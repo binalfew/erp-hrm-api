@@ -1,0 +1,316 @@
+# ------------------------------------------------------
+# THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
+# ------------------------------------------------------
+
+"""An arbitrary-precision Decimal type"""
+scalar Decimal
+
+type Department {
+  _count: DepartmentCount
+  children: [Department!]
+  code: String!
+  createdAt: Timestamp!
+  id: ID!
+  locales: JSON
+  name: String!
+  parent: Department
+  parentId: Int
+  positions: [Position!]
+  updatedAt: Timestamp!
+}
+
+type DepartmentCount {
+  children: Int!
+  positions: Int!
+}
+
+type Employee {
+  Phone: String!
+  countryOfBirth: String!
+  createdAt: Timestamp!
+  dateOfBirth: Timestamp!
+  deleted: Boolean!
+  email: String!
+  emergencyContact: String!
+  emergencyPhone: String!
+  employmentDate: Timestamp!
+  employmentNature: EmploymentNature
+  employmentNatureId: Int
+  employmentType: EmploymentType
+  employmentTypeId: Int
+  firstName: JSON!
+  gender: Gender
+  genderId: Int
+  grandfatherName: JSON!
+  id: ID!
+  idNumber: String!
+  lastName: JSON!
+  locales: JSON
+  maritalStatus: MaritalStatus
+  maritalStatusId: Int
+  nationality: Nationality
+  nationalityId: Int
+  numberOfChildren: Int!
+  passportNumber: String!
+  placeOfBirth: String!
+  probationDate: Timestamp!
+  retirementDate: Timestamp!
+  updatedAt: Timestamp!
+}
+
+type EmploymentNature {
+  _count: EmploymentNatureCount
+  code: String!
+  createdAt: Timestamp!
+  deleted: Boolean!
+  employees: [Employee!]
+  id: ID!
+  locales: JSON
+  name: String!
+  updatedAt: Timestamp!
+}
+
+type EmploymentNatureCount {
+  employees: Int!
+}
+
+type EmploymentType {
+  _count: EmploymentTypeCount
+  code: String!
+  createdAt: Timestamp!
+  deleted: Boolean!
+  employees: [Employee!]
+  id: ID!
+  locales: JSON
+  name: String!
+  updatedAt: Timestamp!
+}
+
+type EmploymentTypeCount {
+  employees: Int!
+}
+
+type Gender {
+  _count: GenderCount
+  code: String!
+  createdAt: Timestamp!
+  deleted: Boolean!
+  employees: [Employee!]
+  id: ID!
+  locales: JSON
+  name: String!
+  positionClasses: [PositionClass!]
+  updatedAt: Timestamp!
+}
+
+type GenderAvgAggregate {
+  id: Float
+}
+
+type GenderCount {
+  employees: Int!
+  positionClasses: Int!
+}
+
+type GenderCountAggregate {
+  _all: Int!
+  code: Int!
+  createdAt: Int!
+  deleted: Int!
+  id: Int!
+  locales: Int!
+  name: Int!
+  updatedAt: Int!
+}
+
+type GenderMaxAggregate {
+  code: String
+  createdAt: Timestamp
+  deleted: Boolean
+  id: Int
+  name: String
+  updatedAt: Timestamp
+}
+
+type GenderMinAggregate {
+  code: String
+  createdAt: Timestamp
+  deleted: Boolean
+  id: Int
+  name: String
+  updatedAt: Timestamp
+}
+
+type GenderSumAggregate {
+  id: Int
+}
+
+"""
+The `JSON` scalar type represents JSON values as specified by [ECMA-404](http://www.ecma-international.org/publications/files/ECMA-ST/ECMA-404.pdf).
+"""
+scalar JSON @specifiedBy(url: "http://www.ecma-international.org/publications/files/ECMA-ST/ECMA-404.pdf")
+
+type JobGrade {
+  _count: JobGradeCount
+  code: String!
+  createdAt: Timestamp!
+  deleted: Boolean!
+  id: ID!
+  locales: JSON
+  name: String!
+  salaryScales: [SalaryScale!]
+  updatedAt: Timestamp!
+}
+
+type JobGradeCount {
+  salaryScales: Int!
+}
+
+type JobStep {
+  _count: JobStepCount
+  code: String!
+  createdAt: Timestamp!
+  deleted: Boolean!
+  id: ID!
+  locales: JSON
+  name: String!
+  salaryScales: [SalaryScale!]
+  updatedAt: Timestamp!
+}
+
+type JobStepCount {
+  salaryScales: Int!
+}
+
+type MaritalStatus {
+  _count: MaritalStatusCount
+  code: String!
+  createdAt: Timestamp!
+  deleted: Boolean!
+  employees: [Employee!]
+  id: ID!
+  locales: JSON
+  name: String!
+  updatedAt: Timestamp!
+}
+
+type MaritalStatusCount {
+  employees: Int!
+}
+
+type Nationality {
+  _count: NationalityCount
+  code: String!
+  createdAt: Timestamp!
+  deleted: Boolean!
+  employees: [Employee!]
+  id: ID!
+  locales: JSON
+  name: String!
+  updatedAt: Timestamp!
+}
+
+type NationalityCount {
+  employees: Int!
+}
+
+type Position {
+  code: String!
+  createdAt: Timestamp!
+  deleted: Boolean!
+  department: Department
+  departmentId: Int
+  id: ID!
+  positionClass: PositionClass
+  positionClassId: Int
+  updatedAt: Timestamp!
+  vacant: Boolean!
+}
+
+type PositionClass {
+  _count: PositionClassCount
+  code: String!
+  createdAt: Timestamp!
+  deleted: Boolean!
+  gender: Gender
+  genderId: Int
+  id: ID!
+  locales: JSON
+  maximumAge: Int!
+  minimumAge: Int!
+  monthlyWorkingHours: Decimal!
+  name: String!
+  positionClassCategory: PositionClassCategory
+  positionClassCategoryId: Int
+  positionClassType: PositionClassType
+  positionClassTypeId: Int
+  positions: [Position!]
+  salary: Decimal!
+  salaryScale: SalaryScale
+  salaryScaleId: Int
+  specification: String
+  updatedAt: Timestamp!
+}
+
+type PositionClassCategory {
+  _count: PositionClassCategoryCount
+  code: String!
+  createdAt: Timestamp!
+  deleted: Boolean!
+  id: ID!
+  locales: JSON
+  name: String!
+  positionClasses: [PositionClass!]
+  updatedAt: Timestamp!
+}
+
+type PositionClassCategoryCount {
+  positionClasses: Int!
+}
+
+type PositionClassCount {
+  positions: Int!
+}
+
+type PositionClassType {
+  _count: PositionClassTypeCount
+  code: String!
+  createdAt: Timestamp!
+  deleted: Boolean!
+  id: ID!
+  locales: JSON
+  name: String!
+  positionClasses: [PositionClass!]
+  updatedAt: Timestamp!
+}
+
+type PositionClassTypeCount {
+  positionClasses: Int!
+}
+
+type Query {
+  sayHello: String!
+}
+
+type SalaryScale {
+  _count: SalaryScaleCount
+  createdAt: Timestamp!
+  deleted: Boolean!
+  id: ID!
+  jobGrade: JobGrade
+  jobGradeId: Int
+  jobStep: JobStep
+  jobStepId: Int
+  positionClasses: [PositionClass!]
+  salary: Float!
+  updatedAt: Timestamp!
+}
+
+type SalaryScaleCount {
+  positionClasses: Int!
+}
+
+"""
+`Date` type as integer. Type represents date and time as number of milliseconds from start of UNIX epoch.
+"""
+scalar Timestamp

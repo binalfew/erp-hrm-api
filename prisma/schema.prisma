@@ -1,0 +1,258 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+generator nestgraphql {
+  provider                              = "node node_modules/prisma-nestjs-graphql"
+  output                                = "../src/@generated"
+  fields_Validator_from                 = "class-validator"
+  fields_Validator_input                = true
+  reExport                              = Directories
+  requireSingleFieldsInWhereUniqueInput = true
+}
+
+model Gender {
+  id              Int             @id @default(autoincrement())
+  name            String          @unique @db.VarChar
+  code            String          @unique @db.VarChar
+  locales         Json?
+  deleted         Boolean         @default(false)
+  createdAt       DateTime        @default(now()) @db.Timestamp(6)
+  updatedAt       DateTime        @default(now()) @db.Timestamp(6)
+  positionClasses PositionClass[]
+  employees       Employee[]
+
+  @@map(name: "genders")
+}
+
+model Nationality {
+  id        Int        @id @default(autoincrement())
+  name      String     @unique @db.VarChar
+  code      String     @unique @db.VarChar
+  locales   Json?
+  deleted   Boolean    @default(false)
+  createdAt DateTime   @default(now()) @db.Timestamp(6)
+  updatedAt DateTime   @default(now()) @db.Timestamp(6)
+  employees Employee[]
+
+  @@map(name: "nationalities")
+}
+
+model MaritalStatus {
+  id        Int        @id @default(autoincrement())
+  name      String     @unique @db.VarChar
+  code      String     @unique @db.VarChar
+  locales   Json?
+  deleted   Boolean    @default(false)
+  createdAt DateTime   @default(now()) @db.Timestamp(6)
+  updatedAt DateTime   @default(now()) @db.Timestamp(6)
+  employees Employee[]
+
+  @@map(name: "marital_statuses")
+}
+
+model EmploymentType {
+  id        Int        @id @default(autoincrement())
+  name      String     @unique @db.VarChar
+  code      String     @unique @db.VarChar
+  locales   Json?
+  deleted   Boolean    @default(false)
+  createdAt DateTime   @default(now()) @db.Timestamp(6)
+  updatedAt DateTime   @default(now()) @db.Timestamp(6)
+  employees Employee[]
+
+  @@map(name: "employment_types")
+}
+
+model EmploymentNature {
+  id        Int        @id @default(autoincrement())
+  name      String     @unique @db.VarChar
+  code      String     @unique @db.VarChar
+  locales   Json?
+  deleted   Boolean    @default(false)
+  createdAt DateTime   @default(now()) @db.Timestamp(6)
+  updatedAt DateTime   @default(now()) @db.Timestamp(6)
+  employees Employee[]
+
+  @@map(name: "employment_natures")
+}
+
+model JobGrade {
+  id           Int           @id @default(autoincrement())
+  name         String        @unique @db.VarChar
+  code         String        @unique @db.VarChar
+  locales      Json?
+  deleted      Boolean       @default(false)
+  createdAt    DateTime      @default(now()) @db.Timestamp(6)
+  updatedAt    DateTime      @default(now()) @db.Timestamp(6)
+  salaryScales SalaryScale[]
+
+  @@map(name: "job_grades")
+}
+
+model JobStep {
+  id           Int           @id @default(autoincrement())
+  name         String        @unique @db.VarChar
+  code         String        @unique @db.VarChar
+  locales      Json?
+  deleted      Boolean       @default(false)
+  createdAt    DateTime      @default(now()) @db.Timestamp(6)
+  updatedAt    DateTime      @default(now()) @db.Timestamp(6)
+  salaryScales SalaryScale[]
+
+  @@map(name: "job_steps")
+}
+
+model PositionClassType {
+  id              Int             @id @default(autoincrement())
+  name            String          @unique @db.VarChar
+  code            String          @unique @db.VarChar
+  locales         Json?
+  deleted         Boolean         @default(false)
+  createdAt       DateTime        @default(now()) @db.Timestamp(6)
+  updatedAt       DateTime        @default(now()) @db.Timestamp(6)
+  positionClasses PositionClass[]
+
+  @@map(name: "position_class_types")
+}
+
+model PositionClassCategory {
+  id              Int             @id @default(autoincrement())
+  name            String          @unique @db.VarChar
+  code            String          @unique @db.VarChar
+  locales         Json?
+  deleted         Boolean         @default(false)
+  createdAt       DateTime        @default(now()) @db.Timestamp(6)
+  updatedAt       DateTime        @default(now()) @db.Timestamp(6)
+  positionClasses PositionClass[]
+
+  @@map(name: "position_class_categories")
+}
+
+model SalaryScale {
+  id              Int             @id @default(autoincrement())
+  jobGrade        JobGrade?       @relation(fields: [jobGradeId], references: [id])
+  jobGradeId      Int?
+  jobStep         JobStep?        @relation(fields: [jobStepId], references: [id])
+  jobStepId       Int?
+  salary          Float           @default(0.00)
+  deleted         Boolean         @default(false)
+  createdAt       DateTime        @default(now()) @db.Timestamp(6)
+  updatedAt       DateTime        @default(now()) @db.Timestamp(6)
+  positionClasses PositionClass[]
+
+  @@map(name: "salary_scales")
+}
+
+model Department {
+  id        Int          @id @default(autoincrement())
+  name      String
+  code      String
+  locales   Json?
+  parentId  Int?
+  parent    Department?  @relation("ParentToChild", fields: [parentId], references: [id])
+  children  Department[] @relation("ParentToChild")
+  createdAt DateTime     @default(now()) @db.Timestamp(6)
+  updatedAt DateTime     @default(now()) @db.Timestamp(6)
+  positions Position[]
+
+  @@map(name: "departments")
+}
+
+model PositionClass {
+  id                      Int                    @id @default(autoincrement())
+  name                    String                 @unique @db.VarChar
+  code                    String                 @unique @db.VarChar
+  locales                 Json?
+  gender                  Gender?                @relation(fields: [genderId], references: [id])
+  genderId                Int?
+  positionClassType       PositionClassType?     @relation(fields: [positionClassTypeId], references: [id])
+  positionClassTypeId     Int?
+  positionClassCategory   PositionClassCategory? @relation(fields: [positionClassCategoryId], references: [id])
+  positionClassCategoryId Int?
+  salaryScale             SalaryScale?           @relation(fields: [salaryScaleId], references: [id])
+  salaryScaleId           Int?
+  minimumAge              Int                    @default(0)
+  maximumAge              Int                    @default(0)
+  monthlyWorkingHours     Decimal                @default(0.00)
+  salary                  Decimal                @default(0.00)
+  specification           String?                @db.Text
+  deleted                 Boolean                @default(false)
+  createdAt               DateTime               @default(now()) @db.Timestamp(6)
+  updatedAt               DateTime               @default(now()) @db.Timestamp(6)
+  positions               Position[]
+
+  @@map(name: "position_classes")
+}
+
+model Position {
+  id              Int            @id @default(autoincrement())
+  code            String         @unique @db.VarChar
+  positionClass   PositionClass? @relation(fields: [positionClassId], references: [id])
+  positionClassId Int?
+  department      Department?    @relation(fields: [departmentId], references: [id])
+  departmentId    Int?
+  vacant          Boolean        @default(false)
+  deleted         Boolean        @default(false)
+  createdAt       DateTime       @default(now()) @db.Timestamp(6)
+  updatedAt       DateTime       @default(now()) @db.Timestamp(6)
+
+  @@map(name: "positions")
+}
+
+model Employee {
+  id                 Int               @id @default(autoincrement())
+  firstName          Json
+  lastName           Json
+  grandfatherName    Json
+  locales            Json?
+  gender             Gender?           @relation(fields: [genderId], references: [id])
+  genderId           Int?
+  nationality        Nationality?      @relation(fields: [nationalityId], references: [id])
+  nationalityId      Int?
+  maritalStatus      MaritalStatus?    @relation(fields: [maritalStatusId], references: [id])
+  maritalStatusId    Int?
+  employmentType     EmploymentType?   @relation(fields: [employmentTypeId], references: [id])
+  employmentTypeId   Int?
+  employmentNature   EmploymentNature? @relation(fields: [employmentNatureId], references: [id])
+  employmentNatureId Int?
+  dateOfBirth        DateTime          @default(now()) @db.Timestamp(6)
+  placeOfBirth       String
+  countryOfBirth     String
+  idNumber           String
+  passportNumber     String
+  email              String
+  Phone              String
+  emergencyContact   String
+  emergencyPhone     String
+  numberOfChildren   Int
+  employmentDate     DateTime          @default(now()) @db.Timestamp(6)
+  probationDate      DateTime          @default(now()) @db.Timestamp(6)
+  retirementDate     DateTime          @default(now()) @db.Timestamp(6)
+  deleted            Boolean           @default(false)
+  createdAt          DateTime          @default(now()) @db.Timestamp(6)
+  updatedAt          DateTime          @default(now()) @db.Timestamp(6)
+
+  @@map(name: "employees")
+}
+
+model User {
+  id        Int      @id @default(autoincrement())
+  username  String   @unique @db.VarChar
+  email     String   @unique @db.VarChar
+  password  String
+  verified  Boolean  @default(false)
+  deleted   Boolean  @default(false)
+  createdAt DateTime @default(now()) @db.Timestamp(6)
+  updatedAt DateTime @default(now()) @db.Timestamp(6)
+
+  @@map(name: "users")
+}
