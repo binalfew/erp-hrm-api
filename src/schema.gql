@@ -2072,7 +2072,7 @@ input PositionWhereUniqueInput {
 }
 
 type Query {
-  gender(where: GenderWhereUniqueInput!): Gender!
+  gender(where: GenderWhereUniqueInput!): Gender
   genders(cursor: GenderWhereUniqueInput, distinct: [GenderScalarFieldEnum!], orderBy: [GenderOrderByWithRelationInput!], skip: Int, take: Int, where: GenderWhereInput): GendersResponse!
 }
 

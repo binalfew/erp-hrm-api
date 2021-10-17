@@ -17,7 +17,7 @@ export class GendersResponse extends PaginatedResponse(Gender) {}
 export class GendersResolver {
   constructor(private readonly data: DataService) {}
 
-  @Query(() => Gender, { name: 'gender' })
+  @Query(() => Gender, { name: 'gender', nullable: true })
   async getGender(@Args() args: FindUniqueGenderArgs): Promise<Gender> {
     return this.data.gender.findUnique({ where: args.where });
   }
