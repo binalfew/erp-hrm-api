@@ -42,7 +42,7 @@
     "graphql-type-json": "^0.3.2",
     "joi": "^17.4.2",
     "prisma-graphql-type-decimal": "^1.0.0",
-    "prisma-nestjs-graphql": "^14.4.1",
+    "prisma-nestjs-graphql": "^14.6.0",
     "redis": "^3.1.2",
     "reflect-metadata": "^0.1.13",
     "rimraf": "^3.0.2",

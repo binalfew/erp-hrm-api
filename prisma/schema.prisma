@@ -21,7 +21,9 @@ generator nestgraphql {
 
 model Gender {
   id              Int             @id @default(autoincrement())
+  /// @Validator.IsNotEmpty()
   name            String          @unique @db.VarChar
+  /// @Validator.IsNotEmpty()
   code            String          @unique @db.VarChar
   locales         Json?
   deleted         Boolean         @default(false)

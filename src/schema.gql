@@ -2,8 +2,51 @@
 # THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
 # ------------------------------------------------------
 
+input BoolFieldUpdateOperationsInput {
+  set: Boolean
+}
+
+input BoolFilter {
+  equals: Boolean
+  not: NestedBoolFilter
+}
+
+input DateTimeFieldUpdateOperationsInput {
+  set: Timestamp
+}
+
+input DateTimeFilter {
+  equals: Timestamp
+  gt: Timestamp
+  gte: Timestamp
+  in: [Timestamp!]
+  lt: Timestamp
+  lte: Timestamp
+  not: NestedDateTimeFilter
+  notIn: [Timestamp!]
+}
+
 """An arbitrary-precision Decimal type"""
 scalar Decimal
+
+input DecimalFieldUpdateOperationsInput {
+  decrement: Decimal
+  divide: Decimal
+  increment: Decimal
+  multiply: Decimal
+  set: Decimal
+}
+
+input DecimalFilter {
+  equals: Decimal
+  gt: Decimal
+  gte: Decimal
+  in: [Decimal!]
+  lt: Decimal
+  lte: Decimal
+  not: NestedDecimalFilter
+  notIn: [Decimal!]
+}
 
 type Department {
   _count: DepartmentCount
@@ -22,6 +65,226 @@ type Department {
 type DepartmentCount {
   children: Int!
   positions: Int!
+}
+
+input DepartmentCreateManyParentInput {
+  code: String!
+  createdAt: Timestamp
+  id: Int
+  locales: JSON
+  name: String!
+  updatedAt: Timestamp
+}
+
+input DepartmentCreateManyParentInputEnvelope {
+  data: [DepartmentCreateManyParentInput!]!
+  skipDuplicates: Boolean
+}
+
+input DepartmentCreateNestedManyWithoutParentInput {
+  connect: [DepartmentWhereUniqueInput!]
+  connectOrCreate: [DepartmentCreateOrConnectWithoutParentInput!]
+  create: [DepartmentCreateWithoutParentInput!]
+  createMany: DepartmentCreateManyParentInputEnvelope
+}
+
+input DepartmentCreateNestedOneWithoutChildrenInput {
+  connect: DepartmentWhereUniqueInput
+  connectOrCreate: DepartmentCreateOrConnectWithoutChildrenInput
+  create: DepartmentCreateWithoutChildrenInput
+}
+
+input DepartmentCreateNestedOneWithoutPositionsInput {
+  connect: DepartmentWhereUniqueInput
+  connectOrCreate: DepartmentCreateOrConnectWithoutPositionsInput
+  create: DepartmentCreateWithoutPositionsInput
+}
+
+input DepartmentCreateOrConnectWithoutChildrenInput {
+  create: DepartmentCreateWithoutChildrenInput!
+  where: DepartmentWhereUniqueInput!
+}
+
+input DepartmentCreateOrConnectWithoutParentInput {
+  create: DepartmentCreateWithoutParentInput!
+  where: DepartmentWhereUniqueInput!
+}
+
+input DepartmentCreateOrConnectWithoutPositionsInput {
+  create: DepartmentCreateWithoutPositionsInput!
+  where: DepartmentWhereUniqueInput!
+}
+
+input DepartmentCreateWithoutChildrenInput {
+  code: String!
+  createdAt: Timestamp
+  locales: JSON
+  name: String!
+  parent: DepartmentCreateNestedOneWithoutChildrenInput
+  positions: PositionCreateNestedManyWithoutDepartmentInput
+  updatedAt: Timestamp
+}
+
+input DepartmentCreateWithoutParentInput {
+  children: DepartmentCreateNestedManyWithoutParentInput
+  code: String!
+  createdAt: Timestamp
+  locales: JSON
+  name: String!
+  positions: PositionCreateNestedManyWithoutDepartmentInput
+  updatedAt: Timestamp
+}
+
+input DepartmentCreateWithoutPositionsInput {
+  children: DepartmentCreateNestedManyWithoutParentInput
+  code: String!
+  createdAt: Timestamp
+  locales: JSON
+  name: String!
+  parent: DepartmentCreateNestedOneWithoutChildrenInput
+  updatedAt: Timestamp
+}
+
+input DepartmentListRelationFilter {
+  every: DepartmentWhereInput
+  none: DepartmentWhereInput
+  some: DepartmentWhereInput
+}
+
+input DepartmentRelationFilter {
+  is: DepartmentWhereInput
+  isNot: DepartmentWhereInput
+}
+
+input DepartmentScalarWhereInput {
+  AND: [DepartmentScalarWhereInput!]
+  NOT: [DepartmentScalarWhereInput!]
+  OR: [DepartmentScalarWhereInput!]
+  code: StringFilter
+  createdAt: DateTimeFilter
+  id: IntFilter
+  locales: JsonNullableFilter
+  name: StringFilter
+  parentId: IntNullableFilter
+  updatedAt: DateTimeFilter
+}
+
+input DepartmentUpdateManyMutationInput {
+  code: StringFieldUpdateOperationsInput
+  createdAt: DateTimeFieldUpdateOperationsInput
+  locales: JSON
+  name: StringFieldUpdateOperationsInput
+  updatedAt: DateTimeFieldUpdateOperationsInput
+}
+
+input DepartmentUpdateManyWithWhereWithoutParentInput {
+  data: DepartmentUpdateManyMutationInput!
+  where: DepartmentScalarWhereInput!
+}
+
+input DepartmentUpdateManyWithoutParentInput {
+  connect: [DepartmentWhereUniqueInput!]
+  connectOrCreate: [DepartmentCreateOrConnectWithoutParentInput!]
+  create: [DepartmentCreateWithoutParentInput!]
+  createMany: DepartmentCreateManyParentInputEnvelope
+  delete: [DepartmentWhereUniqueInput!]
+  deleteMany: [DepartmentScalarWhereInput!]
+  disconnect: [DepartmentWhereUniqueInput!]
+  set: [DepartmentWhereUniqueInput!]
+  update: [DepartmentUpdateWithWhereUniqueWithoutParentInput!]
+  updateMany: [DepartmentUpdateManyWithWhereWithoutParentInput!]
+  upsert: [DepartmentUpsertWithWhereUniqueWithoutParentInput!]
+}
+
+input DepartmentUpdateOneWithoutChildrenInput {
+  connect: DepartmentWhereUniqueInput
+  connectOrCreate: DepartmentCreateOrConnectWithoutChildrenInput
+  create: DepartmentCreateWithoutChildrenInput
+  delete: Boolean
+  disconnect: Boolean
+  update: DepartmentUpdateWithoutChildrenInput
+  upsert: DepartmentUpsertWithoutChildrenInput
+}
+
+input DepartmentUpdateOneWithoutPositionsInput {
+  connect: DepartmentWhereUniqueInput
+  connectOrCreate: DepartmentCreateOrConnectWithoutPositionsInput
+  create: DepartmentCreateWithoutPositionsInput
+  delete: Boolean
+  disconnect: Boolean
+  update: DepartmentUpdateWithoutPositionsInput
+  upsert: DepartmentUpsertWithoutPositionsInput
+}
+
+input DepartmentUpdateWithWhereUniqueWithoutParentInput {
+  data: DepartmentUpdateWithoutParentInput!
+  where: DepartmentWhereUniqueInput!
+}
+
+input DepartmentUpdateWithoutChildrenInput {
+  code: StringFieldUpdateOperationsInput
+  createdAt: DateTimeFieldUpdateOperationsInput
+  locales: JSON
+  name: StringFieldUpdateOperationsInput
+  parent: DepartmentUpdateOneWithoutChildrenInput
+  positions: PositionUpdateManyWithoutDepartmentInput
+  updatedAt: DateTimeFieldUpdateOperationsInput
+}
+
+input DepartmentUpdateWithoutParentInput {
+  children: DepartmentUpdateManyWithoutParentInput
+  code: StringFieldUpdateOperationsInput
+  createdAt: DateTimeFieldUpdateOperationsInput
+  locales: JSON
+  name: StringFieldUpdateOperationsInput
+  positions: PositionUpdateManyWithoutDepartmentInput
+  updatedAt: DateTimeFieldUpdateOperationsInput
+}
+
+input DepartmentUpdateWithoutPositionsInput {
+  children: DepartmentUpdateManyWithoutParentInput
+  code: StringFieldUpdateOperationsInput
+  createdAt: DateTimeFieldUpdateOperationsInput
+  locales: JSON
+  name: StringFieldUpdateOperationsInput
+  parent: DepartmentUpdateOneWithoutChildrenInput
+  updatedAt: DateTimeFieldUpdateOperationsInput
+}
+
+input DepartmentUpsertWithWhereUniqueWithoutParentInput {
+  create: DepartmentCreateWithoutParentInput!
+  update: DepartmentUpdateWithoutParentInput!
+  where: DepartmentWhereUniqueInput!
+}
+
+input DepartmentUpsertWithoutChildrenInput {
+  create: DepartmentCreateWithoutChildrenInput!
+  update: DepartmentUpdateWithoutChildrenInput!
+}
+
+input DepartmentUpsertWithoutPositionsInput {
+  create: DepartmentCreateWithoutPositionsInput!
+  update: DepartmentUpdateWithoutPositionsInput!
+}
+
+input DepartmentWhereInput {
+  AND: [DepartmentWhereInput!]
+  NOT: [DepartmentWhereInput!]
+  OR: [DepartmentWhereInput!]
+  children: DepartmentListRelationFilter
+  code: StringFilter
+  createdAt: DateTimeFilter
+  id: IntFilter
+  locales: JsonNullableFilter
+  name: StringFilter
+  parent: DepartmentRelationFilter
+  parentId: IntNullableFilter
+  positions: PositionListRelationFilter
+  updatedAt: DateTimeFilter
+}
+
+input DepartmentWhereUniqueInput {
+  id: Int!
 }
 
 type Employee {
@@ -58,6 +321,241 @@ type Employee {
   updatedAt: Timestamp!
 }
 
+input EmployeeCreateManyGenderInput {
+  Phone: String!
+  countryOfBirth: String!
+  createdAt: Timestamp
+  dateOfBirth: Timestamp
+  deleted: Boolean
+  email: String!
+  emergencyContact: String!
+  emergencyPhone: String!
+  employmentDate: Timestamp
+  employmentNatureId: Int
+  employmentTypeId: Int
+  firstName: JSON!
+  grandfatherName: JSON!
+  id: Int
+  idNumber: String!
+  lastName: JSON!
+  locales: JSON
+  maritalStatusId: Int
+  nationalityId: Int
+  numberOfChildren: Int!
+  passportNumber: String!
+  placeOfBirth: String!
+  probationDate: Timestamp
+  retirementDate: Timestamp
+  updatedAt: Timestamp
+}
+
+input EmployeeCreateManyGenderInputEnvelope {
+  data: [EmployeeCreateManyGenderInput!]!
+  skipDuplicates: Boolean
+}
+
+input EmployeeCreateNestedManyWithoutGenderInput {
+  connect: [EmployeeWhereUniqueInput!]
+  connectOrCreate: [EmployeeCreateOrConnectWithoutGenderInput!]
+  create: [EmployeeCreateWithoutGenderInput!]
+  createMany: EmployeeCreateManyGenderInputEnvelope
+}
+
+input EmployeeCreateOrConnectWithoutGenderInput {
+  create: EmployeeCreateWithoutGenderInput!
+  where: EmployeeWhereUniqueInput!
+}
+
+input EmployeeCreateWithoutGenderInput {
+  Phone: String!
+  countryOfBirth: String!
+  createdAt: Timestamp
+  dateOfBirth: Timestamp
+  deleted: Boolean
+  email: String!
+  emergencyContact: String!
+  emergencyPhone: String!
+  employmentDate: Timestamp
+  employmentNature: EmploymentNatureCreateNestedOneWithoutEmployeesInput
+  employmentType: EmploymentTypeCreateNestedOneWithoutEmployeesInput
+  firstName: JSON!
+  grandfatherName: JSON!
+  idNumber: String!
+  lastName: JSON!
+  locales: JSON
+  maritalStatus: MaritalStatusCreateNestedOneWithoutEmployeesInput
+  nationality: NationalityCreateNestedOneWithoutEmployeesInput
+  numberOfChildren: Int!
+  passportNumber: String!
+  placeOfBirth: String!
+  probationDate: Timestamp
+  retirementDate: Timestamp
+  updatedAt: Timestamp
+}
+
+input EmployeeListRelationFilter {
+  every: EmployeeWhereInput
+  none: EmployeeWhereInput
+  some: EmployeeWhereInput
+}
+
+input EmployeeOrderByRelationAggregateInput {
+  _count: SortOrder
+}
+
+input EmployeeScalarWhereInput {
+  AND: [EmployeeScalarWhereInput!]
+  NOT: [EmployeeScalarWhereInput!]
+  OR: [EmployeeScalarWhereInput!]
+  Phone: StringFilter
+  countryOfBirth: StringFilter
+  createdAt: DateTimeFilter
+  dateOfBirth: DateTimeFilter
+  deleted: BoolFilter
+  email: StringFilter
+  emergencyContact: StringFilter
+  emergencyPhone: StringFilter
+  employmentDate: DateTimeFilter
+  employmentNatureId: IntNullableFilter
+  employmentTypeId: IntNullableFilter
+  firstName: JsonFilter
+  genderId: IntNullableFilter
+  grandfatherName: JsonFilter
+  id: IntFilter
+  idNumber: StringFilter
+  lastName: JsonFilter
+  locales: JsonNullableFilter
+  maritalStatusId: IntNullableFilter
+  nationalityId: IntNullableFilter
+  numberOfChildren: IntFilter
+  passportNumber: StringFilter
+  placeOfBirth: StringFilter
+  probationDate: DateTimeFilter
+  retirementDate: DateTimeFilter
+  updatedAt: DateTimeFilter
+}
+
+input EmployeeUpdateManyMutationInput {
+  Phone: StringFieldUpdateOperationsInput
+  countryOfBirth: StringFieldUpdateOperationsInput
+  createdAt: DateTimeFieldUpdateOperationsInput
+  dateOfBirth: DateTimeFieldUpdateOperationsInput
+  deleted: BoolFieldUpdateOperationsInput
+  email: StringFieldUpdateOperationsInput
+  emergencyContact: StringFieldUpdateOperationsInput
+  emergencyPhone: StringFieldUpdateOperationsInput
+  employmentDate: DateTimeFieldUpdateOperationsInput
+  firstName: JSON
+  grandfatherName: JSON
+  idNumber: StringFieldUpdateOperationsInput
+  lastName: JSON
+  locales: JSON
+  numberOfChildren: IntFieldUpdateOperationsInput
+  passportNumber: StringFieldUpdateOperationsInput
+  placeOfBirth: StringFieldUpdateOperationsInput
+  probationDate: DateTimeFieldUpdateOperationsInput
+  retirementDate: DateTimeFieldUpdateOperationsInput
+  updatedAt: DateTimeFieldUpdateOperationsInput
+}
+
+input EmployeeUpdateManyWithWhereWithoutGenderInput {
+  data: EmployeeUpdateManyMutationInput!
+  where: EmployeeScalarWhereInput!
+}
+
+input EmployeeUpdateManyWithoutGenderInput {
+  connect: [EmployeeWhereUniqueInput!]
+  connectOrCreate: [EmployeeCreateOrConnectWithoutGenderInput!]
+  create: [EmployeeCreateWithoutGenderInput!]
+  createMany: EmployeeCreateManyGenderInputEnvelope
+  delete: [EmployeeWhereUniqueInput!]
+  deleteMany: [EmployeeScalarWhereInput!]
+  disconnect: [EmployeeWhereUniqueInput!]
+  set: [EmployeeWhereUniqueInput!]
+  update: [EmployeeUpdateWithWhereUniqueWithoutGenderInput!]
+  updateMany: [EmployeeUpdateManyWithWhereWithoutGenderInput!]
+  upsert: [EmployeeUpsertWithWhereUniqueWithoutGenderInput!]
+}
+
+input EmployeeUpdateWithWhereUniqueWithoutGenderInput {
+  data: EmployeeUpdateWithoutGenderInput!
+  where: EmployeeWhereUniqueInput!
+}
+
+input EmployeeUpdateWithoutGenderInput {
+  Phone: StringFieldUpdateOperationsInput
+  countryOfBirth: StringFieldUpdateOperationsInput
+  createdAt: DateTimeFieldUpdateOperationsInput
+  dateOfBirth: DateTimeFieldUpdateOperationsInput
+  deleted: BoolFieldUpdateOperationsInput
+  email: StringFieldUpdateOperationsInput
+  emergencyContact: StringFieldUpdateOperationsInput
+  emergencyPhone: StringFieldUpdateOperationsInput
+  employmentDate: DateTimeFieldUpdateOperationsInput
+  employmentNature: EmploymentNatureUpdateOneWithoutEmployeesInput
+  employmentType: EmploymentTypeUpdateOneWithoutEmployeesInput
+  firstName: JSON
+  grandfatherName: JSON
+  idNumber: StringFieldUpdateOperationsInput
+  lastName: JSON
+  locales: JSON
+  maritalStatus: MaritalStatusUpdateOneWithoutEmployeesInput
+  nationality: NationalityUpdateOneWithoutEmployeesInput
+  numberOfChildren: IntFieldUpdateOperationsInput
+  passportNumber: StringFieldUpdateOperationsInput
+  placeOfBirth: StringFieldUpdateOperationsInput
+  probationDate: DateTimeFieldUpdateOperationsInput
+  retirementDate: DateTimeFieldUpdateOperationsInput
+  updatedAt: DateTimeFieldUpdateOperationsInput
+}
+
+input EmployeeUpsertWithWhereUniqueWithoutGenderInput {
+  create: EmployeeCreateWithoutGenderInput!
+  update: EmployeeUpdateWithoutGenderInput!
+  where: EmployeeWhereUniqueInput!
+}
+
+input EmployeeWhereInput {
+  AND: [EmployeeWhereInput!]
+  NOT: [EmployeeWhereInput!]
+  OR: [EmployeeWhereInput!]
+  Phone: StringFilter
+  countryOfBirth: StringFilter
+  createdAt: DateTimeFilter
+  dateOfBirth: DateTimeFilter
+  deleted: BoolFilter
+  email: StringFilter
+  emergencyContact: StringFilter
+  emergencyPhone: StringFilter
+  employmentDate: DateTimeFilter
+  employmentNature: EmploymentNatureRelationFilter
+  employmentNatureId: IntNullableFilter
+  employmentType: EmploymentTypeRelationFilter
+  employmentTypeId: IntNullableFilter
+  firstName: JsonFilter
+  gender: GenderRelationFilter
+  genderId: IntNullableFilter
+  grandfatherName: JsonFilter
+  id: IntFilter
+  idNumber: StringFilter
+  lastName: JsonFilter
+  locales: JsonNullableFilter
+  maritalStatus: MaritalStatusRelationFilter
+  maritalStatusId: IntNullableFilter
+  nationality: NationalityRelationFilter
+  nationalityId: IntNullableFilter
+  numberOfChildren: IntFilter
+  passportNumber: StringFilter
+  placeOfBirth: StringFilter
+  probationDate: DateTimeFilter
+  retirementDate: DateTimeFilter
+  updatedAt: DateTimeFilter
+}
+
+input EmployeeWhereUniqueInput {
+  id: Int!
+}
+
 type EmploymentNature {
   _count: EmploymentNatureCount
   code: String!
@@ -74,6 +572,75 @@ type EmploymentNatureCount {
   employees: Int!
 }
 
+input EmploymentNatureCreateNestedOneWithoutEmployeesInput {
+  connect: EmploymentNatureWhereUniqueInput
+  connectOrCreate: EmploymentNatureCreateOrConnectWithoutEmployeesInput
+  create: EmploymentNatureCreateWithoutEmployeesInput
+}
+
+input EmploymentNatureCreateOrConnectWithoutEmployeesInput {
+  create: EmploymentNatureCreateWithoutEmployeesInput!
+  where: EmploymentNatureWhereUniqueInput!
+}
+
+input EmploymentNatureCreateWithoutEmployeesInput {
+  code: String!
+  createdAt: Timestamp
+  deleted: Boolean
+  locales: JSON
+  name: String!
+  updatedAt: Timestamp
+}
+
+input EmploymentNatureRelationFilter {
+  is: EmploymentNatureWhereInput
+  isNot: EmploymentNatureWhereInput
+}
+
+input EmploymentNatureUpdateOneWithoutEmployeesInput {
+  connect: EmploymentNatureWhereUniqueInput
+  connectOrCreate: EmploymentNatureCreateOrConnectWithoutEmployeesInput
+  create: EmploymentNatureCreateWithoutEmployeesInput
+  delete: Boolean
+  disconnect: Boolean
+  update: EmploymentNatureUpdateWithoutEmployeesInput
+  upsert: EmploymentNatureUpsertWithoutEmployeesInput
+}
+
+input EmploymentNatureUpdateWithoutEmployeesInput {
+  code: StringFieldUpdateOperationsInput
+  createdAt: DateTimeFieldUpdateOperationsInput
+  deleted: BoolFieldUpdateOperationsInput
+  locales: JSON
+  name: StringFieldUpdateOperationsInput
+  updatedAt: DateTimeFieldUpdateOperationsInput
+}
+
+input EmploymentNatureUpsertWithoutEmployeesInput {
+  create: EmploymentNatureCreateWithoutEmployeesInput!
+  update: EmploymentNatureUpdateWithoutEmployeesInput!
+}
+
+input EmploymentNatureWhereInput {
+  AND: [EmploymentNatureWhereInput!]
+  NOT: [EmploymentNatureWhereInput!]
+  OR: [EmploymentNatureWhereInput!]
+  code: StringFilter
+  createdAt: DateTimeFilter
+  deleted: BoolFilter
+  employees: EmployeeListRelationFilter
+  id: IntFilter
+  locales: JsonNullableFilter
+  name: StringFilter
+  updatedAt: DateTimeFilter
+}
+
+input EmploymentNatureWhereUniqueInput {
+  code: String
+  id: Int
+  name: String
+}
+
 type EmploymentType {
   _count: EmploymentTypeCount
   code: String!
@@ -88,6 +655,94 @@ type EmploymentType {
 
 type EmploymentTypeCount {
   employees: Int!
+}
+
+input EmploymentTypeCreateNestedOneWithoutEmployeesInput {
+  connect: EmploymentTypeWhereUniqueInput
+  connectOrCreate: EmploymentTypeCreateOrConnectWithoutEmployeesInput
+  create: EmploymentTypeCreateWithoutEmployeesInput
+}
+
+input EmploymentTypeCreateOrConnectWithoutEmployeesInput {
+  create: EmploymentTypeCreateWithoutEmployeesInput!
+  where: EmploymentTypeWhereUniqueInput!
+}
+
+input EmploymentTypeCreateWithoutEmployeesInput {
+  code: String!
+  createdAt: Timestamp
+  deleted: Boolean
+  locales: JSON
+  name: String!
+  updatedAt: Timestamp
+}
+
+input EmploymentTypeRelationFilter {
+  is: EmploymentTypeWhereInput
+  isNot: EmploymentTypeWhereInput
+}
+
+input EmploymentTypeUpdateOneWithoutEmployeesInput {
+  connect: EmploymentTypeWhereUniqueInput
+  connectOrCreate: EmploymentTypeCreateOrConnectWithoutEmployeesInput
+  create: EmploymentTypeCreateWithoutEmployeesInput
+  delete: Boolean
+  disconnect: Boolean
+  update: EmploymentTypeUpdateWithoutEmployeesInput
+  upsert: EmploymentTypeUpsertWithoutEmployeesInput
+}
+
+input EmploymentTypeUpdateWithoutEmployeesInput {
+  code: StringFieldUpdateOperationsInput
+  createdAt: DateTimeFieldUpdateOperationsInput
+  deleted: BoolFieldUpdateOperationsInput
+  locales: JSON
+  name: StringFieldUpdateOperationsInput
+  updatedAt: DateTimeFieldUpdateOperationsInput
+}
+
+input EmploymentTypeUpsertWithoutEmployeesInput {
+  create: EmploymentTypeCreateWithoutEmployeesInput!
+  update: EmploymentTypeUpdateWithoutEmployeesInput!
+}
+
+input EmploymentTypeWhereInput {
+  AND: [EmploymentTypeWhereInput!]
+  NOT: [EmploymentTypeWhereInput!]
+  OR: [EmploymentTypeWhereInput!]
+  code: StringFilter
+  createdAt: DateTimeFilter
+  deleted: BoolFilter
+  employees: EmployeeListRelationFilter
+  id: IntFilter
+  locales: JsonNullableFilter
+  name: StringFilter
+  updatedAt: DateTimeFilter
+}
+
+input EmploymentTypeWhereUniqueInput {
+  code: String
+  id: Int
+  name: String
+}
+
+input FloatFieldUpdateOperationsInput {
+  decrement: Float
+  divide: Float
+  increment: Float
+  multiply: Float
+  set: Float
+}
+
+input FloatFilter {
+  equals: Float
+  gt: Float
+  gte: Float
+  in: [Float!]
+  lt: Float
+  lte: Float
+  not: NestedFloatFilter
+  notIn: [Float!]
 }
 
 type Gender {
@@ -123,6 +778,43 @@ type GenderCountAggregate {
   updatedAt: Int!
 }
 
+input GenderCreateInput {
+  code: String!
+  createdAt: Timestamp
+  deleted: Boolean
+  employees: EmployeeCreateNestedManyWithoutGenderInput
+  locales: JSON
+  name: String!
+  positionClasses: PositionClassCreateNestedManyWithoutGenderInput
+  updatedAt: Timestamp
+}
+
+input GenderCreateNestedOneWithoutPositionClassesInput {
+  connect: GenderWhereUniqueInput
+  connectOrCreate: GenderCreateOrConnectWithoutPositionClassesInput
+  create: GenderCreateWithoutPositionClassesInput
+}
+
+input GenderCreateOrConnectWithoutPositionClassesInput {
+  create: GenderCreateWithoutPositionClassesInput!
+  where: GenderWhereUniqueInput!
+}
+
+input GenderCreateWithoutPositionClassesInput {
+  code: String!
+  createdAt: Timestamp
+  deleted: Boolean
+  employees: EmployeeCreateNestedManyWithoutGenderInput
+  locales: JSON
+  name: String!
+  updatedAt: Timestamp
+}
+
+type GenderEdge {
+  cursor: String!
+  node: Gender!
+}
+
 type GenderMaxAggregate {
   code: String
   createdAt: Timestamp
@@ -141,8 +833,131 @@ type GenderMinAggregate {
   updatedAt: Timestamp
 }
 
+input GenderOrderByWithRelationInput {
+  code: SortOrder
+  createdAt: SortOrder
+  deleted: SortOrder
+  employees: EmployeeOrderByRelationAggregateInput
+  id: SortOrder
+  locales: SortOrder
+  name: SortOrder
+  positionClasses: PositionClassOrderByRelationAggregateInput
+  updatedAt: SortOrder
+}
+
+input GenderRelationFilter {
+  is: GenderWhereInput
+  isNot: GenderWhereInput
+}
+
+enum GenderScalarFieldEnum {
+  code
+  createdAt
+  deleted
+  id
+  locales
+  name
+  updatedAt
+}
+
 type GenderSumAggregate {
   id: Int
+}
+
+input GenderUpdateInput {
+  code: StringFieldUpdateOperationsInput
+  createdAt: DateTimeFieldUpdateOperationsInput
+  deleted: BoolFieldUpdateOperationsInput
+  employees: EmployeeUpdateManyWithoutGenderInput
+  locales: JSON
+  name: StringFieldUpdateOperationsInput
+  positionClasses: PositionClassUpdateManyWithoutGenderInput
+  updatedAt: DateTimeFieldUpdateOperationsInput
+}
+
+input GenderUpdateOneWithoutPositionClassesInput {
+  connect: GenderWhereUniqueInput
+  connectOrCreate: GenderCreateOrConnectWithoutPositionClassesInput
+  create: GenderCreateWithoutPositionClassesInput
+  delete: Boolean
+  disconnect: Boolean
+  update: GenderUpdateWithoutPositionClassesInput
+  upsert: GenderUpsertWithoutPositionClassesInput
+}
+
+input GenderUpdateWithoutPositionClassesInput {
+  code: StringFieldUpdateOperationsInput
+  createdAt: DateTimeFieldUpdateOperationsInput
+  deleted: BoolFieldUpdateOperationsInput
+  employees: EmployeeUpdateManyWithoutGenderInput
+  locales: JSON
+  name: StringFieldUpdateOperationsInput
+  updatedAt: DateTimeFieldUpdateOperationsInput
+}
+
+input GenderUpsertWithoutPositionClassesInput {
+  create: GenderCreateWithoutPositionClassesInput!
+  update: GenderUpdateWithoutPositionClassesInput!
+}
+
+input GenderWhereInput {
+  AND: [GenderWhereInput!]
+  NOT: [GenderWhereInput!]
+  OR: [GenderWhereInput!]
+  code: StringFilter
+  createdAt: DateTimeFilter
+  deleted: BoolFilter
+  employees: EmployeeListRelationFilter
+  id: IntFilter
+  locales: JsonNullableFilter
+  name: StringFilter
+  positionClasses: PositionClassListRelationFilter
+  updatedAt: DateTimeFilter
+}
+
+input GenderWhereUniqueInput {
+  code: String
+  id: Int
+  name: String
+}
+
+type GendersResponse {
+  edges: [GenderEdge!]!
+  endCursor: Int!
+  hasNextPage: Boolean!
+  nodes: [Gender!]!
+  startCursor: Int!
+  totalCount: Int!
+}
+
+input IntFieldUpdateOperationsInput {
+  decrement: Int
+  divide: Int
+  increment: Int
+  multiply: Int
+  set: Int
+}
+
+input IntFilter {
+  equals: Int
+  gt: Int
+  gte: Int
+  in: [Int!]
+  lt: Int
+  lte: Int
+  not: NestedIntFilter
+  notIn: [Int!]
+}
+
+input IntNullableFilter {
+  equals: Int
+  gt: Int
+  gte: Int
+  in: [Int!]
+  lt: Int
+  lte: Int
+  not: NestedIntNullableFilter
+  notIn: [Int!]
 }
 
 """
@@ -166,6 +981,75 @@ type JobGradeCount {
   salaryScales: Int!
 }
 
+input JobGradeCreateNestedOneWithoutSalaryScalesInput {
+  connect: JobGradeWhereUniqueInput
+  connectOrCreate: JobGradeCreateOrConnectWithoutSalaryScalesInput
+  create: JobGradeCreateWithoutSalaryScalesInput
+}
+
+input JobGradeCreateOrConnectWithoutSalaryScalesInput {
+  create: JobGradeCreateWithoutSalaryScalesInput!
+  where: JobGradeWhereUniqueInput!
+}
+
+input JobGradeCreateWithoutSalaryScalesInput {
+  code: String!
+  createdAt: Timestamp
+  deleted: Boolean
+  locales: JSON
+  name: String!
+  updatedAt: Timestamp
+}
+
+input JobGradeRelationFilter {
+  is: JobGradeWhereInput
+  isNot: JobGradeWhereInput
+}
+
+input JobGradeUpdateOneWithoutSalaryScalesInput {
+  connect: JobGradeWhereUniqueInput
+  connectOrCreate: JobGradeCreateOrConnectWithoutSalaryScalesInput
+  create: JobGradeCreateWithoutSalaryScalesInput
+  delete: Boolean
+  disconnect: Boolean
+  update: JobGradeUpdateWithoutSalaryScalesInput
+  upsert: JobGradeUpsertWithoutSalaryScalesInput
+}
+
+input JobGradeUpdateWithoutSalaryScalesInput {
+  code: StringFieldUpdateOperationsInput
+  createdAt: DateTimeFieldUpdateOperationsInput
+  deleted: BoolFieldUpdateOperationsInput
+  locales: JSON
+  name: StringFieldUpdateOperationsInput
+  updatedAt: DateTimeFieldUpdateOperationsInput
+}
+
+input JobGradeUpsertWithoutSalaryScalesInput {
+  create: JobGradeCreateWithoutSalaryScalesInput!
+  update: JobGradeUpdateWithoutSalaryScalesInput!
+}
+
+input JobGradeWhereInput {
+  AND: [JobGradeWhereInput!]
+  NOT: [JobGradeWhereInput!]
+  OR: [JobGradeWhereInput!]
+  code: StringFilter
+  createdAt: DateTimeFilter
+  deleted: BoolFilter
+  id: IntFilter
+  locales: JsonNullableFilter
+  name: StringFilter
+  salaryScales: SalaryScaleListRelationFilter
+  updatedAt: DateTimeFilter
+}
+
+input JobGradeWhereUniqueInput {
+  code: String
+  id: Int
+  name: String
+}
+
 type JobStep {
   _count: JobStepCount
   code: String!
@@ -180,6 +1064,85 @@ type JobStep {
 
 type JobStepCount {
   salaryScales: Int!
+}
+
+input JobStepCreateNestedOneWithoutSalaryScalesInput {
+  connect: JobStepWhereUniqueInput
+  connectOrCreate: JobStepCreateOrConnectWithoutSalaryScalesInput
+  create: JobStepCreateWithoutSalaryScalesInput
+}
+
+input JobStepCreateOrConnectWithoutSalaryScalesInput {
+  create: JobStepCreateWithoutSalaryScalesInput!
+  where: JobStepWhereUniqueInput!
+}
+
+input JobStepCreateWithoutSalaryScalesInput {
+  code: String!
+  createdAt: Timestamp
+  deleted: Boolean
+  locales: JSON
+  name: String!
+  updatedAt: Timestamp
+}
+
+input JobStepRelationFilter {
+  is: JobStepWhereInput
+  isNot: JobStepWhereInput
+}
+
+input JobStepUpdateOneWithoutSalaryScalesInput {
+  connect: JobStepWhereUniqueInput
+  connectOrCreate: JobStepCreateOrConnectWithoutSalaryScalesInput
+  create: JobStepCreateWithoutSalaryScalesInput
+  delete: Boolean
+  disconnect: Boolean
+  update: JobStepUpdateWithoutSalaryScalesInput
+  upsert: JobStepUpsertWithoutSalaryScalesInput
+}
+
+input JobStepUpdateWithoutSalaryScalesInput {
+  code: StringFieldUpdateOperationsInput
+  createdAt: DateTimeFieldUpdateOperationsInput
+  deleted: BoolFieldUpdateOperationsInput
+  locales: JSON
+  name: StringFieldUpdateOperationsInput
+  updatedAt: DateTimeFieldUpdateOperationsInput
+}
+
+input JobStepUpsertWithoutSalaryScalesInput {
+  create: JobStepCreateWithoutSalaryScalesInput!
+  update: JobStepUpdateWithoutSalaryScalesInput!
+}
+
+input JobStepWhereInput {
+  AND: [JobStepWhereInput!]
+  NOT: [JobStepWhereInput!]
+  OR: [JobStepWhereInput!]
+  code: StringFilter
+  createdAt: DateTimeFilter
+  deleted: BoolFilter
+  id: IntFilter
+  locales: JsonNullableFilter
+  name: StringFilter
+  salaryScales: SalaryScaleListRelationFilter
+  updatedAt: DateTimeFilter
+}
+
+input JobStepWhereUniqueInput {
+  code: String
+  id: Int
+  name: String
+}
+
+input JsonFilter {
+  equals: JSON
+  not: JSON
+}
+
+input JsonNullableFilter {
+  equals: JSON
+  not: JSON
 }
 
 type MaritalStatus {
@@ -198,6 +1161,81 @@ type MaritalStatusCount {
   employees: Int!
 }
 
+input MaritalStatusCreateNestedOneWithoutEmployeesInput {
+  connect: MaritalStatusWhereUniqueInput
+  connectOrCreate: MaritalStatusCreateOrConnectWithoutEmployeesInput
+  create: MaritalStatusCreateWithoutEmployeesInput
+}
+
+input MaritalStatusCreateOrConnectWithoutEmployeesInput {
+  create: MaritalStatusCreateWithoutEmployeesInput!
+  where: MaritalStatusWhereUniqueInput!
+}
+
+input MaritalStatusCreateWithoutEmployeesInput {
+  code: String!
+  createdAt: Timestamp
+  deleted: Boolean
+  locales: JSON
+  name: String!
+  updatedAt: Timestamp
+}
+
+input MaritalStatusRelationFilter {
+  is: MaritalStatusWhereInput
+  isNot: MaritalStatusWhereInput
+}
+
+input MaritalStatusUpdateOneWithoutEmployeesInput {
+  connect: MaritalStatusWhereUniqueInput
+  connectOrCreate: MaritalStatusCreateOrConnectWithoutEmployeesInput
+  create: MaritalStatusCreateWithoutEmployeesInput
+  delete: Boolean
+  disconnect: Boolean
+  update: MaritalStatusUpdateWithoutEmployeesInput
+  upsert: MaritalStatusUpsertWithoutEmployeesInput
+}
+
+input MaritalStatusUpdateWithoutEmployeesInput {
+  code: StringFieldUpdateOperationsInput
+  createdAt: DateTimeFieldUpdateOperationsInput
+  deleted: BoolFieldUpdateOperationsInput
+  locales: JSON
+  name: StringFieldUpdateOperationsInput
+  updatedAt: DateTimeFieldUpdateOperationsInput
+}
+
+input MaritalStatusUpsertWithoutEmployeesInput {
+  create: MaritalStatusCreateWithoutEmployeesInput!
+  update: MaritalStatusUpdateWithoutEmployeesInput!
+}
+
+input MaritalStatusWhereInput {
+  AND: [MaritalStatusWhereInput!]
+  NOT: [MaritalStatusWhereInput!]
+  OR: [MaritalStatusWhereInput!]
+  code: StringFilter
+  createdAt: DateTimeFilter
+  deleted: BoolFilter
+  employees: EmployeeListRelationFilter
+  id: IntFilter
+  locales: JsonNullableFilter
+  name: StringFilter
+  updatedAt: DateTimeFilter
+}
+
+input MaritalStatusWhereUniqueInput {
+  code: String
+  id: Int
+  name: String
+}
+
+type Mutation {
+  createGender(data: GenderCreateInput!): Gender!
+  deleteGender(where: GenderWhereUniqueInput!): Gender!
+  updateGender(data: GenderUpdateInput!, where: GenderWhereUniqueInput!): Gender!
+}
+
 type Nationality {
   _count: NationalityCount
   code: String!
@@ -212,6 +1250,167 @@ type Nationality {
 
 type NationalityCount {
   employees: Int!
+}
+
+input NationalityCreateNestedOneWithoutEmployeesInput {
+  connect: NationalityWhereUniqueInput
+  connectOrCreate: NationalityCreateOrConnectWithoutEmployeesInput
+  create: NationalityCreateWithoutEmployeesInput
+}
+
+input NationalityCreateOrConnectWithoutEmployeesInput {
+  create: NationalityCreateWithoutEmployeesInput!
+  where: NationalityWhereUniqueInput!
+}
+
+input NationalityCreateWithoutEmployeesInput {
+  code: String!
+  createdAt: Timestamp
+  deleted: Boolean
+  locales: JSON
+  name: String!
+  updatedAt: Timestamp
+}
+
+input NationalityRelationFilter {
+  is: NationalityWhereInput
+  isNot: NationalityWhereInput
+}
+
+input NationalityUpdateOneWithoutEmployeesInput {
+  connect: NationalityWhereUniqueInput
+  connectOrCreate: NationalityCreateOrConnectWithoutEmployeesInput
+  create: NationalityCreateWithoutEmployeesInput
+  delete: Boolean
+  disconnect: Boolean
+  update: NationalityUpdateWithoutEmployeesInput
+  upsert: NationalityUpsertWithoutEmployeesInput
+}
+
+input NationalityUpdateWithoutEmployeesInput {
+  code: StringFieldUpdateOperationsInput
+  createdAt: DateTimeFieldUpdateOperationsInput
+  deleted: BoolFieldUpdateOperationsInput
+  locales: JSON
+  name: StringFieldUpdateOperationsInput
+  updatedAt: DateTimeFieldUpdateOperationsInput
+}
+
+input NationalityUpsertWithoutEmployeesInput {
+  create: NationalityCreateWithoutEmployeesInput!
+  update: NationalityUpdateWithoutEmployeesInput!
+}
+
+input NationalityWhereInput {
+  AND: [NationalityWhereInput!]
+  NOT: [NationalityWhereInput!]
+  OR: [NationalityWhereInput!]
+  code: StringFilter
+  createdAt: DateTimeFilter
+  deleted: BoolFilter
+  employees: EmployeeListRelationFilter
+  id: IntFilter
+  locales: JsonNullableFilter
+  name: StringFilter
+  updatedAt: DateTimeFilter
+}
+
+input NationalityWhereUniqueInput {
+  code: String
+  id: Int
+  name: String
+}
+
+input NestedBoolFilter {
+  equals: Boolean
+  not: NestedBoolFilter
+}
+
+input NestedDateTimeFilter {
+  equals: Timestamp
+  gt: Timestamp
+  gte: Timestamp
+  in: [Timestamp!]
+  lt: Timestamp
+  lte: Timestamp
+  not: NestedDateTimeFilter
+  notIn: [Timestamp!]
+}
+
+input NestedDecimalFilter {
+  equals: Decimal
+  gt: Decimal
+  gte: Decimal
+  in: [Decimal!]
+  lt: Decimal
+  lte: Decimal
+  not: NestedDecimalFilter
+  notIn: [Decimal!]
+}
+
+input NestedFloatFilter {
+  equals: Float
+  gt: Float
+  gte: Float
+  in: [Float!]
+  lt: Float
+  lte: Float
+  not: NestedFloatFilter
+  notIn: [Float!]
+}
+
+input NestedIntFilter {
+  equals: Int
+  gt: Int
+  gte: Int
+  in: [Int!]
+  lt: Int
+  lte: Int
+  not: NestedIntFilter
+  notIn: [Int!]
+}
+
+input NestedIntNullableFilter {
+  equals: Int
+  gt: Int
+  gte: Int
+  in: [Int!]
+  lt: Int
+  lte: Int
+  not: NestedIntNullableFilter
+  notIn: [Int!]
+}
+
+input NestedStringFilter {
+  contains: String
+  endsWith: String
+  equals: String
+  gt: String
+  gte: String
+  in: [String!]
+  lt: String
+  lte: String
+  not: NestedStringFilter
+  notIn: [String!]
+  startsWith: String
+}
+
+input NestedStringNullableFilter {
+  contains: String
+  endsWith: String
+  equals: String
+  gt: String
+  gte: String
+  in: [String!]
+  lt: String
+  lte: String
+  not: NestedStringNullableFilter
+  notIn: [String!]
+  startsWith: String
+}
+
+input NullableStringFieldUpdateOperationsInput {
+  set: String
 }
 
 type Position {
@@ -268,8 +1467,196 @@ type PositionClassCategoryCount {
   positionClasses: Int!
 }
 
+input PositionClassCategoryCreateNestedOneWithoutPositionClassesInput {
+  connect: PositionClassCategoryWhereUniqueInput
+  connectOrCreate: PositionClassCategoryCreateOrConnectWithoutPositionClassesInput
+  create: PositionClassCategoryCreateWithoutPositionClassesInput
+}
+
+input PositionClassCategoryCreateOrConnectWithoutPositionClassesInput {
+  create: PositionClassCategoryCreateWithoutPositionClassesInput!
+  where: PositionClassCategoryWhereUniqueInput!
+}
+
+input PositionClassCategoryCreateWithoutPositionClassesInput {
+  code: String!
+  createdAt: Timestamp
+  deleted: Boolean
+  locales: JSON
+  name: String!
+  updatedAt: Timestamp
+}
+
+input PositionClassCategoryRelationFilter {
+  is: PositionClassCategoryWhereInput
+  isNot: PositionClassCategoryWhereInput
+}
+
+input PositionClassCategoryUpdateOneWithoutPositionClassesInput {
+  connect: PositionClassCategoryWhereUniqueInput
+  connectOrCreate: PositionClassCategoryCreateOrConnectWithoutPositionClassesInput
+  create: PositionClassCategoryCreateWithoutPositionClassesInput
+  delete: Boolean
+  disconnect: Boolean
+  update: PositionClassCategoryUpdateWithoutPositionClassesInput
+  upsert: PositionClassCategoryUpsertWithoutPositionClassesInput
+}
+
+input PositionClassCategoryUpdateWithoutPositionClassesInput {
+  code: StringFieldUpdateOperationsInput
+  createdAt: DateTimeFieldUpdateOperationsInput
+  deleted: BoolFieldUpdateOperationsInput
+  locales: JSON
+  name: StringFieldUpdateOperationsInput
+  updatedAt: DateTimeFieldUpdateOperationsInput
+}
+
+input PositionClassCategoryUpsertWithoutPositionClassesInput {
+  create: PositionClassCategoryCreateWithoutPositionClassesInput!
+  update: PositionClassCategoryUpdateWithoutPositionClassesInput!
+}
+
+input PositionClassCategoryWhereInput {
+  AND: [PositionClassCategoryWhereInput!]
+  NOT: [PositionClassCategoryWhereInput!]
+  OR: [PositionClassCategoryWhereInput!]
+  code: StringFilter
+  createdAt: DateTimeFilter
+  deleted: BoolFilter
+  id: IntFilter
+  locales: JsonNullableFilter
+  name: StringFilter
+  positionClasses: PositionClassListRelationFilter
+  updatedAt: DateTimeFilter
+}
+
+input PositionClassCategoryWhereUniqueInput {
+  code: String
+  id: Int
+  name: String
+}
+
 type PositionClassCount {
   positions: Int!
+}
+
+input PositionClassCreateManyGenderInput {
+  code: String!
+  createdAt: Timestamp
+  deleted: Boolean
+  id: Int
+  locales: JSON
+  maximumAge: Int
+  minimumAge: Int
+  monthlyWorkingHours: Decimal
+  name: String!
+  positionClassCategoryId: Int
+  positionClassTypeId: Int
+  salary: Decimal
+  salaryScaleId: Int
+  specification: String
+  updatedAt: Timestamp
+}
+
+input PositionClassCreateManyGenderInputEnvelope {
+  data: [PositionClassCreateManyGenderInput!]!
+  skipDuplicates: Boolean
+}
+
+input PositionClassCreateNestedManyWithoutGenderInput {
+  connect: [PositionClassWhereUniqueInput!]
+  connectOrCreate: [PositionClassCreateOrConnectWithoutGenderInput!]
+  create: [PositionClassCreateWithoutGenderInput!]
+  createMany: PositionClassCreateManyGenderInputEnvelope
+}
+
+input PositionClassCreateNestedOneWithoutPositionsInput {
+  connect: PositionClassWhereUniqueInput
+  connectOrCreate: PositionClassCreateOrConnectWithoutPositionsInput
+  create: PositionClassCreateWithoutPositionsInput
+}
+
+input PositionClassCreateOrConnectWithoutGenderInput {
+  create: PositionClassCreateWithoutGenderInput!
+  where: PositionClassWhereUniqueInput!
+}
+
+input PositionClassCreateOrConnectWithoutPositionsInput {
+  create: PositionClassCreateWithoutPositionsInput!
+  where: PositionClassWhereUniqueInput!
+}
+
+input PositionClassCreateWithoutGenderInput {
+  code: String!
+  createdAt: Timestamp
+  deleted: Boolean
+  locales: JSON
+  maximumAge: Int
+  minimumAge: Int
+  monthlyWorkingHours: Decimal
+  name: String!
+  positionClassCategory: PositionClassCategoryCreateNestedOneWithoutPositionClassesInput
+  positionClassType: PositionClassTypeCreateNestedOneWithoutPositionClassesInput
+  positions: PositionCreateNestedManyWithoutPositionClassInput
+  salary: Decimal
+  salaryScale: SalaryScaleCreateNestedOneWithoutPositionClassesInput
+  specification: String
+  updatedAt: Timestamp
+}
+
+input PositionClassCreateWithoutPositionsInput {
+  code: String!
+  createdAt: Timestamp
+  deleted: Boolean
+  gender: GenderCreateNestedOneWithoutPositionClassesInput
+  locales: JSON
+  maximumAge: Int
+  minimumAge: Int
+  monthlyWorkingHours: Decimal
+  name: String!
+  positionClassCategory: PositionClassCategoryCreateNestedOneWithoutPositionClassesInput
+  positionClassType: PositionClassTypeCreateNestedOneWithoutPositionClassesInput
+  salary: Decimal
+  salaryScale: SalaryScaleCreateNestedOneWithoutPositionClassesInput
+  specification: String
+  updatedAt: Timestamp
+}
+
+input PositionClassListRelationFilter {
+  every: PositionClassWhereInput
+  none: PositionClassWhereInput
+  some: PositionClassWhereInput
+}
+
+input PositionClassOrderByRelationAggregateInput {
+  _count: SortOrder
+}
+
+input PositionClassRelationFilter {
+  is: PositionClassWhereInput
+  isNot: PositionClassWhereInput
+}
+
+input PositionClassScalarWhereInput {
+  AND: [PositionClassScalarWhereInput!]
+  NOT: [PositionClassScalarWhereInput!]
+  OR: [PositionClassScalarWhereInput!]
+  code: StringFilter
+  createdAt: DateTimeFilter
+  deleted: BoolFilter
+  genderId: IntNullableFilter
+  id: IntFilter
+  locales: JsonNullableFilter
+  maximumAge: IntFilter
+  minimumAge: IntFilter
+  monthlyWorkingHours: DecimalFilter
+  name: StringFilter
+  positionClassCategoryId: IntNullableFilter
+  positionClassTypeId: IntNullableFilter
+  salary: DecimalFilter
+  salaryScaleId: IntNullableFilter
+  specification: StringNullableFilter
+  updatedAt: DateTimeFilter
 }
 
 type PositionClassType {
@@ -288,8 +1675,410 @@ type PositionClassTypeCount {
   positionClasses: Int!
 }
 
+input PositionClassTypeCreateNestedOneWithoutPositionClassesInput {
+  connect: PositionClassTypeWhereUniqueInput
+  connectOrCreate: PositionClassTypeCreateOrConnectWithoutPositionClassesInput
+  create: PositionClassTypeCreateWithoutPositionClassesInput
+}
+
+input PositionClassTypeCreateOrConnectWithoutPositionClassesInput {
+  create: PositionClassTypeCreateWithoutPositionClassesInput!
+  where: PositionClassTypeWhereUniqueInput!
+}
+
+input PositionClassTypeCreateWithoutPositionClassesInput {
+  code: String!
+  createdAt: Timestamp
+  deleted: Boolean
+  locales: JSON
+  name: String!
+  updatedAt: Timestamp
+}
+
+input PositionClassTypeRelationFilter {
+  is: PositionClassTypeWhereInput
+  isNot: PositionClassTypeWhereInput
+}
+
+input PositionClassTypeUpdateOneWithoutPositionClassesInput {
+  connect: PositionClassTypeWhereUniqueInput
+  connectOrCreate: PositionClassTypeCreateOrConnectWithoutPositionClassesInput
+  create: PositionClassTypeCreateWithoutPositionClassesInput
+  delete: Boolean
+  disconnect: Boolean
+  update: PositionClassTypeUpdateWithoutPositionClassesInput
+  upsert: PositionClassTypeUpsertWithoutPositionClassesInput
+}
+
+input PositionClassTypeUpdateWithoutPositionClassesInput {
+  code: StringFieldUpdateOperationsInput
+  createdAt: DateTimeFieldUpdateOperationsInput
+  deleted: BoolFieldUpdateOperationsInput
+  locales: JSON
+  name: StringFieldUpdateOperationsInput
+  updatedAt: DateTimeFieldUpdateOperationsInput
+}
+
+input PositionClassTypeUpsertWithoutPositionClassesInput {
+  create: PositionClassTypeCreateWithoutPositionClassesInput!
+  update: PositionClassTypeUpdateWithoutPositionClassesInput!
+}
+
+input PositionClassTypeWhereInput {
+  AND: [PositionClassTypeWhereInput!]
+  NOT: [PositionClassTypeWhereInput!]
+  OR: [PositionClassTypeWhereInput!]
+  code: StringFilter
+  createdAt: DateTimeFilter
+  deleted: BoolFilter
+  id: IntFilter
+  locales: JsonNullableFilter
+  name: StringFilter
+  positionClasses: PositionClassListRelationFilter
+  updatedAt: DateTimeFilter
+}
+
+input PositionClassTypeWhereUniqueInput {
+  code: String
+  id: Int
+  name: String
+}
+
+input PositionClassUpdateManyMutationInput {
+  code: StringFieldUpdateOperationsInput
+  createdAt: DateTimeFieldUpdateOperationsInput
+  deleted: BoolFieldUpdateOperationsInput
+  locales: JSON
+  maximumAge: IntFieldUpdateOperationsInput
+  minimumAge: IntFieldUpdateOperationsInput
+  monthlyWorkingHours: DecimalFieldUpdateOperationsInput
+  name: StringFieldUpdateOperationsInput
+  salary: DecimalFieldUpdateOperationsInput
+  specification: NullableStringFieldUpdateOperationsInput
+  updatedAt: DateTimeFieldUpdateOperationsInput
+}
+
+input PositionClassUpdateManyWithWhereWithoutGenderInput {
+  data: PositionClassUpdateManyMutationInput!
+  where: PositionClassScalarWhereInput!
+}
+
+input PositionClassUpdateManyWithoutGenderInput {
+  connect: [PositionClassWhereUniqueInput!]
+  connectOrCreate: [PositionClassCreateOrConnectWithoutGenderInput!]
+  create: [PositionClassCreateWithoutGenderInput!]
+  createMany: PositionClassCreateManyGenderInputEnvelope
+  delete: [PositionClassWhereUniqueInput!]
+  deleteMany: [PositionClassScalarWhereInput!]
+  disconnect: [PositionClassWhereUniqueInput!]
+  set: [PositionClassWhereUniqueInput!]
+  update: [PositionClassUpdateWithWhereUniqueWithoutGenderInput!]
+  updateMany: [PositionClassUpdateManyWithWhereWithoutGenderInput!]
+  upsert: [PositionClassUpsertWithWhereUniqueWithoutGenderInput!]
+}
+
+input PositionClassUpdateOneWithoutPositionsInput {
+  connect: PositionClassWhereUniqueInput
+  connectOrCreate: PositionClassCreateOrConnectWithoutPositionsInput
+  create: PositionClassCreateWithoutPositionsInput
+  delete: Boolean
+  disconnect: Boolean
+  update: PositionClassUpdateWithoutPositionsInput
+  upsert: PositionClassUpsertWithoutPositionsInput
+}
+
+input PositionClassUpdateWithWhereUniqueWithoutGenderInput {
+  data: PositionClassUpdateWithoutGenderInput!
+  where: PositionClassWhereUniqueInput!
+}
+
+input PositionClassUpdateWithoutGenderInput {
+  code: StringFieldUpdateOperationsInput
+  createdAt: DateTimeFieldUpdateOperationsInput
+  deleted: BoolFieldUpdateOperationsInput
+  locales: JSON
+  maximumAge: IntFieldUpdateOperationsInput
+  minimumAge: IntFieldUpdateOperationsInput
+  monthlyWorkingHours: DecimalFieldUpdateOperationsInput
+  name: StringFieldUpdateOperationsInput
+  positionClassCategory: PositionClassCategoryUpdateOneWithoutPositionClassesInput
+  positionClassType: PositionClassTypeUpdateOneWithoutPositionClassesInput
+  positions: PositionUpdateManyWithoutPositionClassInput
+  salary: DecimalFieldUpdateOperationsInput
+  salaryScale: SalaryScaleUpdateOneWithoutPositionClassesInput
+  specification: NullableStringFieldUpdateOperationsInput
+  updatedAt: DateTimeFieldUpdateOperationsInput
+}
+
+input PositionClassUpdateWithoutPositionsInput {
+  code: StringFieldUpdateOperationsInput
+  createdAt: DateTimeFieldUpdateOperationsInput
+  deleted: BoolFieldUpdateOperationsInput
+  gender: GenderUpdateOneWithoutPositionClassesInput
+  locales: JSON
+  maximumAge: IntFieldUpdateOperationsInput
+  minimumAge: IntFieldUpdateOperationsInput
+  monthlyWorkingHours: DecimalFieldUpdateOperationsInput
+  name: StringFieldUpdateOperationsInput
+  positionClassCategory: PositionClassCategoryUpdateOneWithoutPositionClassesInput
+  positionClassType: PositionClassTypeUpdateOneWithoutPositionClassesInput
+  salary: DecimalFieldUpdateOperationsInput
+  salaryScale: SalaryScaleUpdateOneWithoutPositionClassesInput
+  specification: NullableStringFieldUpdateOperationsInput
+  updatedAt: DateTimeFieldUpdateOperationsInput
+}
+
+input PositionClassUpsertWithWhereUniqueWithoutGenderInput {
+  create: PositionClassCreateWithoutGenderInput!
+  update: PositionClassUpdateWithoutGenderInput!
+  where: PositionClassWhereUniqueInput!
+}
+
+input PositionClassUpsertWithoutPositionsInput {
+  create: PositionClassCreateWithoutPositionsInput!
+  update: PositionClassUpdateWithoutPositionsInput!
+}
+
+input PositionClassWhereInput {
+  AND: [PositionClassWhereInput!]
+  NOT: [PositionClassWhereInput!]
+  OR: [PositionClassWhereInput!]
+  code: StringFilter
+  createdAt: DateTimeFilter
+  deleted: BoolFilter
+  gender: GenderRelationFilter
+  genderId: IntNullableFilter
+  id: IntFilter
+  locales: JsonNullableFilter
+  maximumAge: IntFilter
+  minimumAge: IntFilter
+  monthlyWorkingHours: DecimalFilter
+  name: StringFilter
+  positionClassCategory: PositionClassCategoryRelationFilter
+  positionClassCategoryId: IntNullableFilter
+  positionClassType: PositionClassTypeRelationFilter
+  positionClassTypeId: IntNullableFilter
+  positions: PositionListRelationFilter
+  salary: DecimalFilter
+  salaryScale: SalaryScaleRelationFilter
+  salaryScaleId: IntNullableFilter
+  specification: StringNullableFilter
+  updatedAt: DateTimeFilter
+}
+
+input PositionClassWhereUniqueInput {
+  code: String
+  id: Int
+  name: String
+}
+
+input PositionCreateManyDepartmentInput {
+  code: String!
+  createdAt: Timestamp
+  deleted: Boolean
+  id: Int
+  positionClassId: Int
+  updatedAt: Timestamp
+  vacant: Boolean
+}
+
+input PositionCreateManyDepartmentInputEnvelope {
+  data: [PositionCreateManyDepartmentInput!]!
+  skipDuplicates: Boolean
+}
+
+input PositionCreateManyPositionClassInput {
+  code: String!
+  createdAt: Timestamp
+  deleted: Boolean
+  departmentId: Int
+  id: Int
+  updatedAt: Timestamp
+  vacant: Boolean
+}
+
+input PositionCreateManyPositionClassInputEnvelope {
+  data: [PositionCreateManyPositionClassInput!]!
+  skipDuplicates: Boolean
+}
+
+input PositionCreateNestedManyWithoutDepartmentInput {
+  connect: [PositionWhereUniqueInput!]
+  connectOrCreate: [PositionCreateOrConnectWithoutDepartmentInput!]
+  create: [PositionCreateWithoutDepartmentInput!]
+  createMany: PositionCreateManyDepartmentInputEnvelope
+}
+
+input PositionCreateNestedManyWithoutPositionClassInput {
+  connect: [PositionWhereUniqueInput!]
+  connectOrCreate: [PositionCreateOrConnectWithoutPositionClassInput!]
+  create: [PositionCreateWithoutPositionClassInput!]
+  createMany: PositionCreateManyPositionClassInputEnvelope
+}
+
+input PositionCreateOrConnectWithoutDepartmentInput {
+  create: PositionCreateWithoutDepartmentInput!
+  where: PositionWhereUniqueInput!
+}
+
+input PositionCreateOrConnectWithoutPositionClassInput {
+  create: PositionCreateWithoutPositionClassInput!
+  where: PositionWhereUniqueInput!
+}
+
+input PositionCreateWithoutDepartmentInput {
+  code: String!
+  createdAt: Timestamp
+  deleted: Boolean
+  positionClass: PositionClassCreateNestedOneWithoutPositionsInput
+  updatedAt: Timestamp
+  vacant: Boolean
+}
+
+input PositionCreateWithoutPositionClassInput {
+  code: String!
+  createdAt: Timestamp
+  deleted: Boolean
+  department: DepartmentCreateNestedOneWithoutPositionsInput
+  updatedAt: Timestamp
+  vacant: Boolean
+}
+
+input PositionListRelationFilter {
+  every: PositionWhereInput
+  none: PositionWhereInput
+  some: PositionWhereInput
+}
+
+input PositionScalarWhereInput {
+  AND: [PositionScalarWhereInput!]
+  NOT: [PositionScalarWhereInput!]
+  OR: [PositionScalarWhereInput!]
+  code: StringFilter
+  createdAt: DateTimeFilter
+  deleted: BoolFilter
+  departmentId: IntNullableFilter
+  id: IntFilter
+  positionClassId: IntNullableFilter
+  updatedAt: DateTimeFilter
+  vacant: BoolFilter
+}
+
+input PositionUpdateManyMutationInput {
+  code: StringFieldUpdateOperationsInput
+  createdAt: DateTimeFieldUpdateOperationsInput
+  deleted: BoolFieldUpdateOperationsInput
+  updatedAt: DateTimeFieldUpdateOperationsInput
+  vacant: BoolFieldUpdateOperationsInput
+}
+
+input PositionUpdateManyWithWhereWithoutDepartmentInput {
+  data: PositionUpdateManyMutationInput!
+  where: PositionScalarWhereInput!
+}
+
+input PositionUpdateManyWithWhereWithoutPositionClassInput {
+  data: PositionUpdateManyMutationInput!
+  where: PositionScalarWhereInput!
+}
+
+input PositionUpdateManyWithoutDepartmentInput {
+  connect: [PositionWhereUniqueInput!]
+  connectOrCreate: [PositionCreateOrConnectWithoutDepartmentInput!]
+  create: [PositionCreateWithoutDepartmentInput!]
+  createMany: PositionCreateManyDepartmentInputEnvelope
+  delete: [PositionWhereUniqueInput!]
+  deleteMany: [PositionScalarWhereInput!]
+  disconnect: [PositionWhereUniqueInput!]
+  set: [PositionWhereUniqueInput!]
+  update: [PositionUpdateWithWhereUniqueWithoutDepartmentInput!]
+  updateMany: [PositionUpdateManyWithWhereWithoutDepartmentInput!]
+  upsert: [PositionUpsertWithWhereUniqueWithoutDepartmentInput!]
+}
+
+input PositionUpdateManyWithoutPositionClassInput {
+  connect: [PositionWhereUniqueInput!]
+  connectOrCreate: [PositionCreateOrConnectWithoutPositionClassInput!]
+  create: [PositionCreateWithoutPositionClassInput!]
+  createMany: PositionCreateManyPositionClassInputEnvelope
+  delete: [PositionWhereUniqueInput!]
+  deleteMany: [PositionScalarWhereInput!]
+  disconnect: [PositionWhereUniqueInput!]
+  set: [PositionWhereUniqueInput!]
+  update: [PositionUpdateWithWhereUniqueWithoutPositionClassInput!]
+  updateMany: [PositionUpdateManyWithWhereWithoutPositionClassInput!]
+  upsert: [PositionUpsertWithWhereUniqueWithoutPositionClassInput!]
+}
+
+input PositionUpdateWithWhereUniqueWithoutDepartmentInput {
+  data: PositionUpdateWithoutDepartmentInput!
+  where: PositionWhereUniqueInput!
+}
+
+input PositionUpdateWithWhereUniqueWithoutPositionClassInput {
+  data: PositionUpdateWithoutPositionClassInput!
+  where: PositionWhereUniqueInput!
+}
+
+input PositionUpdateWithoutDepartmentInput {
+  code: StringFieldUpdateOperationsInput
+  createdAt: DateTimeFieldUpdateOperationsInput
+  deleted: BoolFieldUpdateOperationsInput
+  positionClass: PositionClassUpdateOneWithoutPositionsInput
+  updatedAt: DateTimeFieldUpdateOperationsInput
+  vacant: BoolFieldUpdateOperationsInput
+}
+
+input PositionUpdateWithoutPositionClassInput {
+  code: StringFieldUpdateOperationsInput
+  createdAt: DateTimeFieldUpdateOperationsInput
+  deleted: BoolFieldUpdateOperationsInput
+  department: DepartmentUpdateOneWithoutPositionsInput
+  updatedAt: DateTimeFieldUpdateOperationsInput
+  vacant: BoolFieldUpdateOperationsInput
+}
+
+input PositionUpsertWithWhereUniqueWithoutDepartmentInput {
+  create: PositionCreateWithoutDepartmentInput!
+  update: PositionUpdateWithoutDepartmentInput!
+  where: PositionWhereUniqueInput!
+}
+
+input PositionUpsertWithWhereUniqueWithoutPositionClassInput {
+  create: PositionCreateWithoutPositionClassInput!
+  update: PositionUpdateWithoutPositionClassInput!
+  where: PositionWhereUniqueInput!
+}
+
+input PositionWhereInput {
+  AND: [PositionWhereInput!]
+  NOT: [PositionWhereInput!]
+  OR: [PositionWhereInput!]
+  code: StringFilter
+  createdAt: DateTimeFilter
+  deleted: BoolFilter
+  department: DepartmentRelationFilter
+  departmentId: IntNullableFilter
+  id: IntFilter
+  positionClass: PositionClassRelationFilter
+  positionClassId: IntNullableFilter
+  updatedAt: DateTimeFilter
+  vacant: BoolFilter
+}
+
+input PositionWhereUniqueInput {
+  code: String
+  id: Int
+}
+
 type Query {
-  sayHello: String!
+  gender(where: GenderWhereUniqueInput!): Gender!
+  genders(cursor: GenderWhereUniqueInput, distinct: [GenderScalarFieldEnum!], orderBy: [GenderOrderByWithRelationInput!], skip: Int, take: Int, where: GenderWhereInput): GendersResponse!
+}
+
+enum QueryMode {
+  default
+  insensitive
 }
 
 type SalaryScale {
@@ -308,6 +2097,120 @@ type SalaryScale {
 
 type SalaryScaleCount {
   positionClasses: Int!
+}
+
+input SalaryScaleCreateNestedOneWithoutPositionClassesInput {
+  connect: SalaryScaleWhereUniqueInput
+  connectOrCreate: SalaryScaleCreateOrConnectWithoutPositionClassesInput
+  create: SalaryScaleCreateWithoutPositionClassesInput
+}
+
+input SalaryScaleCreateOrConnectWithoutPositionClassesInput {
+  create: SalaryScaleCreateWithoutPositionClassesInput!
+  where: SalaryScaleWhereUniqueInput!
+}
+
+input SalaryScaleCreateWithoutPositionClassesInput {
+  createdAt: Timestamp
+  deleted: Boolean
+  jobGrade: JobGradeCreateNestedOneWithoutSalaryScalesInput
+  jobStep: JobStepCreateNestedOneWithoutSalaryScalesInput
+  salary: Float
+  updatedAt: Timestamp
+}
+
+input SalaryScaleListRelationFilter {
+  every: SalaryScaleWhereInput
+  none: SalaryScaleWhereInput
+  some: SalaryScaleWhereInput
+}
+
+input SalaryScaleRelationFilter {
+  is: SalaryScaleWhereInput
+  isNot: SalaryScaleWhereInput
+}
+
+input SalaryScaleUpdateOneWithoutPositionClassesInput {
+  connect: SalaryScaleWhereUniqueInput
+  connectOrCreate: SalaryScaleCreateOrConnectWithoutPositionClassesInput
+  create: SalaryScaleCreateWithoutPositionClassesInput
+  delete: Boolean
+  disconnect: Boolean
+  update: SalaryScaleUpdateWithoutPositionClassesInput
+  upsert: SalaryScaleUpsertWithoutPositionClassesInput
+}
+
+input SalaryScaleUpdateWithoutPositionClassesInput {
+  createdAt: DateTimeFieldUpdateOperationsInput
+  deleted: BoolFieldUpdateOperationsInput
+  jobGrade: JobGradeUpdateOneWithoutSalaryScalesInput
+  jobStep: JobStepUpdateOneWithoutSalaryScalesInput
+  salary: FloatFieldUpdateOperationsInput
+  updatedAt: DateTimeFieldUpdateOperationsInput
+}
+
+input SalaryScaleUpsertWithoutPositionClassesInput {
+  create: SalaryScaleCreateWithoutPositionClassesInput!
+  update: SalaryScaleUpdateWithoutPositionClassesInput!
+}
+
+input SalaryScaleWhereInput {
+  AND: [SalaryScaleWhereInput!]
+  NOT: [SalaryScaleWhereInput!]
+  OR: [SalaryScaleWhereInput!]
+  createdAt: DateTimeFilter
+  deleted: BoolFilter
+  id: IntFilter
+  jobGrade: JobGradeRelationFilter
+  jobGradeId: IntNullableFilter
+  jobStep: JobStepRelationFilter
+  jobStepId: IntNullableFilter
+  positionClasses: PositionClassListRelationFilter
+  salary: FloatFilter
+  updatedAt: DateTimeFilter
+}
+
+input SalaryScaleWhereUniqueInput {
+  id: Int!
+}
+
+enum SortOrder {
+  asc
+  desc
+}
+
+input StringFieldUpdateOperationsInput {
+  set: String
+}
+
+input StringFilter {
+  contains: String
+  endsWith: String
+  equals: String
+  gt: String
+  gte: String
+  in: [String!]
+  lt: String
+  lte: String
+  mode: QueryMode
+  not: NestedStringFilter
+  notIn: [String!]
+  startsWith: String
+}
+
+input StringNullableFilter {
+  contains: String
+  endsWith: String
+  equals: String
+  gt: String
+  gte: String
+  in: [String!]
+  lt: String
+  lte: String
+  mode: QueryMode
+  not: NestedStringNullableFilter
+  notIn: [String!]
+  startsWith: String
 }
 
 """

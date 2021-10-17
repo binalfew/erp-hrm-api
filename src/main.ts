@@ -1,10 +1,10 @@
+import { ValidationPipe } from '@nestjs/common';
 import { ConfigService } from '@nestjs/config';
 import { NestFactory } from '@nestjs/core';
 import * as createRedisStore from 'connect-redis';
 import * as session from 'express-session';
 import { createClient } from 'redis';
 import { AppModule } from './app.module';
-import { AppConfigService } from './config/config.service';
 import { DataService } from './data/data.service';
 
 async function bootstrap() {
@@ -40,6 +40,7 @@ async function bootstrap() {
     }),
   );
 
+  app.useGlobalPipes(new ValidationPipe());
   await app.listen(Number(port));
 }
 

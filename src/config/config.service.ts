@@ -92,6 +92,38 @@ export class GqlConfigService implements GqlOptionsFactory {
         origin: this.corsOrigin,
         credentials: this.corsEnabled,
       },
+      formatError: (error) => {
+        if (error.extensions?.exception?.code === 'P2002') {
+          const fieldName = error.extensions.exception.meta['target'][0];
+          return {
+            message: 'Bad Request Exception',
+            code: 'BAD_USER_INPUT',
+            response: {
+              statusCode: 409,
+              error: 'Conflict',
+              message: [fieldName + ' is already taken'],
+            },
+          };
+        }
+
+        if (error.extensions?.exception?.code === 'P2025') {
+          return {
+            message: 'Bad Request Exception',
+            code: 'BAD_USER_INPUT',
+            response: {
+              statusCode: 404,
+              error: 'Not Found',
+              message: ['Record to delete does not exist'],
+            },
+          };
+        }
+
+        return {
+          message: error.message,
+          code: 'INTERNAL_SERVER_ERROR',
+          response: error.extensions?.response,
+        };
+      },
     };
   }
 }

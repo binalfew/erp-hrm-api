@@ -1,5 +1,6 @@
 import { Field } from '@nestjs/graphql';
 import { InputType } from '@nestjs/graphql';
+import * as Validator from 'class-validator';
 import { GraphQLJSON } from 'graphql-type-json';
 import { PositionClassCreateNestedManyWithoutGenderInput } from '../position-class/position-class-create-nested-many-without-gender.input';
 import { EmployeeCreateNestedManyWithoutGenderInput } from '../employee/employee-create-nested-many-without-gender.input';
@@ -8,9 +9,11 @@ import { EmployeeCreateNestedManyWithoutGenderInput } from '../employee/employee
 export class GenderCreateInput {
 
     @Field(() => String, {nullable:false})
+    @Validator.IsNotEmpty()
     name!: string;
 
     @Field(() => String, {nullable:false})
+    @Validator.IsNotEmpty()
     code!: string;
 
     @Field(() => GraphQLJSON, {nullable:true})
