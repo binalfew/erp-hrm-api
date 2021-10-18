@@ -8,25 +8,26 @@ import { DepartmentUpdateWithoutChildrenInput } from './department-update-withou
 
 @InputType()
 export class DepartmentUpdateOneWithoutChildrenInput {
+  @Field(() => DepartmentCreateWithoutChildrenInput, { nullable: true })
+  create?: DepartmentCreateWithoutChildrenInput;
 
-    @Field(() => DepartmentCreateWithoutChildrenInput, {nullable:true})
-    create?: DepartmentCreateWithoutChildrenInput;
+  @Field(() => DepartmentCreateOrConnectWithoutChildrenInput, {
+    nullable: true,
+  })
+  connectOrCreate?: DepartmentCreateOrConnectWithoutChildrenInput;
 
-    @Field(() => DepartmentCreateOrConnectWithoutChildrenInput, {nullable:true})
-    connectOrCreate?: DepartmentCreateOrConnectWithoutChildrenInput;
+  @Field(() => DepartmentUpsertWithoutChildrenInput, { nullable: true })
+  upsert?: DepartmentUpsertWithoutChildrenInput;
 
-    @Field(() => DepartmentUpsertWithoutChildrenInput, {nullable:true})
-    upsert?: DepartmentUpsertWithoutChildrenInput;
+  @Field(() => DepartmentWhereUniqueInput, { nullable: true })
+  connect?: DepartmentWhereUniqueInput;
 
-    @Field(() => DepartmentWhereUniqueInput, {nullable:true})
-    connect?: DepartmentWhereUniqueInput;
+  @Field(() => Boolean, { nullable: true })
+  disconnect?: boolean;
 
-    @Field(() => Boolean, {nullable:true})
-    disconnect?: boolean;
+  @Field(() => Boolean, { nullable: true })
+  delete?: boolean;
 
-    @Field(() => Boolean, {nullable:true})
-    delete?: boolean;
-
-    @Field(() => DepartmentUpdateWithoutChildrenInput, {nullable:true})
-    update?: DepartmentUpdateWithoutChildrenInput;
+  @Field(() => DepartmentUpdateWithoutChildrenInput, { nullable: true })
+  update?: DepartmentUpdateWithoutChildrenInput;
 }

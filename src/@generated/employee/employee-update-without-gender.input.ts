@@ -12,76 +12,77 @@ import { EmploymentNatureUpdateOneWithoutEmployeesInput } from '../employment-na
 
 @InputType()
 export class EmployeeUpdateWithoutGenderInput {
+  @Field(() => GraphQLJSON, { nullable: true })
+  firstName?: any;
 
-    @Field(() => GraphQLJSON, {nullable:true})
-    firstName?: any;
+  @Field(() => GraphQLJSON, { nullable: true })
+  lastName?: any;
 
-    @Field(() => GraphQLJSON, {nullable:true})
-    lastName?: any;
+  @Field(() => GraphQLJSON, { nullable: true })
+  grandfatherName?: any;
 
-    @Field(() => GraphQLJSON, {nullable:true})
-    grandfatherName?: any;
+  @Field(() => GraphQLJSON, { nullable: true })
+  locales?: any;
 
-    @Field(() => GraphQLJSON, {nullable:true})
-    locales?: any;
+  @Field(() => DateTimeFieldUpdateOperationsInput, { nullable: true })
+  dateOfBirth?: DateTimeFieldUpdateOperationsInput;
 
-    @Field(() => DateTimeFieldUpdateOperationsInput, {nullable:true})
-    dateOfBirth?: DateTimeFieldUpdateOperationsInput;
+  @Field(() => StringFieldUpdateOperationsInput, { nullable: true })
+  placeOfBirth?: StringFieldUpdateOperationsInput;
 
-    @Field(() => StringFieldUpdateOperationsInput, {nullable:true})
-    placeOfBirth?: StringFieldUpdateOperationsInput;
+  @Field(() => StringFieldUpdateOperationsInput, { nullable: true })
+  countryOfBirth?: StringFieldUpdateOperationsInput;
 
-    @Field(() => StringFieldUpdateOperationsInput, {nullable:true})
-    countryOfBirth?: StringFieldUpdateOperationsInput;
+  @Field(() => StringFieldUpdateOperationsInput, { nullable: true })
+  idNumber?: StringFieldUpdateOperationsInput;
 
-    @Field(() => StringFieldUpdateOperationsInput, {nullable:true})
-    idNumber?: StringFieldUpdateOperationsInput;
+  @Field(() => StringFieldUpdateOperationsInput, { nullable: true })
+  passportNumber?: StringFieldUpdateOperationsInput;
 
-    @Field(() => StringFieldUpdateOperationsInput, {nullable:true})
-    passportNumber?: StringFieldUpdateOperationsInput;
+  @Field(() => StringFieldUpdateOperationsInput, { nullable: true })
+  email?: StringFieldUpdateOperationsInput;
 
-    @Field(() => StringFieldUpdateOperationsInput, {nullable:true})
-    email?: StringFieldUpdateOperationsInput;
+  @Field(() => StringFieldUpdateOperationsInput, { nullable: true })
+  Phone?: StringFieldUpdateOperationsInput;
 
-    @Field(() => StringFieldUpdateOperationsInput, {nullable:true})
-    Phone?: StringFieldUpdateOperationsInput;
+  @Field(() => StringFieldUpdateOperationsInput, { nullable: true })
+  emergencyContact?: StringFieldUpdateOperationsInput;
 
-    @Field(() => StringFieldUpdateOperationsInput, {nullable:true})
-    emergencyContact?: StringFieldUpdateOperationsInput;
+  @Field(() => StringFieldUpdateOperationsInput, { nullable: true })
+  emergencyPhone?: StringFieldUpdateOperationsInput;
 
-    @Field(() => StringFieldUpdateOperationsInput, {nullable:true})
-    emergencyPhone?: StringFieldUpdateOperationsInput;
+  @Field(() => IntFieldUpdateOperationsInput, { nullable: true })
+  numberOfChildren?: IntFieldUpdateOperationsInput;
 
-    @Field(() => IntFieldUpdateOperationsInput, {nullable:true})
-    numberOfChildren?: IntFieldUpdateOperationsInput;
+  @Field(() => DateTimeFieldUpdateOperationsInput, { nullable: true })
+  employmentDate?: DateTimeFieldUpdateOperationsInput;
 
-    @Field(() => DateTimeFieldUpdateOperationsInput, {nullable:true})
-    employmentDate?: DateTimeFieldUpdateOperationsInput;
+  @Field(() => DateTimeFieldUpdateOperationsInput, { nullable: true })
+  probationDate?: DateTimeFieldUpdateOperationsInput;
 
-    @Field(() => DateTimeFieldUpdateOperationsInput, {nullable:true})
-    probationDate?: DateTimeFieldUpdateOperationsInput;
+  @Field(() => DateTimeFieldUpdateOperationsInput, { nullable: true })
+  retirementDate?: DateTimeFieldUpdateOperationsInput;
 
-    @Field(() => DateTimeFieldUpdateOperationsInput, {nullable:true})
-    retirementDate?: DateTimeFieldUpdateOperationsInput;
+  @Field(() => BoolFieldUpdateOperationsInput, { nullable: true })
+  deleted?: BoolFieldUpdateOperationsInput;
 
-    @Field(() => BoolFieldUpdateOperationsInput, {nullable:true})
-    deleted?: BoolFieldUpdateOperationsInput;
+  @Field(() => DateTimeFieldUpdateOperationsInput, { nullable: true })
+  createdAt?: DateTimeFieldUpdateOperationsInput;
 
-    @Field(() => DateTimeFieldUpdateOperationsInput, {nullable:true})
-    createdAt?: DateTimeFieldUpdateOperationsInput;
+  @Field(() => DateTimeFieldUpdateOperationsInput, { nullable: true })
+  updatedAt?: DateTimeFieldUpdateOperationsInput;
 
-    @Field(() => DateTimeFieldUpdateOperationsInput, {nullable:true})
-    updatedAt?: DateTimeFieldUpdateOperationsInput;
+  @Field(() => NationalityUpdateOneWithoutEmployeesInput, { nullable: true })
+  nationality?: NationalityUpdateOneWithoutEmployeesInput;
 
-    @Field(() => NationalityUpdateOneWithoutEmployeesInput, {nullable:true})
-    nationality?: NationalityUpdateOneWithoutEmployeesInput;
+  @Field(() => MaritalStatusUpdateOneWithoutEmployeesInput, { nullable: true })
+  maritalStatus?: MaritalStatusUpdateOneWithoutEmployeesInput;
 
-    @Field(() => MaritalStatusUpdateOneWithoutEmployeesInput, {nullable:true})
-    maritalStatus?: MaritalStatusUpdateOneWithoutEmployeesInput;
+  @Field(() => EmploymentTypeUpdateOneWithoutEmployeesInput, { nullable: true })
+  employmentType?: EmploymentTypeUpdateOneWithoutEmployeesInput;
 
-    @Field(() => EmploymentTypeUpdateOneWithoutEmployeesInput, {nullable:true})
-    employmentType?: EmploymentTypeUpdateOneWithoutEmployeesInput;
-
-    @Field(() => EmploymentNatureUpdateOneWithoutEmployeesInput, {nullable:true})
-    employmentNature?: EmploymentNatureUpdateOneWithoutEmployeesInput;
+  @Field(() => EmploymentNatureUpdateOneWithoutEmployeesInput, {
+    nullable: true,
+  })
+  employmentNature?: EmploymentNatureUpdateOneWithoutEmployeesInput;
 }

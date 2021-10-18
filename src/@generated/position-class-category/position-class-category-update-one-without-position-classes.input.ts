@@ -8,25 +8,33 @@ import { PositionClassCategoryUpdateWithoutPositionClassesInput } from './positi
 
 @InputType()
 export class PositionClassCategoryUpdateOneWithoutPositionClassesInput {
+  @Field(() => PositionClassCategoryCreateWithoutPositionClassesInput, {
+    nullable: true,
+  })
+  create?: PositionClassCategoryCreateWithoutPositionClassesInput;
 
-    @Field(() => PositionClassCategoryCreateWithoutPositionClassesInput, {nullable:true})
-    create?: PositionClassCategoryCreateWithoutPositionClassesInput;
+  @Field(
+    () => PositionClassCategoryCreateOrConnectWithoutPositionClassesInput,
+    { nullable: true },
+  )
+  connectOrCreate?: PositionClassCategoryCreateOrConnectWithoutPositionClassesInput;
 
-    @Field(() => PositionClassCategoryCreateOrConnectWithoutPositionClassesInput, {nullable:true})
-    connectOrCreate?: PositionClassCategoryCreateOrConnectWithoutPositionClassesInput;
+  @Field(() => PositionClassCategoryUpsertWithoutPositionClassesInput, {
+    nullable: true,
+  })
+  upsert?: PositionClassCategoryUpsertWithoutPositionClassesInput;
 
-    @Field(() => PositionClassCategoryUpsertWithoutPositionClassesInput, {nullable:true})
-    upsert?: PositionClassCategoryUpsertWithoutPositionClassesInput;
+  @Field(() => PositionClassCategoryWhereUniqueInput, { nullable: true })
+  connect?: PositionClassCategoryWhereUniqueInput;
 
-    @Field(() => PositionClassCategoryWhereUniqueInput, {nullable:true})
-    connect?: PositionClassCategoryWhereUniqueInput;
+  @Field(() => Boolean, { nullable: true })
+  disconnect?: boolean;
 
-    @Field(() => Boolean, {nullable:true})
-    disconnect?: boolean;
+  @Field(() => Boolean, { nullable: true })
+  delete?: boolean;
 
-    @Field(() => Boolean, {nullable:true})
-    delete?: boolean;
-
-    @Field(() => PositionClassCategoryUpdateWithoutPositionClassesInput, {nullable:true})
-    update?: PositionClassCategoryUpdateWithoutPositionClassesInput;
+  @Field(() => PositionClassCategoryUpdateWithoutPositionClassesInput, {
+    nullable: true,
+  })
+  update?: PositionClassCategoryUpdateWithoutPositionClassesInput;
 }

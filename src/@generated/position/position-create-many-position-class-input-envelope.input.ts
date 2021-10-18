@@ -4,10 +4,9 @@ import { PositionCreateManyPositionClassInput } from './position-create-many-pos
 
 @InputType()
 export class PositionCreateManyPositionClassInputEnvelope {
+  @Field(() => [PositionCreateManyPositionClassInput], { nullable: false })
+  data!: Array<PositionCreateManyPositionClassInput>;
 
-    @Field(() => [PositionCreateManyPositionClassInput], {nullable:false})
-    data!: Array<PositionCreateManyPositionClassInput>;
-
-    @Field(() => Boolean, {nullable:true})
-    skipDuplicates?: boolean;
+  @Field(() => Boolean, { nullable: true })
+  skipDuplicates?: boolean;
 }

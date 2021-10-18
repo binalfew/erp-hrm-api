@@ -8,22 +8,21 @@ import { JobGradeScalarFieldEnum } from './job-grade-scalar-field.enum';
 
 @ArgsType()
 export class FindManyJobGradeArgs {
+  @Field(() => JobGradeWhereInput, { nullable: true })
+  where?: JobGradeWhereInput;
 
-    @Field(() => JobGradeWhereInput, {nullable:true})
-    where?: JobGradeWhereInput;
+  @Field(() => [JobGradeOrderByWithRelationInput], { nullable: true })
+  orderBy?: Array<JobGradeOrderByWithRelationInput>;
 
-    @Field(() => [JobGradeOrderByWithRelationInput], {nullable:true})
-    orderBy?: Array<JobGradeOrderByWithRelationInput>;
+  @Field(() => JobGradeWhereUniqueInput, { nullable: true })
+  cursor?: JobGradeWhereUniqueInput;
 
-    @Field(() => JobGradeWhereUniqueInput, {nullable:true})
-    cursor?: JobGradeWhereUniqueInput;
+  @Field(() => Int, { nullable: true })
+  take?: number;
 
-    @Field(() => Int, {nullable:true})
-    take?: number;
+  @Field(() => Int, { nullable: true })
+  skip?: number;
 
-    @Field(() => Int, {nullable:true})
-    skip?: number;
-
-    @Field(() => [JobGradeScalarFieldEnum], {nullable:true})
-    distinct?: Array<keyof typeof JobGradeScalarFieldEnum>;
+  @Field(() => [JobGradeScalarFieldEnum], { nullable: true })
+  distinct?: Array<keyof typeof JobGradeScalarFieldEnum>;
 }

@@ -4,7 +4,6 @@ import { EmploymentNatureWhereInput } from './employment-nature-where.input';
 
 @ArgsType()
 export class DeleteManyEmploymentNatureArgs {
-
-    @Field(() => EmploymentNatureWhereInput, {nullable:true})
-    where?: EmploymentNatureWhereInput;
+  @Field(() => EmploymentNatureWhereInput, { nullable: true })
+  where?: EmploymentNatureWhereInput;
 }

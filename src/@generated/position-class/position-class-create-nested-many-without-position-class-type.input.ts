@@ -7,16 +7,21 @@ import { PositionClassWhereUniqueInput } from './position-class-where-unique.inp
 
 @InputType()
 export class PositionClassCreateNestedManyWithoutPositionClassTypeInput {
+  @Field(() => [PositionClassCreateWithoutPositionClassTypeInput], {
+    nullable: true,
+  })
+  create?: Array<PositionClassCreateWithoutPositionClassTypeInput>;
 
-    @Field(() => [PositionClassCreateWithoutPositionClassTypeInput], {nullable:true})
-    create?: Array<PositionClassCreateWithoutPositionClassTypeInput>;
+  @Field(() => [PositionClassCreateOrConnectWithoutPositionClassTypeInput], {
+    nullable: true,
+  })
+  connectOrCreate?: Array<PositionClassCreateOrConnectWithoutPositionClassTypeInput>;
 
-    @Field(() => [PositionClassCreateOrConnectWithoutPositionClassTypeInput], {nullable:true})
-    connectOrCreate?: Array<PositionClassCreateOrConnectWithoutPositionClassTypeInput>;
+  @Field(() => PositionClassCreateManyPositionClassTypeInputEnvelope, {
+    nullable: true,
+  })
+  createMany?: PositionClassCreateManyPositionClassTypeInputEnvelope;
 
-    @Field(() => PositionClassCreateManyPositionClassTypeInputEnvelope, {nullable:true})
-    createMany?: PositionClassCreateManyPositionClassTypeInputEnvelope;
-
-    @Field(() => [PositionClassWhereUniqueInput], {nullable:true})
-    connect?: Array<PositionClassWhereUniqueInput>;
+  @Field(() => [PositionClassWhereUniqueInput], { nullable: true })
+  connect?: Array<PositionClassWhereUniqueInput>;
 }

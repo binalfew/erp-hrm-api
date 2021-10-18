@@ -7,31 +7,30 @@ import { NationalityCount } from './nationality-count.output';
 
 @ObjectType()
 export class Nationality {
+  @Field(() => ID, { nullable: false })
+  id!: number;
 
-    @Field(() => ID, {nullable:false})
-    id!: number;
+  @Field(() => String, { nullable: false })
+  name!: string;
 
-    @Field(() => String, {nullable:false})
-    name!: string;
+  @Field(() => String, { nullable: false })
+  code!: string;
 
-    @Field(() => String, {nullable:false})
-    code!: string;
+  @Field(() => GraphQLJSON, { nullable: true })
+  locales!: any | null;
 
-    @Field(() => GraphQLJSON, {nullable:true})
-    locales!: any | null;
+  @Field(() => Boolean, { nullable: false, defaultValue: false })
+  deleted!: boolean;
 
-    @Field(() => Boolean, {nullable:false,defaultValue:false})
-    deleted!: boolean;
+  @Field(() => Date, { nullable: false })
+  createdAt!: Date;
 
-    @Field(() => Date, {nullable:false})
-    createdAt!: Date;
+  @Field(() => Date, { nullable: false })
+  updatedAt!: Date;
 
-    @Field(() => Date, {nullable:false})
-    updatedAt!: Date;
+  @Field(() => [Employee], { nullable: true })
+  employees?: Array<Employee>;
 
-    @Field(() => [Employee], {nullable:true})
-    employees?: Array<Employee>;
-
-    @Field(() => NationalityCount, {nullable:true})
-    _count?: NationalityCount | null;
+  @Field(() => NationalityCount, { nullable: true })
+  _count?: NationalityCount | null;
 }

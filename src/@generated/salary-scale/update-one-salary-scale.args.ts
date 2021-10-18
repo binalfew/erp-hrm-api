@@ -5,10 +5,9 @@ import { SalaryScaleWhereUniqueInput } from './salary-scale-where-unique.input';
 
 @ArgsType()
 export class UpdateOneSalaryScaleArgs {
+  @Field(() => SalaryScaleUpdateInput, { nullable: false })
+  data!: SalaryScaleUpdateInput;
 
-    @Field(() => SalaryScaleUpdateInput, {nullable:false})
-    data!: SalaryScaleUpdateInput;
-
-    @Field(() => SalaryScaleWhereUniqueInput, {nullable:false})
-    where!: SalaryScaleWhereUniqueInput;
+  @Field(() => SalaryScaleWhereUniqueInput, { nullable: false })
+  where!: SalaryScaleWhereUniqueInput;
 }

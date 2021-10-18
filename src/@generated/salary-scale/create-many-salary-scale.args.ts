@@ -4,10 +4,9 @@ import { SalaryScaleCreateManyInput } from './salary-scale-create-many.input';
 
 @ArgsType()
 export class CreateManySalaryScaleArgs {
+  @Field(() => [SalaryScaleCreateManyInput], { nullable: false })
+  data!: Array<SalaryScaleCreateManyInput>;
 
-    @Field(() => [SalaryScaleCreateManyInput], {nullable:false})
-    data!: Array<SalaryScaleCreateManyInput>;
-
-    @Field(() => Boolean, {nullable:true})
-    skipDuplicates?: boolean;
+  @Field(() => Boolean, { nullable: true })
+  skipDuplicates?: boolean;
 }

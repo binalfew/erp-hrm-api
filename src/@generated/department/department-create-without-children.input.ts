@@ -6,25 +6,28 @@ import { PositionCreateNestedManyWithoutDepartmentInput } from '../position/posi
 
 @InputType()
 export class DepartmentCreateWithoutChildrenInput {
+  @Field(() => String, { nullable: false })
+  name!: string;
 
-    @Field(() => String, {nullable:false})
-    name!: string;
+  @Field(() => String, { nullable: false })
+  code!: string;
 
-    @Field(() => String, {nullable:false})
-    code!: string;
+  @Field(() => GraphQLJSON, { nullable: true })
+  locales?: any;
 
-    @Field(() => GraphQLJSON, {nullable:true})
-    locales?: any;
+  @Field(() => Date, { nullable: true })
+  createdAt?: Date | string;
 
-    @Field(() => Date, {nullable:true})
-    createdAt?: Date | string;
+  @Field(() => Date, { nullable: true })
+  updatedAt?: Date | string;
 
-    @Field(() => Date, {nullable:true})
-    updatedAt?: Date | string;
+  @Field(() => DepartmentCreateNestedOneWithoutChildrenInput, {
+    nullable: true,
+  })
+  parent?: DepartmentCreateNestedOneWithoutChildrenInput;
 
-    @Field(() => DepartmentCreateNestedOneWithoutChildrenInput, {nullable:true})
-    parent?: DepartmentCreateNestedOneWithoutChildrenInput;
-
-    @Field(() => PositionCreateNestedManyWithoutDepartmentInput, {nullable:true})
-    positions?: PositionCreateNestedManyWithoutDepartmentInput;
+  @Field(() => PositionCreateNestedManyWithoutDepartmentInput, {
+    nullable: true,
+  })
+  positions?: PositionCreateNestedManyWithoutDepartmentInput;
 }

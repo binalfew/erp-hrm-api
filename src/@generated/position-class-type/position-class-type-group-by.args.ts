@@ -13,37 +13,40 @@ import { PositionClassTypeMaxAggregateInput } from './position-class-type-max-ag
 
 @ArgsType()
 export class PositionClassTypeGroupByArgs {
+  @Field(() => PositionClassTypeWhereInput, { nullable: true })
+  where?: PositionClassTypeWhereInput;
 
-    @Field(() => PositionClassTypeWhereInput, {nullable:true})
-    where?: PositionClassTypeWhereInput;
+  @Field(() => [PositionClassTypeOrderByWithAggregationInput], {
+    nullable: true,
+  })
+  orderBy?: Array<PositionClassTypeOrderByWithAggregationInput>;
 
-    @Field(() => [PositionClassTypeOrderByWithAggregationInput], {nullable:true})
-    orderBy?: Array<PositionClassTypeOrderByWithAggregationInput>;
+  @Field(() => [PositionClassTypeScalarFieldEnum], { nullable: false })
+  by!: Array<keyof typeof PositionClassTypeScalarFieldEnum>;
 
-    @Field(() => [PositionClassTypeScalarFieldEnum], {nullable:false})
-    by!: Array<keyof typeof PositionClassTypeScalarFieldEnum>;
+  @Field(() => PositionClassTypeScalarWhereWithAggregatesInput, {
+    nullable: true,
+  })
+  having?: PositionClassTypeScalarWhereWithAggregatesInput;
 
-    @Field(() => PositionClassTypeScalarWhereWithAggregatesInput, {nullable:true})
-    having?: PositionClassTypeScalarWhereWithAggregatesInput;
+  @Field(() => Int, { nullable: true })
+  take?: number;
 
-    @Field(() => Int, {nullable:true})
-    take?: number;
+  @Field(() => Int, { nullable: true })
+  skip?: number;
 
-    @Field(() => Int, {nullable:true})
-    skip?: number;
+  @Field(() => PositionClassTypeCountAggregateInput, { nullable: true })
+  _count?: PositionClassTypeCountAggregateInput;
 
-    @Field(() => PositionClassTypeCountAggregateInput, {nullable:true})
-    _count?: PositionClassTypeCountAggregateInput;
+  @Field(() => PositionClassTypeAvgAggregateInput, { nullable: true })
+  _avg?: PositionClassTypeAvgAggregateInput;
 
-    @Field(() => PositionClassTypeAvgAggregateInput, {nullable:true})
-    _avg?: PositionClassTypeAvgAggregateInput;
+  @Field(() => PositionClassTypeSumAggregateInput, { nullable: true })
+  _sum?: PositionClassTypeSumAggregateInput;
 
-    @Field(() => PositionClassTypeSumAggregateInput, {nullable:true})
-    _sum?: PositionClassTypeSumAggregateInput;
+  @Field(() => PositionClassTypeMinAggregateInput, { nullable: true })
+  _min?: PositionClassTypeMinAggregateInput;
 
-    @Field(() => PositionClassTypeMinAggregateInput, {nullable:true})
-    _min?: PositionClassTypeMinAggregateInput;
-
-    @Field(() => PositionClassTypeMaxAggregateInput, {nullable:true})
-    _max?: PositionClassTypeMaxAggregateInput;
+  @Field(() => PositionClassTypeMaxAggregateInput, { nullable: true })
+  _max?: PositionClassTypeMaxAggregateInput;
 }

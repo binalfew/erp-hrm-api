@@ -10,43 +10,42 @@ import { DateTimeFilter } from '../prisma/date-time-filter.input';
 
 @InputType()
 export class PositionWhereInput {
+  @Field(() => [PositionWhereInput], { nullable: true })
+  AND?: Array<PositionWhereInput>;
 
-    @Field(() => [PositionWhereInput], {nullable:true})
-    AND?: Array<PositionWhereInput>;
+  @Field(() => [PositionWhereInput], { nullable: true })
+  OR?: Array<PositionWhereInput>;
 
-    @Field(() => [PositionWhereInput], {nullable:true})
-    OR?: Array<PositionWhereInput>;
+  @Field(() => [PositionWhereInput], { nullable: true })
+  NOT?: Array<PositionWhereInput>;
 
-    @Field(() => [PositionWhereInput], {nullable:true})
-    NOT?: Array<PositionWhereInput>;
+  @Field(() => IntFilter, { nullable: true })
+  id?: IntFilter;
 
-    @Field(() => IntFilter, {nullable:true})
-    id?: IntFilter;
+  @Field(() => StringFilter, { nullable: true })
+  code?: StringFilter;
 
-    @Field(() => StringFilter, {nullable:true})
-    code?: StringFilter;
+  @Field(() => PositionClassRelationFilter, { nullable: true })
+  positionClass?: PositionClassRelationFilter;
 
-    @Field(() => PositionClassRelationFilter, {nullable:true})
-    positionClass?: PositionClassRelationFilter;
+  @Field(() => IntNullableFilter, { nullable: true })
+  positionClassId?: IntNullableFilter;
 
-    @Field(() => IntNullableFilter, {nullable:true})
-    positionClassId?: IntNullableFilter;
+  @Field(() => DepartmentRelationFilter, { nullable: true })
+  department?: DepartmentRelationFilter;
 
-    @Field(() => DepartmentRelationFilter, {nullable:true})
-    department?: DepartmentRelationFilter;
+  @Field(() => IntNullableFilter, { nullable: true })
+  departmentId?: IntNullableFilter;
 
-    @Field(() => IntNullableFilter, {nullable:true})
-    departmentId?: IntNullableFilter;
+  @Field(() => BoolFilter, { nullable: true })
+  vacant?: BoolFilter;
 
-    @Field(() => BoolFilter, {nullable:true})
-    vacant?: BoolFilter;
+  @Field(() => BoolFilter, { nullable: true })
+  deleted?: BoolFilter;
 
-    @Field(() => BoolFilter, {nullable:true})
-    deleted?: BoolFilter;
+  @Field(() => DateTimeFilter, { nullable: true })
+  createdAt?: DateTimeFilter;
 
-    @Field(() => DateTimeFilter, {nullable:true})
-    createdAt?: DateTimeFilter;
-
-    @Field(() => DateTimeFilter, {nullable:true})
-    updatedAt?: DateTimeFilter;
+  @Field(() => DateTimeFilter, { nullable: true })
+  updatedAt?: DateTimeFilter;
 }

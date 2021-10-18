@@ -5,10 +5,9 @@ import { EmploymentTypeWhereUniqueInput } from './employment-type-where-unique.i
 
 @ArgsType()
 export class UpdateOneEmploymentTypeArgs {
+  @Field(() => EmploymentTypeUpdateInput, { nullable: false })
+  data!: EmploymentTypeUpdateInput;
 
-    @Field(() => EmploymentTypeUpdateInput, {nullable:false})
-    data!: EmploymentTypeUpdateInput;
-
-    @Field(() => EmploymentTypeWhereUniqueInput, {nullable:false})
-    where!: EmploymentTypeWhereUniqueInput;
+  @Field(() => EmploymentTypeWhereUniqueInput, { nullable: false })
+  where!: EmploymentTypeWhereUniqueInput;
 }

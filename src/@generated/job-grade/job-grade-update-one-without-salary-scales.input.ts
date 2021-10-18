@@ -8,25 +8,26 @@ import { JobGradeUpdateWithoutSalaryScalesInput } from './job-grade-update-witho
 
 @InputType()
 export class JobGradeUpdateOneWithoutSalaryScalesInput {
+  @Field(() => JobGradeCreateWithoutSalaryScalesInput, { nullable: true })
+  create?: JobGradeCreateWithoutSalaryScalesInput;
 
-    @Field(() => JobGradeCreateWithoutSalaryScalesInput, {nullable:true})
-    create?: JobGradeCreateWithoutSalaryScalesInput;
+  @Field(() => JobGradeCreateOrConnectWithoutSalaryScalesInput, {
+    nullable: true,
+  })
+  connectOrCreate?: JobGradeCreateOrConnectWithoutSalaryScalesInput;
 
-    @Field(() => JobGradeCreateOrConnectWithoutSalaryScalesInput, {nullable:true})
-    connectOrCreate?: JobGradeCreateOrConnectWithoutSalaryScalesInput;
+  @Field(() => JobGradeUpsertWithoutSalaryScalesInput, { nullable: true })
+  upsert?: JobGradeUpsertWithoutSalaryScalesInput;
 
-    @Field(() => JobGradeUpsertWithoutSalaryScalesInput, {nullable:true})
-    upsert?: JobGradeUpsertWithoutSalaryScalesInput;
+  @Field(() => JobGradeWhereUniqueInput, { nullable: true })
+  connect?: JobGradeWhereUniqueInput;
 
-    @Field(() => JobGradeWhereUniqueInput, {nullable:true})
-    connect?: JobGradeWhereUniqueInput;
+  @Field(() => Boolean, { nullable: true })
+  disconnect?: boolean;
 
-    @Field(() => Boolean, {nullable:true})
-    disconnect?: boolean;
+  @Field(() => Boolean, { nullable: true })
+  delete?: boolean;
 
-    @Field(() => Boolean, {nullable:true})
-    delete?: boolean;
-
-    @Field(() => JobGradeUpdateWithoutSalaryScalesInput, {nullable:true})
-    update?: JobGradeUpdateWithoutSalaryScalesInput;
+  @Field(() => JobGradeUpdateWithoutSalaryScalesInput, { nullable: true })
+  update?: JobGradeUpdateWithoutSalaryScalesInput;
 }

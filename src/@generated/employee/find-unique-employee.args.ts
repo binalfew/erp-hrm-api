@@ -4,7 +4,6 @@ import { EmployeeWhereUniqueInput } from './employee-where-unique.input';
 
 @ArgsType()
 export class FindUniqueEmployeeArgs {
-
-    @Field(() => EmployeeWhereUniqueInput, {nullable:false})
-    where!: EmployeeWhereUniqueInput;
+  @Field(() => EmployeeWhereUniqueInput, { nullable: false })
+  where!: EmployeeWhereUniqueInput;
 }

@@ -8,22 +8,21 @@ import { PositionScalarFieldEnum } from './position-scalar-field.enum';
 
 @ArgsType()
 export class FindFirstPositionArgs {
+  @Field(() => PositionWhereInput, { nullable: true })
+  where?: PositionWhereInput;
 
-    @Field(() => PositionWhereInput, {nullable:true})
-    where?: PositionWhereInput;
+  @Field(() => [PositionOrderByWithRelationInput], { nullable: true })
+  orderBy?: Array<PositionOrderByWithRelationInput>;
 
-    @Field(() => [PositionOrderByWithRelationInput], {nullable:true})
-    orderBy?: Array<PositionOrderByWithRelationInput>;
+  @Field(() => PositionWhereUniqueInput, { nullable: true })
+  cursor?: PositionWhereUniqueInput;
 
-    @Field(() => PositionWhereUniqueInput, {nullable:true})
-    cursor?: PositionWhereUniqueInput;
+  @Field(() => Int, { nullable: true })
+  take?: number;
 
-    @Field(() => Int, {nullable:true})
-    take?: number;
+  @Field(() => Int, { nullable: true })
+  skip?: number;
 
-    @Field(() => Int, {nullable:true})
-    skip?: number;
-
-    @Field(() => [PositionScalarFieldEnum], {nullable:true})
-    distinct?: Array<keyof typeof PositionScalarFieldEnum>;
+  @Field(() => [PositionScalarFieldEnum], { nullable: true })
+  distinct?: Array<keyof typeof PositionScalarFieldEnum>;
 }

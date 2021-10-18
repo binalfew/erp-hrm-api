@@ -8,22 +8,23 @@ import { PositionClassUpdateManyWithoutSalaryScaleInput } from '../position-clas
 
 @InputType()
 export class SalaryScaleUpdateWithoutJobStepInput {
+  @Field(() => FloatFieldUpdateOperationsInput, { nullable: true })
+  salary?: FloatFieldUpdateOperationsInput;
 
-    @Field(() => FloatFieldUpdateOperationsInput, {nullable:true})
-    salary?: FloatFieldUpdateOperationsInput;
+  @Field(() => BoolFieldUpdateOperationsInput, { nullable: true })
+  deleted?: BoolFieldUpdateOperationsInput;
 
-    @Field(() => BoolFieldUpdateOperationsInput, {nullable:true})
-    deleted?: BoolFieldUpdateOperationsInput;
+  @Field(() => DateTimeFieldUpdateOperationsInput, { nullable: true })
+  createdAt?: DateTimeFieldUpdateOperationsInput;
 
-    @Field(() => DateTimeFieldUpdateOperationsInput, {nullable:true})
-    createdAt?: DateTimeFieldUpdateOperationsInput;
+  @Field(() => DateTimeFieldUpdateOperationsInput, { nullable: true })
+  updatedAt?: DateTimeFieldUpdateOperationsInput;
 
-    @Field(() => DateTimeFieldUpdateOperationsInput, {nullable:true})
-    updatedAt?: DateTimeFieldUpdateOperationsInput;
+  @Field(() => JobGradeUpdateOneWithoutSalaryScalesInput, { nullable: true })
+  jobGrade?: JobGradeUpdateOneWithoutSalaryScalesInput;
 
-    @Field(() => JobGradeUpdateOneWithoutSalaryScalesInput, {nullable:true})
-    jobGrade?: JobGradeUpdateOneWithoutSalaryScalesInput;
-
-    @Field(() => PositionClassUpdateManyWithoutSalaryScaleInput, {nullable:true})
-    positionClasses?: PositionClassUpdateManyWithoutSalaryScaleInput;
+  @Field(() => PositionClassUpdateManyWithoutSalaryScaleInput, {
+    nullable: true,
+  })
+  positionClasses?: PositionClassUpdateManyWithoutSalaryScaleInput;
 }

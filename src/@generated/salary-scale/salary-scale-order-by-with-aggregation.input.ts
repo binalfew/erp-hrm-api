@@ -9,40 +9,39 @@ import { SalaryScaleSumOrderByAggregateInput } from './salary-scale-sum-order-by
 
 @InputType()
 export class SalaryScaleOrderByWithAggregationInput {
+  @Field(() => SortOrder, { nullable: true })
+  id?: keyof typeof SortOrder;
 
-    @Field(() => SortOrder, {nullable:true})
-    id?: keyof typeof SortOrder;
+  @Field(() => SortOrder, { nullable: true })
+  jobGradeId?: keyof typeof SortOrder;
 
-    @Field(() => SortOrder, {nullable:true})
-    jobGradeId?: keyof typeof SortOrder;
+  @Field(() => SortOrder, { nullable: true })
+  jobStepId?: keyof typeof SortOrder;
 
-    @Field(() => SortOrder, {nullable:true})
-    jobStepId?: keyof typeof SortOrder;
+  @Field(() => SortOrder, { nullable: true })
+  salary?: keyof typeof SortOrder;
 
-    @Field(() => SortOrder, {nullable:true})
-    salary?: keyof typeof SortOrder;
+  @Field(() => SortOrder, { nullable: true })
+  deleted?: keyof typeof SortOrder;
 
-    @Field(() => SortOrder, {nullable:true})
-    deleted?: keyof typeof SortOrder;
+  @Field(() => SortOrder, { nullable: true })
+  createdAt?: keyof typeof SortOrder;
 
-    @Field(() => SortOrder, {nullable:true})
-    createdAt?: keyof typeof SortOrder;
+  @Field(() => SortOrder, { nullable: true })
+  updatedAt?: keyof typeof SortOrder;
 
-    @Field(() => SortOrder, {nullable:true})
-    updatedAt?: keyof typeof SortOrder;
+  @Field(() => SalaryScaleCountOrderByAggregateInput, { nullable: true })
+  _count?: SalaryScaleCountOrderByAggregateInput;
 
-    @Field(() => SalaryScaleCountOrderByAggregateInput, {nullable:true})
-    _count?: SalaryScaleCountOrderByAggregateInput;
+  @Field(() => SalaryScaleAvgOrderByAggregateInput, { nullable: true })
+  _avg?: SalaryScaleAvgOrderByAggregateInput;
 
-    @Field(() => SalaryScaleAvgOrderByAggregateInput, {nullable:true})
-    _avg?: SalaryScaleAvgOrderByAggregateInput;
+  @Field(() => SalaryScaleMaxOrderByAggregateInput, { nullable: true })
+  _max?: SalaryScaleMaxOrderByAggregateInput;
 
-    @Field(() => SalaryScaleMaxOrderByAggregateInput, {nullable:true})
-    _max?: SalaryScaleMaxOrderByAggregateInput;
+  @Field(() => SalaryScaleMinOrderByAggregateInput, { nullable: true })
+  _min?: SalaryScaleMinOrderByAggregateInput;
 
-    @Field(() => SalaryScaleMinOrderByAggregateInput, {nullable:true})
-    _min?: SalaryScaleMinOrderByAggregateInput;
-
-    @Field(() => SalaryScaleSumOrderByAggregateInput, {nullable:true})
-    _sum?: SalaryScaleSumOrderByAggregateInput;
+  @Field(() => SalaryScaleSumOrderByAggregateInput, { nullable: true })
+  _sum?: SalaryScaleSumOrderByAggregateInput;
 }

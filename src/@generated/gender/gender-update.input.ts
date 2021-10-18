@@ -9,28 +9,27 @@ import { EmployeeUpdateManyWithoutGenderInput } from '../employee/employee-updat
 
 @InputType()
 export class GenderUpdateInput {
+  @Field(() => StringFieldUpdateOperationsInput, { nullable: true })
+  name?: StringFieldUpdateOperationsInput;
 
-    @Field(() => StringFieldUpdateOperationsInput, {nullable:true})
-    name?: StringFieldUpdateOperationsInput;
+  @Field(() => StringFieldUpdateOperationsInput, { nullable: true })
+  code?: StringFieldUpdateOperationsInput;
 
-    @Field(() => StringFieldUpdateOperationsInput, {nullable:true})
-    code?: StringFieldUpdateOperationsInput;
+  @Field(() => GraphQLJSON, { nullable: true })
+  locales?: any;
 
-    @Field(() => GraphQLJSON, {nullable:true})
-    locales?: any;
+  @Field(() => BoolFieldUpdateOperationsInput, { nullable: true })
+  deleted?: BoolFieldUpdateOperationsInput;
 
-    @Field(() => BoolFieldUpdateOperationsInput, {nullable:true})
-    deleted?: BoolFieldUpdateOperationsInput;
+  @Field(() => DateTimeFieldUpdateOperationsInput, { nullable: true })
+  createdAt?: DateTimeFieldUpdateOperationsInput;
 
-    @Field(() => DateTimeFieldUpdateOperationsInput, {nullable:true})
-    createdAt?: DateTimeFieldUpdateOperationsInput;
+  @Field(() => DateTimeFieldUpdateOperationsInput, { nullable: true })
+  updatedAt?: DateTimeFieldUpdateOperationsInput;
 
-    @Field(() => DateTimeFieldUpdateOperationsInput, {nullable:true})
-    updatedAt?: DateTimeFieldUpdateOperationsInput;
+  @Field(() => PositionClassUpdateManyWithoutGenderInput, { nullable: true })
+  positionClasses?: PositionClassUpdateManyWithoutGenderInput;
 
-    @Field(() => PositionClassUpdateManyWithoutGenderInput, {nullable:true})
-    positionClasses?: PositionClassUpdateManyWithoutGenderInput;
-
-    @Field(() => EmployeeUpdateManyWithoutGenderInput, {nullable:true})
-    employees?: EmployeeUpdateManyWithoutGenderInput;
+  @Field(() => EmployeeUpdateManyWithoutGenderInput, { nullable: true })
+  employees?: EmployeeUpdateManyWithoutGenderInput;
 }

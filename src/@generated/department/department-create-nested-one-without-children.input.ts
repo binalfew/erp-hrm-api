@@ -6,13 +6,14 @@ import { DepartmentWhereUniqueInput } from './department-where-unique.input';
 
 @InputType()
 export class DepartmentCreateNestedOneWithoutChildrenInput {
+  @Field(() => DepartmentCreateWithoutChildrenInput, { nullable: true })
+  create?: DepartmentCreateWithoutChildrenInput;
 
-    @Field(() => DepartmentCreateWithoutChildrenInput, {nullable:true})
-    create?: DepartmentCreateWithoutChildrenInput;
+  @Field(() => DepartmentCreateOrConnectWithoutChildrenInput, {
+    nullable: true,
+  })
+  connectOrCreate?: DepartmentCreateOrConnectWithoutChildrenInput;
 
-    @Field(() => DepartmentCreateOrConnectWithoutChildrenInput, {nullable:true})
-    connectOrCreate?: DepartmentCreateOrConnectWithoutChildrenInput;
-
-    @Field(() => DepartmentWhereUniqueInput, {nullable:true})
-    connect?: DepartmentWhereUniqueInput;
+  @Field(() => DepartmentWhereUniqueInput, { nullable: true })
+  connect?: DepartmentWhereUniqueInput;
 }

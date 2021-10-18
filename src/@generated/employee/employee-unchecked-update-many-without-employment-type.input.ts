@@ -11,37 +11,46 @@ import { EmployeeScalarWhereInput } from './employee-scalar-where.input';
 
 @InputType()
 export class EmployeeUncheckedUpdateManyWithoutEmploymentTypeInput {
+  @Field(() => [EmployeeCreateWithoutEmploymentTypeInput], { nullable: true })
+  create?: Array<EmployeeCreateWithoutEmploymentTypeInput>;
 
-    @Field(() => [EmployeeCreateWithoutEmploymentTypeInput], {nullable:true})
-    create?: Array<EmployeeCreateWithoutEmploymentTypeInput>;
+  @Field(() => [EmployeeCreateOrConnectWithoutEmploymentTypeInput], {
+    nullable: true,
+  })
+  connectOrCreate?: Array<EmployeeCreateOrConnectWithoutEmploymentTypeInput>;
 
-    @Field(() => [EmployeeCreateOrConnectWithoutEmploymentTypeInput], {nullable:true})
-    connectOrCreate?: Array<EmployeeCreateOrConnectWithoutEmploymentTypeInput>;
+  @Field(() => [EmployeeUpsertWithWhereUniqueWithoutEmploymentTypeInput], {
+    nullable: true,
+  })
+  upsert?: Array<EmployeeUpsertWithWhereUniqueWithoutEmploymentTypeInput>;
 
-    @Field(() => [EmployeeUpsertWithWhereUniqueWithoutEmploymentTypeInput], {nullable:true})
-    upsert?: Array<EmployeeUpsertWithWhereUniqueWithoutEmploymentTypeInput>;
+  @Field(() => EmployeeCreateManyEmploymentTypeInputEnvelope, {
+    nullable: true,
+  })
+  createMany?: EmployeeCreateManyEmploymentTypeInputEnvelope;
 
-    @Field(() => EmployeeCreateManyEmploymentTypeInputEnvelope, {nullable:true})
-    createMany?: EmployeeCreateManyEmploymentTypeInputEnvelope;
+  @Field(() => [EmployeeWhereUniqueInput], { nullable: true })
+  connect?: Array<EmployeeWhereUniqueInput>;
 
-    @Field(() => [EmployeeWhereUniqueInput], {nullable:true})
-    connect?: Array<EmployeeWhereUniqueInput>;
+  @Field(() => [EmployeeWhereUniqueInput], { nullable: true })
+  set?: Array<EmployeeWhereUniqueInput>;
 
-    @Field(() => [EmployeeWhereUniqueInput], {nullable:true})
-    set?: Array<EmployeeWhereUniqueInput>;
+  @Field(() => [EmployeeWhereUniqueInput], { nullable: true })
+  disconnect?: Array<EmployeeWhereUniqueInput>;
 
-    @Field(() => [EmployeeWhereUniqueInput], {nullable:true})
-    disconnect?: Array<EmployeeWhereUniqueInput>;
+  @Field(() => [EmployeeWhereUniqueInput], { nullable: true })
+  delete?: Array<EmployeeWhereUniqueInput>;
 
-    @Field(() => [EmployeeWhereUniqueInput], {nullable:true})
-    delete?: Array<EmployeeWhereUniqueInput>;
+  @Field(() => [EmployeeUpdateWithWhereUniqueWithoutEmploymentTypeInput], {
+    nullable: true,
+  })
+  update?: Array<EmployeeUpdateWithWhereUniqueWithoutEmploymentTypeInput>;
 
-    @Field(() => [EmployeeUpdateWithWhereUniqueWithoutEmploymentTypeInput], {nullable:true})
-    update?: Array<EmployeeUpdateWithWhereUniqueWithoutEmploymentTypeInput>;
+  @Field(() => [EmployeeUpdateManyWithWhereWithoutEmploymentTypeInput], {
+    nullable: true,
+  })
+  updateMany?: Array<EmployeeUpdateManyWithWhereWithoutEmploymentTypeInput>;
 
-    @Field(() => [EmployeeUpdateManyWithWhereWithoutEmploymentTypeInput], {nullable:true})
-    updateMany?: Array<EmployeeUpdateManyWithWhereWithoutEmploymentTypeInput>;
-
-    @Field(() => [EmployeeScalarWhereInput], {nullable:true})
-    deleteMany?: Array<EmployeeScalarWhereInput>;
+  @Field(() => [EmployeeScalarWhereInput], { nullable: true })
+  deleteMany?: Array<EmployeeScalarWhereInput>;
 }

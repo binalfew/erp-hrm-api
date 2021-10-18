@@ -6,13 +6,12 @@ import { EmployeeCreateWithoutMaritalStatusInput } from './employee-create-witho
 
 @InputType()
 export class EmployeeUpsertWithWhereUniqueWithoutMaritalStatusInput {
+  @Field(() => EmployeeWhereUniqueInput, { nullable: false })
+  where!: EmployeeWhereUniqueInput;
 
-    @Field(() => EmployeeWhereUniqueInput, {nullable:false})
-    where!: EmployeeWhereUniqueInput;
+  @Field(() => EmployeeUpdateWithoutMaritalStatusInput, { nullable: false })
+  update!: EmployeeUpdateWithoutMaritalStatusInput;
 
-    @Field(() => EmployeeUpdateWithoutMaritalStatusInput, {nullable:false})
-    update!: EmployeeUpdateWithoutMaritalStatusInput;
-
-    @Field(() => EmployeeCreateWithoutMaritalStatusInput, {nullable:false})
-    create!: EmployeeCreateWithoutMaritalStatusInput;
+  @Field(() => EmployeeCreateWithoutMaritalStatusInput, { nullable: false })
+  create!: EmployeeCreateWithoutMaritalStatusInput;
 }

@@ -5,10 +5,9 @@ import { DepartmentCreateWithoutPositionsInput } from './department-create-witho
 
 @InputType()
 export class DepartmentCreateOrConnectWithoutPositionsInput {
+  @Field(() => DepartmentWhereUniqueInput, { nullable: false })
+  where!: DepartmentWhereUniqueInput;
 
-    @Field(() => DepartmentWhereUniqueInput, {nullable:false})
-    where!: DepartmentWhereUniqueInput;
-
-    @Field(() => DepartmentCreateWithoutPositionsInput, {nullable:false})
-    create!: DepartmentCreateWithoutPositionsInput;
+  @Field(() => DepartmentCreateWithoutPositionsInput, { nullable: false })
+  create!: DepartmentCreateWithoutPositionsInput;
 }

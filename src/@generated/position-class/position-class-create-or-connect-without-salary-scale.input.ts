@@ -5,10 +5,9 @@ import { PositionClassCreateWithoutSalaryScaleInput } from './position-class-cre
 
 @InputType()
 export class PositionClassCreateOrConnectWithoutSalaryScaleInput {
+  @Field(() => PositionClassWhereUniqueInput, { nullable: false })
+  where!: PositionClassWhereUniqueInput;
 
-    @Field(() => PositionClassWhereUniqueInput, {nullable:false})
-    where!: PositionClassWhereUniqueInput;
-
-    @Field(() => PositionClassCreateWithoutSalaryScaleInput, {nullable:false})
-    create!: PositionClassCreateWithoutSalaryScaleInput;
+  @Field(() => PositionClassCreateWithoutSalaryScaleInput, { nullable: false })
+  create!: PositionClassCreateWithoutSalaryScaleInput;
 }

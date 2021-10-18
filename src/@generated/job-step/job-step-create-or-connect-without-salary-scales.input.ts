@@ -5,10 +5,9 @@ import { JobStepCreateWithoutSalaryScalesInput } from './job-step-create-without
 
 @InputType()
 export class JobStepCreateOrConnectWithoutSalaryScalesInput {
+  @Field(() => JobStepWhereUniqueInput, { nullable: false })
+  where!: JobStepWhereUniqueInput;
 
-    @Field(() => JobStepWhereUniqueInput, {nullable:false})
-    where!: JobStepWhereUniqueInput;
-
-    @Field(() => JobStepCreateWithoutSalaryScalesInput, {nullable:false})
-    create!: JobStepCreateWithoutSalaryScalesInput;
+  @Field(() => JobStepCreateWithoutSalaryScalesInput, { nullable: false })
+  create!: JobStepCreateWithoutSalaryScalesInput;
 }

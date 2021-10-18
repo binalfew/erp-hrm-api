@@ -5,10 +5,11 @@ import { SalaryScaleCreateWithoutPositionClassesInput } from './salary-scale-cre
 
 @InputType()
 export class SalaryScaleCreateOrConnectWithoutPositionClassesInput {
+  @Field(() => SalaryScaleWhereUniqueInput, { nullable: false })
+  where!: SalaryScaleWhereUniqueInput;
 
-    @Field(() => SalaryScaleWhereUniqueInput, {nullable:false})
-    where!: SalaryScaleWhereUniqueInput;
-
-    @Field(() => SalaryScaleCreateWithoutPositionClassesInput, {nullable:false})
-    create!: SalaryScaleCreateWithoutPositionClassesInput;
+  @Field(() => SalaryScaleCreateWithoutPositionClassesInput, {
+    nullable: false,
+  })
+  create!: SalaryScaleCreateWithoutPositionClassesInput;
 }

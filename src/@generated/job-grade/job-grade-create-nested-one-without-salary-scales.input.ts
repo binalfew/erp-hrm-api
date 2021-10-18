@@ -6,13 +6,14 @@ import { JobGradeWhereUniqueInput } from './job-grade-where-unique.input';
 
 @InputType()
 export class JobGradeCreateNestedOneWithoutSalaryScalesInput {
+  @Field(() => JobGradeCreateWithoutSalaryScalesInput, { nullable: true })
+  create?: JobGradeCreateWithoutSalaryScalesInput;
 
-    @Field(() => JobGradeCreateWithoutSalaryScalesInput, {nullable:true})
-    create?: JobGradeCreateWithoutSalaryScalesInput;
+  @Field(() => JobGradeCreateOrConnectWithoutSalaryScalesInput, {
+    nullable: true,
+  })
+  connectOrCreate?: JobGradeCreateOrConnectWithoutSalaryScalesInput;
 
-    @Field(() => JobGradeCreateOrConnectWithoutSalaryScalesInput, {nullable:true})
-    connectOrCreate?: JobGradeCreateOrConnectWithoutSalaryScalesInput;
-
-    @Field(() => JobGradeWhereUniqueInput, {nullable:true})
-    connect?: JobGradeWhereUniqueInput;
+  @Field(() => JobGradeWhereUniqueInput, { nullable: true })
+  connect?: JobGradeWhereUniqueInput;
 }

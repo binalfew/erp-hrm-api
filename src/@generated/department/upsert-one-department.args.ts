@@ -6,13 +6,12 @@ import { DepartmentUpdateInput } from './department-update.input';
 
 @ArgsType()
 export class UpsertOneDepartmentArgs {
+  @Field(() => DepartmentWhereUniqueInput, { nullable: false })
+  where!: DepartmentWhereUniqueInput;
 
-    @Field(() => DepartmentWhereUniqueInput, {nullable:false})
-    where!: DepartmentWhereUniqueInput;
+  @Field(() => DepartmentCreateInput, { nullable: false })
+  create!: DepartmentCreateInput;
 
-    @Field(() => DepartmentCreateInput, {nullable:false})
-    create!: DepartmentCreateInput;
-
-    @Field(() => DepartmentUpdateInput, {nullable:false})
-    update!: DepartmentUpdateInput;
+  @Field(() => DepartmentUpdateInput, { nullable: false })
+  update!: DepartmentUpdateInput;
 }

@@ -7,28 +7,31 @@ import { PositionUncheckedCreateNestedManyWithoutDepartmentInput } from '../posi
 
 @InputType()
 export class DepartmentUncheckedCreateWithoutParentInput {
+  @Field(() => Int, { nullable: true })
+  id?: number;
 
-    @Field(() => Int, {nullable:true})
-    id?: number;
+  @Field(() => String, { nullable: false })
+  name!: string;
 
-    @Field(() => String, {nullable:false})
-    name!: string;
+  @Field(() => String, { nullable: false })
+  code!: string;
 
-    @Field(() => String, {nullable:false})
-    code!: string;
+  @Field(() => GraphQLJSON, { nullable: true })
+  locales?: any;
 
-    @Field(() => GraphQLJSON, {nullable:true})
-    locales?: any;
+  @Field(() => Date, { nullable: true })
+  createdAt?: Date | string;
 
-    @Field(() => Date, {nullable:true})
-    createdAt?: Date | string;
+  @Field(() => Date, { nullable: true })
+  updatedAt?: Date | string;
 
-    @Field(() => Date, {nullable:true})
-    updatedAt?: Date | string;
+  @Field(() => DepartmentUncheckedCreateNestedManyWithoutParentInput, {
+    nullable: true,
+  })
+  children?: DepartmentUncheckedCreateNestedManyWithoutParentInput;
 
-    @Field(() => DepartmentUncheckedCreateNestedManyWithoutParentInput, {nullable:true})
-    children?: DepartmentUncheckedCreateNestedManyWithoutParentInput;
-
-    @Field(() => PositionUncheckedCreateNestedManyWithoutDepartmentInput, {nullable:true})
-    positions?: PositionUncheckedCreateNestedManyWithoutDepartmentInput;
+  @Field(() => PositionUncheckedCreateNestedManyWithoutDepartmentInput, {
+    nullable: true,
+  })
+  positions?: PositionUncheckedCreateNestedManyWithoutDepartmentInput;
 }

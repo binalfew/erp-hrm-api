@@ -5,10 +5,13 @@ import { PositionClassCategoryCreateWithoutPositionClassesInput } from './positi
 
 @InputType()
 export class PositionClassCategoryUpsertWithoutPositionClassesInput {
+  @Field(() => PositionClassCategoryUpdateWithoutPositionClassesInput, {
+    nullable: false,
+  })
+  update!: PositionClassCategoryUpdateWithoutPositionClassesInput;
 
-    @Field(() => PositionClassCategoryUpdateWithoutPositionClassesInput, {nullable:false})
-    update!: PositionClassCategoryUpdateWithoutPositionClassesInput;
-
-    @Field(() => PositionClassCategoryCreateWithoutPositionClassesInput, {nullable:false})
-    create!: PositionClassCategoryCreateWithoutPositionClassesInput;
+  @Field(() => PositionClassCategoryCreateWithoutPositionClassesInput, {
+    nullable: false,
+  })
+  create!: PositionClassCategoryCreateWithoutPositionClassesInput;
 }

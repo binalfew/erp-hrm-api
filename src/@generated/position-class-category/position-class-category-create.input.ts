@@ -5,25 +5,26 @@ import { PositionClassCreateNestedManyWithoutPositionClassCategoryInput } from '
 
 @InputType()
 export class PositionClassCategoryCreateInput {
+  @Field(() => String, { nullable: false })
+  name!: string;
 
-    @Field(() => String, {nullable:false})
-    name!: string;
+  @Field(() => String, { nullable: false })
+  code!: string;
 
-    @Field(() => String, {nullable:false})
-    code!: string;
+  @Field(() => GraphQLJSON, { nullable: true })
+  locales?: any;
 
-    @Field(() => GraphQLJSON, {nullable:true})
-    locales?: any;
+  @Field(() => Boolean, { nullable: true })
+  deleted?: boolean;
 
-    @Field(() => Boolean, {nullable:true})
-    deleted?: boolean;
+  @Field(() => Date, { nullable: true })
+  createdAt?: Date | string;
 
-    @Field(() => Date, {nullable:true})
-    createdAt?: Date | string;
+  @Field(() => Date, { nullable: true })
+  updatedAt?: Date | string;
 
-    @Field(() => Date, {nullable:true})
-    updatedAt?: Date | string;
-
-    @Field(() => PositionClassCreateNestedManyWithoutPositionClassCategoryInput, {nullable:true})
-    positionClasses?: PositionClassCreateNestedManyWithoutPositionClassCategoryInput;
+  @Field(() => PositionClassCreateNestedManyWithoutPositionClassCategoryInput, {
+    nullable: true,
+  })
+  positionClasses?: PositionClassCreateNestedManyWithoutPositionClassCategoryInput;
 }

@@ -10,40 +10,39 @@ import { EmployeeListRelationFilter } from '../employee/employee-list-relation-f
 
 @InputType()
 export class GenderWhereInput {
+  @Field(() => [GenderWhereInput], { nullable: true })
+  AND?: Array<GenderWhereInput>;
 
-    @Field(() => [GenderWhereInput], {nullable:true})
-    AND?: Array<GenderWhereInput>;
+  @Field(() => [GenderWhereInput], { nullable: true })
+  OR?: Array<GenderWhereInput>;
 
-    @Field(() => [GenderWhereInput], {nullable:true})
-    OR?: Array<GenderWhereInput>;
+  @Field(() => [GenderWhereInput], { nullable: true })
+  NOT?: Array<GenderWhereInput>;
 
-    @Field(() => [GenderWhereInput], {nullable:true})
-    NOT?: Array<GenderWhereInput>;
+  @Field(() => IntFilter, { nullable: true })
+  id?: IntFilter;
 
-    @Field(() => IntFilter, {nullable:true})
-    id?: IntFilter;
+  @Field(() => StringFilter, { nullable: true })
+  name?: StringFilter;
 
-    @Field(() => StringFilter, {nullable:true})
-    name?: StringFilter;
+  @Field(() => StringFilter, { nullable: true })
+  code?: StringFilter;
 
-    @Field(() => StringFilter, {nullable:true})
-    code?: StringFilter;
+  @Field(() => JsonNullableFilter, { nullable: true })
+  locales?: JsonNullableFilter;
 
-    @Field(() => JsonNullableFilter, {nullable:true})
-    locales?: JsonNullableFilter;
+  @Field(() => BoolFilter, { nullable: true })
+  deleted?: BoolFilter;
 
-    @Field(() => BoolFilter, {nullable:true})
-    deleted?: BoolFilter;
+  @Field(() => DateTimeFilter, { nullable: true })
+  createdAt?: DateTimeFilter;
 
-    @Field(() => DateTimeFilter, {nullable:true})
-    createdAt?: DateTimeFilter;
+  @Field(() => DateTimeFilter, { nullable: true })
+  updatedAt?: DateTimeFilter;
 
-    @Field(() => DateTimeFilter, {nullable:true})
-    updatedAt?: DateTimeFilter;
+  @Field(() => PositionClassListRelationFilter, { nullable: true })
+  positionClasses?: PositionClassListRelationFilter;
 
-    @Field(() => PositionClassListRelationFilter, {nullable:true})
-    positionClasses?: PositionClassListRelationFilter;
-
-    @Field(() => EmployeeListRelationFilter, {nullable:true})
-    employees?: EmployeeListRelationFilter;
+  @Field(() => EmployeeListRelationFilter, { nullable: true })
+  employees?: EmployeeListRelationFilter;
 }

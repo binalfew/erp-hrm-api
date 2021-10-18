@@ -5,10 +5,9 @@ import { JobGradeWhereUniqueInput } from './job-grade-where-unique.input';
 
 @ArgsType()
 export class UpdateOneJobGradeArgs {
+  @Field(() => JobGradeUpdateInput, { nullable: false })
+  data!: JobGradeUpdateInput;
 
-    @Field(() => JobGradeUpdateInput, {nullable:false})
-    data!: JobGradeUpdateInput;
-
-    @Field(() => JobGradeWhereUniqueInput, {nullable:false})
-    where!: JobGradeWhereUniqueInput;
+  @Field(() => JobGradeWhereUniqueInput, { nullable: false })
+  where!: JobGradeWhereUniqueInput;
 }

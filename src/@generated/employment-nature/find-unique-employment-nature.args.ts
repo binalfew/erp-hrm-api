@@ -4,7 +4,6 @@ import { EmploymentNatureWhereUniqueInput } from './employment-nature-where-uniq
 
 @ArgsType()
 export class FindUniqueEmploymentNatureArgs {
-
-    @Field(() => EmploymentNatureWhereUniqueInput, {nullable:false})
-    where!: EmploymentNatureWhereUniqueInput;
+  @Field(() => EmploymentNatureWhereUniqueInput, { nullable: false })
+  where!: EmploymentNatureWhereUniqueInput;
 }

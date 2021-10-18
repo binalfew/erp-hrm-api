@@ -5,10 +5,9 @@ import { DepartmentCreateWithoutChildrenInput } from './department-create-withou
 
 @InputType()
 export class DepartmentUpsertWithoutChildrenInput {
+  @Field(() => DepartmentUpdateWithoutChildrenInput, { nullable: false })
+  update!: DepartmentUpdateWithoutChildrenInput;
 
-    @Field(() => DepartmentUpdateWithoutChildrenInput, {nullable:false})
-    update!: DepartmentUpdateWithoutChildrenInput;
-
-    @Field(() => DepartmentCreateWithoutChildrenInput, {nullable:false})
-    create!: DepartmentCreateWithoutChildrenInput;
+  @Field(() => DepartmentCreateWithoutChildrenInput, { nullable: false })
+  create!: DepartmentCreateWithoutChildrenInput;
 }

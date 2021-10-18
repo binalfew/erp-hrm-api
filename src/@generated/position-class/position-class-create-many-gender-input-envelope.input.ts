@@ -4,10 +4,9 @@ import { PositionClassCreateManyGenderInput } from './position-class-create-many
 
 @InputType()
 export class PositionClassCreateManyGenderInputEnvelope {
+  @Field(() => [PositionClassCreateManyGenderInput], { nullable: false })
+  data!: Array<PositionClassCreateManyGenderInput>;
 
-    @Field(() => [PositionClassCreateManyGenderInput], {nullable:false})
-    data!: Array<PositionClassCreateManyGenderInput>;
-
-    @Field(() => Boolean, {nullable:true})
-    skipDuplicates?: boolean;
+  @Field(() => Boolean, { nullable: true })
+  skipDuplicates?: boolean;
 }

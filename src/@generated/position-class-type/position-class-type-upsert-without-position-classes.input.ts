@@ -5,10 +5,13 @@ import { PositionClassTypeCreateWithoutPositionClassesInput } from './position-c
 
 @InputType()
 export class PositionClassTypeUpsertWithoutPositionClassesInput {
+  @Field(() => PositionClassTypeUpdateWithoutPositionClassesInput, {
+    nullable: false,
+  })
+  update!: PositionClassTypeUpdateWithoutPositionClassesInput;
 
-    @Field(() => PositionClassTypeUpdateWithoutPositionClassesInput, {nullable:false})
-    update!: PositionClassTypeUpdateWithoutPositionClassesInput;
-
-    @Field(() => PositionClassTypeCreateWithoutPositionClassesInput, {nullable:false})
-    create!: PositionClassTypeCreateWithoutPositionClassesInput;
+  @Field(() => PositionClassTypeCreateWithoutPositionClassesInput, {
+    nullable: false,
+  })
+  create!: PositionClassTypeCreateWithoutPositionClassesInput;
 }

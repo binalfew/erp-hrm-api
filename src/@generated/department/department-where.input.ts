@@ -11,43 +11,42 @@ import { PositionListRelationFilter } from '../position/position-list-relation-f
 
 @InputType()
 export class DepartmentWhereInput {
+  @Field(() => [DepartmentWhereInput], { nullable: true })
+  AND?: Array<DepartmentWhereInput>;
 
-    @Field(() => [DepartmentWhereInput], {nullable:true})
-    AND?: Array<DepartmentWhereInput>;
+  @Field(() => [DepartmentWhereInput], { nullable: true })
+  OR?: Array<DepartmentWhereInput>;
 
-    @Field(() => [DepartmentWhereInput], {nullable:true})
-    OR?: Array<DepartmentWhereInput>;
+  @Field(() => [DepartmentWhereInput], { nullable: true })
+  NOT?: Array<DepartmentWhereInput>;
 
-    @Field(() => [DepartmentWhereInput], {nullable:true})
-    NOT?: Array<DepartmentWhereInput>;
+  @Field(() => IntFilter, { nullable: true })
+  id?: IntFilter;
 
-    @Field(() => IntFilter, {nullable:true})
-    id?: IntFilter;
+  @Field(() => StringFilter, { nullable: true })
+  name?: StringFilter;
 
-    @Field(() => StringFilter, {nullable:true})
-    name?: StringFilter;
+  @Field(() => StringFilter, { nullable: true })
+  code?: StringFilter;
 
-    @Field(() => StringFilter, {nullable:true})
-    code?: StringFilter;
+  @Field(() => JsonNullableFilter, { nullable: true })
+  locales?: JsonNullableFilter;
 
-    @Field(() => JsonNullableFilter, {nullable:true})
-    locales?: JsonNullableFilter;
+  @Field(() => IntNullableFilter, { nullable: true })
+  parentId?: IntNullableFilter;
 
-    @Field(() => IntNullableFilter, {nullable:true})
-    parentId?: IntNullableFilter;
+  @Field(() => DepartmentRelationFilter, { nullable: true })
+  parent?: DepartmentRelationFilter;
 
-    @Field(() => DepartmentRelationFilter, {nullable:true})
-    parent?: DepartmentRelationFilter;
+  @Field(() => DepartmentListRelationFilter, { nullable: true })
+  children?: DepartmentListRelationFilter;
 
-    @Field(() => DepartmentListRelationFilter, {nullable:true})
-    children?: DepartmentListRelationFilter;
+  @Field(() => DateTimeFilter, { nullable: true })
+  createdAt?: DateTimeFilter;
 
-    @Field(() => DateTimeFilter, {nullable:true})
-    createdAt?: DateTimeFilter;
+  @Field(() => DateTimeFilter, { nullable: true })
+  updatedAt?: DateTimeFilter;
 
-    @Field(() => DateTimeFilter, {nullable:true})
-    updatedAt?: DateTimeFilter;
-
-    @Field(() => PositionListRelationFilter, {nullable:true})
-    positions?: PositionListRelationFilter;
+  @Field(() => PositionListRelationFilter, { nullable: true })
+  positions?: PositionListRelationFilter;
 }

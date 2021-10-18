@@ -6,13 +6,14 @@ import { GenderWhereUniqueInput } from './gender-where-unique.input';
 
 @InputType()
 export class GenderCreateNestedOneWithoutPositionClassesInput {
+  @Field(() => GenderCreateWithoutPositionClassesInput, { nullable: true })
+  create?: GenderCreateWithoutPositionClassesInput;
 
-    @Field(() => GenderCreateWithoutPositionClassesInput, {nullable:true})
-    create?: GenderCreateWithoutPositionClassesInput;
+  @Field(() => GenderCreateOrConnectWithoutPositionClassesInput, {
+    nullable: true,
+  })
+  connectOrCreate?: GenderCreateOrConnectWithoutPositionClassesInput;
 
-    @Field(() => GenderCreateOrConnectWithoutPositionClassesInput, {nullable:true})
-    connectOrCreate?: GenderCreateOrConnectWithoutPositionClassesInput;
-
-    @Field(() => GenderWhereUniqueInput, {nullable:true})
-    connect?: GenderWhereUniqueInput;
+  @Field(() => GenderWhereUniqueInput, { nullable: true })
+  connect?: GenderWhereUniqueInput;
 }

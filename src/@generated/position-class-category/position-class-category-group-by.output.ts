@@ -10,40 +10,39 @@ import { PositionClassCategoryMaxAggregate } from './position-class-category-max
 
 @ObjectType()
 export class PositionClassCategoryGroupBy {
+  @Field(() => Int, { nullable: false })
+  id!: number;
 
-    @Field(() => Int, {nullable:false})
-    id!: number;
+  @Field(() => String, { nullable: false })
+  name!: string;
 
-    @Field(() => String, {nullable:false})
-    name!: string;
+  @Field(() => String, { nullable: false })
+  code!: string;
 
-    @Field(() => String, {nullable:false})
-    code!: string;
+  @Field(() => GraphQLJSON, { nullable: true })
+  locales?: any;
 
-    @Field(() => GraphQLJSON, {nullable:true})
-    locales?: any;
+  @Field(() => Boolean, { nullable: false })
+  deleted!: boolean;
 
-    @Field(() => Boolean, {nullable:false})
-    deleted!: boolean;
+  @Field(() => Date, { nullable: false })
+  createdAt!: Date | string;
 
-    @Field(() => Date, {nullable:false})
-    createdAt!: Date | string;
+  @Field(() => Date, { nullable: false })
+  updatedAt!: Date | string;
 
-    @Field(() => Date, {nullable:false})
-    updatedAt!: Date | string;
+  @Field(() => PositionClassCategoryCountAggregate, { nullable: true })
+  _count?: PositionClassCategoryCountAggregate;
 
-    @Field(() => PositionClassCategoryCountAggregate, {nullable:true})
-    _count?: PositionClassCategoryCountAggregate;
+  @Field(() => PositionClassCategoryAvgAggregate, { nullable: true })
+  _avg?: PositionClassCategoryAvgAggregate;
 
-    @Field(() => PositionClassCategoryAvgAggregate, {nullable:true})
-    _avg?: PositionClassCategoryAvgAggregate;
+  @Field(() => PositionClassCategorySumAggregate, { nullable: true })
+  _sum?: PositionClassCategorySumAggregate;
 
-    @Field(() => PositionClassCategorySumAggregate, {nullable:true})
-    _sum?: PositionClassCategorySumAggregate;
+  @Field(() => PositionClassCategoryMinAggregate, { nullable: true })
+  _min?: PositionClassCategoryMinAggregate;
 
-    @Field(() => PositionClassCategoryMinAggregate, {nullable:true})
-    _min?: PositionClassCategoryMinAggregate;
-
-    @Field(() => PositionClassCategoryMaxAggregate, {nullable:true})
-    _max?: PositionClassCategoryMaxAggregate;
+  @Field(() => PositionClassCategoryMaxAggregate, { nullable: true })
+  _max?: PositionClassCategoryMaxAggregate;
 }

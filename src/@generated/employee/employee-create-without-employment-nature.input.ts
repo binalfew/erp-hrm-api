@@ -9,76 +9,81 @@ import { EmploymentTypeCreateNestedOneWithoutEmployeesInput } from '../employmen
 
 @InputType()
 export class EmployeeCreateWithoutEmploymentNatureInput {
+  @Field(() => GraphQLJSON, { nullable: false })
+  firstName!: any;
 
-    @Field(() => GraphQLJSON, {nullable:false})
-    firstName!: any;
+  @Field(() => GraphQLJSON, { nullable: false })
+  lastName!: any;
 
-    @Field(() => GraphQLJSON, {nullable:false})
-    lastName!: any;
+  @Field(() => GraphQLJSON, { nullable: false })
+  grandfatherName!: any;
 
-    @Field(() => GraphQLJSON, {nullable:false})
-    grandfatherName!: any;
+  @Field(() => GraphQLJSON, { nullable: true })
+  locales?: any;
 
-    @Field(() => GraphQLJSON, {nullable:true})
-    locales?: any;
+  @Field(() => Date, { nullable: true })
+  dateOfBirth?: Date | string;
 
-    @Field(() => Date, {nullable:true})
-    dateOfBirth?: Date | string;
+  @Field(() => String, { nullable: false })
+  placeOfBirth!: string;
 
-    @Field(() => String, {nullable:false})
-    placeOfBirth!: string;
+  @Field(() => String, { nullable: false })
+  countryOfBirth!: string;
 
-    @Field(() => String, {nullable:false})
-    countryOfBirth!: string;
+  @Field(() => String, { nullable: false })
+  idNumber!: string;
 
-    @Field(() => String, {nullable:false})
-    idNumber!: string;
+  @Field(() => String, { nullable: false })
+  passportNumber!: string;
 
-    @Field(() => String, {nullable:false})
-    passportNumber!: string;
+  @Field(() => String, { nullable: false })
+  email!: string;
 
-    @Field(() => String, {nullable:false})
-    email!: string;
+  @Field(() => String, { nullable: false })
+  Phone!: string;
 
-    @Field(() => String, {nullable:false})
-    Phone!: string;
+  @Field(() => String, { nullable: false })
+  emergencyContact!: string;
 
-    @Field(() => String, {nullable:false})
-    emergencyContact!: string;
+  @Field(() => String, { nullable: false })
+  emergencyPhone!: string;
 
-    @Field(() => String, {nullable:false})
-    emergencyPhone!: string;
+  @Field(() => Int, { nullable: false })
+  numberOfChildren!: number;
 
-    @Field(() => Int, {nullable:false})
-    numberOfChildren!: number;
+  @Field(() => Date, { nullable: true })
+  employmentDate?: Date | string;
 
-    @Field(() => Date, {nullable:true})
-    employmentDate?: Date | string;
+  @Field(() => Date, { nullable: true })
+  probationDate?: Date | string;
 
-    @Field(() => Date, {nullable:true})
-    probationDate?: Date | string;
+  @Field(() => Date, { nullable: true })
+  retirementDate?: Date | string;
 
-    @Field(() => Date, {nullable:true})
-    retirementDate?: Date | string;
+  @Field(() => Boolean, { nullable: true })
+  deleted?: boolean;
 
-    @Field(() => Boolean, {nullable:true})
-    deleted?: boolean;
+  @Field(() => Date, { nullable: true })
+  createdAt?: Date | string;
 
-    @Field(() => Date, {nullable:true})
-    createdAt?: Date | string;
+  @Field(() => Date, { nullable: true })
+  updatedAt?: Date | string;
 
-    @Field(() => Date, {nullable:true})
-    updatedAt?: Date | string;
+  @Field(() => GenderCreateNestedOneWithoutEmployeesInput, { nullable: true })
+  gender?: GenderCreateNestedOneWithoutEmployeesInput;
 
-    @Field(() => GenderCreateNestedOneWithoutEmployeesInput, {nullable:true})
-    gender?: GenderCreateNestedOneWithoutEmployeesInput;
+  @Field(() => NationalityCreateNestedOneWithoutEmployeesInput, {
+    nullable: true,
+  })
+  nationality?: NationalityCreateNestedOneWithoutEmployeesInput;
 
-    @Field(() => NationalityCreateNestedOneWithoutEmployeesInput, {nullable:true})
-    nationality?: NationalityCreateNestedOneWithoutEmployeesInput;
+  @Field(() => MaritalStatusCreateNestedOneWithoutEmployeesInput, {
+    nullable: true,
+  })
+  maritalStatus?: MaritalStatusCreateNestedOneWithoutEmployeesInput;
 
-    @Field(() => MaritalStatusCreateNestedOneWithoutEmployeesInput, {nullable:true})
-    maritalStatus?: MaritalStatusCreateNestedOneWithoutEmployeesInput;
-
-    @Field(() => EmploymentTypeCreateNestedOneWithoutEmployeesInput, {nullable:true})
-    employmentType?: EmploymentTypeCreateNestedOneWithoutEmployeesInput;
+  @Field(() => EmploymentTypeCreateNestedOneWithoutEmployeesInput, {
+    nullable: true,
+  })
+  employmentType?: EmploymentTypeCreateNestedOneWithoutEmployeesInput;
 }

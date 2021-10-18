@@ -5,10 +5,9 @@ import { PositionClassCategoryWhereUniqueInput } from './position-class-category
 
 @ArgsType()
 export class UpdateOnePositionClassCategoryArgs {
+  @Field(() => PositionClassCategoryUpdateInput, { nullable: false })
+  data!: PositionClassCategoryUpdateInput;
 
-    @Field(() => PositionClassCategoryUpdateInput, {nullable:false})
-    data!: PositionClassCategoryUpdateInput;
-
-    @Field(() => PositionClassCategoryWhereUniqueInput, {nullable:false})
-    where!: PositionClassCategoryWhereUniqueInput;
+  @Field(() => PositionClassCategoryWhereUniqueInput, { nullable: false })
+  where!: PositionClassCategoryWhereUniqueInput;
 }

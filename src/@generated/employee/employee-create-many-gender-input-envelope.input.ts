@@ -4,10 +4,9 @@ import { EmployeeCreateManyGenderInput } from './employee-create-many-gender.inp
 
 @InputType()
 export class EmployeeCreateManyGenderInputEnvelope {
+  @Field(() => [EmployeeCreateManyGenderInput], { nullable: false })
+  data!: Array<EmployeeCreateManyGenderInput>;
 
-    @Field(() => [EmployeeCreateManyGenderInput], {nullable:false})
-    data!: Array<EmployeeCreateManyGenderInput>;
-
-    @Field(() => Boolean, {nullable:true})
-    skipDuplicates?: boolean;
+  @Field(() => Boolean, { nullable: true })
+  skipDuplicates?: boolean;
 }

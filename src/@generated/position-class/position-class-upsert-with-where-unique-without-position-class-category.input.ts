@@ -6,13 +6,16 @@ import { PositionClassCreateWithoutPositionClassCategoryInput } from './position
 
 @InputType()
 export class PositionClassUpsertWithWhereUniqueWithoutPositionClassCategoryInput {
+  @Field(() => PositionClassWhereUniqueInput, { nullable: false })
+  where!: PositionClassWhereUniqueInput;
 
-    @Field(() => PositionClassWhereUniqueInput, {nullable:false})
-    where!: PositionClassWhereUniqueInput;
+  @Field(() => PositionClassUpdateWithoutPositionClassCategoryInput, {
+    nullable: false,
+  })
+  update!: PositionClassUpdateWithoutPositionClassCategoryInput;
 
-    @Field(() => PositionClassUpdateWithoutPositionClassCategoryInput, {nullable:false})
-    update!: PositionClassUpdateWithoutPositionClassCategoryInput;
-
-    @Field(() => PositionClassCreateWithoutPositionClassCategoryInput, {nullable:false})
-    create!: PositionClassCreateWithoutPositionClassCategoryInput;
+  @Field(() => PositionClassCreateWithoutPositionClassCategoryInput, {
+    nullable: false,
+  })
+  create!: PositionClassCreateWithoutPositionClassCategoryInput;
 }

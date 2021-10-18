@@ -10,40 +10,39 @@ import { DepartmentMaxAggregate } from './department-max-aggregate.output';
 
 @ObjectType()
 export class DepartmentGroupBy {
+  @Field(() => Int, { nullable: false })
+  id!: number;
 
-    @Field(() => Int, {nullable:false})
-    id!: number;
+  @Field(() => String, { nullable: false })
+  name!: string;
 
-    @Field(() => String, {nullable:false})
-    name!: string;
+  @Field(() => String, { nullable: false })
+  code!: string;
 
-    @Field(() => String, {nullable:false})
-    code!: string;
+  @Field(() => GraphQLJSON, { nullable: true })
+  locales?: any;
 
-    @Field(() => GraphQLJSON, {nullable:true})
-    locales?: any;
+  @Field(() => Int, { nullable: true })
+  parentId?: number;
 
-    @Field(() => Int, {nullable:true})
-    parentId?: number;
+  @Field(() => Date, { nullable: false })
+  createdAt!: Date | string;
 
-    @Field(() => Date, {nullable:false})
-    createdAt!: Date | string;
+  @Field(() => Date, { nullable: false })
+  updatedAt!: Date | string;
 
-    @Field(() => Date, {nullable:false})
-    updatedAt!: Date | string;
+  @Field(() => DepartmentCountAggregate, { nullable: true })
+  _count?: DepartmentCountAggregate;
 
-    @Field(() => DepartmentCountAggregate, {nullable:true})
-    _count?: DepartmentCountAggregate;
+  @Field(() => DepartmentAvgAggregate, { nullable: true })
+  _avg?: DepartmentAvgAggregate;
 
-    @Field(() => DepartmentAvgAggregate, {nullable:true})
-    _avg?: DepartmentAvgAggregate;
+  @Field(() => DepartmentSumAggregate, { nullable: true })
+  _sum?: DepartmentSumAggregate;
 
-    @Field(() => DepartmentSumAggregate, {nullable:true})
-    _sum?: DepartmentSumAggregate;
+  @Field(() => DepartmentMinAggregate, { nullable: true })
+  _min?: DepartmentMinAggregate;
 
-    @Field(() => DepartmentMinAggregate, {nullable:true})
-    _min?: DepartmentMinAggregate;
-
-    @Field(() => DepartmentMaxAggregate, {nullable:true})
-    _max?: DepartmentMaxAggregate;
+  @Field(() => DepartmentMaxAggregate, { nullable: true })
+  _max?: DepartmentMaxAggregate;
 }

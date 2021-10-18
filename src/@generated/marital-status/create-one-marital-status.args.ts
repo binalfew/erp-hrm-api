@@ -4,7 +4,6 @@ import { MaritalStatusCreateInput } from './marital-status-create.input';
 
 @ArgsType()
 export class CreateOneMaritalStatusArgs {
-
-    @Field(() => MaritalStatusCreateInput, {nullable:false})
-    data!: MaritalStatusCreateInput;
+  @Field(() => MaritalStatusCreateInput, { nullable: false })
+  data!: MaritalStatusCreateInput;
 }

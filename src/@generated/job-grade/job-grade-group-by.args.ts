@@ -13,37 +13,36 @@ import { JobGradeMaxAggregateInput } from './job-grade-max-aggregate.input';
 
 @ArgsType()
 export class JobGradeGroupByArgs {
+  @Field(() => JobGradeWhereInput, { nullable: true })
+  where?: JobGradeWhereInput;
 
-    @Field(() => JobGradeWhereInput, {nullable:true})
-    where?: JobGradeWhereInput;
+  @Field(() => [JobGradeOrderByWithAggregationInput], { nullable: true })
+  orderBy?: Array<JobGradeOrderByWithAggregationInput>;
 
-    @Field(() => [JobGradeOrderByWithAggregationInput], {nullable:true})
-    orderBy?: Array<JobGradeOrderByWithAggregationInput>;
+  @Field(() => [JobGradeScalarFieldEnum], { nullable: false })
+  by!: Array<keyof typeof JobGradeScalarFieldEnum>;
 
-    @Field(() => [JobGradeScalarFieldEnum], {nullable:false})
-    by!: Array<keyof typeof JobGradeScalarFieldEnum>;
+  @Field(() => JobGradeScalarWhereWithAggregatesInput, { nullable: true })
+  having?: JobGradeScalarWhereWithAggregatesInput;
 
-    @Field(() => JobGradeScalarWhereWithAggregatesInput, {nullable:true})
-    having?: JobGradeScalarWhereWithAggregatesInput;
+  @Field(() => Int, { nullable: true })
+  take?: number;
 
-    @Field(() => Int, {nullable:true})
-    take?: number;
+  @Field(() => Int, { nullable: true })
+  skip?: number;
 
-    @Field(() => Int, {nullable:true})
-    skip?: number;
+  @Field(() => JobGradeCountAggregateInput, { nullable: true })
+  _count?: JobGradeCountAggregateInput;
 
-    @Field(() => JobGradeCountAggregateInput, {nullable:true})
-    _count?: JobGradeCountAggregateInput;
+  @Field(() => JobGradeAvgAggregateInput, { nullable: true })
+  _avg?: JobGradeAvgAggregateInput;
 
-    @Field(() => JobGradeAvgAggregateInput, {nullable:true})
-    _avg?: JobGradeAvgAggregateInput;
+  @Field(() => JobGradeSumAggregateInput, { nullable: true })
+  _sum?: JobGradeSumAggregateInput;
 
-    @Field(() => JobGradeSumAggregateInput, {nullable:true})
-    _sum?: JobGradeSumAggregateInput;
+  @Field(() => JobGradeMinAggregateInput, { nullable: true })
+  _min?: JobGradeMinAggregateInput;
 
-    @Field(() => JobGradeMinAggregateInput, {nullable:true})
-    _min?: JobGradeMinAggregateInput;
-
-    @Field(() => JobGradeMaxAggregateInput, {nullable:true})
-    _max?: JobGradeMaxAggregateInput;
+  @Field(() => JobGradeMaxAggregateInput, { nullable: true })
+  _max?: JobGradeMaxAggregateInput;
 }

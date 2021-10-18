@@ -5,10 +5,9 @@ import { EmploymentTypeWhereInput } from './employment-type-where.input';
 
 @ArgsType()
 export class UpdateManyEmploymentTypeArgs {
+  @Field(() => EmploymentTypeUpdateManyMutationInput, { nullable: false })
+  data!: EmploymentTypeUpdateManyMutationInput;
 
-    @Field(() => EmploymentTypeUpdateManyMutationInput, {nullable:false})
-    data!: EmploymentTypeUpdateManyMutationInput;
-
-    @Field(() => EmploymentTypeWhereInput, {nullable:true})
-    where?: EmploymentTypeWhereInput;
+  @Field(() => EmploymentTypeWhereInput, { nullable: true })
+  where?: EmploymentTypeWhereInput;
 }

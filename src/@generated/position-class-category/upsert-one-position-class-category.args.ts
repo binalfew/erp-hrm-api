@@ -6,13 +6,12 @@ import { PositionClassCategoryUpdateInput } from './position-class-category-upda
 
 @ArgsType()
 export class UpsertOnePositionClassCategoryArgs {
+  @Field(() => PositionClassCategoryWhereUniqueInput, { nullable: false })
+  where!: PositionClassCategoryWhereUniqueInput;
 
-    @Field(() => PositionClassCategoryWhereUniqueInput, {nullable:false})
-    where!: PositionClassCategoryWhereUniqueInput;
+  @Field(() => PositionClassCategoryCreateInput, { nullable: false })
+  create!: PositionClassCategoryCreateInput;
 
-    @Field(() => PositionClassCategoryCreateInput, {nullable:false})
-    create!: PositionClassCategoryCreateInput;
-
-    @Field(() => PositionClassCategoryUpdateInput, {nullable:false})
-    update!: PositionClassCategoryUpdateInput;
+  @Field(() => PositionClassCategoryUpdateInput, { nullable: false })
+  update!: PositionClassCategoryUpdateInput;
 }

@@ -4,7 +4,6 @@ import { MaritalStatusWhereUniqueInput } from './marital-status-where-unique.inp
 
 @ArgsType()
 export class DeleteOneMaritalStatusArgs {
-
-    @Field(() => MaritalStatusWhereUniqueInput, {nullable:false})
-    where!: MaritalStatusWhereUniqueInput;
+  @Field(() => MaritalStatusWhereUniqueInput, { nullable: false })
+  where!: MaritalStatusWhereUniqueInput;
 }

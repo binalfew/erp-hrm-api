@@ -11,37 +11,42 @@ import { EmployeeScalarWhereInput } from './employee-scalar-where.input';
 
 @InputType()
 export class EmployeeUncheckedUpdateManyWithoutGenderInput {
+  @Field(() => [EmployeeCreateWithoutGenderInput], { nullable: true })
+  create?: Array<EmployeeCreateWithoutGenderInput>;
 
-    @Field(() => [EmployeeCreateWithoutGenderInput], {nullable:true})
-    create?: Array<EmployeeCreateWithoutGenderInput>;
+  @Field(() => [EmployeeCreateOrConnectWithoutGenderInput], { nullable: true })
+  connectOrCreate?: Array<EmployeeCreateOrConnectWithoutGenderInput>;
 
-    @Field(() => [EmployeeCreateOrConnectWithoutGenderInput], {nullable:true})
-    connectOrCreate?: Array<EmployeeCreateOrConnectWithoutGenderInput>;
+  @Field(() => [EmployeeUpsertWithWhereUniqueWithoutGenderInput], {
+    nullable: true,
+  })
+  upsert?: Array<EmployeeUpsertWithWhereUniqueWithoutGenderInput>;
 
-    @Field(() => [EmployeeUpsertWithWhereUniqueWithoutGenderInput], {nullable:true})
-    upsert?: Array<EmployeeUpsertWithWhereUniqueWithoutGenderInput>;
+  @Field(() => EmployeeCreateManyGenderInputEnvelope, { nullable: true })
+  createMany?: EmployeeCreateManyGenderInputEnvelope;
 
-    @Field(() => EmployeeCreateManyGenderInputEnvelope, {nullable:true})
-    createMany?: EmployeeCreateManyGenderInputEnvelope;
+  @Field(() => [EmployeeWhereUniqueInput], { nullable: true })
+  connect?: Array<EmployeeWhereUniqueInput>;
 
-    @Field(() => [EmployeeWhereUniqueInput], {nullable:true})
-    connect?: Array<EmployeeWhereUniqueInput>;
+  @Field(() => [EmployeeWhereUniqueInput], { nullable: true })
+  set?: Array<EmployeeWhereUniqueInput>;
 
-    @Field(() => [EmployeeWhereUniqueInput], {nullable:true})
-    set?: Array<EmployeeWhereUniqueInput>;
+  @Field(() => [EmployeeWhereUniqueInput], { nullable: true })
+  disconnect?: Array<EmployeeWhereUniqueInput>;
 
-    @Field(() => [EmployeeWhereUniqueInput], {nullable:true})
-    disconnect?: Array<EmployeeWhereUniqueInput>;
+  @Field(() => [EmployeeWhereUniqueInput], { nullable: true })
+  delete?: Array<EmployeeWhereUniqueInput>;
 
-    @Field(() => [EmployeeWhereUniqueInput], {nullable:true})
-    delete?: Array<EmployeeWhereUniqueInput>;
+  @Field(() => [EmployeeUpdateWithWhereUniqueWithoutGenderInput], {
+    nullable: true,
+  })
+  update?: Array<EmployeeUpdateWithWhereUniqueWithoutGenderInput>;
 
-    @Field(() => [EmployeeUpdateWithWhereUniqueWithoutGenderInput], {nullable:true})
-    update?: Array<EmployeeUpdateWithWhereUniqueWithoutGenderInput>;
+  @Field(() => [EmployeeUpdateManyWithWhereWithoutGenderInput], {
+    nullable: true,
+  })
+  updateMany?: Array<EmployeeUpdateManyWithWhereWithoutGenderInput>;
 
-    @Field(() => [EmployeeUpdateManyWithWhereWithoutGenderInput], {nullable:true})
-    updateMany?: Array<EmployeeUpdateManyWithWhereWithoutGenderInput>;
-
-    @Field(() => [EmployeeScalarWhereInput], {nullable:true})
-    deleteMany?: Array<EmployeeScalarWhereInput>;
+  @Field(() => [EmployeeScalarWhereInput], { nullable: true })
+  deleteMany?: Array<EmployeeScalarWhereInput>;
 }

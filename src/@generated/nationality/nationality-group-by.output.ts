@@ -10,40 +10,39 @@ import { NationalityMaxAggregate } from './nationality-max-aggregate.output';
 
 @ObjectType()
 export class NationalityGroupBy {
+  @Field(() => Int, { nullable: false })
+  id!: number;
 
-    @Field(() => Int, {nullable:false})
-    id!: number;
+  @Field(() => String, { nullable: false })
+  name!: string;
 
-    @Field(() => String, {nullable:false})
-    name!: string;
+  @Field(() => String, { nullable: false })
+  code!: string;
 
-    @Field(() => String, {nullable:false})
-    code!: string;
+  @Field(() => GraphQLJSON, { nullable: true })
+  locales?: any;
 
-    @Field(() => GraphQLJSON, {nullable:true})
-    locales?: any;
+  @Field(() => Boolean, { nullable: false })
+  deleted!: boolean;
 
-    @Field(() => Boolean, {nullable:false})
-    deleted!: boolean;
+  @Field(() => Date, { nullable: false })
+  createdAt!: Date | string;
 
-    @Field(() => Date, {nullable:false})
-    createdAt!: Date | string;
+  @Field(() => Date, { nullable: false })
+  updatedAt!: Date | string;
 
-    @Field(() => Date, {nullable:false})
-    updatedAt!: Date | string;
+  @Field(() => NationalityCountAggregate, { nullable: true })
+  _count?: NationalityCountAggregate;
 
-    @Field(() => NationalityCountAggregate, {nullable:true})
-    _count?: NationalityCountAggregate;
+  @Field(() => NationalityAvgAggregate, { nullable: true })
+  _avg?: NationalityAvgAggregate;
 
-    @Field(() => NationalityAvgAggregate, {nullable:true})
-    _avg?: NationalityAvgAggregate;
+  @Field(() => NationalitySumAggregate, { nullable: true })
+  _sum?: NationalitySumAggregate;
 
-    @Field(() => NationalitySumAggregate, {nullable:true})
-    _sum?: NationalitySumAggregate;
+  @Field(() => NationalityMinAggregate, { nullable: true })
+  _min?: NationalityMinAggregate;
 
-    @Field(() => NationalityMinAggregate, {nullable:true})
-    _min?: NationalityMinAggregate;
-
-    @Field(() => NationalityMaxAggregate, {nullable:true})
-    _max?: NationalityMaxAggregate;
+  @Field(() => NationalityMaxAggregate, { nullable: true })
+  _max?: NationalityMaxAggregate;
 }

@@ -4,10 +4,9 @@ import { PositionClassCreateManySalaryScaleInput } from './position-class-create
 
 @InputType()
 export class PositionClassCreateManySalaryScaleInputEnvelope {
+  @Field(() => [PositionClassCreateManySalaryScaleInput], { nullable: false })
+  data!: Array<PositionClassCreateManySalaryScaleInput>;
 
-    @Field(() => [PositionClassCreateManySalaryScaleInput], {nullable:false})
-    data!: Array<PositionClassCreateManySalaryScaleInput>;
-
-    @Field(() => Boolean, {nullable:true})
-    skipDuplicates?: boolean;
+  @Field(() => Boolean, { nullable: true })
+  skipDuplicates?: boolean;
 }

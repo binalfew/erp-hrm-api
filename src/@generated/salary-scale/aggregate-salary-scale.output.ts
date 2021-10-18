@@ -8,19 +8,18 @@ import { SalaryScaleMaxAggregate } from './salary-scale-max-aggregate.output';
 
 @ObjectType()
 export class AggregateSalaryScale {
+  @Field(() => SalaryScaleCountAggregate, { nullable: true })
+  _count?: SalaryScaleCountAggregate;
 
-    @Field(() => SalaryScaleCountAggregate, {nullable:true})
-    _count?: SalaryScaleCountAggregate;
+  @Field(() => SalaryScaleAvgAggregate, { nullable: true })
+  _avg?: SalaryScaleAvgAggregate;
 
-    @Field(() => SalaryScaleAvgAggregate, {nullable:true})
-    _avg?: SalaryScaleAvgAggregate;
+  @Field(() => SalaryScaleSumAggregate, { nullable: true })
+  _sum?: SalaryScaleSumAggregate;
 
-    @Field(() => SalaryScaleSumAggregate, {nullable:true})
-    _sum?: SalaryScaleSumAggregate;
+  @Field(() => SalaryScaleMinAggregate, { nullable: true })
+  _min?: SalaryScaleMinAggregate;
 
-    @Field(() => SalaryScaleMinAggregate, {nullable:true})
-    _min?: SalaryScaleMinAggregate;
-
-    @Field(() => SalaryScaleMaxAggregate, {nullable:true})
-    _max?: SalaryScaleMaxAggregate;
+  @Field(() => SalaryScaleMaxAggregate, { nullable: true })
+  _max?: SalaryScaleMaxAggregate;
 }

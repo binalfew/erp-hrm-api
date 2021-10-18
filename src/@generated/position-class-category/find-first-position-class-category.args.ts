@@ -8,22 +8,23 @@ import { PositionClassCategoryScalarFieldEnum } from './position-class-category-
 
 @ArgsType()
 export class FindFirstPositionClassCategoryArgs {
+  @Field(() => PositionClassCategoryWhereInput, { nullable: true })
+  where?: PositionClassCategoryWhereInput;
 
-    @Field(() => PositionClassCategoryWhereInput, {nullable:true})
-    where?: PositionClassCategoryWhereInput;
+  @Field(() => [PositionClassCategoryOrderByWithRelationInput], {
+    nullable: true,
+  })
+  orderBy?: Array<PositionClassCategoryOrderByWithRelationInput>;
 
-    @Field(() => [PositionClassCategoryOrderByWithRelationInput], {nullable:true})
-    orderBy?: Array<PositionClassCategoryOrderByWithRelationInput>;
+  @Field(() => PositionClassCategoryWhereUniqueInput, { nullable: true })
+  cursor?: PositionClassCategoryWhereUniqueInput;
 
-    @Field(() => PositionClassCategoryWhereUniqueInput, {nullable:true})
-    cursor?: PositionClassCategoryWhereUniqueInput;
+  @Field(() => Int, { nullable: true })
+  take?: number;
 
-    @Field(() => Int, {nullable:true})
-    take?: number;
+  @Field(() => Int, { nullable: true })
+  skip?: number;
 
-    @Field(() => Int, {nullable:true})
-    skip?: number;
-
-    @Field(() => [PositionClassCategoryScalarFieldEnum], {nullable:true})
-    distinct?: Array<keyof typeof PositionClassCategoryScalarFieldEnum>;
+  @Field(() => [PositionClassCategoryScalarFieldEnum], { nullable: true })
+  distinct?: Array<keyof typeof PositionClassCategoryScalarFieldEnum>;
 }

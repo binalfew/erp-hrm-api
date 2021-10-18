@@ -4,10 +4,9 @@ import { EmployeeCreateManyEmploymentNatureInput } from './employee-create-many-
 
 @InputType()
 export class EmployeeCreateManyEmploymentNatureInputEnvelope {
+  @Field(() => [EmployeeCreateManyEmploymentNatureInput], { nullable: false })
+  data!: Array<EmployeeCreateManyEmploymentNatureInput>;
 
-    @Field(() => [EmployeeCreateManyEmploymentNatureInput], {nullable:false})
-    data!: Array<EmployeeCreateManyEmploymentNatureInput>;
-
-    @Field(() => Boolean, {nullable:true})
-    skipDuplicates?: boolean;
+  @Field(() => Boolean, { nullable: true })
+  skipDuplicates?: boolean;
 }

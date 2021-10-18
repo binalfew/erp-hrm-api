@@ -5,10 +5,9 @@ import { EmployeeCreateWithoutGenderInput } from './employee-create-without-gend
 
 @InputType()
 export class EmployeeCreateOrConnectWithoutGenderInput {
+  @Field(() => EmployeeWhereUniqueInput, { nullable: false })
+  where!: EmployeeWhereUniqueInput;
 
-    @Field(() => EmployeeWhereUniqueInput, {nullable:false})
-    where!: EmployeeWhereUniqueInput;
-
-    @Field(() => EmployeeCreateWithoutGenderInput, {nullable:false})
-    create!: EmployeeCreateWithoutGenderInput;
+  @Field(() => EmployeeCreateWithoutGenderInput, { nullable: false })
+  create!: EmployeeCreateWithoutGenderInput;
 }

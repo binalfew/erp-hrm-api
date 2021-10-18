@@ -7,16 +7,17 @@ import { SalaryScaleWhereUniqueInput } from './salary-scale-where-unique.input';
 
 @InputType()
 export class SalaryScaleUncheckedCreateNestedManyWithoutJobGradeInput {
+  @Field(() => [SalaryScaleCreateWithoutJobGradeInput], { nullable: true })
+  create?: Array<SalaryScaleCreateWithoutJobGradeInput>;
 
-    @Field(() => [SalaryScaleCreateWithoutJobGradeInput], {nullable:true})
-    create?: Array<SalaryScaleCreateWithoutJobGradeInput>;
+  @Field(() => [SalaryScaleCreateOrConnectWithoutJobGradeInput], {
+    nullable: true,
+  })
+  connectOrCreate?: Array<SalaryScaleCreateOrConnectWithoutJobGradeInput>;
 
-    @Field(() => [SalaryScaleCreateOrConnectWithoutJobGradeInput], {nullable:true})
-    connectOrCreate?: Array<SalaryScaleCreateOrConnectWithoutJobGradeInput>;
+  @Field(() => SalaryScaleCreateManyJobGradeInputEnvelope, { nullable: true })
+  createMany?: SalaryScaleCreateManyJobGradeInputEnvelope;
 
-    @Field(() => SalaryScaleCreateManyJobGradeInputEnvelope, {nullable:true})
-    createMany?: SalaryScaleCreateManyJobGradeInputEnvelope;
-
-    @Field(() => [SalaryScaleWhereUniqueInput], {nullable:true})
-    connect?: Array<SalaryScaleWhereUniqueInput>;
+  @Field(() => [SalaryScaleWhereUniqueInput], { nullable: true })
+  connect?: Array<SalaryScaleWhereUniqueInput>;
 }

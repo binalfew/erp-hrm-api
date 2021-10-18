@@ -8,19 +8,18 @@ import { JobGradeMaxAggregate } from './job-grade-max-aggregate.output';
 
 @ObjectType()
 export class AggregateJobGrade {
+  @Field(() => JobGradeCountAggregate, { nullable: true })
+  _count?: JobGradeCountAggregate;
 
-    @Field(() => JobGradeCountAggregate, {nullable:true})
-    _count?: JobGradeCountAggregate;
+  @Field(() => JobGradeAvgAggregate, { nullable: true })
+  _avg?: JobGradeAvgAggregate;
 
-    @Field(() => JobGradeAvgAggregate, {nullable:true})
-    _avg?: JobGradeAvgAggregate;
+  @Field(() => JobGradeSumAggregate, { nullable: true })
+  _sum?: JobGradeSumAggregate;
 
-    @Field(() => JobGradeSumAggregate, {nullable:true})
-    _sum?: JobGradeSumAggregate;
+  @Field(() => JobGradeMinAggregate, { nullable: true })
+  _min?: JobGradeMinAggregate;
 
-    @Field(() => JobGradeMinAggregate, {nullable:true})
-    _min?: JobGradeMinAggregate;
-
-    @Field(() => JobGradeMaxAggregate, {nullable:true})
-    _max?: JobGradeMaxAggregate;
+  @Field(() => JobGradeMaxAggregate, { nullable: true })
+  _max?: JobGradeMaxAggregate;
 }

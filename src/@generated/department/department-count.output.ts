@@ -4,10 +4,9 @@ import { Int } from '@nestjs/graphql';
 
 @ObjectType()
 export class DepartmentCount {
+  @Field(() => Int, { nullable: false })
+  children!: number;
 
-    @Field(() => Int, {nullable:false})
-    children!: number;
-
-    @Field(() => Int, {nullable:false})
-    positions!: number;
+  @Field(() => Int, { nullable: false })
+  positions!: number;
 }

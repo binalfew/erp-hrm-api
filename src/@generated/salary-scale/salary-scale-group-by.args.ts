@@ -13,37 +13,36 @@ import { SalaryScaleMaxAggregateInput } from './salary-scale-max-aggregate.input
 
 @ArgsType()
 export class SalaryScaleGroupByArgs {
+  @Field(() => SalaryScaleWhereInput, { nullable: true })
+  where?: SalaryScaleWhereInput;
 
-    @Field(() => SalaryScaleWhereInput, {nullable:true})
-    where?: SalaryScaleWhereInput;
+  @Field(() => [SalaryScaleOrderByWithAggregationInput], { nullable: true })
+  orderBy?: Array<SalaryScaleOrderByWithAggregationInput>;
 
-    @Field(() => [SalaryScaleOrderByWithAggregationInput], {nullable:true})
-    orderBy?: Array<SalaryScaleOrderByWithAggregationInput>;
+  @Field(() => [SalaryScaleScalarFieldEnum], { nullable: false })
+  by!: Array<keyof typeof SalaryScaleScalarFieldEnum>;
 
-    @Field(() => [SalaryScaleScalarFieldEnum], {nullable:false})
-    by!: Array<keyof typeof SalaryScaleScalarFieldEnum>;
+  @Field(() => SalaryScaleScalarWhereWithAggregatesInput, { nullable: true })
+  having?: SalaryScaleScalarWhereWithAggregatesInput;
 
-    @Field(() => SalaryScaleScalarWhereWithAggregatesInput, {nullable:true})
-    having?: SalaryScaleScalarWhereWithAggregatesInput;
+  @Field(() => Int, { nullable: true })
+  take?: number;
 
-    @Field(() => Int, {nullable:true})
-    take?: number;
+  @Field(() => Int, { nullable: true })
+  skip?: number;
 
-    @Field(() => Int, {nullable:true})
-    skip?: number;
+  @Field(() => SalaryScaleCountAggregateInput, { nullable: true })
+  _count?: SalaryScaleCountAggregateInput;
 
-    @Field(() => SalaryScaleCountAggregateInput, {nullable:true})
-    _count?: SalaryScaleCountAggregateInput;
+  @Field(() => SalaryScaleAvgAggregateInput, { nullable: true })
+  _avg?: SalaryScaleAvgAggregateInput;
 
-    @Field(() => SalaryScaleAvgAggregateInput, {nullable:true})
-    _avg?: SalaryScaleAvgAggregateInput;
+  @Field(() => SalaryScaleSumAggregateInput, { nullable: true })
+  _sum?: SalaryScaleSumAggregateInput;
 
-    @Field(() => SalaryScaleSumAggregateInput, {nullable:true})
-    _sum?: SalaryScaleSumAggregateInput;
+  @Field(() => SalaryScaleMinAggregateInput, { nullable: true })
+  _min?: SalaryScaleMinAggregateInput;
 
-    @Field(() => SalaryScaleMinAggregateInput, {nullable:true})
-    _min?: SalaryScaleMinAggregateInput;
-
-    @Field(() => SalaryScaleMaxAggregateInput, {nullable:true})
-    _max?: SalaryScaleMaxAggregateInput;
+  @Field(() => SalaryScaleMaxAggregateInput, { nullable: true })
+  _max?: SalaryScaleMaxAggregateInput;
 }

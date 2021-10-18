@@ -6,13 +6,12 @@ import { NationalityUpdateInput } from './nationality-update.input';
 
 @ArgsType()
 export class UpsertOneNationalityArgs {
+  @Field(() => NationalityWhereUniqueInput, { nullable: false })
+  where!: NationalityWhereUniqueInput;
 
-    @Field(() => NationalityWhereUniqueInput, {nullable:false})
-    where!: NationalityWhereUniqueInput;
+  @Field(() => NationalityCreateInput, { nullable: false })
+  create!: NationalityCreateInput;
 
-    @Field(() => NationalityCreateInput, {nullable:false})
-    create!: NationalityCreateInput;
-
-    @Field(() => NationalityUpdateInput, {nullable:false})
-    update!: NationalityUpdateInput;
+  @Field(() => NationalityUpdateInput, { nullable: false })
+  update!: NationalityUpdateInput;
 }

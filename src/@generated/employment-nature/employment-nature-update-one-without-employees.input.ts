@@ -8,25 +8,26 @@ import { EmploymentNatureUpdateWithoutEmployeesInput } from './employment-nature
 
 @InputType()
 export class EmploymentNatureUpdateOneWithoutEmployeesInput {
+  @Field(() => EmploymentNatureCreateWithoutEmployeesInput, { nullable: true })
+  create?: EmploymentNatureCreateWithoutEmployeesInput;
 
-    @Field(() => EmploymentNatureCreateWithoutEmployeesInput, {nullable:true})
-    create?: EmploymentNatureCreateWithoutEmployeesInput;
+  @Field(() => EmploymentNatureCreateOrConnectWithoutEmployeesInput, {
+    nullable: true,
+  })
+  connectOrCreate?: EmploymentNatureCreateOrConnectWithoutEmployeesInput;
 
-    @Field(() => EmploymentNatureCreateOrConnectWithoutEmployeesInput, {nullable:true})
-    connectOrCreate?: EmploymentNatureCreateOrConnectWithoutEmployeesInput;
+  @Field(() => EmploymentNatureUpsertWithoutEmployeesInput, { nullable: true })
+  upsert?: EmploymentNatureUpsertWithoutEmployeesInput;
 
-    @Field(() => EmploymentNatureUpsertWithoutEmployeesInput, {nullable:true})
-    upsert?: EmploymentNatureUpsertWithoutEmployeesInput;
+  @Field(() => EmploymentNatureWhereUniqueInput, { nullable: true })
+  connect?: EmploymentNatureWhereUniqueInput;
 
-    @Field(() => EmploymentNatureWhereUniqueInput, {nullable:true})
-    connect?: EmploymentNatureWhereUniqueInput;
+  @Field(() => Boolean, { nullable: true })
+  disconnect?: boolean;
 
-    @Field(() => Boolean, {nullable:true})
-    disconnect?: boolean;
+  @Field(() => Boolean, { nullable: true })
+  delete?: boolean;
 
-    @Field(() => Boolean, {nullable:true})
-    delete?: boolean;
-
-    @Field(() => EmploymentNatureUpdateWithoutEmployeesInput, {nullable:true})
-    update?: EmploymentNatureUpdateWithoutEmployeesInput;
+  @Field(() => EmploymentNatureUpdateWithoutEmployeesInput, { nullable: true })
+  update?: EmploymentNatureUpdateWithoutEmployeesInput;
 }

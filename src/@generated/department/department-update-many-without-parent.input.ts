@@ -11,37 +11,44 @@ import { DepartmentScalarWhereInput } from './department-scalar-where.input';
 
 @InputType()
 export class DepartmentUpdateManyWithoutParentInput {
+  @Field(() => [DepartmentCreateWithoutParentInput], { nullable: true })
+  create?: Array<DepartmentCreateWithoutParentInput>;
 
-    @Field(() => [DepartmentCreateWithoutParentInput], {nullable:true})
-    create?: Array<DepartmentCreateWithoutParentInput>;
+  @Field(() => [DepartmentCreateOrConnectWithoutParentInput], {
+    nullable: true,
+  })
+  connectOrCreate?: Array<DepartmentCreateOrConnectWithoutParentInput>;
 
-    @Field(() => [DepartmentCreateOrConnectWithoutParentInput], {nullable:true})
-    connectOrCreate?: Array<DepartmentCreateOrConnectWithoutParentInput>;
+  @Field(() => [DepartmentUpsertWithWhereUniqueWithoutParentInput], {
+    nullable: true,
+  })
+  upsert?: Array<DepartmentUpsertWithWhereUniqueWithoutParentInput>;
 
-    @Field(() => [DepartmentUpsertWithWhereUniqueWithoutParentInput], {nullable:true})
-    upsert?: Array<DepartmentUpsertWithWhereUniqueWithoutParentInput>;
+  @Field(() => DepartmentCreateManyParentInputEnvelope, { nullable: true })
+  createMany?: DepartmentCreateManyParentInputEnvelope;
 
-    @Field(() => DepartmentCreateManyParentInputEnvelope, {nullable:true})
-    createMany?: DepartmentCreateManyParentInputEnvelope;
+  @Field(() => [DepartmentWhereUniqueInput], { nullable: true })
+  connect?: Array<DepartmentWhereUniqueInput>;
 
-    @Field(() => [DepartmentWhereUniqueInput], {nullable:true})
-    connect?: Array<DepartmentWhereUniqueInput>;
+  @Field(() => [DepartmentWhereUniqueInput], { nullable: true })
+  set?: Array<DepartmentWhereUniqueInput>;
 
-    @Field(() => [DepartmentWhereUniqueInput], {nullable:true})
-    set?: Array<DepartmentWhereUniqueInput>;
+  @Field(() => [DepartmentWhereUniqueInput], { nullable: true })
+  disconnect?: Array<DepartmentWhereUniqueInput>;
 
-    @Field(() => [DepartmentWhereUniqueInput], {nullable:true})
-    disconnect?: Array<DepartmentWhereUniqueInput>;
+  @Field(() => [DepartmentWhereUniqueInput], { nullable: true })
+  delete?: Array<DepartmentWhereUniqueInput>;
 
-    @Field(() => [DepartmentWhereUniqueInput], {nullable:true})
-    delete?: Array<DepartmentWhereUniqueInput>;
+  @Field(() => [DepartmentUpdateWithWhereUniqueWithoutParentInput], {
+    nullable: true,
+  })
+  update?: Array<DepartmentUpdateWithWhereUniqueWithoutParentInput>;
 
-    @Field(() => [DepartmentUpdateWithWhereUniqueWithoutParentInput], {nullable:true})
-    update?: Array<DepartmentUpdateWithWhereUniqueWithoutParentInput>;
+  @Field(() => [DepartmentUpdateManyWithWhereWithoutParentInput], {
+    nullable: true,
+  })
+  updateMany?: Array<DepartmentUpdateManyWithWhereWithoutParentInput>;
 
-    @Field(() => [DepartmentUpdateManyWithWhereWithoutParentInput], {nullable:true})
-    updateMany?: Array<DepartmentUpdateManyWithWhereWithoutParentInput>;
-
-    @Field(() => [DepartmentScalarWhereInput], {nullable:true})
-    deleteMany?: Array<DepartmentScalarWhereInput>;
+  @Field(() => [DepartmentScalarWhereInput], { nullable: true })
+  deleteMany?: Array<DepartmentScalarWhereInput>;
 }

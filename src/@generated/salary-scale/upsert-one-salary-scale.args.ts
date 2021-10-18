@@ -6,13 +6,12 @@ import { SalaryScaleUpdateInput } from './salary-scale-update.input';
 
 @ArgsType()
 export class UpsertOneSalaryScaleArgs {
+  @Field(() => SalaryScaleWhereUniqueInput, { nullable: false })
+  where!: SalaryScaleWhereUniqueInput;
 
-    @Field(() => SalaryScaleWhereUniqueInput, {nullable:false})
-    where!: SalaryScaleWhereUniqueInput;
+  @Field(() => SalaryScaleCreateInput, { nullable: false })
+  create!: SalaryScaleCreateInput;
 
-    @Field(() => SalaryScaleCreateInput, {nullable:false})
-    create!: SalaryScaleCreateInput;
-
-    @Field(() => SalaryScaleUpdateInput, {nullable:false})
-    update!: SalaryScaleUpdateInput;
+  @Field(() => SalaryScaleUpdateInput, { nullable: false })
+  update!: SalaryScaleUpdateInput;
 }

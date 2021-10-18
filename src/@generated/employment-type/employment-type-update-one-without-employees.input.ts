@@ -8,25 +8,26 @@ import { EmploymentTypeUpdateWithoutEmployeesInput } from './employment-type-upd
 
 @InputType()
 export class EmploymentTypeUpdateOneWithoutEmployeesInput {
+  @Field(() => EmploymentTypeCreateWithoutEmployeesInput, { nullable: true })
+  create?: EmploymentTypeCreateWithoutEmployeesInput;
 
-    @Field(() => EmploymentTypeCreateWithoutEmployeesInput, {nullable:true})
-    create?: EmploymentTypeCreateWithoutEmployeesInput;
+  @Field(() => EmploymentTypeCreateOrConnectWithoutEmployeesInput, {
+    nullable: true,
+  })
+  connectOrCreate?: EmploymentTypeCreateOrConnectWithoutEmployeesInput;
 
-    @Field(() => EmploymentTypeCreateOrConnectWithoutEmployeesInput, {nullable:true})
-    connectOrCreate?: EmploymentTypeCreateOrConnectWithoutEmployeesInput;
+  @Field(() => EmploymentTypeUpsertWithoutEmployeesInput, { nullable: true })
+  upsert?: EmploymentTypeUpsertWithoutEmployeesInput;
 
-    @Field(() => EmploymentTypeUpsertWithoutEmployeesInput, {nullable:true})
-    upsert?: EmploymentTypeUpsertWithoutEmployeesInput;
+  @Field(() => EmploymentTypeWhereUniqueInput, { nullable: true })
+  connect?: EmploymentTypeWhereUniqueInput;
 
-    @Field(() => EmploymentTypeWhereUniqueInput, {nullable:true})
-    connect?: EmploymentTypeWhereUniqueInput;
+  @Field(() => Boolean, { nullable: true })
+  disconnect?: boolean;
 
-    @Field(() => Boolean, {nullable:true})
-    disconnect?: boolean;
+  @Field(() => Boolean, { nullable: true })
+  delete?: boolean;
 
-    @Field(() => Boolean, {nullable:true})
-    delete?: boolean;
-
-    @Field(() => EmploymentTypeUpdateWithoutEmployeesInput, {nullable:true})
-    update?: EmploymentTypeUpdateWithoutEmployeesInput;
+  @Field(() => EmploymentTypeUpdateWithoutEmployeesInput, { nullable: true })
+  update?: EmploymentTypeUpdateWithoutEmployeesInput;
 }

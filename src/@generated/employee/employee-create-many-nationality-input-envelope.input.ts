@@ -4,10 +4,9 @@ import { EmployeeCreateManyNationalityInput } from './employee-create-many-natio
 
 @InputType()
 export class EmployeeCreateManyNationalityInputEnvelope {
+  @Field(() => [EmployeeCreateManyNationalityInput], { nullable: false })
+  data!: Array<EmployeeCreateManyNationalityInput>;
 
-    @Field(() => [EmployeeCreateManyNationalityInput], {nullable:false})
-    data!: Array<EmployeeCreateManyNationalityInput>;
-
-    @Field(() => Boolean, {nullable:true})
-    skipDuplicates?: boolean;
+  @Field(() => Boolean, { nullable: true })
+  skipDuplicates?: boolean;
 }

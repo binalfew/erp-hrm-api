@@ -5,10 +5,9 @@ import { EmploymentTypeCreateWithoutEmployeesInput } from './employment-type-cre
 
 @InputType()
 export class EmploymentTypeUpsertWithoutEmployeesInput {
+  @Field(() => EmploymentTypeUpdateWithoutEmployeesInput, { nullable: false })
+  update!: EmploymentTypeUpdateWithoutEmployeesInput;
 
-    @Field(() => EmploymentTypeUpdateWithoutEmployeesInput, {nullable:false})
-    update!: EmploymentTypeUpdateWithoutEmployeesInput;
-
-    @Field(() => EmploymentTypeCreateWithoutEmployeesInput, {nullable:false})
-    create!: EmploymentTypeCreateWithoutEmployeesInput;
+  @Field(() => EmploymentTypeCreateWithoutEmployeesInput, { nullable: false })
+  create!: EmploymentTypeCreateWithoutEmployeesInput;
 }

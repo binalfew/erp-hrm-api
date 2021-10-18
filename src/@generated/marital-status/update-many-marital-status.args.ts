@@ -5,10 +5,9 @@ import { MaritalStatusWhereInput } from './marital-status-where.input';
 
 @ArgsType()
 export class UpdateManyMaritalStatusArgs {
+  @Field(() => MaritalStatusUpdateManyMutationInput, { nullable: false })
+  data!: MaritalStatusUpdateManyMutationInput;
 
-    @Field(() => MaritalStatusUpdateManyMutationInput, {nullable:false})
-    data!: MaritalStatusUpdateManyMutationInput;
-
-    @Field(() => MaritalStatusWhereInput, {nullable:true})
-    where?: MaritalStatusWhereInput;
+  @Field(() => MaritalStatusWhereInput, { nullable: true })
+  where?: MaritalStatusWhereInput;
 }

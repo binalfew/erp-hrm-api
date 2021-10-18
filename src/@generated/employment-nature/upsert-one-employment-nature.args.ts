@@ -6,13 +6,12 @@ import { EmploymentNatureUpdateInput } from './employment-nature-update.input';
 
 @ArgsType()
 export class UpsertOneEmploymentNatureArgs {
+  @Field(() => EmploymentNatureWhereUniqueInput, { nullable: false })
+  where!: EmploymentNatureWhereUniqueInput;
 
-    @Field(() => EmploymentNatureWhereUniqueInput, {nullable:false})
-    where!: EmploymentNatureWhereUniqueInput;
+  @Field(() => EmploymentNatureCreateInput, { nullable: false })
+  create!: EmploymentNatureCreateInput;
 
-    @Field(() => EmploymentNatureCreateInput, {nullable:false})
-    create!: EmploymentNatureCreateInput;
-
-    @Field(() => EmploymentNatureUpdateInput, {nullable:false})
-    update!: EmploymentNatureUpdateInput;
+  @Field(() => EmploymentNatureUpdateInput, { nullable: false })
+  update!: EmploymentNatureUpdateInput;
 }

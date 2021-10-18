@@ -4,10 +4,9 @@ import { MaritalStatusCreateManyInput } from './marital-status-create-many.input
 
 @ArgsType()
 export class CreateManyMaritalStatusArgs {
+  @Field(() => [MaritalStatusCreateManyInput], { nullable: false })
+  data!: Array<MaritalStatusCreateManyInput>;
 
-    @Field(() => [MaritalStatusCreateManyInput], {nullable:false})
-    data!: Array<MaritalStatusCreateManyInput>;
-
-    @Field(() => Boolean, {nullable:true})
-    skipDuplicates?: boolean;
+  @Field(() => Boolean, { nullable: true })
+  skipDuplicates?: boolean;
 }

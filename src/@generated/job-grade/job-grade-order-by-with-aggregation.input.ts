@@ -9,40 +9,39 @@ import { JobGradeSumOrderByAggregateInput } from './job-grade-sum-order-by-aggre
 
 @InputType()
 export class JobGradeOrderByWithAggregationInput {
+  @Field(() => SortOrder, { nullable: true })
+  id?: keyof typeof SortOrder;
 
-    @Field(() => SortOrder, {nullable:true})
-    id?: keyof typeof SortOrder;
+  @Field(() => SortOrder, { nullable: true })
+  name?: keyof typeof SortOrder;
 
-    @Field(() => SortOrder, {nullable:true})
-    name?: keyof typeof SortOrder;
+  @Field(() => SortOrder, { nullable: true })
+  code?: keyof typeof SortOrder;
 
-    @Field(() => SortOrder, {nullable:true})
-    code?: keyof typeof SortOrder;
+  @Field(() => SortOrder, { nullable: true })
+  locales?: keyof typeof SortOrder;
 
-    @Field(() => SortOrder, {nullable:true})
-    locales?: keyof typeof SortOrder;
+  @Field(() => SortOrder, { nullable: true })
+  deleted?: keyof typeof SortOrder;
 
-    @Field(() => SortOrder, {nullable:true})
-    deleted?: keyof typeof SortOrder;
+  @Field(() => SortOrder, { nullable: true })
+  createdAt?: keyof typeof SortOrder;
 
-    @Field(() => SortOrder, {nullable:true})
-    createdAt?: keyof typeof SortOrder;
+  @Field(() => SortOrder, { nullable: true })
+  updatedAt?: keyof typeof SortOrder;
 
-    @Field(() => SortOrder, {nullable:true})
-    updatedAt?: keyof typeof SortOrder;
+  @Field(() => JobGradeCountOrderByAggregateInput, { nullable: true })
+  _count?: JobGradeCountOrderByAggregateInput;
 
-    @Field(() => JobGradeCountOrderByAggregateInput, {nullable:true})
-    _count?: JobGradeCountOrderByAggregateInput;
+  @Field(() => JobGradeAvgOrderByAggregateInput, { nullable: true })
+  _avg?: JobGradeAvgOrderByAggregateInput;
 
-    @Field(() => JobGradeAvgOrderByAggregateInput, {nullable:true})
-    _avg?: JobGradeAvgOrderByAggregateInput;
+  @Field(() => JobGradeMaxOrderByAggregateInput, { nullable: true })
+  _max?: JobGradeMaxOrderByAggregateInput;
 
-    @Field(() => JobGradeMaxOrderByAggregateInput, {nullable:true})
-    _max?: JobGradeMaxOrderByAggregateInput;
+  @Field(() => JobGradeMinOrderByAggregateInput, { nullable: true })
+  _min?: JobGradeMinOrderByAggregateInput;
 
-    @Field(() => JobGradeMinOrderByAggregateInput, {nullable:true})
-    _min?: JobGradeMinOrderByAggregateInput;
-
-    @Field(() => JobGradeSumOrderByAggregateInput, {nullable:true})
-    _sum?: JobGradeSumOrderByAggregateInput;
+  @Field(() => JobGradeSumOrderByAggregateInput, { nullable: true })
+  _sum?: JobGradeSumOrderByAggregateInput;
 }

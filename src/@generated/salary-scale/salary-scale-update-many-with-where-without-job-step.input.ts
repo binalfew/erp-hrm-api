@@ -5,10 +5,9 @@ import { SalaryScaleUpdateManyMutationInput } from './salary-scale-update-many-m
 
 @InputType()
 export class SalaryScaleUpdateManyWithWhereWithoutJobStepInput {
+  @Field(() => SalaryScaleScalarWhereInput, { nullable: false })
+  where!: SalaryScaleScalarWhereInput;
 
-    @Field(() => SalaryScaleScalarWhereInput, {nullable:false})
-    where!: SalaryScaleScalarWhereInput;
-
-    @Field(() => SalaryScaleUpdateManyMutationInput, {nullable:false})
-    data!: SalaryScaleUpdateManyMutationInput;
+  @Field(() => SalaryScaleUpdateManyMutationInput, { nullable: false })
+  data!: SalaryScaleUpdateManyMutationInput;
 }

@@ -4,10 +4,9 @@ import { NationalityWhereInput } from './nationality-where.input';
 
 @InputType()
 export class NationalityRelationFilter {
+  @Field(() => NationalityWhereInput, { nullable: true })
+  is?: NationalityWhereInput;
 
-    @Field(() => NationalityWhereInput, {nullable:true})
-    is?: NationalityWhereInput;
-
-    @Field(() => NationalityWhereInput, {nullable:true})
-    isNot?: NationalityWhereInput;
+  @Field(() => NationalityWhereInput, { nullable: true })
+  isNot?: NationalityWhereInput;
 }

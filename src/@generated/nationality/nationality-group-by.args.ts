@@ -13,37 +13,36 @@ import { NationalityMaxAggregateInput } from './nationality-max-aggregate.input'
 
 @ArgsType()
 export class NationalityGroupByArgs {
+  @Field(() => NationalityWhereInput, { nullable: true })
+  where?: NationalityWhereInput;
 
-    @Field(() => NationalityWhereInput, {nullable:true})
-    where?: NationalityWhereInput;
+  @Field(() => [NationalityOrderByWithAggregationInput], { nullable: true })
+  orderBy?: Array<NationalityOrderByWithAggregationInput>;
 
-    @Field(() => [NationalityOrderByWithAggregationInput], {nullable:true})
-    orderBy?: Array<NationalityOrderByWithAggregationInput>;
+  @Field(() => [NationalityScalarFieldEnum], { nullable: false })
+  by!: Array<keyof typeof NationalityScalarFieldEnum>;
 
-    @Field(() => [NationalityScalarFieldEnum], {nullable:false})
-    by!: Array<keyof typeof NationalityScalarFieldEnum>;
+  @Field(() => NationalityScalarWhereWithAggregatesInput, { nullable: true })
+  having?: NationalityScalarWhereWithAggregatesInput;
 
-    @Field(() => NationalityScalarWhereWithAggregatesInput, {nullable:true})
-    having?: NationalityScalarWhereWithAggregatesInput;
+  @Field(() => Int, { nullable: true })
+  take?: number;
 
-    @Field(() => Int, {nullable:true})
-    take?: number;
+  @Field(() => Int, { nullable: true })
+  skip?: number;
 
-    @Field(() => Int, {nullable:true})
-    skip?: number;
+  @Field(() => NationalityCountAggregateInput, { nullable: true })
+  _count?: NationalityCountAggregateInput;
 
-    @Field(() => NationalityCountAggregateInput, {nullable:true})
-    _count?: NationalityCountAggregateInput;
+  @Field(() => NationalityAvgAggregateInput, { nullable: true })
+  _avg?: NationalityAvgAggregateInput;
 
-    @Field(() => NationalityAvgAggregateInput, {nullable:true})
-    _avg?: NationalityAvgAggregateInput;
+  @Field(() => NationalitySumAggregateInput, { nullable: true })
+  _sum?: NationalitySumAggregateInput;
 
-    @Field(() => NationalitySumAggregateInput, {nullable:true})
-    _sum?: NationalitySumAggregateInput;
+  @Field(() => NationalityMinAggregateInput, { nullable: true })
+  _min?: NationalityMinAggregateInput;
 
-    @Field(() => NationalityMinAggregateInput, {nullable:true})
-    _min?: NationalityMinAggregateInput;
-
-    @Field(() => NationalityMaxAggregateInput, {nullable:true})
-    _max?: NationalityMaxAggregateInput;
+  @Field(() => NationalityMaxAggregateInput, { nullable: true })
+  _max?: NationalityMaxAggregateInput;
 }

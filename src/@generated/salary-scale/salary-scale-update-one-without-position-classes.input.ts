@@ -8,25 +8,26 @@ import { SalaryScaleUpdateWithoutPositionClassesInput } from './salary-scale-upd
 
 @InputType()
 export class SalaryScaleUpdateOneWithoutPositionClassesInput {
+  @Field(() => SalaryScaleCreateWithoutPositionClassesInput, { nullable: true })
+  create?: SalaryScaleCreateWithoutPositionClassesInput;
 
-    @Field(() => SalaryScaleCreateWithoutPositionClassesInput, {nullable:true})
-    create?: SalaryScaleCreateWithoutPositionClassesInput;
+  @Field(() => SalaryScaleCreateOrConnectWithoutPositionClassesInput, {
+    nullable: true,
+  })
+  connectOrCreate?: SalaryScaleCreateOrConnectWithoutPositionClassesInput;
 
-    @Field(() => SalaryScaleCreateOrConnectWithoutPositionClassesInput, {nullable:true})
-    connectOrCreate?: SalaryScaleCreateOrConnectWithoutPositionClassesInput;
+  @Field(() => SalaryScaleUpsertWithoutPositionClassesInput, { nullable: true })
+  upsert?: SalaryScaleUpsertWithoutPositionClassesInput;
 
-    @Field(() => SalaryScaleUpsertWithoutPositionClassesInput, {nullable:true})
-    upsert?: SalaryScaleUpsertWithoutPositionClassesInput;
+  @Field(() => SalaryScaleWhereUniqueInput, { nullable: true })
+  connect?: SalaryScaleWhereUniqueInput;
 
-    @Field(() => SalaryScaleWhereUniqueInput, {nullable:true})
-    connect?: SalaryScaleWhereUniqueInput;
+  @Field(() => Boolean, { nullable: true })
+  disconnect?: boolean;
 
-    @Field(() => Boolean, {nullable:true})
-    disconnect?: boolean;
+  @Field(() => Boolean, { nullable: true })
+  delete?: boolean;
 
-    @Field(() => Boolean, {nullable:true})
-    delete?: boolean;
-
-    @Field(() => SalaryScaleUpdateWithoutPositionClassesInput, {nullable:true})
-    update?: SalaryScaleUpdateWithoutPositionClassesInput;
+  @Field(() => SalaryScaleUpdateWithoutPositionClassesInput, { nullable: true })
+  update?: SalaryScaleUpdateWithoutPositionClassesInput;
 }

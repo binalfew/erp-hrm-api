@@ -6,13 +6,14 @@ import { EmploymentNatureWhereUniqueInput } from './employment-nature-where-uniq
 
 @InputType()
 export class EmploymentNatureCreateNestedOneWithoutEmployeesInput {
+  @Field(() => EmploymentNatureCreateWithoutEmployeesInput, { nullable: true })
+  create?: EmploymentNatureCreateWithoutEmployeesInput;
 
-    @Field(() => EmploymentNatureCreateWithoutEmployeesInput, {nullable:true})
-    create?: EmploymentNatureCreateWithoutEmployeesInput;
+  @Field(() => EmploymentNatureCreateOrConnectWithoutEmployeesInput, {
+    nullable: true,
+  })
+  connectOrCreate?: EmploymentNatureCreateOrConnectWithoutEmployeesInput;
 
-    @Field(() => EmploymentNatureCreateOrConnectWithoutEmployeesInput, {nullable:true})
-    connectOrCreate?: EmploymentNatureCreateOrConnectWithoutEmployeesInput;
-
-    @Field(() => EmploymentNatureWhereUniqueInput, {nullable:true})
-    connect?: EmploymentNatureWhereUniqueInput;
+  @Field(() => EmploymentNatureWhereUniqueInput, { nullable: true })
+  connect?: EmploymentNatureWhereUniqueInput;
 }

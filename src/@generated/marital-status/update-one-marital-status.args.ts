@@ -5,10 +5,9 @@ import { MaritalStatusWhereUniqueInput } from './marital-status-where-unique.inp
 
 @ArgsType()
 export class UpdateOneMaritalStatusArgs {
+  @Field(() => MaritalStatusUpdateInput, { nullable: false })
+  data!: MaritalStatusUpdateInput;
 
-    @Field(() => MaritalStatusUpdateInput, {nullable:false})
-    data!: MaritalStatusUpdateInput;
-
-    @Field(() => MaritalStatusWhereUniqueInput, {nullable:false})
-    where!: MaritalStatusWhereUniqueInput;
+  @Field(() => MaritalStatusWhereUniqueInput, { nullable: false })
+  where!: MaritalStatusWhereUniqueInput;
 }

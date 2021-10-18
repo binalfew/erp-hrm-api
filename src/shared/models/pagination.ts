@@ -6,7 +6,7 @@ interface IEdgeType<T> {
   node: T;
 }
 
-export interface IPaginatedResponseType<T> {
+export interface IPaginatedType<T> {
   edges: IEdgeType<T>[];
   nodes: T[];
   totalCount: number;
@@ -15,9 +15,9 @@ export interface IPaginatedResponseType<T> {
   endCursor: number;
 }
 
-export function PaginatedResponse<T>(
+export function Paginated<T>(
   classRef: Type<T>,
-): Type<IPaginatedResponseType<T>> {
+): Type<IPaginatedType<T>> {
   @ObjectType(`${classRef.name}Edge`)
   abstract class EdgeType {
     @Field(() => String)
@@ -28,7 +28,7 @@ export function PaginatedResponse<T>(
   }
 
   @ObjectType({ isAbstract: true })
-  abstract class PaginatedResponseType implements IPaginatedResponseType<T> {
+  abstract class PaginatedType implements IPaginatedType<T> {
     @Field(() => [EdgeType])
     edges: EdgeType[];
 
@@ -47,7 +47,7 @@ export function PaginatedResponse<T>(
     @Field(() => Int)
     endCursor: number;
   }
-  return PaginatedResponseType as Type<IPaginatedResponseType<T>>;
+  return PaginatedType as Type<IPaginatedType<T>>;
 }
 
 export const paginate = async (prisma: any, args: any) => {

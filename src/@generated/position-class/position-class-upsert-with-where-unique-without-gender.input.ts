@@ -6,13 +6,12 @@ import { PositionClassCreateWithoutGenderInput } from './position-class-create-w
 
 @InputType()
 export class PositionClassUpsertWithWhereUniqueWithoutGenderInput {
+  @Field(() => PositionClassWhereUniqueInput, { nullable: false })
+  where!: PositionClassWhereUniqueInput;
 
-    @Field(() => PositionClassWhereUniqueInput, {nullable:false})
-    where!: PositionClassWhereUniqueInput;
+  @Field(() => PositionClassUpdateWithoutGenderInput, { nullable: false })
+  update!: PositionClassUpdateWithoutGenderInput;
 
-    @Field(() => PositionClassUpdateWithoutGenderInput, {nullable:false})
-    update!: PositionClassUpdateWithoutGenderInput;
-
-    @Field(() => PositionClassCreateWithoutGenderInput, {nullable:false})
-    create!: PositionClassCreateWithoutGenderInput;
+  @Field(() => PositionClassCreateWithoutGenderInput, { nullable: false })
+  create!: PositionClassCreateWithoutGenderInput;
 }

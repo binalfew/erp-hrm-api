@@ -4,7 +4,6 @@ import { JobStepCreateInput } from './job-step-create.input';
 
 @ArgsType()
 export class CreateOneJobStepArgs {
-
-    @Field(() => JobStepCreateInput, {nullable:false})
-    data!: JobStepCreateInput;
+  @Field(() => JobStepCreateInput, { nullable: false })
+  data!: JobStepCreateInput;
 }

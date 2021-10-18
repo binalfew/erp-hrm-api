@@ -13,37 +13,36 @@ import { DepartmentMaxAggregateInput } from './department-max-aggregate.input';
 
 @ArgsType()
 export class DepartmentGroupByArgs {
+  @Field(() => DepartmentWhereInput, { nullable: true })
+  where?: DepartmentWhereInput;
 
-    @Field(() => DepartmentWhereInput, {nullable:true})
-    where?: DepartmentWhereInput;
+  @Field(() => [DepartmentOrderByWithAggregationInput], { nullable: true })
+  orderBy?: Array<DepartmentOrderByWithAggregationInput>;
 
-    @Field(() => [DepartmentOrderByWithAggregationInput], {nullable:true})
-    orderBy?: Array<DepartmentOrderByWithAggregationInput>;
+  @Field(() => [DepartmentScalarFieldEnum], { nullable: false })
+  by!: Array<keyof typeof DepartmentScalarFieldEnum>;
 
-    @Field(() => [DepartmentScalarFieldEnum], {nullable:false})
-    by!: Array<keyof typeof DepartmentScalarFieldEnum>;
+  @Field(() => DepartmentScalarWhereWithAggregatesInput, { nullable: true })
+  having?: DepartmentScalarWhereWithAggregatesInput;
 
-    @Field(() => DepartmentScalarWhereWithAggregatesInput, {nullable:true})
-    having?: DepartmentScalarWhereWithAggregatesInput;
+  @Field(() => Int, { nullable: true })
+  take?: number;
 
-    @Field(() => Int, {nullable:true})
-    take?: number;
+  @Field(() => Int, { nullable: true })
+  skip?: number;
 
-    @Field(() => Int, {nullable:true})
-    skip?: number;
+  @Field(() => DepartmentCountAggregateInput, { nullable: true })
+  _count?: DepartmentCountAggregateInput;
 
-    @Field(() => DepartmentCountAggregateInput, {nullable:true})
-    _count?: DepartmentCountAggregateInput;
+  @Field(() => DepartmentAvgAggregateInput, { nullable: true })
+  _avg?: DepartmentAvgAggregateInput;
 
-    @Field(() => DepartmentAvgAggregateInput, {nullable:true})
-    _avg?: DepartmentAvgAggregateInput;
+  @Field(() => DepartmentSumAggregateInput, { nullable: true })
+  _sum?: DepartmentSumAggregateInput;
 
-    @Field(() => DepartmentSumAggregateInput, {nullable:true})
-    _sum?: DepartmentSumAggregateInput;
+  @Field(() => DepartmentMinAggregateInput, { nullable: true })
+  _min?: DepartmentMinAggregateInput;
 
-    @Field(() => DepartmentMinAggregateInput, {nullable:true})
-    _min?: DepartmentMinAggregateInput;
-
-    @Field(() => DepartmentMaxAggregateInput, {nullable:true})
-    _max?: DepartmentMaxAggregateInput;
+  @Field(() => DepartmentMaxAggregateInput, { nullable: true })
+  _max?: DepartmentMaxAggregateInput;
 }

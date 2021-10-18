@@ -4,10 +4,9 @@ import { JobStepCreateManyInput } from './job-step-create-many.input';
 
 @ArgsType()
 export class CreateManyJobStepArgs {
+  @Field(() => [JobStepCreateManyInput], { nullable: false })
+  data!: Array<JobStepCreateManyInput>;
 
-    @Field(() => [JobStepCreateManyInput], {nullable:false})
-    data!: Array<JobStepCreateManyInput>;
-
-    @Field(() => Boolean, {nullable:true})
-    skipDuplicates?: boolean;
+  @Field(() => Boolean, { nullable: true })
+  skipDuplicates?: boolean;
 }

@@ -8,19 +8,18 @@ import { NationalityMaxAggregate } from './nationality-max-aggregate.output';
 
 @ObjectType()
 export class AggregateNationality {
+  @Field(() => NationalityCountAggregate, { nullable: true })
+  _count?: NationalityCountAggregate;
 
-    @Field(() => NationalityCountAggregate, {nullable:true})
-    _count?: NationalityCountAggregate;
+  @Field(() => NationalityAvgAggregate, { nullable: true })
+  _avg?: NationalityAvgAggregate;
 
-    @Field(() => NationalityAvgAggregate, {nullable:true})
-    _avg?: NationalityAvgAggregate;
+  @Field(() => NationalitySumAggregate, { nullable: true })
+  _sum?: NationalitySumAggregate;
 
-    @Field(() => NationalitySumAggregate, {nullable:true})
-    _sum?: NationalitySumAggregate;
+  @Field(() => NationalityMinAggregate, { nullable: true })
+  _min?: NationalityMinAggregate;
 
-    @Field(() => NationalityMinAggregate, {nullable:true})
-    _min?: NationalityMinAggregate;
-
-    @Field(() => NationalityMaxAggregate, {nullable:true})
-    _max?: NationalityMaxAggregate;
+  @Field(() => NationalityMaxAggregate, { nullable: true })
+  _max?: NationalityMaxAggregate;
 }

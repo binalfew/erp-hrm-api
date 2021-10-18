@@ -4,10 +4,9 @@ import { PositionClassCategoryCreateManyInput } from './position-class-category-
 
 @ArgsType()
 export class CreateManyPositionClassCategoryArgs {
+  @Field(() => [PositionClassCategoryCreateManyInput], { nullable: false })
+  data!: Array<PositionClassCategoryCreateManyInput>;
 
-    @Field(() => [PositionClassCategoryCreateManyInput], {nullable:false})
-    data!: Array<PositionClassCategoryCreateManyInput>;
-
-    @Field(() => Boolean, {nullable:true})
-    skipDuplicates?: boolean;
+  @Field(() => Boolean, { nullable: true })
+  skipDuplicates?: boolean;
 }

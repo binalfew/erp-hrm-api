@@ -6,25 +6,26 @@ import { PositionClassUncheckedCreateNestedManyWithoutSalaryScaleInput } from '.
 
 @InputType()
 export class SalaryScaleUncheckedCreateWithoutJobStepInput {
+  @Field(() => Int, { nullable: true })
+  id?: number;
 
-    @Field(() => Int, {nullable:true})
-    id?: number;
+  @Field(() => Int, { nullable: true })
+  jobGradeId?: number;
 
-    @Field(() => Int, {nullable:true})
-    jobGradeId?: number;
+  @Field(() => Float, { nullable: true })
+  salary?: number;
 
-    @Field(() => Float, {nullable:true})
-    salary?: number;
+  @Field(() => Boolean, { nullable: true })
+  deleted?: boolean;
 
-    @Field(() => Boolean, {nullable:true})
-    deleted?: boolean;
+  @Field(() => Date, { nullable: true })
+  createdAt?: Date | string;
 
-    @Field(() => Date, {nullable:true})
-    createdAt?: Date | string;
+  @Field(() => Date, { nullable: true })
+  updatedAt?: Date | string;
 
-    @Field(() => Date, {nullable:true})
-    updatedAt?: Date | string;
-
-    @Field(() => PositionClassUncheckedCreateNestedManyWithoutSalaryScaleInput, {nullable:true})
-    positionClasses?: PositionClassUncheckedCreateNestedManyWithoutSalaryScaleInput;
+  @Field(() => PositionClassUncheckedCreateNestedManyWithoutSalaryScaleInput, {
+    nullable: true,
+  })
+  positionClasses?: PositionClassUncheckedCreateNestedManyWithoutSalaryScaleInput;
 }

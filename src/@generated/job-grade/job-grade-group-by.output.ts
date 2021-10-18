@@ -10,40 +10,39 @@ import { JobGradeMaxAggregate } from './job-grade-max-aggregate.output';
 
 @ObjectType()
 export class JobGradeGroupBy {
+  @Field(() => Int, { nullable: false })
+  id!: number;
 
-    @Field(() => Int, {nullable:false})
-    id!: number;
+  @Field(() => String, { nullable: false })
+  name!: string;
 
-    @Field(() => String, {nullable:false})
-    name!: string;
+  @Field(() => String, { nullable: false })
+  code!: string;
 
-    @Field(() => String, {nullable:false})
-    code!: string;
+  @Field(() => GraphQLJSON, { nullable: true })
+  locales?: any;
 
-    @Field(() => GraphQLJSON, {nullable:true})
-    locales?: any;
+  @Field(() => Boolean, { nullable: false })
+  deleted!: boolean;
 
-    @Field(() => Boolean, {nullable:false})
-    deleted!: boolean;
+  @Field(() => Date, { nullable: false })
+  createdAt!: Date | string;
 
-    @Field(() => Date, {nullable:false})
-    createdAt!: Date | string;
+  @Field(() => Date, { nullable: false })
+  updatedAt!: Date | string;
 
-    @Field(() => Date, {nullable:false})
-    updatedAt!: Date | string;
+  @Field(() => JobGradeCountAggregate, { nullable: true })
+  _count?: JobGradeCountAggregate;
 
-    @Field(() => JobGradeCountAggregate, {nullable:true})
-    _count?: JobGradeCountAggregate;
+  @Field(() => JobGradeAvgAggregate, { nullable: true })
+  _avg?: JobGradeAvgAggregate;
 
-    @Field(() => JobGradeAvgAggregate, {nullable:true})
-    _avg?: JobGradeAvgAggregate;
+  @Field(() => JobGradeSumAggregate, { nullable: true })
+  _sum?: JobGradeSumAggregate;
 
-    @Field(() => JobGradeSumAggregate, {nullable:true})
-    _sum?: JobGradeSumAggregate;
+  @Field(() => JobGradeMinAggregate, { nullable: true })
+  _min?: JobGradeMinAggregate;
 
-    @Field(() => JobGradeMinAggregate, {nullable:true})
-    _min?: JobGradeMinAggregate;
-
-    @Field(() => JobGradeMaxAggregate, {nullable:true})
-    _max?: JobGradeMaxAggregate;
+  @Field(() => JobGradeMaxAggregate, { nullable: true })
+  _max?: JobGradeMaxAggregate;
 }

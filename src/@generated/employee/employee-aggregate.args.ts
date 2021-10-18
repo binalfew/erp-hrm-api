@@ -12,34 +12,33 @@ import { EmployeeMaxAggregateInput } from './employee-max-aggregate.input';
 
 @ArgsType()
 export class EmployeeAggregateArgs {
+  @Field(() => EmployeeWhereInput, { nullable: true })
+  where?: EmployeeWhereInput;
 
-    @Field(() => EmployeeWhereInput, {nullable:true})
-    where?: EmployeeWhereInput;
+  @Field(() => [EmployeeOrderByWithRelationInput], { nullable: true })
+  orderBy?: Array<EmployeeOrderByWithRelationInput>;
 
-    @Field(() => [EmployeeOrderByWithRelationInput], {nullable:true})
-    orderBy?: Array<EmployeeOrderByWithRelationInput>;
+  @Field(() => EmployeeWhereUniqueInput, { nullable: true })
+  cursor?: EmployeeWhereUniqueInput;
 
-    @Field(() => EmployeeWhereUniqueInput, {nullable:true})
-    cursor?: EmployeeWhereUniqueInput;
+  @Field(() => Int, { nullable: true })
+  take?: number;
 
-    @Field(() => Int, {nullable:true})
-    take?: number;
+  @Field(() => Int, { nullable: true })
+  skip?: number;
 
-    @Field(() => Int, {nullable:true})
-    skip?: number;
+  @Field(() => EmployeeCountAggregateInput, { nullable: true })
+  _count?: EmployeeCountAggregateInput;
 
-    @Field(() => EmployeeCountAggregateInput, {nullable:true})
-    _count?: EmployeeCountAggregateInput;
+  @Field(() => EmployeeAvgAggregateInput, { nullable: true })
+  _avg?: EmployeeAvgAggregateInput;
 
-    @Field(() => EmployeeAvgAggregateInput, {nullable:true})
-    _avg?: EmployeeAvgAggregateInput;
+  @Field(() => EmployeeSumAggregateInput, { nullable: true })
+  _sum?: EmployeeSumAggregateInput;
 
-    @Field(() => EmployeeSumAggregateInput, {nullable:true})
-    _sum?: EmployeeSumAggregateInput;
+  @Field(() => EmployeeMinAggregateInput, { nullable: true })
+  _min?: EmployeeMinAggregateInput;
 
-    @Field(() => EmployeeMinAggregateInput, {nullable:true})
-    _min?: EmployeeMinAggregateInput;
-
-    @Field(() => EmployeeMaxAggregateInput, {nullable:true})
-    _max?: EmployeeMaxAggregateInput;
+  @Field(() => EmployeeMaxAggregateInput, { nullable: true })
+  _max?: EmployeeMaxAggregateInput;
 }

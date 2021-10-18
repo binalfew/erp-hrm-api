@@ -4,7 +4,6 @@ import { SalaryScaleCreateInput } from './salary-scale-create.input';
 
 @ArgsType()
 export class CreateOneSalaryScaleArgs {
-
-    @Field(() => SalaryScaleCreateInput, {nullable:false})
-    data!: SalaryScaleCreateInput;
+  @Field(() => SalaryScaleCreateInput, { nullable: false })
+  data!: SalaryScaleCreateInput;
 }

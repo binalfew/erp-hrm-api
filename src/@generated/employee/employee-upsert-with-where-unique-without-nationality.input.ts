@@ -6,13 +6,12 @@ import { EmployeeCreateWithoutNationalityInput } from './employee-create-without
 
 @InputType()
 export class EmployeeUpsertWithWhereUniqueWithoutNationalityInput {
+  @Field(() => EmployeeWhereUniqueInput, { nullable: false })
+  where!: EmployeeWhereUniqueInput;
 
-    @Field(() => EmployeeWhereUniqueInput, {nullable:false})
-    where!: EmployeeWhereUniqueInput;
+  @Field(() => EmployeeUpdateWithoutNationalityInput, { nullable: false })
+  update!: EmployeeUpdateWithoutNationalityInput;
 
-    @Field(() => EmployeeUpdateWithoutNationalityInput, {nullable:false})
-    update!: EmployeeUpdateWithoutNationalityInput;
-
-    @Field(() => EmployeeCreateWithoutNationalityInput, {nullable:false})
-    create!: EmployeeCreateWithoutNationalityInput;
+  @Field(() => EmployeeCreateWithoutNationalityInput, { nullable: false })
+  create!: EmployeeCreateWithoutNationalityInput;
 }

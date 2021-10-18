@@ -5,10 +5,9 @@ import { EmployeeUpdateWithoutEmploymentNatureInput } from './employee-update-wi
 
 @InputType()
 export class EmployeeUpdateWithWhereUniqueWithoutEmploymentNatureInput {
+  @Field(() => EmployeeWhereUniqueInput, { nullable: false })
+  where!: EmployeeWhereUniqueInput;
 
-    @Field(() => EmployeeWhereUniqueInput, {nullable:false})
-    where!: EmployeeWhereUniqueInput;
-
-    @Field(() => EmployeeUpdateWithoutEmploymentNatureInput, {nullable:false})
-    data!: EmployeeUpdateWithoutEmploymentNatureInput;
+  @Field(() => EmployeeUpdateWithoutEmploymentNatureInput, { nullable: false })
+  data!: EmployeeUpdateWithoutEmploymentNatureInput;
 }

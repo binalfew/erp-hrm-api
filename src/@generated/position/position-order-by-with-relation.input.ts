@@ -6,34 +6,33 @@ import { DepartmentOrderByWithRelationInput } from '../department/department-ord
 
 @InputType()
 export class PositionOrderByWithRelationInput {
+  @Field(() => SortOrder, { nullable: true })
+  id?: keyof typeof SortOrder;
 
-    @Field(() => SortOrder, {nullable:true})
-    id?: keyof typeof SortOrder;
+  @Field(() => SortOrder, { nullable: true })
+  code?: keyof typeof SortOrder;
 
-    @Field(() => SortOrder, {nullable:true})
-    code?: keyof typeof SortOrder;
+  @Field(() => PositionClassOrderByWithRelationInput, { nullable: true })
+  positionClass?: PositionClassOrderByWithRelationInput;
 
-    @Field(() => PositionClassOrderByWithRelationInput, {nullable:true})
-    positionClass?: PositionClassOrderByWithRelationInput;
+  @Field(() => SortOrder, { nullable: true })
+  positionClassId?: keyof typeof SortOrder;
 
-    @Field(() => SortOrder, {nullable:true})
-    positionClassId?: keyof typeof SortOrder;
+  @Field(() => DepartmentOrderByWithRelationInput, { nullable: true })
+  department?: DepartmentOrderByWithRelationInput;
 
-    @Field(() => DepartmentOrderByWithRelationInput, {nullable:true})
-    department?: DepartmentOrderByWithRelationInput;
+  @Field(() => SortOrder, { nullable: true })
+  departmentId?: keyof typeof SortOrder;
 
-    @Field(() => SortOrder, {nullable:true})
-    departmentId?: keyof typeof SortOrder;
+  @Field(() => SortOrder, { nullable: true })
+  vacant?: keyof typeof SortOrder;
 
-    @Field(() => SortOrder, {nullable:true})
-    vacant?: keyof typeof SortOrder;
+  @Field(() => SortOrder, { nullable: true })
+  deleted?: keyof typeof SortOrder;
 
-    @Field(() => SortOrder, {nullable:true})
-    deleted?: keyof typeof SortOrder;
+  @Field(() => SortOrder, { nullable: true })
+  createdAt?: keyof typeof SortOrder;
 
-    @Field(() => SortOrder, {nullable:true})
-    createdAt?: keyof typeof SortOrder;
-
-    @Field(() => SortOrder, {nullable:true})
-    updatedAt?: keyof typeof SortOrder;
+  @Field(() => SortOrder, { nullable: true })
+  updatedAt?: keyof typeof SortOrder;
 }

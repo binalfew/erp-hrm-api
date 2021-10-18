@@ -11,52 +11,62 @@ import { PositionCreateNestedManyWithoutPositionClassInput } from '../position/p
 
 @InputType()
 export class PositionClassCreateInput {
+  @Field(() => String, { nullable: false })
+  name!: string;
 
-    @Field(() => String, {nullable:false})
-    name!: string;
+  @Field(() => String, { nullable: false })
+  code!: string;
 
-    @Field(() => String, {nullable:false})
-    code!: string;
+  @Field(() => GraphQLJSON, { nullable: true })
+  locales?: any;
 
-    @Field(() => GraphQLJSON, {nullable:true})
-    locales?: any;
+  @Field(() => Int, { nullable: true })
+  minimumAge?: number;
 
-    @Field(() => Int, {nullable:true})
-    minimumAge?: number;
+  @Field(() => Int, { nullable: true })
+  maximumAge?: number;
 
-    @Field(() => Int, {nullable:true})
-    maximumAge?: number;
+  @Field(() => GraphQLDecimal, { nullable: true })
+  monthlyWorkingHours?: any;
 
-    @Field(() => GraphQLDecimal, {nullable:true})
-    monthlyWorkingHours?: any;
+  @Field(() => GraphQLDecimal, { nullable: true })
+  salary?: any;
 
-    @Field(() => GraphQLDecimal, {nullable:true})
-    salary?: any;
+  @Field(() => String, { nullable: true })
+  specification?: string;
 
-    @Field(() => String, {nullable:true})
-    specification?: string;
+  @Field(() => Boolean, { nullable: true })
+  deleted?: boolean;
 
-    @Field(() => Boolean, {nullable:true})
-    deleted?: boolean;
+  @Field(() => Date, { nullable: true })
+  createdAt?: Date | string;
 
-    @Field(() => Date, {nullable:true})
-    createdAt?: Date | string;
+  @Field(() => Date, { nullable: true })
+  updatedAt?: Date | string;
 
-    @Field(() => Date, {nullable:true})
-    updatedAt?: Date | string;
+  @Field(() => GenderCreateNestedOneWithoutPositionClassesInput, {
+    nullable: true,
+  })
+  gender?: GenderCreateNestedOneWithoutPositionClassesInput;
 
-    @Field(() => GenderCreateNestedOneWithoutPositionClassesInput, {nullable:true})
-    gender?: GenderCreateNestedOneWithoutPositionClassesInput;
+  @Field(() => PositionClassTypeCreateNestedOneWithoutPositionClassesInput, {
+    nullable: true,
+  })
+  positionClassType?: PositionClassTypeCreateNestedOneWithoutPositionClassesInput;
 
-    @Field(() => PositionClassTypeCreateNestedOneWithoutPositionClassesInput, {nullable:true})
-    positionClassType?: PositionClassTypeCreateNestedOneWithoutPositionClassesInput;
+  @Field(
+    () => PositionClassCategoryCreateNestedOneWithoutPositionClassesInput,
+    { nullable: true },
+  )
+  positionClassCategory?: PositionClassCategoryCreateNestedOneWithoutPositionClassesInput;
 
-    @Field(() => PositionClassCategoryCreateNestedOneWithoutPositionClassesInput, {nullable:true})
-    positionClassCategory?: PositionClassCategoryCreateNestedOneWithoutPositionClassesInput;
+  @Field(() => SalaryScaleCreateNestedOneWithoutPositionClassesInput, {
+    nullable: true,
+  })
+  salaryScale?: SalaryScaleCreateNestedOneWithoutPositionClassesInput;
 
-    @Field(() => SalaryScaleCreateNestedOneWithoutPositionClassesInput, {nullable:true})
-    salaryScale?: SalaryScaleCreateNestedOneWithoutPositionClassesInput;
-
-    @Field(() => PositionCreateNestedManyWithoutPositionClassInput, {nullable:true})
-    positions?: PositionCreateNestedManyWithoutPositionClassInput;
+  @Field(() => PositionCreateNestedManyWithoutPositionClassInput, {
+    nullable: true,
+  })
+  positions?: PositionCreateNestedManyWithoutPositionClassInput;
 }

@@ -4,10 +4,9 @@ import { GenderCreateManyInput } from './gender-create-many.input';
 
 @ArgsType()
 export class CreateManyGenderArgs {
+  @Field(() => [GenderCreateManyInput], { nullable: false })
+  data!: Array<GenderCreateManyInput>;
 
-    @Field(() => [GenderCreateManyInput], {nullable:false})
-    data!: Array<GenderCreateManyInput>;
-
-    @Field(() => Boolean, {nullable:true})
-    skipDuplicates?: boolean;
+  @Field(() => Boolean, { nullable: true })
+  skipDuplicates?: boolean;
 }

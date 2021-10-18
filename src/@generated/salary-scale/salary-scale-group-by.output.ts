@@ -10,40 +10,39 @@ import { SalaryScaleMaxAggregate } from './salary-scale-max-aggregate.output';
 
 @ObjectType()
 export class SalaryScaleGroupBy {
+  @Field(() => Int, { nullable: false })
+  id!: number;
 
-    @Field(() => Int, {nullable:false})
-    id!: number;
+  @Field(() => Int, { nullable: true })
+  jobGradeId?: number;
 
-    @Field(() => Int, {nullable:true})
-    jobGradeId?: number;
+  @Field(() => Int, { nullable: true })
+  jobStepId?: number;
 
-    @Field(() => Int, {nullable:true})
-    jobStepId?: number;
+  @Field(() => Float, { nullable: false })
+  salary!: number;
 
-    @Field(() => Float, {nullable:false})
-    salary!: number;
+  @Field(() => Boolean, { nullable: false })
+  deleted!: boolean;
 
-    @Field(() => Boolean, {nullable:false})
-    deleted!: boolean;
+  @Field(() => Date, { nullable: false })
+  createdAt!: Date | string;
 
-    @Field(() => Date, {nullable:false})
-    createdAt!: Date | string;
+  @Field(() => Date, { nullable: false })
+  updatedAt!: Date | string;
 
-    @Field(() => Date, {nullable:false})
-    updatedAt!: Date | string;
+  @Field(() => SalaryScaleCountAggregate, { nullable: true })
+  _count?: SalaryScaleCountAggregate;
 
-    @Field(() => SalaryScaleCountAggregate, {nullable:true})
-    _count?: SalaryScaleCountAggregate;
+  @Field(() => SalaryScaleAvgAggregate, { nullable: true })
+  _avg?: SalaryScaleAvgAggregate;
 
-    @Field(() => SalaryScaleAvgAggregate, {nullable:true})
-    _avg?: SalaryScaleAvgAggregate;
+  @Field(() => SalaryScaleSumAggregate, { nullable: true })
+  _sum?: SalaryScaleSumAggregate;
 
-    @Field(() => SalaryScaleSumAggregate, {nullable:true})
-    _sum?: SalaryScaleSumAggregate;
+  @Field(() => SalaryScaleMinAggregate, { nullable: true })
+  _min?: SalaryScaleMinAggregate;
 
-    @Field(() => SalaryScaleMinAggregate, {nullable:true})
-    _min?: SalaryScaleMinAggregate;
-
-    @Field(() => SalaryScaleMaxAggregate, {nullable:true})
-    _max?: SalaryScaleMaxAggregate;
+  @Field(() => SalaryScaleMaxAggregate, { nullable: true })
+  _max?: SalaryScaleMaxAggregate;
 }

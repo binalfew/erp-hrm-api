@@ -9,25 +9,26 @@ import { PositionClassUncheckedUpdateManyWithoutSalaryScaleInput } from '../posi
 
 @InputType()
 export class SalaryScaleUncheckedUpdateWithoutJobGradeInput {
+  @Field(() => IntFieldUpdateOperationsInput, { nullable: true })
+  id?: IntFieldUpdateOperationsInput;
 
-    @Field(() => IntFieldUpdateOperationsInput, {nullable:true})
-    id?: IntFieldUpdateOperationsInput;
+  @Field(() => NullableIntFieldUpdateOperationsInput, { nullable: true })
+  jobStepId?: NullableIntFieldUpdateOperationsInput;
 
-    @Field(() => NullableIntFieldUpdateOperationsInput, {nullable:true})
-    jobStepId?: NullableIntFieldUpdateOperationsInput;
+  @Field(() => FloatFieldUpdateOperationsInput, { nullable: true })
+  salary?: FloatFieldUpdateOperationsInput;
 
-    @Field(() => FloatFieldUpdateOperationsInput, {nullable:true})
-    salary?: FloatFieldUpdateOperationsInput;
+  @Field(() => BoolFieldUpdateOperationsInput, { nullable: true })
+  deleted?: BoolFieldUpdateOperationsInput;
 
-    @Field(() => BoolFieldUpdateOperationsInput, {nullable:true})
-    deleted?: BoolFieldUpdateOperationsInput;
+  @Field(() => DateTimeFieldUpdateOperationsInput, { nullable: true })
+  createdAt?: DateTimeFieldUpdateOperationsInput;
 
-    @Field(() => DateTimeFieldUpdateOperationsInput, {nullable:true})
-    createdAt?: DateTimeFieldUpdateOperationsInput;
+  @Field(() => DateTimeFieldUpdateOperationsInput, { nullable: true })
+  updatedAt?: DateTimeFieldUpdateOperationsInput;
 
-    @Field(() => DateTimeFieldUpdateOperationsInput, {nullable:true})
-    updatedAt?: DateTimeFieldUpdateOperationsInput;
-
-    @Field(() => PositionClassUncheckedUpdateManyWithoutSalaryScaleInput, {nullable:true})
-    positionClasses?: PositionClassUncheckedUpdateManyWithoutSalaryScaleInput;
+  @Field(() => PositionClassUncheckedUpdateManyWithoutSalaryScaleInput, {
+    nullable: true,
+  })
+  positionClasses?: PositionClassUncheckedUpdateManyWithoutSalaryScaleInput;
 }

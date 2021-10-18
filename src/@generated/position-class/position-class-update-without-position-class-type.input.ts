@@ -14,49 +14,52 @@ import { PositionUpdateManyWithoutPositionClassInput } from '../position/positio
 
 @InputType()
 export class PositionClassUpdateWithoutPositionClassTypeInput {
+  @Field(() => StringFieldUpdateOperationsInput, { nullable: true })
+  name?: StringFieldUpdateOperationsInput;
 
-    @Field(() => StringFieldUpdateOperationsInput, {nullable:true})
-    name?: StringFieldUpdateOperationsInput;
+  @Field(() => StringFieldUpdateOperationsInput, { nullable: true })
+  code?: StringFieldUpdateOperationsInput;
 
-    @Field(() => StringFieldUpdateOperationsInput, {nullable:true})
-    code?: StringFieldUpdateOperationsInput;
+  @Field(() => GraphQLJSON, { nullable: true })
+  locales?: any;
 
-    @Field(() => GraphQLJSON, {nullable:true})
-    locales?: any;
+  @Field(() => IntFieldUpdateOperationsInput, { nullable: true })
+  minimumAge?: IntFieldUpdateOperationsInput;
 
-    @Field(() => IntFieldUpdateOperationsInput, {nullable:true})
-    minimumAge?: IntFieldUpdateOperationsInput;
+  @Field(() => IntFieldUpdateOperationsInput, { nullable: true })
+  maximumAge?: IntFieldUpdateOperationsInput;
 
-    @Field(() => IntFieldUpdateOperationsInput, {nullable:true})
-    maximumAge?: IntFieldUpdateOperationsInput;
+  @Field(() => DecimalFieldUpdateOperationsInput, { nullable: true })
+  monthlyWorkingHours?: DecimalFieldUpdateOperationsInput;
 
-    @Field(() => DecimalFieldUpdateOperationsInput, {nullable:true})
-    monthlyWorkingHours?: DecimalFieldUpdateOperationsInput;
+  @Field(() => DecimalFieldUpdateOperationsInput, { nullable: true })
+  salary?: DecimalFieldUpdateOperationsInput;
 
-    @Field(() => DecimalFieldUpdateOperationsInput, {nullable:true})
-    salary?: DecimalFieldUpdateOperationsInput;
+  @Field(() => NullableStringFieldUpdateOperationsInput, { nullable: true })
+  specification?: NullableStringFieldUpdateOperationsInput;
 
-    @Field(() => NullableStringFieldUpdateOperationsInput, {nullable:true})
-    specification?: NullableStringFieldUpdateOperationsInput;
+  @Field(() => BoolFieldUpdateOperationsInput, { nullable: true })
+  deleted?: BoolFieldUpdateOperationsInput;
 
-    @Field(() => BoolFieldUpdateOperationsInput, {nullable:true})
-    deleted?: BoolFieldUpdateOperationsInput;
+  @Field(() => DateTimeFieldUpdateOperationsInput, { nullable: true })
+  createdAt?: DateTimeFieldUpdateOperationsInput;
 
-    @Field(() => DateTimeFieldUpdateOperationsInput, {nullable:true})
-    createdAt?: DateTimeFieldUpdateOperationsInput;
+  @Field(() => DateTimeFieldUpdateOperationsInput, { nullable: true })
+  updatedAt?: DateTimeFieldUpdateOperationsInput;
 
-    @Field(() => DateTimeFieldUpdateOperationsInput, {nullable:true})
-    updatedAt?: DateTimeFieldUpdateOperationsInput;
+  @Field(() => GenderUpdateOneWithoutPositionClassesInput, { nullable: true })
+  gender?: GenderUpdateOneWithoutPositionClassesInput;
 
-    @Field(() => GenderUpdateOneWithoutPositionClassesInput, {nullable:true})
-    gender?: GenderUpdateOneWithoutPositionClassesInput;
+  @Field(() => PositionClassCategoryUpdateOneWithoutPositionClassesInput, {
+    nullable: true,
+  })
+  positionClassCategory?: PositionClassCategoryUpdateOneWithoutPositionClassesInput;
 
-    @Field(() => PositionClassCategoryUpdateOneWithoutPositionClassesInput, {nullable:true})
-    positionClassCategory?: PositionClassCategoryUpdateOneWithoutPositionClassesInput;
+  @Field(() => SalaryScaleUpdateOneWithoutPositionClassesInput, {
+    nullable: true,
+  })
+  salaryScale?: SalaryScaleUpdateOneWithoutPositionClassesInput;
 
-    @Field(() => SalaryScaleUpdateOneWithoutPositionClassesInput, {nullable:true})
-    salaryScale?: SalaryScaleUpdateOneWithoutPositionClassesInput;
-
-    @Field(() => PositionUpdateManyWithoutPositionClassInput, {nullable:true})
-    positions?: PositionUpdateManyWithoutPositionClassInput;
+  @Field(() => PositionUpdateManyWithoutPositionClassInput, { nullable: true })
+  positions?: PositionUpdateManyWithoutPositionClassInput;
 }

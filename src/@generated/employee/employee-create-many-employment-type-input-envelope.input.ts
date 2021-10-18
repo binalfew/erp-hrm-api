@@ -4,10 +4,9 @@ import { EmployeeCreateManyEmploymentTypeInput } from './employee-create-many-em
 
 @InputType()
 export class EmployeeCreateManyEmploymentTypeInputEnvelope {
+  @Field(() => [EmployeeCreateManyEmploymentTypeInput], { nullable: false })
+  data!: Array<EmployeeCreateManyEmploymentTypeInput>;
 
-    @Field(() => [EmployeeCreateManyEmploymentTypeInput], {nullable:false})
-    data!: Array<EmployeeCreateManyEmploymentTypeInput>;
-
-    @Field(() => Boolean, {nullable:true})
-    skipDuplicates?: boolean;
+  @Field(() => Boolean, { nullable: true })
+  skipDuplicates?: boolean;
 }

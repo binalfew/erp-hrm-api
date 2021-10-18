@@ -5,10 +5,9 @@ import { NationalityWhereUniqueInput } from './nationality-where-unique.input';
 
 @ArgsType()
 export class UpdateOneNationalityArgs {
+  @Field(() => NationalityUpdateInput, { nullable: false })
+  data!: NationalityUpdateInput;
 
-    @Field(() => NationalityUpdateInput, {nullable:false})
-    data!: NationalityUpdateInput;
-
-    @Field(() => NationalityWhereUniqueInput, {nullable:false})
-    where!: NationalityWhereUniqueInput;
+  @Field(() => NationalityWhereUniqueInput, { nullable: false })
+  where!: NationalityWhereUniqueInput;
 }

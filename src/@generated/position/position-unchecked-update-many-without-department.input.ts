@@ -11,37 +11,44 @@ import { PositionScalarWhereInput } from './position-scalar-where.input';
 
 @InputType()
 export class PositionUncheckedUpdateManyWithoutDepartmentInput {
+  @Field(() => [PositionCreateWithoutDepartmentInput], { nullable: true })
+  create?: Array<PositionCreateWithoutDepartmentInput>;
 
-    @Field(() => [PositionCreateWithoutDepartmentInput], {nullable:true})
-    create?: Array<PositionCreateWithoutDepartmentInput>;
+  @Field(() => [PositionCreateOrConnectWithoutDepartmentInput], {
+    nullable: true,
+  })
+  connectOrCreate?: Array<PositionCreateOrConnectWithoutDepartmentInput>;
 
-    @Field(() => [PositionCreateOrConnectWithoutDepartmentInput], {nullable:true})
-    connectOrCreate?: Array<PositionCreateOrConnectWithoutDepartmentInput>;
+  @Field(() => [PositionUpsertWithWhereUniqueWithoutDepartmentInput], {
+    nullable: true,
+  })
+  upsert?: Array<PositionUpsertWithWhereUniqueWithoutDepartmentInput>;
 
-    @Field(() => [PositionUpsertWithWhereUniqueWithoutDepartmentInput], {nullable:true})
-    upsert?: Array<PositionUpsertWithWhereUniqueWithoutDepartmentInput>;
+  @Field(() => PositionCreateManyDepartmentInputEnvelope, { nullable: true })
+  createMany?: PositionCreateManyDepartmentInputEnvelope;
 
-    @Field(() => PositionCreateManyDepartmentInputEnvelope, {nullable:true})
-    createMany?: PositionCreateManyDepartmentInputEnvelope;
+  @Field(() => [PositionWhereUniqueInput], { nullable: true })
+  connect?: Array<PositionWhereUniqueInput>;
 
-    @Field(() => [PositionWhereUniqueInput], {nullable:true})
-    connect?: Array<PositionWhereUniqueInput>;
+  @Field(() => [PositionWhereUniqueInput], { nullable: true })
+  set?: Array<PositionWhereUniqueInput>;
 
-    @Field(() => [PositionWhereUniqueInput], {nullable:true})
-    set?: Array<PositionWhereUniqueInput>;
+  @Field(() => [PositionWhereUniqueInput], { nullable: true })
+  disconnect?: Array<PositionWhereUniqueInput>;
 
-    @Field(() => [PositionWhereUniqueInput], {nullable:true})
-    disconnect?: Array<PositionWhereUniqueInput>;
+  @Field(() => [PositionWhereUniqueInput], { nullable: true })
+  delete?: Array<PositionWhereUniqueInput>;
 
-    @Field(() => [PositionWhereUniqueInput], {nullable:true})
-    delete?: Array<PositionWhereUniqueInput>;
+  @Field(() => [PositionUpdateWithWhereUniqueWithoutDepartmentInput], {
+    nullable: true,
+  })
+  update?: Array<PositionUpdateWithWhereUniqueWithoutDepartmentInput>;
 
-    @Field(() => [PositionUpdateWithWhereUniqueWithoutDepartmentInput], {nullable:true})
-    update?: Array<PositionUpdateWithWhereUniqueWithoutDepartmentInput>;
+  @Field(() => [PositionUpdateManyWithWhereWithoutDepartmentInput], {
+    nullable: true,
+  })
+  updateMany?: Array<PositionUpdateManyWithWhereWithoutDepartmentInput>;
 
-    @Field(() => [PositionUpdateManyWithWhereWithoutDepartmentInput], {nullable:true})
-    updateMany?: Array<PositionUpdateManyWithWhereWithoutDepartmentInput>;
-
-    @Field(() => [PositionScalarWhereInput], {nullable:true})
-    deleteMany?: Array<PositionScalarWhereInput>;
+  @Field(() => [PositionScalarWhereInput], { nullable: true })
+  deleteMany?: Array<PositionScalarWhereInput>;
 }

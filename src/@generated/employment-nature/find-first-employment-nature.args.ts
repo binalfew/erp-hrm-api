@@ -8,22 +8,21 @@ import { EmploymentNatureScalarFieldEnum } from './employment-nature-scalar-fiel
 
 @ArgsType()
 export class FindFirstEmploymentNatureArgs {
+  @Field(() => EmploymentNatureWhereInput, { nullable: true })
+  where?: EmploymentNatureWhereInput;
 
-    @Field(() => EmploymentNatureWhereInput, {nullable:true})
-    where?: EmploymentNatureWhereInput;
+  @Field(() => [EmploymentNatureOrderByWithRelationInput], { nullable: true })
+  orderBy?: Array<EmploymentNatureOrderByWithRelationInput>;
 
-    @Field(() => [EmploymentNatureOrderByWithRelationInput], {nullable:true})
-    orderBy?: Array<EmploymentNatureOrderByWithRelationInput>;
+  @Field(() => EmploymentNatureWhereUniqueInput, { nullable: true })
+  cursor?: EmploymentNatureWhereUniqueInput;
 
-    @Field(() => EmploymentNatureWhereUniqueInput, {nullable:true})
-    cursor?: EmploymentNatureWhereUniqueInput;
+  @Field(() => Int, { nullable: true })
+  take?: number;
 
-    @Field(() => Int, {nullable:true})
-    take?: number;
+  @Field(() => Int, { nullable: true })
+  skip?: number;
 
-    @Field(() => Int, {nullable:true})
-    skip?: number;
-
-    @Field(() => [EmploymentNatureScalarFieldEnum], {nullable:true})
-    distinct?: Array<keyof typeof EmploymentNatureScalarFieldEnum>;
+  @Field(() => [EmploymentNatureScalarFieldEnum], { nullable: true })
+  distinct?: Array<keyof typeof EmploymentNatureScalarFieldEnum>;
 }

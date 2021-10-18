@@ -11,61 +11,60 @@ import { DateTimeFilter } from '../prisma/date-time-filter.input';
 
 @InputType()
 export class PositionClassScalarWhereInput {
+  @Field(() => [PositionClassScalarWhereInput], { nullable: true })
+  AND?: Array<PositionClassScalarWhereInput>;
 
-    @Field(() => [PositionClassScalarWhereInput], {nullable:true})
-    AND?: Array<PositionClassScalarWhereInput>;
+  @Field(() => [PositionClassScalarWhereInput], { nullable: true })
+  OR?: Array<PositionClassScalarWhereInput>;
 
-    @Field(() => [PositionClassScalarWhereInput], {nullable:true})
-    OR?: Array<PositionClassScalarWhereInput>;
+  @Field(() => [PositionClassScalarWhereInput], { nullable: true })
+  NOT?: Array<PositionClassScalarWhereInput>;
 
-    @Field(() => [PositionClassScalarWhereInput], {nullable:true})
-    NOT?: Array<PositionClassScalarWhereInput>;
+  @Field(() => IntFilter, { nullable: true })
+  id?: IntFilter;
 
-    @Field(() => IntFilter, {nullable:true})
-    id?: IntFilter;
+  @Field(() => StringFilter, { nullable: true })
+  name?: StringFilter;
 
-    @Field(() => StringFilter, {nullable:true})
-    name?: StringFilter;
+  @Field(() => StringFilter, { nullable: true })
+  code?: StringFilter;
 
-    @Field(() => StringFilter, {nullable:true})
-    code?: StringFilter;
+  @Field(() => JsonNullableFilter, { nullable: true })
+  locales?: JsonNullableFilter;
 
-    @Field(() => JsonNullableFilter, {nullable:true})
-    locales?: JsonNullableFilter;
+  @Field(() => IntNullableFilter, { nullable: true })
+  genderId?: IntNullableFilter;
 
-    @Field(() => IntNullableFilter, {nullable:true})
-    genderId?: IntNullableFilter;
+  @Field(() => IntNullableFilter, { nullable: true })
+  positionClassTypeId?: IntNullableFilter;
 
-    @Field(() => IntNullableFilter, {nullable:true})
-    positionClassTypeId?: IntNullableFilter;
+  @Field(() => IntNullableFilter, { nullable: true })
+  positionClassCategoryId?: IntNullableFilter;
 
-    @Field(() => IntNullableFilter, {nullable:true})
-    positionClassCategoryId?: IntNullableFilter;
+  @Field(() => IntNullableFilter, { nullable: true })
+  salaryScaleId?: IntNullableFilter;
 
-    @Field(() => IntNullableFilter, {nullable:true})
-    salaryScaleId?: IntNullableFilter;
+  @Field(() => IntFilter, { nullable: true })
+  minimumAge?: IntFilter;
 
-    @Field(() => IntFilter, {nullable:true})
-    minimumAge?: IntFilter;
+  @Field(() => IntFilter, { nullable: true })
+  maximumAge?: IntFilter;
 
-    @Field(() => IntFilter, {nullable:true})
-    maximumAge?: IntFilter;
+  @Field(() => DecimalFilter, { nullable: true })
+  monthlyWorkingHours?: DecimalFilter;
 
-    @Field(() => DecimalFilter, {nullable:true})
-    monthlyWorkingHours?: DecimalFilter;
+  @Field(() => DecimalFilter, { nullable: true })
+  salary?: DecimalFilter;
 
-    @Field(() => DecimalFilter, {nullable:true})
-    salary?: DecimalFilter;
+  @Field(() => StringNullableFilter, { nullable: true })
+  specification?: StringNullableFilter;
 
-    @Field(() => StringNullableFilter, {nullable:true})
-    specification?: StringNullableFilter;
+  @Field(() => BoolFilter, { nullable: true })
+  deleted?: BoolFilter;
 
-    @Field(() => BoolFilter, {nullable:true})
-    deleted?: BoolFilter;
+  @Field(() => DateTimeFilter, { nullable: true })
+  createdAt?: DateTimeFilter;
 
-    @Field(() => DateTimeFilter, {nullable:true})
-    createdAt?: DateTimeFilter;
-
-    @Field(() => DateTimeFilter, {nullable:true})
-    updatedAt?: DateTimeFilter;
+  @Field(() => DateTimeFilter, { nullable: true })
+  updatedAt?: DateTimeFilter;
 }

@@ -4,10 +4,9 @@ import { Int } from '@nestjs/graphql';
 
 @ObjectType()
 export class GenderCount {
+  @Field(() => Int, { nullable: false })
+  positionClasses!: number;
 
-    @Field(() => Int, {nullable:false})
-    positionClasses!: number;
-
-    @Field(() => Int, {nullable:false})
-    employees!: number;
+  @Field(() => Int, { nullable: false })
+  employees!: number;
 }

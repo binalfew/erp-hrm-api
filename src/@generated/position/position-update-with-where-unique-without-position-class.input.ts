@@ -5,10 +5,9 @@ import { PositionUpdateWithoutPositionClassInput } from './position-update-witho
 
 @InputType()
 export class PositionUpdateWithWhereUniqueWithoutPositionClassInput {
+  @Field(() => PositionWhereUniqueInput, { nullable: false })
+  where!: PositionWhereUniqueInput;
 
-    @Field(() => PositionWhereUniqueInput, {nullable:false})
-    where!: PositionWhereUniqueInput;
-
-    @Field(() => PositionUpdateWithoutPositionClassInput, {nullable:false})
-    data!: PositionUpdateWithoutPositionClassInput;
+  @Field(() => PositionUpdateWithoutPositionClassInput, { nullable: false })
+  data!: PositionUpdateWithoutPositionClassInput;
 }

@@ -10,40 +10,39 @@ import { MaritalStatusMaxAggregate } from './marital-status-max-aggregate.output
 
 @ObjectType()
 export class MaritalStatusGroupBy {
+  @Field(() => Int, { nullable: false })
+  id!: number;
 
-    @Field(() => Int, {nullable:false})
-    id!: number;
+  @Field(() => String, { nullable: false })
+  name!: string;
 
-    @Field(() => String, {nullable:false})
-    name!: string;
+  @Field(() => String, { nullable: false })
+  code!: string;
 
-    @Field(() => String, {nullable:false})
-    code!: string;
+  @Field(() => GraphQLJSON, { nullable: true })
+  locales?: any;
 
-    @Field(() => GraphQLJSON, {nullable:true})
-    locales?: any;
+  @Field(() => Boolean, { nullable: false })
+  deleted!: boolean;
 
-    @Field(() => Boolean, {nullable:false})
-    deleted!: boolean;
+  @Field(() => Date, { nullable: false })
+  createdAt!: Date | string;
 
-    @Field(() => Date, {nullable:false})
-    createdAt!: Date | string;
+  @Field(() => Date, { nullable: false })
+  updatedAt!: Date | string;
 
-    @Field(() => Date, {nullable:false})
-    updatedAt!: Date | string;
+  @Field(() => MaritalStatusCountAggregate, { nullable: true })
+  _count?: MaritalStatusCountAggregate;
 
-    @Field(() => MaritalStatusCountAggregate, {nullable:true})
-    _count?: MaritalStatusCountAggregate;
+  @Field(() => MaritalStatusAvgAggregate, { nullable: true })
+  _avg?: MaritalStatusAvgAggregate;
 
-    @Field(() => MaritalStatusAvgAggregate, {nullable:true})
-    _avg?: MaritalStatusAvgAggregate;
+  @Field(() => MaritalStatusSumAggregate, { nullable: true })
+  _sum?: MaritalStatusSumAggregate;
 
-    @Field(() => MaritalStatusSumAggregate, {nullable:true})
-    _sum?: MaritalStatusSumAggregate;
+  @Field(() => MaritalStatusMinAggregate, { nullable: true })
+  _min?: MaritalStatusMinAggregate;
 
-    @Field(() => MaritalStatusMinAggregate, {nullable:true})
-    _min?: MaritalStatusMinAggregate;
-
-    @Field(() => MaritalStatusMaxAggregate, {nullable:true})
-    _max?: MaritalStatusMaxAggregate;
+  @Field(() => MaritalStatusMaxAggregate, { nullable: true })
+  _max?: MaritalStatusMaxAggregate;
 }

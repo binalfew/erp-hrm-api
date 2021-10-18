@@ -5,10 +5,9 @@ import { PositionClassUpdateManyMutationInput } from './position-class-update-ma
 
 @InputType()
 export class PositionClassUpdateManyWithWhereWithoutGenderInput {
+  @Field(() => PositionClassScalarWhereInput, { nullable: false })
+  where!: PositionClassScalarWhereInput;
 
-    @Field(() => PositionClassScalarWhereInput, {nullable:false})
-    where!: PositionClassScalarWhereInput;
-
-    @Field(() => PositionClassUpdateManyMutationInput, {nullable:false})
-    data!: PositionClassUpdateManyMutationInput;
+  @Field(() => PositionClassUpdateManyMutationInput, { nullable: false })
+  data!: PositionClassUpdateManyMutationInput;
 }

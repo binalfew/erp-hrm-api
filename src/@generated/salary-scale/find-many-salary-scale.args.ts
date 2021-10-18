@@ -8,22 +8,21 @@ import { SalaryScaleScalarFieldEnum } from './salary-scale-scalar-field.enum';
 
 @ArgsType()
 export class FindManySalaryScaleArgs {
+  @Field(() => SalaryScaleWhereInput, { nullable: true })
+  where?: SalaryScaleWhereInput;
 
-    @Field(() => SalaryScaleWhereInput, {nullable:true})
-    where?: SalaryScaleWhereInput;
+  @Field(() => [SalaryScaleOrderByWithRelationInput], { nullable: true })
+  orderBy?: Array<SalaryScaleOrderByWithRelationInput>;
 
-    @Field(() => [SalaryScaleOrderByWithRelationInput], {nullable:true})
-    orderBy?: Array<SalaryScaleOrderByWithRelationInput>;
+  @Field(() => SalaryScaleWhereUniqueInput, { nullable: true })
+  cursor?: SalaryScaleWhereUniqueInput;
 
-    @Field(() => SalaryScaleWhereUniqueInput, {nullable:true})
-    cursor?: SalaryScaleWhereUniqueInput;
+  @Field(() => Int, { nullable: true })
+  take?: number;
 
-    @Field(() => Int, {nullable:true})
-    take?: number;
+  @Field(() => Int, { nullable: true })
+  skip?: number;
 
-    @Field(() => Int, {nullable:true})
-    skip?: number;
-
-    @Field(() => [SalaryScaleScalarFieldEnum], {nullable:true})
-    distinct?: Array<keyof typeof SalaryScaleScalarFieldEnum>;
+  @Field(() => [SalaryScaleScalarFieldEnum], { nullable: true })
+  distinct?: Array<keyof typeof SalaryScaleScalarFieldEnum>;
 }

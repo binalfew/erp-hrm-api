@@ -921,15 +921,6 @@ input GenderWhereUniqueInput {
   name: String
 }
 
-type GendersResponse {
-  edges: [GenderEdge!]!
-  endCursor: Int!
-  hasNextPage: Boolean!
-  nodes: [Gender!]!
-  startCursor: Int!
-  totalCount: Int!
-}
-
 input IntFieldUpdateOperationsInput {
   decrement: Int
   divide: Int
@@ -1411,6 +1402,15 @@ input NestedStringNullableFilter {
 
 input NullableStringFieldUpdateOperationsInput {
   set: String
+}
+
+type PaginatedGender {
+  edges: [GenderEdge!]!
+  endCursor: Int!
+  hasNextPage: Boolean!
+  nodes: [Gender!]!
+  startCursor: Int!
+  totalCount: Int!
 }
 
 type Position {
@@ -2073,7 +2073,7 @@ input PositionWhereUniqueInput {
 
 type Query {
   gender(where: GenderWhereUniqueInput!): Gender
-  genders(cursor: GenderWhereUniqueInput, distinct: [GenderScalarFieldEnum!], orderBy: [GenderOrderByWithRelationInput!], skip: Int, take: Int, where: GenderWhereInput): GendersResponse!
+  genders(cursor: GenderWhereUniqueInput, distinct: [GenderScalarFieldEnum!], orderBy: [GenderOrderByWithRelationInput!], skip: Int, take: Int, where: GenderWhereInput): PaginatedGender!
 }
 
 enum QueryMode {

@@ -5,10 +5,9 @@ import { PositionUpdateWithoutDepartmentInput } from './position-update-without-
 
 @InputType()
 export class PositionUpdateWithWhereUniqueWithoutDepartmentInput {
+  @Field(() => PositionWhereUniqueInput, { nullable: false })
+  where!: PositionWhereUniqueInput;
 
-    @Field(() => PositionWhereUniqueInput, {nullable:false})
-    where!: PositionWhereUniqueInput;
-
-    @Field(() => PositionUpdateWithoutDepartmentInput, {nullable:false})
-    data!: PositionUpdateWithoutDepartmentInput;
+  @Field(() => PositionUpdateWithoutDepartmentInput, { nullable: false })
+  data!: PositionUpdateWithoutDepartmentInput;
 }

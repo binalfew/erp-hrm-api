@@ -6,13 +6,14 @@ import { EmploymentTypeWhereUniqueInput } from './employment-type-where-unique.i
 
 @InputType()
 export class EmploymentTypeCreateNestedOneWithoutEmployeesInput {
+  @Field(() => EmploymentTypeCreateWithoutEmployeesInput, { nullable: true })
+  create?: EmploymentTypeCreateWithoutEmployeesInput;
 
-    @Field(() => EmploymentTypeCreateWithoutEmployeesInput, {nullable:true})
-    create?: EmploymentTypeCreateWithoutEmployeesInput;
+  @Field(() => EmploymentTypeCreateOrConnectWithoutEmployeesInput, {
+    nullable: true,
+  })
+  connectOrCreate?: EmploymentTypeCreateOrConnectWithoutEmployeesInput;
 
-    @Field(() => EmploymentTypeCreateOrConnectWithoutEmployeesInput, {nullable:true})
-    connectOrCreate?: EmploymentTypeCreateOrConnectWithoutEmployeesInput;
-
-    @Field(() => EmploymentTypeWhereUniqueInput, {nullable:true})
-    connect?: EmploymentTypeWhereUniqueInput;
+  @Field(() => EmploymentTypeWhereUniqueInput, { nullable: true })
+  connect?: EmploymentTypeWhereUniqueInput;
 }

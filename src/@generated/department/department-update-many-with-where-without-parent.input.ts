@@ -5,10 +5,9 @@ import { DepartmentUpdateManyMutationInput } from './department-update-many-muta
 
 @InputType()
 export class DepartmentUpdateManyWithWhereWithoutParentInput {
+  @Field(() => DepartmentScalarWhereInput, { nullable: false })
+  where!: DepartmentScalarWhereInput;
 
-    @Field(() => DepartmentScalarWhereInput, {nullable:false})
-    where!: DepartmentScalarWhereInput;
-
-    @Field(() => DepartmentUpdateManyMutationInput, {nullable:false})
-    data!: DepartmentUpdateManyMutationInput;
+  @Field(() => DepartmentUpdateManyMutationInput, { nullable: false })
+  data!: DepartmentUpdateManyMutationInput;
 }

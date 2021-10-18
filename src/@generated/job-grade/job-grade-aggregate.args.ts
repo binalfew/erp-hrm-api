@@ -12,34 +12,33 @@ import { JobGradeMaxAggregateInput } from './job-grade-max-aggregate.input';
 
 @ArgsType()
 export class JobGradeAggregateArgs {
+  @Field(() => JobGradeWhereInput, { nullable: true })
+  where?: JobGradeWhereInput;
 
-    @Field(() => JobGradeWhereInput, {nullable:true})
-    where?: JobGradeWhereInput;
+  @Field(() => [JobGradeOrderByWithRelationInput], { nullable: true })
+  orderBy?: Array<JobGradeOrderByWithRelationInput>;
 
-    @Field(() => [JobGradeOrderByWithRelationInput], {nullable:true})
-    orderBy?: Array<JobGradeOrderByWithRelationInput>;
+  @Field(() => JobGradeWhereUniqueInput, { nullable: true })
+  cursor?: JobGradeWhereUniqueInput;
 
-    @Field(() => JobGradeWhereUniqueInput, {nullable:true})
-    cursor?: JobGradeWhereUniqueInput;
+  @Field(() => Int, { nullable: true })
+  take?: number;
 
-    @Field(() => Int, {nullable:true})
-    take?: number;
+  @Field(() => Int, { nullable: true })
+  skip?: number;
 
-    @Field(() => Int, {nullable:true})
-    skip?: number;
+  @Field(() => JobGradeCountAggregateInput, { nullable: true })
+  _count?: JobGradeCountAggregateInput;
 
-    @Field(() => JobGradeCountAggregateInput, {nullable:true})
-    _count?: JobGradeCountAggregateInput;
+  @Field(() => JobGradeAvgAggregateInput, { nullable: true })
+  _avg?: JobGradeAvgAggregateInput;
 
-    @Field(() => JobGradeAvgAggregateInput, {nullable:true})
-    _avg?: JobGradeAvgAggregateInput;
+  @Field(() => JobGradeSumAggregateInput, { nullable: true })
+  _sum?: JobGradeSumAggregateInput;
 
-    @Field(() => JobGradeSumAggregateInput, {nullable:true})
-    _sum?: JobGradeSumAggregateInput;
+  @Field(() => JobGradeMinAggregateInput, { nullable: true })
+  _min?: JobGradeMinAggregateInput;
 
-    @Field(() => JobGradeMinAggregateInput, {nullable:true})
-    _min?: JobGradeMinAggregateInput;
-
-    @Field(() => JobGradeMaxAggregateInput, {nullable:true})
-    _max?: JobGradeMaxAggregateInput;
+  @Field(() => JobGradeMaxAggregateInput, { nullable: true })
+  _max?: JobGradeMaxAggregateInput;
 }

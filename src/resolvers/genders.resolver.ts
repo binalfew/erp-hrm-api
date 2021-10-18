@@ -1,17 +1,16 @@
 import { Args, Mutation, ObjectType, Query, Resolver } from '@nestjs/graphql';
 import {
+  CreateOneGenderArgs,
   FindManyGenderArgs,
   FindUniqueGenderArgs,
   Gender,
-  GenderCreateInput,
-  GenderUpdateInput,
-  GenderWhereUniqueInput,
+  UpdateOneGenderArgs,
 } from 'src/@generated/gender';
 import { DataService } from 'src/data/data.service';
-import { paginate, PaginatedResponse } from 'src/shared/models/pagination';
+import { paginate, Paginated } from 'src/shared/models/pagination';
 
 @ObjectType()
-export class GendersResponse extends PaginatedResponse(Gender) {}
+export class PaginatedGender extends Paginated(Gender) {}
 
 @Resolver(() => Gender)
 export class GendersResolver {
@@ -22,24 +21,21 @@ export class GendersResolver {
     return this.data.gender.findUnique({ where: args.where });
   }
 
-  @Query(() => GendersResponse, { name: 'genders' })
-  async getGenders(@Args() args: FindManyGenderArgs): Promise<GendersResponse> {
+  @Query(() => PaginatedGender, { name: 'genders' })
+  async getGenders(@Args() args: FindManyGenderArgs): Promise<PaginatedGender> {
     return paginate(this.data.gender, args);
   }
 
   @Mutation(() => Gender)
-  async createGender(@Args('data') data: GenderCreateInput): Promise<Gender> {
+  async createGender(@Args() args: CreateOneGenderArgs): Promise<Gender> {
     return this.data.gender.create({
-      data,
+      data: args.data,
     });
   }
 
   @Mutation(() => Gender)
-  async updateGender(
-    @Args('data') data: GenderUpdateInput,
-    @Args('where') where: GenderWhereUniqueInput,
-  ): Promise<Gender> {
-    return this.data.gender.update({ where, data });
+  async updateGender(@Args() args: UpdateOneGenderArgs): Promise<Gender> {
+    return this.data.gender.update({ where: args.where, data: args.data });
   }
 
   @Mutation(() => Gender)

@@ -4,10 +4,9 @@ import { JobGradeWhereInput } from './job-grade-where.input';
 
 @InputType()
 export class JobGradeRelationFilter {
+  @Field(() => JobGradeWhereInput, { nullable: true })
+  is?: JobGradeWhereInput;
 
-    @Field(() => JobGradeWhereInput, {nullable:true})
-    is?: JobGradeWhereInput;
-
-    @Field(() => JobGradeWhereInput, {nullable:true})
-    isNot?: JobGradeWhereInput;
+  @Field(() => JobGradeWhereInput, { nullable: true })
+  isNot?: JobGradeWhereInput;
 }

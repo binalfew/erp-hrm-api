@@ -9,28 +9,27 @@ import { PositionUpdateManyWithoutDepartmentInput } from '../position/position-u
 
 @InputType()
 export class DepartmentUpdateInput {
+  @Field(() => StringFieldUpdateOperationsInput, { nullable: true })
+  name?: StringFieldUpdateOperationsInput;
 
-    @Field(() => StringFieldUpdateOperationsInput, {nullable:true})
-    name?: StringFieldUpdateOperationsInput;
+  @Field(() => StringFieldUpdateOperationsInput, { nullable: true })
+  code?: StringFieldUpdateOperationsInput;
 
-    @Field(() => StringFieldUpdateOperationsInput, {nullable:true})
-    code?: StringFieldUpdateOperationsInput;
+  @Field(() => GraphQLJSON, { nullable: true })
+  locales?: any;
 
-    @Field(() => GraphQLJSON, {nullable:true})
-    locales?: any;
+  @Field(() => DateTimeFieldUpdateOperationsInput, { nullable: true })
+  createdAt?: DateTimeFieldUpdateOperationsInput;
 
-    @Field(() => DateTimeFieldUpdateOperationsInput, {nullable:true})
-    createdAt?: DateTimeFieldUpdateOperationsInput;
+  @Field(() => DateTimeFieldUpdateOperationsInput, { nullable: true })
+  updatedAt?: DateTimeFieldUpdateOperationsInput;
 
-    @Field(() => DateTimeFieldUpdateOperationsInput, {nullable:true})
-    updatedAt?: DateTimeFieldUpdateOperationsInput;
+  @Field(() => DepartmentUpdateOneWithoutChildrenInput, { nullable: true })
+  parent?: DepartmentUpdateOneWithoutChildrenInput;
 
-    @Field(() => DepartmentUpdateOneWithoutChildrenInput, {nullable:true})
-    parent?: DepartmentUpdateOneWithoutChildrenInput;
+  @Field(() => DepartmentUpdateManyWithoutParentInput, { nullable: true })
+  children?: DepartmentUpdateManyWithoutParentInput;
 
-    @Field(() => DepartmentUpdateManyWithoutParentInput, {nullable:true})
-    children?: DepartmentUpdateManyWithoutParentInput;
-
-    @Field(() => PositionUpdateManyWithoutDepartmentInput, {nullable:true})
-    positions?: PositionUpdateManyWithoutDepartmentInput;
+  @Field(() => PositionUpdateManyWithoutDepartmentInput, { nullable: true })
+  positions?: PositionUpdateManyWithoutDepartmentInput;
 }

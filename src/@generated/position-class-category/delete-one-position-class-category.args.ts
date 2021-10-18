@@ -4,7 +4,6 @@ import { PositionClassCategoryWhereUniqueInput } from './position-class-category
 
 @ArgsType()
 export class DeleteOnePositionClassCategoryArgs {
-
-    @Field(() => PositionClassCategoryWhereUniqueInput, {nullable:false})
-    where!: PositionClassCategoryWhereUniqueInput;
+  @Field(() => PositionClassCategoryWhereUniqueInput, { nullable: false })
+  where!: PositionClassCategoryWhereUniqueInput;
 }

@@ -8,22 +8,21 @@ import { PositionClassTypeScalarFieldEnum } from './position-class-type-scalar-f
 
 @ArgsType()
 export class FindManyPositionClassTypeArgs {
+  @Field(() => PositionClassTypeWhereInput, { nullable: true })
+  where?: PositionClassTypeWhereInput;
 
-    @Field(() => PositionClassTypeWhereInput, {nullable:true})
-    where?: PositionClassTypeWhereInput;
+  @Field(() => [PositionClassTypeOrderByWithRelationInput], { nullable: true })
+  orderBy?: Array<PositionClassTypeOrderByWithRelationInput>;
 
-    @Field(() => [PositionClassTypeOrderByWithRelationInput], {nullable:true})
-    orderBy?: Array<PositionClassTypeOrderByWithRelationInput>;
+  @Field(() => PositionClassTypeWhereUniqueInput, { nullable: true })
+  cursor?: PositionClassTypeWhereUniqueInput;
 
-    @Field(() => PositionClassTypeWhereUniqueInput, {nullable:true})
-    cursor?: PositionClassTypeWhereUniqueInput;
+  @Field(() => Int, { nullable: true })
+  take?: number;
 
-    @Field(() => Int, {nullable:true})
-    take?: number;
+  @Field(() => Int, { nullable: true })
+  skip?: number;
 
-    @Field(() => Int, {nullable:true})
-    skip?: number;
-
-    @Field(() => [PositionClassTypeScalarFieldEnum], {nullable:true})
-    distinct?: Array<keyof typeof PositionClassTypeScalarFieldEnum>;
+  @Field(() => [PositionClassTypeScalarFieldEnum], { nullable: true })
+  distinct?: Array<keyof typeof PositionClassTypeScalarFieldEnum>;
 }

@@ -4,7 +4,6 @@ import { NationalityCreateInput } from './nationality-create.input';
 
 @ArgsType()
 export class CreateOneNationalityArgs {
-
-    @Field(() => NationalityCreateInput, {nullable:false})
-    data!: NationalityCreateInput;
+  @Field(() => NationalityCreateInput, { nullable: false })
+  data!: NationalityCreateInput;
 }

@@ -4,7 +4,6 @@ import { PositionClassCategoryWhereInput } from './position-class-category-where
 
 @ArgsType()
 export class DeleteManyPositionClassCategoryArgs {
-
-    @Field(() => PositionClassCategoryWhereInput, {nullable:true})
-    where?: PositionClassCategoryWhereInput;
+  @Field(() => PositionClassCategoryWhereInput, { nullable: true })
+  where?: PositionClassCategoryWhereInput;
 }

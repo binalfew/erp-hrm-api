@@ -8,19 +8,18 @@ import { DepartmentMaxAggregate } from './department-max-aggregate.output';
 
 @ObjectType()
 export class AggregateDepartment {
+  @Field(() => DepartmentCountAggregate, { nullable: true })
+  _count?: DepartmentCountAggregate;
 
-    @Field(() => DepartmentCountAggregate, {nullable:true})
-    _count?: DepartmentCountAggregate;
+  @Field(() => DepartmentAvgAggregate, { nullable: true })
+  _avg?: DepartmentAvgAggregate;
 
-    @Field(() => DepartmentAvgAggregate, {nullable:true})
-    _avg?: DepartmentAvgAggregate;
+  @Field(() => DepartmentSumAggregate, { nullable: true })
+  _sum?: DepartmentSumAggregate;
 
-    @Field(() => DepartmentSumAggregate, {nullable:true})
-    _sum?: DepartmentSumAggregate;
+  @Field(() => DepartmentMinAggregate, { nullable: true })
+  _min?: DepartmentMinAggregate;
 
-    @Field(() => DepartmentMinAggregate, {nullable:true})
-    _min?: DepartmentMinAggregate;
-
-    @Field(() => DepartmentMaxAggregate, {nullable:true})
-    _max?: DepartmentMaxAggregate;
+  @Field(() => DepartmentMaxAggregate, { nullable: true })
+  _max?: DepartmentMaxAggregate;
 }

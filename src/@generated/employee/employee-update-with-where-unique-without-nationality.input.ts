@@ -5,10 +5,9 @@ import { EmployeeUpdateWithoutNationalityInput } from './employee-update-without
 
 @InputType()
 export class EmployeeUpdateWithWhereUniqueWithoutNationalityInput {
+  @Field(() => EmployeeWhereUniqueInput, { nullable: false })
+  where!: EmployeeWhereUniqueInput;
 
-    @Field(() => EmployeeWhereUniqueInput, {nullable:false})
-    where!: EmployeeWhereUniqueInput;
-
-    @Field(() => EmployeeUpdateWithoutNationalityInput, {nullable:false})
-    data!: EmployeeUpdateWithoutNationalityInput;
+  @Field(() => EmployeeUpdateWithoutNationalityInput, { nullable: false })
+  data!: EmployeeUpdateWithoutNationalityInput;
 }

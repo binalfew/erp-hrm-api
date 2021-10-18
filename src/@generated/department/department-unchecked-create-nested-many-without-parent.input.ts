@@ -7,16 +7,17 @@ import { DepartmentWhereUniqueInput } from './department-where-unique.input';
 
 @InputType()
 export class DepartmentUncheckedCreateNestedManyWithoutParentInput {
+  @Field(() => [DepartmentCreateWithoutParentInput], { nullable: true })
+  create?: Array<DepartmentCreateWithoutParentInput>;
 
-    @Field(() => [DepartmentCreateWithoutParentInput], {nullable:true})
-    create?: Array<DepartmentCreateWithoutParentInput>;
+  @Field(() => [DepartmentCreateOrConnectWithoutParentInput], {
+    nullable: true,
+  })
+  connectOrCreate?: Array<DepartmentCreateOrConnectWithoutParentInput>;
 
-    @Field(() => [DepartmentCreateOrConnectWithoutParentInput], {nullable:true})
-    connectOrCreate?: Array<DepartmentCreateOrConnectWithoutParentInput>;
+  @Field(() => DepartmentCreateManyParentInputEnvelope, { nullable: true })
+  createMany?: DepartmentCreateManyParentInputEnvelope;
 
-    @Field(() => DepartmentCreateManyParentInputEnvelope, {nullable:true})
-    createMany?: DepartmentCreateManyParentInputEnvelope;
-
-    @Field(() => [DepartmentWhereUniqueInput], {nullable:true})
-    connect?: Array<DepartmentWhereUniqueInput>;
+  @Field(() => [DepartmentWhereUniqueInput], { nullable: true })
+  connect?: Array<DepartmentWhereUniqueInput>;
 }

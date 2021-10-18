@@ -6,13 +6,12 @@ import { EmployeeCreateWithoutEmploymentTypeInput } from './employee-create-with
 
 @InputType()
 export class EmployeeUpsertWithWhereUniqueWithoutEmploymentTypeInput {
+  @Field(() => EmployeeWhereUniqueInput, { nullable: false })
+  where!: EmployeeWhereUniqueInput;
 
-    @Field(() => EmployeeWhereUniqueInput, {nullable:false})
-    where!: EmployeeWhereUniqueInput;
+  @Field(() => EmployeeUpdateWithoutEmploymentTypeInput, { nullable: false })
+  update!: EmployeeUpdateWithoutEmploymentTypeInput;
 
-    @Field(() => EmployeeUpdateWithoutEmploymentTypeInput, {nullable:false})
-    update!: EmployeeUpdateWithoutEmploymentTypeInput;
-
-    @Field(() => EmployeeCreateWithoutEmploymentTypeInput, {nullable:false})
-    create!: EmployeeCreateWithoutEmploymentTypeInput;
+  @Field(() => EmployeeCreateWithoutEmploymentTypeInput, { nullable: false })
+  create!: EmployeeCreateWithoutEmploymentTypeInput;
 }

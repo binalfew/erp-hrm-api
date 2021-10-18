@@ -7,34 +7,33 @@ import { PositionClassOrderByRelationAggregateInput } from '../position-class/po
 
 @InputType()
 export class SalaryScaleOrderByWithRelationInput {
+  @Field(() => SortOrder, { nullable: true })
+  id?: keyof typeof SortOrder;
 
-    @Field(() => SortOrder, {nullable:true})
-    id?: keyof typeof SortOrder;
+  @Field(() => JobGradeOrderByWithRelationInput, { nullable: true })
+  jobGrade?: JobGradeOrderByWithRelationInput;
 
-    @Field(() => JobGradeOrderByWithRelationInput, {nullable:true})
-    jobGrade?: JobGradeOrderByWithRelationInput;
+  @Field(() => SortOrder, { nullable: true })
+  jobGradeId?: keyof typeof SortOrder;
 
-    @Field(() => SortOrder, {nullable:true})
-    jobGradeId?: keyof typeof SortOrder;
+  @Field(() => JobStepOrderByWithRelationInput, { nullable: true })
+  jobStep?: JobStepOrderByWithRelationInput;
 
-    @Field(() => JobStepOrderByWithRelationInput, {nullable:true})
-    jobStep?: JobStepOrderByWithRelationInput;
+  @Field(() => SortOrder, { nullable: true })
+  jobStepId?: keyof typeof SortOrder;
 
-    @Field(() => SortOrder, {nullable:true})
-    jobStepId?: keyof typeof SortOrder;
+  @Field(() => SortOrder, { nullable: true })
+  salary?: keyof typeof SortOrder;
 
-    @Field(() => SortOrder, {nullable:true})
-    salary?: keyof typeof SortOrder;
+  @Field(() => SortOrder, { nullable: true })
+  deleted?: keyof typeof SortOrder;
 
-    @Field(() => SortOrder, {nullable:true})
-    deleted?: keyof typeof SortOrder;
+  @Field(() => SortOrder, { nullable: true })
+  createdAt?: keyof typeof SortOrder;
 
-    @Field(() => SortOrder, {nullable:true})
-    createdAt?: keyof typeof SortOrder;
+  @Field(() => SortOrder, { nullable: true })
+  updatedAt?: keyof typeof SortOrder;
 
-    @Field(() => SortOrder, {nullable:true})
-    updatedAt?: keyof typeof SortOrder;
-
-    @Field(() => PositionClassOrderByRelationAggregateInput, {nullable:true})
-    positionClasses?: PositionClassOrderByRelationAggregateInput;
+  @Field(() => PositionClassOrderByRelationAggregateInput, { nullable: true })
+  positionClasses?: PositionClassOrderByRelationAggregateInput;
 }

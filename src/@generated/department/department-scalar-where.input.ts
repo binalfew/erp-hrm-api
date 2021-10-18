@@ -8,34 +8,33 @@ import { DateTimeFilter } from '../prisma/date-time-filter.input';
 
 @InputType()
 export class DepartmentScalarWhereInput {
+  @Field(() => [DepartmentScalarWhereInput], { nullable: true })
+  AND?: Array<DepartmentScalarWhereInput>;
 
-    @Field(() => [DepartmentScalarWhereInput], {nullable:true})
-    AND?: Array<DepartmentScalarWhereInput>;
+  @Field(() => [DepartmentScalarWhereInput], { nullable: true })
+  OR?: Array<DepartmentScalarWhereInput>;
 
-    @Field(() => [DepartmentScalarWhereInput], {nullable:true})
-    OR?: Array<DepartmentScalarWhereInput>;
+  @Field(() => [DepartmentScalarWhereInput], { nullable: true })
+  NOT?: Array<DepartmentScalarWhereInput>;
 
-    @Field(() => [DepartmentScalarWhereInput], {nullable:true})
-    NOT?: Array<DepartmentScalarWhereInput>;
+  @Field(() => IntFilter, { nullable: true })
+  id?: IntFilter;
 
-    @Field(() => IntFilter, {nullable:true})
-    id?: IntFilter;
+  @Field(() => StringFilter, { nullable: true })
+  name?: StringFilter;
 
-    @Field(() => StringFilter, {nullable:true})
-    name?: StringFilter;
+  @Field(() => StringFilter, { nullable: true })
+  code?: StringFilter;
 
-    @Field(() => StringFilter, {nullable:true})
-    code?: StringFilter;
+  @Field(() => JsonNullableFilter, { nullable: true })
+  locales?: JsonNullableFilter;
 
-    @Field(() => JsonNullableFilter, {nullable:true})
-    locales?: JsonNullableFilter;
+  @Field(() => IntNullableFilter, { nullable: true })
+  parentId?: IntNullableFilter;
 
-    @Field(() => IntNullableFilter, {nullable:true})
-    parentId?: IntNullableFilter;
+  @Field(() => DateTimeFilter, { nullable: true })
+  createdAt?: DateTimeFilter;
 
-    @Field(() => DateTimeFilter, {nullable:true})
-    createdAt?: DateTimeFilter;
-
-    @Field(() => DateTimeFilter, {nullable:true})
-    updatedAt?: DateTimeFilter;
+  @Field(() => DateTimeFilter, { nullable: true })
+  updatedAt?: DateTimeFilter;
 }

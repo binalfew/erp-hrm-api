@@ -6,13 +6,12 @@ import { SalaryScaleCreateWithoutJobGradeInput } from './salary-scale-create-wit
 
 @InputType()
 export class SalaryScaleUpsertWithWhereUniqueWithoutJobGradeInput {
+  @Field(() => SalaryScaleWhereUniqueInput, { nullable: false })
+  where!: SalaryScaleWhereUniqueInput;
 
-    @Field(() => SalaryScaleWhereUniqueInput, {nullable:false})
-    where!: SalaryScaleWhereUniqueInput;
+  @Field(() => SalaryScaleUpdateWithoutJobGradeInput, { nullable: false })
+  update!: SalaryScaleUpdateWithoutJobGradeInput;
 
-    @Field(() => SalaryScaleUpdateWithoutJobGradeInput, {nullable:false})
-    update!: SalaryScaleUpdateWithoutJobGradeInput;
-
-    @Field(() => SalaryScaleCreateWithoutJobGradeInput, {nullable:false})
-    create!: SalaryScaleCreateWithoutJobGradeInput;
+  @Field(() => SalaryScaleCreateWithoutJobGradeInput, { nullable: false })
+  create!: SalaryScaleCreateWithoutJobGradeInput;
 }

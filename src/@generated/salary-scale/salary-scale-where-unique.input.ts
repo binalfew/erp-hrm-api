@@ -4,7 +4,6 @@ import { Int } from '@nestjs/graphql';
 
 @InputType()
 export class SalaryScaleWhereUniqueInput {
-
-    @Field(() => Int, {nullable:false})
-    id!: number;
+  @Field(() => Int, { nullable: false })
+  id!: number;
 }

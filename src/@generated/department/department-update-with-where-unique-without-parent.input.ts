@@ -5,10 +5,9 @@ import { DepartmentUpdateWithoutParentInput } from './department-update-without-
 
 @InputType()
 export class DepartmentUpdateWithWhereUniqueWithoutParentInput {
+  @Field(() => DepartmentWhereUniqueInput, { nullable: false })
+  where!: DepartmentWhereUniqueInput;
 
-    @Field(() => DepartmentWhereUniqueInput, {nullable:false})
-    where!: DepartmentWhereUniqueInput;
-
-    @Field(() => DepartmentUpdateWithoutParentInput, {nullable:false})
-    data!: DepartmentUpdateWithoutParentInput;
+  @Field(() => DepartmentUpdateWithoutParentInput, { nullable: false })
+  data!: DepartmentUpdateWithoutParentInput;
 }

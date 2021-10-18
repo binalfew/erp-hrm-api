@@ -8,19 +8,18 @@ import { PositionClassCategoryMaxAggregate } from './position-class-category-max
 
 @ObjectType()
 export class AggregatePositionClassCategory {
+  @Field(() => PositionClassCategoryCountAggregate, { nullable: true })
+  _count?: PositionClassCategoryCountAggregate;
 
-    @Field(() => PositionClassCategoryCountAggregate, {nullable:true})
-    _count?: PositionClassCategoryCountAggregate;
+  @Field(() => PositionClassCategoryAvgAggregate, { nullable: true })
+  _avg?: PositionClassCategoryAvgAggregate;
 
-    @Field(() => PositionClassCategoryAvgAggregate, {nullable:true})
-    _avg?: PositionClassCategoryAvgAggregate;
+  @Field(() => PositionClassCategorySumAggregate, { nullable: true })
+  _sum?: PositionClassCategorySumAggregate;
 
-    @Field(() => PositionClassCategorySumAggregate, {nullable:true})
-    _sum?: PositionClassCategorySumAggregate;
+  @Field(() => PositionClassCategoryMinAggregate, { nullable: true })
+  _min?: PositionClassCategoryMinAggregate;
 
-    @Field(() => PositionClassCategoryMinAggregate, {nullable:true})
-    _min?: PositionClassCategoryMinAggregate;
-
-    @Field(() => PositionClassCategoryMaxAggregate, {nullable:true})
-    _max?: PositionClassCategoryMaxAggregate;
+  @Field(() => PositionClassCategoryMaxAggregate, { nullable: true })
+  _max?: PositionClassCategoryMaxAggregate;
 }

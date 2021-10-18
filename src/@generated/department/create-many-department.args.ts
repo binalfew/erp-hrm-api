@@ -4,10 +4,9 @@ import { DepartmentCreateManyInput } from './department-create-many.input';
 
 @ArgsType()
 export class CreateManyDepartmentArgs {
+  @Field(() => [DepartmentCreateManyInput], { nullable: false })
+  data!: Array<DepartmentCreateManyInput>;
 
-    @Field(() => [DepartmentCreateManyInput], {nullable:false})
-    data!: Array<DepartmentCreateManyInput>;
-
-    @Field(() => Boolean, {nullable:true})
-    skipDuplicates?: boolean;
+  @Field(() => Boolean, { nullable: true })
+  skipDuplicates?: boolean;
 }

@@ -4,7 +4,6 @@ import { NationalityWhereInput } from './nationality-where.input';
 
 @ArgsType()
 export class DeleteManyNationalityArgs {
-
-    @Field(() => NationalityWhereInput, {nullable:true})
-    where?: NationalityWhereInput;
+  @Field(() => NationalityWhereInput, { nullable: true })
+  where?: NationalityWhereInput;
 }

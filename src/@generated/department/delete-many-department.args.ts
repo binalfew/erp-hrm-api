@@ -4,7 +4,6 @@ import { DepartmentWhereInput } from './department-where.input';
 
 @ArgsType()
 export class DeleteManyDepartmentArgs {
-
-    @Field(() => DepartmentWhereInput, {nullable:true})
-    where?: DepartmentWhereInput;
+  @Field(() => DepartmentWhereInput, { nullable: true })
+  where?: DepartmentWhereInput;
 }

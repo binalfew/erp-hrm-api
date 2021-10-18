@@ -6,13 +6,12 @@ import { DepartmentCreateWithoutParentInput } from './department-create-without-
 
 @InputType()
 export class DepartmentUpsertWithWhereUniqueWithoutParentInput {
+  @Field(() => DepartmentWhereUniqueInput, { nullable: false })
+  where!: DepartmentWhereUniqueInput;
 
-    @Field(() => DepartmentWhereUniqueInput, {nullable:false})
-    where!: DepartmentWhereUniqueInput;
+  @Field(() => DepartmentUpdateWithoutParentInput, { nullable: false })
+  update!: DepartmentUpdateWithoutParentInput;
 
-    @Field(() => DepartmentUpdateWithoutParentInput, {nullable:false})
-    update!: DepartmentUpdateWithoutParentInput;
-
-    @Field(() => DepartmentCreateWithoutParentInput, {nullable:false})
-    create!: DepartmentCreateWithoutParentInput;
+  @Field(() => DepartmentCreateWithoutParentInput, { nullable: false })
+  create!: DepartmentCreateWithoutParentInput;
 }

@@ -4,10 +4,9 @@ import { EmploymentTypeWhereInput } from './employment-type-where.input';
 
 @InputType()
 export class EmploymentTypeRelationFilter {
+  @Field(() => EmploymentTypeWhereInput, { nullable: true })
+  is?: EmploymentTypeWhereInput;
 
-    @Field(() => EmploymentTypeWhereInput, {nullable:true})
-    is?: EmploymentTypeWhereInput;
-
-    @Field(() => EmploymentTypeWhereInput, {nullable:true})
-    isNot?: EmploymentTypeWhereInput;
+  @Field(() => EmploymentTypeWhereInput, { nullable: true })
+  isNot?: EmploymentTypeWhereInput;
 }

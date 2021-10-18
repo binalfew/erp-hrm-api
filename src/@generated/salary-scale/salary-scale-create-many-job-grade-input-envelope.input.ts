@@ -4,10 +4,9 @@ import { SalaryScaleCreateManyJobGradeInput } from './salary-scale-create-many-j
 
 @InputType()
 export class SalaryScaleCreateManyJobGradeInputEnvelope {
+  @Field(() => [SalaryScaleCreateManyJobGradeInput], { nullable: false })
+  data!: Array<SalaryScaleCreateManyJobGradeInput>;
 
-    @Field(() => [SalaryScaleCreateManyJobGradeInput], {nullable:false})
-    data!: Array<SalaryScaleCreateManyJobGradeInput>;
-
-    @Field(() => Boolean, {nullable:true})
-    skipDuplicates?: boolean;
+  @Field(() => Boolean, { nullable: true })
+  skipDuplicates?: boolean;
 }

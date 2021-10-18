@@ -8,19 +8,18 @@ import { JobStepMaxAggregate } from './job-step-max-aggregate.output';
 
 @ObjectType()
 export class AggregateJobStep {
+  @Field(() => JobStepCountAggregate, { nullable: true })
+  _count?: JobStepCountAggregate;
 
-    @Field(() => JobStepCountAggregate, {nullable:true})
-    _count?: JobStepCountAggregate;
+  @Field(() => JobStepAvgAggregate, { nullable: true })
+  _avg?: JobStepAvgAggregate;
 
-    @Field(() => JobStepAvgAggregate, {nullable:true})
-    _avg?: JobStepAvgAggregate;
+  @Field(() => JobStepSumAggregate, { nullable: true })
+  _sum?: JobStepSumAggregate;
 
-    @Field(() => JobStepSumAggregate, {nullable:true})
-    _sum?: JobStepSumAggregate;
+  @Field(() => JobStepMinAggregate, { nullable: true })
+  _min?: JobStepMinAggregate;
 
-    @Field(() => JobStepMinAggregate, {nullable:true})
-    _min?: JobStepMinAggregate;
-
-    @Field(() => JobStepMaxAggregate, {nullable:true})
-    _max?: JobStepMaxAggregate;
+  @Field(() => JobStepMaxAggregate, { nullable: true })
+  _max?: JobStepMaxAggregate;
 }

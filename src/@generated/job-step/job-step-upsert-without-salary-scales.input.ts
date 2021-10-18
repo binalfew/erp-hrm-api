@@ -5,10 +5,9 @@ import { JobStepCreateWithoutSalaryScalesInput } from './job-step-create-without
 
 @InputType()
 export class JobStepUpsertWithoutSalaryScalesInput {
+  @Field(() => JobStepUpdateWithoutSalaryScalesInput, { nullable: false })
+  update!: JobStepUpdateWithoutSalaryScalesInput;
 
-    @Field(() => JobStepUpdateWithoutSalaryScalesInput, {nullable:false})
-    update!: JobStepUpdateWithoutSalaryScalesInput;
-
-    @Field(() => JobStepCreateWithoutSalaryScalesInput, {nullable:false})
-    create!: JobStepCreateWithoutSalaryScalesInput;
+  @Field(() => JobStepCreateWithoutSalaryScalesInput, { nullable: false })
+  create!: JobStepCreateWithoutSalaryScalesInput;
 }

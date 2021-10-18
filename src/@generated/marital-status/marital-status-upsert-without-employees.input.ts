@@ -5,10 +5,9 @@ import { MaritalStatusCreateWithoutEmployeesInput } from './marital-status-creat
 
 @InputType()
 export class MaritalStatusUpsertWithoutEmployeesInput {
+  @Field(() => MaritalStatusUpdateWithoutEmployeesInput, { nullable: false })
+  update!: MaritalStatusUpdateWithoutEmployeesInput;
 
-    @Field(() => MaritalStatusUpdateWithoutEmployeesInput, {nullable:false})
-    update!: MaritalStatusUpdateWithoutEmployeesInput;
-
-    @Field(() => MaritalStatusCreateWithoutEmployeesInput, {nullable:false})
-    create!: MaritalStatusCreateWithoutEmployeesInput;
+  @Field(() => MaritalStatusCreateWithoutEmployeesInput, { nullable: false })
+  create!: MaritalStatusCreateWithoutEmployeesInput;
 }

@@ -8,19 +8,18 @@ import { EmploymentNatureMaxAggregate } from './employment-nature-max-aggregate.
 
 @ObjectType()
 export class AggregateEmploymentNature {
+  @Field(() => EmploymentNatureCountAggregate, { nullable: true })
+  _count?: EmploymentNatureCountAggregate;
 
-    @Field(() => EmploymentNatureCountAggregate, {nullable:true})
-    _count?: EmploymentNatureCountAggregate;
+  @Field(() => EmploymentNatureAvgAggregate, { nullable: true })
+  _avg?: EmploymentNatureAvgAggregate;
 
-    @Field(() => EmploymentNatureAvgAggregate, {nullable:true})
-    _avg?: EmploymentNatureAvgAggregate;
+  @Field(() => EmploymentNatureSumAggregate, { nullable: true })
+  _sum?: EmploymentNatureSumAggregate;
 
-    @Field(() => EmploymentNatureSumAggregate, {nullable:true})
-    _sum?: EmploymentNatureSumAggregate;
+  @Field(() => EmploymentNatureMinAggregate, { nullable: true })
+  _min?: EmploymentNatureMinAggregate;
 
-    @Field(() => EmploymentNatureMinAggregate, {nullable:true})
-    _min?: EmploymentNatureMinAggregate;
-
-    @Field(() => EmploymentNatureMaxAggregate, {nullable:true})
-    _max?: EmploymentNatureMaxAggregate;
+  @Field(() => EmploymentNatureMaxAggregate, { nullable: true })
+  _max?: EmploymentNatureMaxAggregate;
 }

@@ -9,37 +9,36 @@ import { SalaryScaleListRelationFilter } from '../salary-scale/salary-scale-list
 
 @InputType()
 export class JobGradeWhereInput {
+  @Field(() => [JobGradeWhereInput], { nullable: true })
+  AND?: Array<JobGradeWhereInput>;
 
-    @Field(() => [JobGradeWhereInput], {nullable:true})
-    AND?: Array<JobGradeWhereInput>;
+  @Field(() => [JobGradeWhereInput], { nullable: true })
+  OR?: Array<JobGradeWhereInput>;
 
-    @Field(() => [JobGradeWhereInput], {nullable:true})
-    OR?: Array<JobGradeWhereInput>;
+  @Field(() => [JobGradeWhereInput], { nullable: true })
+  NOT?: Array<JobGradeWhereInput>;
 
-    @Field(() => [JobGradeWhereInput], {nullable:true})
-    NOT?: Array<JobGradeWhereInput>;
+  @Field(() => IntFilter, { nullable: true })
+  id?: IntFilter;
 
-    @Field(() => IntFilter, {nullable:true})
-    id?: IntFilter;
+  @Field(() => StringFilter, { nullable: true })
+  name?: StringFilter;
 
-    @Field(() => StringFilter, {nullable:true})
-    name?: StringFilter;
+  @Field(() => StringFilter, { nullable: true })
+  code?: StringFilter;
 
-    @Field(() => StringFilter, {nullable:true})
-    code?: StringFilter;
+  @Field(() => JsonNullableFilter, { nullable: true })
+  locales?: JsonNullableFilter;
 
-    @Field(() => JsonNullableFilter, {nullable:true})
-    locales?: JsonNullableFilter;
+  @Field(() => BoolFilter, { nullable: true })
+  deleted?: BoolFilter;
 
-    @Field(() => BoolFilter, {nullable:true})
-    deleted?: BoolFilter;
+  @Field(() => DateTimeFilter, { nullable: true })
+  createdAt?: DateTimeFilter;
 
-    @Field(() => DateTimeFilter, {nullable:true})
-    createdAt?: DateTimeFilter;
+  @Field(() => DateTimeFilter, { nullable: true })
+  updatedAt?: DateTimeFilter;
 
-    @Field(() => DateTimeFilter, {nullable:true})
-    updatedAt?: DateTimeFilter;
-
-    @Field(() => SalaryScaleListRelationFilter, {nullable:true})
-    salaryScales?: SalaryScaleListRelationFilter;
+  @Field(() => SalaryScaleListRelationFilter, { nullable: true })
+  salaryScales?: SalaryScaleListRelationFilter;
 }
