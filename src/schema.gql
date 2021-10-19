@@ -416,6 +416,74 @@ type Employee {
   updatedAt: Timestamp!
 }
 
+type EmployeeAvgAggregate {
+  employmentNatureId: Float
+  employmentTypeId: Float
+  genderId: Float
+  id: Float
+  maritalStatusId: Float
+  nationalityId: Float
+  numberOfChildren: Float
+}
+
+type EmployeeCountAggregate {
+  Phone: Int!
+  _all: Int!
+  countryOfBirth: Int!
+  createdAt: Int!
+  dateOfBirth: Int!
+  deleted: Int!
+  email: Int!
+  emergencyContact: Int!
+  emergencyPhone: Int!
+  employmentDate: Int!
+  employmentNatureId: Int!
+  employmentTypeId: Int!
+  firstName: Int!
+  genderId: Int!
+  grandfatherName: Int!
+  id: Int!
+  idNumber: Int!
+  lastName: Int!
+  locales: Int!
+  maritalStatusId: Int!
+  nationalityId: Int!
+  numberOfChildren: Int!
+  passportNumber: Int!
+  placeOfBirth: Int!
+  probationDate: Int!
+  retirementDate: Int!
+  updatedAt: Int!
+}
+
+input EmployeeCreateInput {
+  Phone: String!
+  countryOfBirth: String!
+  createdAt: Timestamp
+  dateOfBirth: Timestamp
+  deleted: Boolean
+  email: String!
+  emergencyContact: String!
+  emergencyPhone: String!
+  employmentDate: Timestamp
+  employmentNature: EmploymentNatureCreateNestedOneWithoutEmployeesInput
+  employmentType: EmploymentTypeCreateNestedOneWithoutEmployeesInput
+  firstName: JSON!
+  gender: GenderCreateNestedOneWithoutEmployeesInput
+  grandfatherName: JSON!
+  idNumber: String!
+  lastName: JSON!
+  locales: JSON
+  maritalStatus: MaritalStatusCreateNestedOneWithoutEmployeesInput
+  nationality: NationalityCreateNestedOneWithoutEmployeesInput
+  numberOfChildren: Int!
+  passportNumber: String!
+  placeOfBirth: String!
+  probationDate: Timestamp
+  retirementDate: Timestamp
+  updatedAt: Timestamp
+}
+
 input EmployeeCreateManyEmploymentNatureInput {
   Phone: String!
   countryOfBirth: String!
@@ -776,14 +844,132 @@ input EmployeeCreateWithoutNationalityInput {
   updatedAt: Timestamp
 }
 
+type EmployeeEdge {
+  cursor: String!
+  node: Employee!
+}
+
 input EmployeeListRelationFilter {
   every: EmployeeWhereInput
   none: EmployeeWhereInput
   some: EmployeeWhereInput
 }
 
+type EmployeeMaxAggregate {
+  Phone: String
+  countryOfBirth: String
+  createdAt: Timestamp
+  dateOfBirth: Timestamp
+  deleted: Boolean
+  email: String
+  emergencyContact: String
+  emergencyPhone: String
+  employmentDate: Timestamp
+  employmentNatureId: Int
+  employmentTypeId: Int
+  genderId: Int
+  id: Int
+  idNumber: String
+  maritalStatusId: Int
+  nationalityId: Int
+  numberOfChildren: Int
+  passportNumber: String
+  placeOfBirth: String
+  probationDate: Timestamp
+  retirementDate: Timestamp
+  updatedAt: Timestamp
+}
+
+type EmployeeMinAggregate {
+  Phone: String
+  countryOfBirth: String
+  createdAt: Timestamp
+  dateOfBirth: Timestamp
+  deleted: Boolean
+  email: String
+  emergencyContact: String
+  emergencyPhone: String
+  employmentDate: Timestamp
+  employmentNatureId: Int
+  employmentTypeId: Int
+  genderId: Int
+  id: Int
+  idNumber: String
+  maritalStatusId: Int
+  nationalityId: Int
+  numberOfChildren: Int
+  passportNumber: String
+  placeOfBirth: String
+  probationDate: Timestamp
+  retirementDate: Timestamp
+  updatedAt: Timestamp
+}
+
 input EmployeeOrderByRelationAggregateInput {
   _count: SortOrder
+}
+
+input EmployeeOrderByWithRelationInput {
+  Phone: SortOrder
+  countryOfBirth: SortOrder
+  createdAt: SortOrder
+  dateOfBirth: SortOrder
+  deleted: SortOrder
+  email: SortOrder
+  emergencyContact: SortOrder
+  emergencyPhone: SortOrder
+  employmentDate: SortOrder
+  employmentNature: EmploymentNatureOrderByWithRelationInput
+  employmentNatureId: SortOrder
+  employmentType: EmploymentTypeOrderByWithRelationInput
+  employmentTypeId: SortOrder
+  firstName: SortOrder
+  gender: GenderOrderByWithRelationInput
+  genderId: SortOrder
+  grandfatherName: SortOrder
+  id: SortOrder
+  idNumber: SortOrder
+  lastName: SortOrder
+  locales: SortOrder
+  maritalStatus: MaritalStatusOrderByWithRelationInput
+  maritalStatusId: SortOrder
+  nationality: NationalityOrderByWithRelationInput
+  nationalityId: SortOrder
+  numberOfChildren: SortOrder
+  passportNumber: SortOrder
+  placeOfBirth: SortOrder
+  probationDate: SortOrder
+  retirementDate: SortOrder
+  updatedAt: SortOrder
+}
+
+enum EmployeeScalarFieldEnum {
+  Phone
+  countryOfBirth
+  createdAt
+  dateOfBirth
+  deleted
+  email
+  emergencyContact
+  emergencyPhone
+  employmentDate
+  employmentNatureId
+  employmentTypeId
+  firstName
+  genderId
+  grandfatherName
+  id
+  idNumber
+  lastName
+  locales
+  maritalStatusId
+  nationalityId
+  numberOfChildren
+  passportNumber
+  placeOfBirth
+  probationDate
+  retirementDate
+  updatedAt
 }
 
 input EmployeeScalarWhereInput {
@@ -816,6 +1002,44 @@ input EmployeeScalarWhereInput {
   probationDate: DateTimeFilter
   retirementDate: DateTimeFilter
   updatedAt: DateTimeFilter
+}
+
+type EmployeeSumAggregate {
+  employmentNatureId: Int
+  employmentTypeId: Int
+  genderId: Int
+  id: Int
+  maritalStatusId: Int
+  nationalityId: Int
+  numberOfChildren: Int
+}
+
+input EmployeeUpdateInput {
+  Phone: StringFieldUpdateOperationsInput
+  countryOfBirth: StringFieldUpdateOperationsInput
+  createdAt: DateTimeFieldUpdateOperationsInput
+  dateOfBirth: DateTimeFieldUpdateOperationsInput
+  deleted: BoolFieldUpdateOperationsInput
+  email: StringFieldUpdateOperationsInput
+  emergencyContact: StringFieldUpdateOperationsInput
+  emergencyPhone: StringFieldUpdateOperationsInput
+  employmentDate: DateTimeFieldUpdateOperationsInput
+  employmentNature: EmploymentNatureUpdateOneWithoutEmployeesInput
+  employmentType: EmploymentTypeUpdateOneWithoutEmployeesInput
+  firstName: JSON
+  gender: GenderUpdateOneWithoutEmployeesInput
+  grandfatherName: JSON
+  idNumber: StringFieldUpdateOperationsInput
+  lastName: JSON
+  locales: JSON
+  maritalStatus: MaritalStatusUpdateOneWithoutEmployeesInput
+  nationality: NationalityUpdateOneWithoutEmployeesInput
+  numberOfChildren: IntFieldUpdateOperationsInput
+  passportNumber: StringFieldUpdateOperationsInput
+  placeOfBirth: StringFieldUpdateOperationsInput
+  probationDate: DateTimeFieldUpdateOperationsInput
+  retirementDate: DateTimeFieldUpdateOperationsInput
+  updatedAt: DateTimeFieldUpdateOperationsInput
 }
 
 input EmployeeUpdateManyMutationInput {
@@ -2295,6 +2519,7 @@ input MaritalStatusWhereUniqueInput {
 
 type Mutation {
   createDepartment(data: DepartmentCreateInput!): Department!
+  createEmployee(data: EmployeeCreateInput!): Employee!
   createEmploymentNature(data: EmploymentNatureCreateInput!): EmploymentNature!
   createEmploymentType(data: EmploymentTypeCreateInput!): EmploymentType!
   createGender(data: GenderCreateInput!): Gender!
@@ -2308,6 +2533,7 @@ type Mutation {
   createPositionClassType(data: PositionClassTypeCreateInput!): PositionClassType!
   createSalaryScale(data: SalaryScaleCreateInput!): SalaryScale!
   deleteDepartment(where: DepartmentWhereUniqueInput!): Department!
+  deleteEmployee(where: EmployeeWhereUniqueInput!): Employee!
   deleteEmploymentNature(where: EmploymentNatureWhereUniqueInput!): EmploymentNature!
   deleteEmploymentType(where: EmploymentTypeWhereUniqueInput!): EmploymentType!
   deleteGender(where: GenderWhereUniqueInput!): Gender!
@@ -2321,6 +2547,7 @@ type Mutation {
   deletePositionClassType(where: PositionClassTypeWhereUniqueInput!): PositionClassType!
   deleteSalaryScale(where: SalaryScaleWhereUniqueInput!): SalaryScale!
   updateDepartment(data: DepartmentUpdateInput!, where: DepartmentWhereUniqueInput!): Department!
+  updateEmployee(data: EmployeeUpdateInput!, where: EmployeeWhereUniqueInput!): Employee!
   updateEmploymentNature(data: EmploymentNatureUpdateInput!, where: EmploymentNatureWhereUniqueInput!): EmploymentNature!
   updateEmploymentType(data: EmploymentTypeUpdateInput!, where: EmploymentTypeWhereUniqueInput!): EmploymentType!
   updateGender(data: GenderUpdateInput!, where: GenderWhereUniqueInput!): Gender!
@@ -2600,6 +2827,15 @@ type PaginatedDepartment {
   endCursor: Int!
   hasNextPage: Boolean!
   nodes: [Department!]!
+  startCursor: Int!
+  totalCount: Int!
+}
+
+type PaginatedEmployee {
+  edges: [EmployeeEdge!]!
+  endCursor: Int!
+  hasNextPage: Boolean!
+  nodes: [Employee!]!
   startCursor: Int!
   totalCount: Int!
 }
@@ -4107,6 +4343,8 @@ input PositionWhereUniqueInput {
 type Query {
   department(where: DepartmentWhereUniqueInput!): Department
   departments(cursor: DepartmentWhereUniqueInput, distinct: [DepartmentScalarFieldEnum!], orderBy: [DepartmentOrderByWithRelationInput!], skip: Int, take: Int, where: DepartmentWhereInput): PaginatedDepartment!
+  employee(where: EmployeeWhereUniqueInput!): Employee
+  employees(cursor: EmployeeWhereUniqueInput, distinct: [EmployeeScalarFieldEnum!], orderBy: [EmployeeOrderByWithRelationInput!], skip: Int, take: Int, where: EmployeeWhereInput): PaginatedEmployee!
   employmentNature(where: EmploymentNatureWhereUniqueInput!): EmploymentNature
   employmentNatures(cursor: EmploymentNatureWhereUniqueInput, distinct: [EmploymentNatureScalarFieldEnum!], orderBy: [EmploymentNatureOrderByWithRelationInput!], skip: Int, take: Int, where: EmploymentNatureWhereInput): PaginatedEmploymentNature!
   employmentType(where: EmploymentTypeWhereUniqueInput!): EmploymentType
