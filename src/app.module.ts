@@ -14,6 +14,7 @@ import {
   sessionConfig,
 } from './config/configuration';
 import { DataModule } from './data/data.module';
+import { DepartmentsResolver } from './resolvers/departments.resolver';
 import { EmploymentNaturesResolver } from './resolvers/employment-natures.resolver';
 import { EmploymentTypesResolver } from './resolvers/employment-types.resolver';
 import { GendersResolver } from './resolvers/genders.resolver';
@@ -53,6 +54,7 @@ import { SalaryScalesResolver } from './resolvers/salary-scales.resolver';
     PositionClassesResolver,
     PositionsResolver,
     SalaryScalesResolver,
+    DepartmentsResolver,
     AppConfigService,
     GqlConfigService,
     RedisConfigService,

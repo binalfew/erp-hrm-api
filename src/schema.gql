@@ -62,9 +62,36 @@ type Department {
   updatedAt: Timestamp!
 }
 
+type DepartmentAvgAggregate {
+  id: Float
+  parentId: Float
+}
+
 type DepartmentCount {
   children: Int!
   positions: Int!
+}
+
+type DepartmentCountAggregate {
+  _all: Int!
+  code: Int!
+  createdAt: Int!
+  id: Int!
+  locales: Int!
+  name: Int!
+  parentId: Int!
+  updatedAt: Int!
+}
+
+input DepartmentCreateInput {
+  children: DepartmentCreateNestedManyWithoutParentInput
+  code: String!
+  createdAt: Timestamp
+  locales: JSON
+  name: String!
+  parent: DepartmentCreateNestedOneWithoutChildrenInput
+  positions: PositionCreateNestedManyWithoutDepartmentInput
+  updatedAt: Timestamp
 }
 
 input DepartmentCreateManyParentInput {
@@ -145,10 +172,33 @@ input DepartmentCreateWithoutPositionsInput {
   updatedAt: Timestamp
 }
 
+type DepartmentEdge {
+  cursor: String!
+  node: Department!
+}
+
 input DepartmentListRelationFilter {
   every: DepartmentWhereInput
   none: DepartmentWhereInput
   some: DepartmentWhereInput
+}
+
+type DepartmentMaxAggregate {
+  code: String
+  createdAt: Timestamp
+  id: Int
+  name: String
+  parentId: Int
+  updatedAt: Timestamp
+}
+
+type DepartmentMinAggregate {
+  code: String
+  createdAt: Timestamp
+  id: Int
+  name: String
+  parentId: Int
+  updatedAt: Timestamp
 }
 
 input DepartmentOrderByRelationAggregateInput {
@@ -173,6 +223,16 @@ input DepartmentRelationFilter {
   isNot: DepartmentWhereInput
 }
 
+enum DepartmentScalarFieldEnum {
+  code
+  createdAt
+  id
+  locales
+  name
+  parentId
+  updatedAt
+}
+
 input DepartmentScalarWhereInput {
   AND: [DepartmentScalarWhereInput!]
   NOT: [DepartmentScalarWhereInput!]
@@ -184,6 +244,22 @@ input DepartmentScalarWhereInput {
   name: StringFilter
   parentId: IntNullableFilter
   updatedAt: DateTimeFilter
+}
+
+type DepartmentSumAggregate {
+  id: Int
+  parentId: Int
+}
+
+input DepartmentUpdateInput {
+  children: DepartmentUpdateManyWithoutParentInput
+  code: StringFieldUpdateOperationsInput
+  createdAt: DateTimeFieldUpdateOperationsInput
+  locales: JSON
+  name: StringFieldUpdateOperationsInput
+  parent: DepartmentUpdateOneWithoutChildrenInput
+  positions: PositionUpdateManyWithoutDepartmentInput
+  updatedAt: DateTimeFieldUpdateOperationsInput
 }
 
 input DepartmentUpdateManyMutationInput {
@@ -2218,6 +2294,7 @@ input MaritalStatusWhereUniqueInput {
 }
 
 type Mutation {
+  createDepartment(data: DepartmentCreateInput!): Department!
   createEmploymentNature(data: EmploymentNatureCreateInput!): EmploymentNature!
   createEmploymentType(data: EmploymentTypeCreateInput!): EmploymentType!
   createGender(data: GenderCreateInput!): Gender!
@@ -2230,6 +2307,7 @@ type Mutation {
   createPositionClassCategory(data: PositionClassCategoryCreateInput!): PositionClassCategory!
   createPositionClassType(data: PositionClassTypeCreateInput!): PositionClassType!
   createSalaryScale(data: SalaryScaleCreateInput!): SalaryScale!
+  deleteDepartment(where: DepartmentWhereUniqueInput!): Department!
   deleteEmploymentNature(where: EmploymentNatureWhereUniqueInput!): EmploymentNature!
   deleteEmploymentType(where: EmploymentTypeWhereUniqueInput!): EmploymentType!
   deleteGender(where: GenderWhereUniqueInput!): Gender!
@@ -2242,6 +2320,7 @@ type Mutation {
   deletePositionClassCategory(where: PositionClassCategoryWhereUniqueInput!): PositionClassCategory!
   deletePositionClassType(where: PositionClassTypeWhereUniqueInput!): PositionClassType!
   deleteSalaryScale(where: SalaryScaleWhereUniqueInput!): SalaryScale!
+  updateDepartment(data: DepartmentUpdateInput!, where: DepartmentWhereUniqueInput!): Department!
   updateEmploymentNature(data: EmploymentNatureUpdateInput!, where: EmploymentNatureWhereUniqueInput!): EmploymentNature!
   updateEmploymentType(data: EmploymentTypeUpdateInput!, where: EmploymentTypeWhereUniqueInput!): EmploymentType!
   updateGender(data: GenderUpdateInput!, where: GenderWhereUniqueInput!): Gender!
@@ -2514,6 +2593,15 @@ input NestedStringNullableFilter {
 
 input NullableStringFieldUpdateOperationsInput {
   set: String
+}
+
+type PaginatedDepartment {
+  edges: [DepartmentEdge!]!
+  endCursor: Int!
+  hasNextPage: Boolean!
+  nodes: [Department!]!
+  startCursor: Int!
+  totalCount: Int!
 }
 
 type PaginatedEmploymentNature {
@@ -4017,6 +4105,8 @@ input PositionWhereUniqueInput {
 }
 
 type Query {
+  department(where: DepartmentWhereUniqueInput!): Department
+  departments(cursor: DepartmentWhereUniqueInput, distinct: [DepartmentScalarFieldEnum!], orderBy: [DepartmentOrderByWithRelationInput!], skip: Int, take: Int, where: DepartmentWhereInput): PaginatedDepartment!
   employmentNature(where: EmploymentNatureWhereUniqueInput!): EmploymentNature
   employmentNatures(cursor: EmploymentNatureWhereUniqueInput, distinct: [EmploymentNatureScalarFieldEnum!], orderBy: [EmploymentNatureOrderByWithRelationInput!], skip: Int, take: Int, where: EmploymentNatureWhereInput): PaginatedEmploymentNature!
   employmentType(where: EmploymentTypeWhereUniqueInput!): EmploymentType
