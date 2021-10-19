@@ -5,9 +5,10 @@ import { GenderCreateWithoutEmployeesInput } from './gender-create-without-emplo
 
 @InputType()
 export class GenderUpsertWithoutEmployeesInput {
-  @Field(() => GenderUpdateWithoutEmployeesInput, { nullable: false })
-  update!: GenderUpdateWithoutEmployeesInput;
 
-  @Field(() => GenderCreateWithoutEmployeesInput, { nullable: false })
-  create!: GenderCreateWithoutEmployeesInput;
+    @Field(() => GenderUpdateWithoutEmployeesInput, {nullable:false})
+    update!: GenderUpdateWithoutEmployeesInput;
+
+    @Field(() => GenderCreateWithoutEmployeesInput, {nullable:false})
+    create!: GenderCreateWithoutEmployeesInput;
 }

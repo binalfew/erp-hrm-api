@@ -7,19 +7,16 @@ import { PositionClassWhereUniqueInput } from './position-class-where-unique.inp
 
 @InputType()
 export class PositionClassUncheckedCreateNestedManyWithoutSalaryScaleInput {
-  @Field(() => [PositionClassCreateWithoutSalaryScaleInput], { nullable: true })
-  create?: Array<PositionClassCreateWithoutSalaryScaleInput>;
 
-  @Field(() => [PositionClassCreateOrConnectWithoutSalaryScaleInput], {
-    nullable: true,
-  })
-  connectOrCreate?: Array<PositionClassCreateOrConnectWithoutSalaryScaleInput>;
+    @Field(() => [PositionClassCreateWithoutSalaryScaleInput], {nullable:true})
+    create?: Array<PositionClassCreateWithoutSalaryScaleInput>;
 
-  @Field(() => PositionClassCreateManySalaryScaleInputEnvelope, {
-    nullable: true,
-  })
-  createMany?: PositionClassCreateManySalaryScaleInputEnvelope;
+    @Field(() => [PositionClassCreateOrConnectWithoutSalaryScaleInput], {nullable:true})
+    connectOrCreate?: Array<PositionClassCreateOrConnectWithoutSalaryScaleInput>;
 
-  @Field(() => [PositionClassWhereUniqueInput], { nullable: true })
-  connect?: Array<PositionClassWhereUniqueInput>;
+    @Field(() => PositionClassCreateManySalaryScaleInputEnvelope, {nullable:true})
+    createMany?: PositionClassCreateManySalaryScaleInputEnvelope;
+
+    @Field(() => [PositionClassWhereUniqueInput], {nullable:true})
+    connect?: Array<PositionClassWhereUniqueInput>;
 }

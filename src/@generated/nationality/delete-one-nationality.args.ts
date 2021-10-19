@@ -4,6 +4,7 @@ import { NationalityWhereUniqueInput } from './nationality-where-unique.input';
 
 @ArgsType()
 export class DeleteOneNationalityArgs {
-  @Field(() => NationalityWhereUniqueInput, { nullable: false })
-  where!: NationalityWhereUniqueInput;
+
+    @Field(() => NationalityWhereUniqueInput, {nullable:false})
+    where!: NationalityWhereUniqueInput;
 }

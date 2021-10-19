@@ -4,27 +4,28 @@ import { SortOrder } from '../prisma/sort-order.enum';
 
 @InputType()
 export class PositionMaxOrderByAggregateInput {
-  @Field(() => SortOrder, { nullable: true })
-  id?: keyof typeof SortOrder;
 
-  @Field(() => SortOrder, { nullable: true })
-  code?: keyof typeof SortOrder;
+    @Field(() => SortOrder, {nullable:true})
+    id?: keyof typeof SortOrder;
 
-  @Field(() => SortOrder, { nullable: true })
-  positionClassId?: keyof typeof SortOrder;
+    @Field(() => SortOrder, {nullable:true})
+    code?: keyof typeof SortOrder;
 
-  @Field(() => SortOrder, { nullable: true })
-  departmentId?: keyof typeof SortOrder;
+    @Field(() => SortOrder, {nullable:true})
+    positionClassId?: keyof typeof SortOrder;
 
-  @Field(() => SortOrder, { nullable: true })
-  vacant?: keyof typeof SortOrder;
+    @Field(() => SortOrder, {nullable:true})
+    departmentId?: keyof typeof SortOrder;
 
-  @Field(() => SortOrder, { nullable: true })
-  deleted?: keyof typeof SortOrder;
+    @Field(() => SortOrder, {nullable:true})
+    vacant?: keyof typeof SortOrder;
 
-  @Field(() => SortOrder, { nullable: true })
-  createdAt?: keyof typeof SortOrder;
+    @Field(() => SortOrder, {nullable:true})
+    deleted?: keyof typeof SortOrder;
 
-  @Field(() => SortOrder, { nullable: true })
-  updatedAt?: keyof typeof SortOrder;
+    @Field(() => SortOrder, {nullable:true})
+    createdAt?: keyof typeof SortOrder;
+
+    @Field(() => SortOrder, {nullable:true})
+    updatedAt?: keyof typeof SortOrder;
 }

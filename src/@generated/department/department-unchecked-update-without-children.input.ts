@@ -9,29 +9,28 @@ import { PositionUncheckedUpdateManyWithoutDepartmentInput } from '../position/p
 
 @InputType()
 export class DepartmentUncheckedUpdateWithoutChildrenInput {
-  @Field(() => IntFieldUpdateOperationsInput, { nullable: true })
-  id?: IntFieldUpdateOperationsInput;
 
-  @Field(() => StringFieldUpdateOperationsInput, { nullable: true })
-  name?: StringFieldUpdateOperationsInput;
+    @Field(() => IntFieldUpdateOperationsInput, {nullable:true})
+    id?: IntFieldUpdateOperationsInput;
 
-  @Field(() => StringFieldUpdateOperationsInput, { nullable: true })
-  code?: StringFieldUpdateOperationsInput;
+    @Field(() => StringFieldUpdateOperationsInput, {nullable:true})
+    name?: StringFieldUpdateOperationsInput;
 
-  @Field(() => GraphQLJSON, { nullable: true })
-  locales?: any;
+    @Field(() => StringFieldUpdateOperationsInput, {nullable:true})
+    code?: StringFieldUpdateOperationsInput;
 
-  @Field(() => NullableIntFieldUpdateOperationsInput, { nullable: true })
-  parentId?: NullableIntFieldUpdateOperationsInput;
+    @Field(() => GraphQLJSON, {nullable:true})
+    locales?: any;
 
-  @Field(() => DateTimeFieldUpdateOperationsInput, { nullable: true })
-  createdAt?: DateTimeFieldUpdateOperationsInput;
+    @Field(() => NullableIntFieldUpdateOperationsInput, {nullable:true})
+    parentId?: NullableIntFieldUpdateOperationsInput;
 
-  @Field(() => DateTimeFieldUpdateOperationsInput, { nullable: true })
-  updatedAt?: DateTimeFieldUpdateOperationsInput;
+    @Field(() => DateTimeFieldUpdateOperationsInput, {nullable:true})
+    createdAt?: DateTimeFieldUpdateOperationsInput;
 
-  @Field(() => PositionUncheckedUpdateManyWithoutDepartmentInput, {
-    nullable: true,
-  })
-  positions?: PositionUncheckedUpdateManyWithoutDepartmentInput;
+    @Field(() => DateTimeFieldUpdateOperationsInput, {nullable:true})
+    updatedAt?: DateTimeFieldUpdateOperationsInput;
+
+    @Field(() => PositionUncheckedUpdateManyWithoutDepartmentInput, {nullable:true})
+    positions?: PositionUncheckedUpdateManyWithoutDepartmentInput;
 }

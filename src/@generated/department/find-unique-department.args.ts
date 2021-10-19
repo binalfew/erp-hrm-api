@@ -4,6 +4,7 @@ import { DepartmentWhereUniqueInput } from './department-where-unique.input';
 
 @ArgsType()
 export class FindUniqueDepartmentArgs {
-  @Field(() => DepartmentWhereUniqueInput, { nullable: false })
-  where!: DepartmentWhereUniqueInput;
+
+    @Field(() => DepartmentWhereUniqueInput, {nullable:false})
+    where!: DepartmentWhereUniqueInput;
 }

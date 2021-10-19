@@ -8,26 +8,25 @@ import { DepartmentUpdateWithoutPositionsInput } from './department-update-witho
 
 @InputType()
 export class DepartmentUpdateOneWithoutPositionsInput {
-  @Field(() => DepartmentCreateWithoutPositionsInput, { nullable: true })
-  create?: DepartmentCreateWithoutPositionsInput;
 
-  @Field(() => DepartmentCreateOrConnectWithoutPositionsInput, {
-    nullable: true,
-  })
-  connectOrCreate?: DepartmentCreateOrConnectWithoutPositionsInput;
+    @Field(() => DepartmentCreateWithoutPositionsInput, {nullable:true})
+    create?: DepartmentCreateWithoutPositionsInput;
 
-  @Field(() => DepartmentUpsertWithoutPositionsInput, { nullable: true })
-  upsert?: DepartmentUpsertWithoutPositionsInput;
+    @Field(() => DepartmentCreateOrConnectWithoutPositionsInput, {nullable:true})
+    connectOrCreate?: DepartmentCreateOrConnectWithoutPositionsInput;
 
-  @Field(() => DepartmentWhereUniqueInput, { nullable: true })
-  connect?: DepartmentWhereUniqueInput;
+    @Field(() => DepartmentUpsertWithoutPositionsInput, {nullable:true})
+    upsert?: DepartmentUpsertWithoutPositionsInput;
 
-  @Field(() => Boolean, { nullable: true })
-  disconnect?: boolean;
+    @Field(() => DepartmentWhereUniqueInput, {nullable:true})
+    connect?: DepartmentWhereUniqueInput;
 
-  @Field(() => Boolean, { nullable: true })
-  delete?: boolean;
+    @Field(() => Boolean, {nullable:true})
+    disconnect?: boolean;
 
-  @Field(() => DepartmentUpdateWithoutPositionsInput, { nullable: true })
-  update?: DepartmentUpdateWithoutPositionsInput;
+    @Field(() => Boolean, {nullable:true})
+    delete?: boolean;
+
+    @Field(() => DepartmentUpdateWithoutPositionsInput, {nullable:true})
+    update?: DepartmentUpdateWithoutPositionsInput;
 }

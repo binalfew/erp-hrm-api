@@ -5,9 +5,10 @@ import { JobStepWhereInput } from './job-step-where.input';
 
 @ArgsType()
 export class UpdateManyJobStepArgs {
-  @Field(() => JobStepUpdateManyMutationInput, { nullable: false })
-  data!: JobStepUpdateManyMutationInput;
 
-  @Field(() => JobStepWhereInput, { nullable: true })
-  where?: JobStepWhereInput;
+    @Field(() => JobStepUpdateManyMutationInput, {nullable:false})
+    data!: JobStepUpdateManyMutationInput;
+
+    @Field(() => JobStepWhereInput, {nullable:true})
+    where?: JobStepWhereInput;
 }

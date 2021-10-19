@@ -4,6 +4,7 @@ import { JobGradeWhereInput } from './job-grade-where.input';
 
 @ArgsType()
 export class DeleteManyJobGradeArgs {
-  @Field(() => JobGradeWhereInput, { nullable: true })
-  where?: JobGradeWhereInput;
+
+    @Field(() => JobGradeWhereInput, {nullable:true})
+    where?: JobGradeWhereInput;
 }

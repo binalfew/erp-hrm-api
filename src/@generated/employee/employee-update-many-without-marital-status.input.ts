@@ -11,44 +11,37 @@ import { EmployeeScalarWhereInput } from './employee-scalar-where.input';
 
 @InputType()
 export class EmployeeUpdateManyWithoutMaritalStatusInput {
-  @Field(() => [EmployeeCreateWithoutMaritalStatusInput], { nullable: true })
-  create?: Array<EmployeeCreateWithoutMaritalStatusInput>;
 
-  @Field(() => [EmployeeCreateOrConnectWithoutMaritalStatusInput], {
-    nullable: true,
-  })
-  connectOrCreate?: Array<EmployeeCreateOrConnectWithoutMaritalStatusInput>;
+    @Field(() => [EmployeeCreateWithoutMaritalStatusInput], {nullable:true})
+    create?: Array<EmployeeCreateWithoutMaritalStatusInput>;
 
-  @Field(() => [EmployeeUpsertWithWhereUniqueWithoutMaritalStatusInput], {
-    nullable: true,
-  })
-  upsert?: Array<EmployeeUpsertWithWhereUniqueWithoutMaritalStatusInput>;
+    @Field(() => [EmployeeCreateOrConnectWithoutMaritalStatusInput], {nullable:true})
+    connectOrCreate?: Array<EmployeeCreateOrConnectWithoutMaritalStatusInput>;
 
-  @Field(() => EmployeeCreateManyMaritalStatusInputEnvelope, { nullable: true })
-  createMany?: EmployeeCreateManyMaritalStatusInputEnvelope;
+    @Field(() => [EmployeeUpsertWithWhereUniqueWithoutMaritalStatusInput], {nullable:true})
+    upsert?: Array<EmployeeUpsertWithWhereUniqueWithoutMaritalStatusInput>;
 
-  @Field(() => [EmployeeWhereUniqueInput], { nullable: true })
-  connect?: Array<EmployeeWhereUniqueInput>;
+    @Field(() => EmployeeCreateManyMaritalStatusInputEnvelope, {nullable:true})
+    createMany?: EmployeeCreateManyMaritalStatusInputEnvelope;
 
-  @Field(() => [EmployeeWhereUniqueInput], { nullable: true })
-  set?: Array<EmployeeWhereUniqueInput>;
+    @Field(() => [EmployeeWhereUniqueInput], {nullable:true})
+    connect?: Array<EmployeeWhereUniqueInput>;
 
-  @Field(() => [EmployeeWhereUniqueInput], { nullable: true })
-  disconnect?: Array<EmployeeWhereUniqueInput>;
+    @Field(() => [EmployeeWhereUniqueInput], {nullable:true})
+    set?: Array<EmployeeWhereUniqueInput>;
 
-  @Field(() => [EmployeeWhereUniqueInput], { nullable: true })
-  delete?: Array<EmployeeWhereUniqueInput>;
+    @Field(() => [EmployeeWhereUniqueInput], {nullable:true})
+    disconnect?: Array<EmployeeWhereUniqueInput>;
 
-  @Field(() => [EmployeeUpdateWithWhereUniqueWithoutMaritalStatusInput], {
-    nullable: true,
-  })
-  update?: Array<EmployeeUpdateWithWhereUniqueWithoutMaritalStatusInput>;
+    @Field(() => [EmployeeWhereUniqueInput], {nullable:true})
+    delete?: Array<EmployeeWhereUniqueInput>;
 
-  @Field(() => [EmployeeUpdateManyWithWhereWithoutMaritalStatusInput], {
-    nullable: true,
-  })
-  updateMany?: Array<EmployeeUpdateManyWithWhereWithoutMaritalStatusInput>;
+    @Field(() => [EmployeeUpdateWithWhereUniqueWithoutMaritalStatusInput], {nullable:true})
+    update?: Array<EmployeeUpdateWithWhereUniqueWithoutMaritalStatusInput>;
 
-  @Field(() => [EmployeeScalarWhereInput], { nullable: true })
-  deleteMany?: Array<EmployeeScalarWhereInput>;
+    @Field(() => [EmployeeUpdateManyWithWhereWithoutMaritalStatusInput], {nullable:true})
+    updateMany?: Array<EmployeeUpdateManyWithWhereWithoutMaritalStatusInput>;
+
+    @Field(() => [EmployeeScalarWhereInput], {nullable:true})
+    deleteMany?: Array<EmployeeScalarWhereInput>;
 }

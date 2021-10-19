@@ -5,9 +5,10 @@ import { EmployeeWhereUniqueInput } from './employee-where-unique.input';
 
 @ArgsType()
 export class UpdateOneEmployeeArgs {
-  @Field(() => EmployeeUpdateInput, { nullable: false })
-  data!: EmployeeUpdateInput;
 
-  @Field(() => EmployeeWhereUniqueInput, { nullable: false })
-  where!: EmployeeWhereUniqueInput;
+    @Field(() => EmployeeUpdateInput, {nullable:false})
+    data!: EmployeeUpdateInput;
+
+    @Field(() => EmployeeWhereUniqueInput, {nullable:false})
+    where!: EmployeeWhereUniqueInput;
 }

@@ -5,9 +5,10 @@ import { PositionClassCreateWithoutGenderInput } from './position-class-create-w
 
 @InputType()
 export class PositionClassCreateOrConnectWithoutGenderInput {
-  @Field(() => PositionClassWhereUniqueInput, { nullable: false })
-  where!: PositionClassWhereUniqueInput;
 
-  @Field(() => PositionClassCreateWithoutGenderInput, { nullable: false })
-  create!: PositionClassCreateWithoutGenderInput;
+    @Field(() => PositionClassWhereUniqueInput, {nullable:false})
+    where!: PositionClassWhereUniqueInput;
+
+    @Field(() => PositionClassCreateWithoutGenderInput, {nullable:false})
+    create!: PositionClassCreateWithoutGenderInput;
 }

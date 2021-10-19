@@ -9,39 +9,40 @@ import { PositionClassTypeSumOrderByAggregateInput } from './position-class-type
 
 @InputType()
 export class PositionClassTypeOrderByWithAggregationInput {
-  @Field(() => SortOrder, { nullable: true })
-  id?: keyof typeof SortOrder;
 
-  @Field(() => SortOrder, { nullable: true })
-  name?: keyof typeof SortOrder;
+    @Field(() => SortOrder, {nullable:true})
+    id?: keyof typeof SortOrder;
 
-  @Field(() => SortOrder, { nullable: true })
-  code?: keyof typeof SortOrder;
+    @Field(() => SortOrder, {nullable:true})
+    name?: keyof typeof SortOrder;
 
-  @Field(() => SortOrder, { nullable: true })
-  locales?: keyof typeof SortOrder;
+    @Field(() => SortOrder, {nullable:true})
+    code?: keyof typeof SortOrder;
 
-  @Field(() => SortOrder, { nullable: true })
-  deleted?: keyof typeof SortOrder;
+    @Field(() => SortOrder, {nullable:true})
+    locales?: keyof typeof SortOrder;
 
-  @Field(() => SortOrder, { nullable: true })
-  createdAt?: keyof typeof SortOrder;
+    @Field(() => SortOrder, {nullable:true})
+    deleted?: keyof typeof SortOrder;
 
-  @Field(() => SortOrder, { nullable: true })
-  updatedAt?: keyof typeof SortOrder;
+    @Field(() => SortOrder, {nullable:true})
+    createdAt?: keyof typeof SortOrder;
 
-  @Field(() => PositionClassTypeCountOrderByAggregateInput, { nullable: true })
-  _count?: PositionClassTypeCountOrderByAggregateInput;
+    @Field(() => SortOrder, {nullable:true})
+    updatedAt?: keyof typeof SortOrder;
 
-  @Field(() => PositionClassTypeAvgOrderByAggregateInput, { nullable: true })
-  _avg?: PositionClassTypeAvgOrderByAggregateInput;
+    @Field(() => PositionClassTypeCountOrderByAggregateInput, {nullable:true})
+    _count?: PositionClassTypeCountOrderByAggregateInput;
 
-  @Field(() => PositionClassTypeMaxOrderByAggregateInput, { nullable: true })
-  _max?: PositionClassTypeMaxOrderByAggregateInput;
+    @Field(() => PositionClassTypeAvgOrderByAggregateInput, {nullable:true})
+    _avg?: PositionClassTypeAvgOrderByAggregateInput;
 
-  @Field(() => PositionClassTypeMinOrderByAggregateInput, { nullable: true })
-  _min?: PositionClassTypeMinOrderByAggregateInput;
+    @Field(() => PositionClassTypeMaxOrderByAggregateInput, {nullable:true})
+    _max?: PositionClassTypeMaxOrderByAggregateInput;
 
-  @Field(() => PositionClassTypeSumOrderByAggregateInput, { nullable: true })
-  _sum?: PositionClassTypeSumOrderByAggregateInput;
+    @Field(() => PositionClassTypeMinOrderByAggregateInput, {nullable:true})
+    _min?: PositionClassTypeMinOrderByAggregateInput;
+
+    @Field(() => PositionClassTypeSumOrderByAggregateInput, {nullable:true})
+    _sum?: PositionClassTypeSumOrderByAggregateInput;
 }

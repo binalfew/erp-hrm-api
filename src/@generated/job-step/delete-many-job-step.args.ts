@@ -4,6 +4,7 @@ import { JobStepWhereInput } from './job-step-where.input';
 
 @ArgsType()
 export class DeleteManyJobStepArgs {
-  @Field(() => JobStepWhereInput, { nullable: true })
-  where?: JobStepWhereInput;
+
+    @Field(() => JobStepWhereInput, {nullable:true})
+    where?: JobStepWhereInput;
 }

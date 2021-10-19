@@ -13,69 +13,70 @@ import { PositionClassCount } from './position-class-count.output';
 
 @ObjectType()
 export class PositionClass {
-  @Field(() => ID, { nullable: false })
-  id!: number;
 
-  @Field(() => String, { nullable: false })
-  name!: string;
+    @Field(() => ID, {nullable:false})
+    id!: number;
 
-  @Field(() => String, { nullable: false })
-  code!: string;
+    @Field(() => String, {nullable:false})
+    name!: string;
 
-  @Field(() => GraphQLJSON, { nullable: true })
-  locales!: any | null;
+    @Field(() => String, {nullable:false})
+    code!: string;
 
-  @Field(() => Gender, { nullable: true })
-  gender?: Gender | null;
+    @Field(() => GraphQLJSON, {nullable:true})
+    locales!: any | null;
 
-  @Field(() => Int, { nullable: true })
-  genderId!: number | null;
+    @Field(() => Gender, {nullable:true})
+    gender?: Gender | null;
 
-  @Field(() => PositionClassType, { nullable: true })
-  positionClassType?: PositionClassType | null;
+    @Field(() => Int, {nullable:true})
+    genderId!: number | null;
 
-  @Field(() => Int, { nullable: true })
-  positionClassTypeId!: number | null;
+    @Field(() => PositionClassType, {nullable:true})
+    positionClassType?: PositionClassType | null;
 
-  @Field(() => PositionClassCategory, { nullable: true })
-  positionClassCategory?: PositionClassCategory | null;
+    @Field(() => Int, {nullable:true})
+    positionClassTypeId!: number | null;
 
-  @Field(() => Int, { nullable: true })
-  positionClassCategoryId!: number | null;
+    @Field(() => PositionClassCategory, {nullable:true})
+    positionClassCategory?: PositionClassCategory | null;
 
-  @Field(() => SalaryScale, { nullable: true })
-  salaryScale?: SalaryScale | null;
+    @Field(() => Int, {nullable:true})
+    positionClassCategoryId!: number | null;
 
-  @Field(() => Int, { nullable: true })
-  salaryScaleId!: number | null;
+    @Field(() => SalaryScale, {nullable:true})
+    salaryScale?: SalaryScale | null;
 
-  @Field(() => Int, { nullable: false, defaultValue: 0 })
-  minimumAge!: number;
+    @Field(() => Int, {nullable:true})
+    salaryScaleId!: number | null;
 
-  @Field(() => Int, { nullable: false, defaultValue: 0 })
-  maximumAge!: number;
+    @Field(() => Int, {nullable:false,defaultValue:0})
+    minimumAge!: number;
 
-  @Field(() => GraphQLDecimal, { nullable: false, defaultValue: 0 })
-  monthlyWorkingHours!: any;
+    @Field(() => Int, {nullable:false,defaultValue:0})
+    maximumAge!: number;
 
-  @Field(() => GraphQLDecimal, { nullable: false, defaultValue: 0 })
-  salary!: any;
+    @Field(() => GraphQLDecimal, {nullable:false,defaultValue:0})
+    monthlyWorkingHours!: any;
 
-  @Field(() => String, { nullable: true })
-  specification!: string | null;
+    @Field(() => GraphQLDecimal, {nullable:false,defaultValue:0})
+    salary!: any;
 
-  @Field(() => Boolean, { nullable: false, defaultValue: false })
-  deleted!: boolean;
+    @Field(() => String, {nullable:true})
+    specification!: string | null;
 
-  @Field(() => Date, { nullable: false })
-  createdAt!: Date;
+    @Field(() => Boolean, {nullable:false,defaultValue:false})
+    deleted!: boolean;
 
-  @Field(() => Date, { nullable: false })
-  updatedAt!: Date;
+    @Field(() => Date, {nullable:false})
+    createdAt!: Date;
 
-  @Field(() => [Position], { nullable: true })
-  positions?: Array<Position>;
+    @Field(() => Date, {nullable:false})
+    updatedAt!: Date;
 
-  @Field(() => PositionClassCount, { nullable: true })
-  _count?: PositionClassCount | null;
+    @Field(() => [Position], {nullable:true})
+    positions?: Array<Position>;
+
+    @Field(() => PositionClassCount, {nullable:true})
+    _count?: PositionClassCount | null;
 }

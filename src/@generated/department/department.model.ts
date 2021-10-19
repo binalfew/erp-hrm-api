@@ -8,36 +8,37 @@ import { DepartmentCount } from './department-count.output';
 
 @ObjectType()
 export class Department {
-  @Field(() => ID, { nullable: false })
-  id!: number;
 
-  @Field(() => String, { nullable: false })
-  name!: string;
+    @Field(() => ID, {nullable:false})
+    id!: number;
 
-  @Field(() => String, { nullable: false })
-  code!: string;
+    @Field(() => String, {nullable:false})
+    name!: string;
 
-  @Field(() => GraphQLJSON, { nullable: true })
-  locales!: any | null;
+    @Field(() => String, {nullable:false})
+    code!: string;
 
-  @Field(() => Int, { nullable: true })
-  parentId!: number | null;
+    @Field(() => GraphQLJSON, {nullable:true})
+    locales!: any | null;
 
-  @Field(() => Department, { nullable: true })
-  parent?: Department | null;
+    @Field(() => Int, {nullable:true})
+    parentId!: number | null;
 
-  @Field(() => [Department], { nullable: true })
-  children?: Array<Department>;
+    @Field(() => Department, {nullable:true})
+    parent?: Department | null;
 
-  @Field(() => Date, { nullable: false })
-  createdAt!: Date;
+    @Field(() => [Department], {nullable:true})
+    children?: Array<Department>;
 
-  @Field(() => Date, { nullable: false })
-  updatedAt!: Date;
+    @Field(() => Date, {nullable:false})
+    createdAt!: Date;
 
-  @Field(() => [Position], { nullable: true })
-  positions?: Array<Position>;
+    @Field(() => Date, {nullable:false})
+    updatedAt!: Date;
 
-  @Field(() => DepartmentCount, { nullable: true })
-  _count?: DepartmentCount | null;
+    @Field(() => [Position], {nullable:true})
+    positions?: Array<Position>;
+
+    @Field(() => DepartmentCount, {nullable:true})
+    _count?: DepartmentCount | null;
 }

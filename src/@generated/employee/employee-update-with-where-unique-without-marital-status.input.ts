@@ -5,9 +5,10 @@ import { EmployeeUpdateWithoutMaritalStatusInput } from './employee-update-witho
 
 @InputType()
 export class EmployeeUpdateWithWhereUniqueWithoutMaritalStatusInput {
-  @Field(() => EmployeeWhereUniqueInput, { nullable: false })
-  where!: EmployeeWhereUniqueInput;
 
-  @Field(() => EmployeeUpdateWithoutMaritalStatusInput, { nullable: false })
-  data!: EmployeeUpdateWithoutMaritalStatusInput;
+    @Field(() => EmployeeWhereUniqueInput, {nullable:false})
+    where!: EmployeeWhereUniqueInput;
+
+    @Field(() => EmployeeUpdateWithoutMaritalStatusInput, {nullable:false})
+    data!: EmployeeUpdateWithoutMaritalStatusInput;
 }

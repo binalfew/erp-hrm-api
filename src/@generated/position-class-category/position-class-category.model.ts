@@ -7,30 +7,31 @@ import { PositionClassCategoryCount } from '../position-class/position-class-cat
 
 @ObjectType()
 export class PositionClassCategory {
-  @Field(() => ID, { nullable: false })
-  id!: number;
 
-  @Field(() => String, { nullable: false })
-  name!: string;
+    @Field(() => ID, {nullable:false})
+    id!: number;
 
-  @Field(() => String, { nullable: false })
-  code!: string;
+    @Field(() => String, {nullable:false})
+    name!: string;
 
-  @Field(() => GraphQLJSON, { nullable: true })
-  locales!: any | null;
+    @Field(() => String, {nullable:false})
+    code!: string;
 
-  @Field(() => Boolean, { nullable: false, defaultValue: false })
-  deleted!: boolean;
+    @Field(() => GraphQLJSON, {nullable:true})
+    locales!: any | null;
 
-  @Field(() => Date, { nullable: false })
-  createdAt!: Date;
+    @Field(() => Boolean, {nullable:false,defaultValue:false})
+    deleted!: boolean;
 
-  @Field(() => Date, { nullable: false })
-  updatedAt!: Date;
+    @Field(() => Date, {nullable:false})
+    createdAt!: Date;
 
-  @Field(() => [PositionClass], { nullable: true })
-  positionClasses?: Array<PositionClass>;
+    @Field(() => Date, {nullable:false})
+    updatedAt!: Date;
 
-  @Field(() => PositionClassCategoryCount, { nullable: true })
-  _count?: PositionClassCategoryCount | null;
+    @Field(() => [PositionClass], {nullable:true})
+    positionClasses?: Array<PositionClass>;
+
+    @Field(() => PositionClassCategoryCount, {nullable:true})
+    _count?: PositionClassCategoryCount | null;
 }

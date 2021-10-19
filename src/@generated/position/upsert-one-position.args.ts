@@ -6,12 +6,13 @@ import { PositionUpdateInput } from './position-update.input';
 
 @ArgsType()
 export class UpsertOnePositionArgs {
-  @Field(() => PositionWhereUniqueInput, { nullable: false })
-  where!: PositionWhereUniqueInput;
 
-  @Field(() => PositionCreateInput, { nullable: false })
-  create!: PositionCreateInput;
+    @Field(() => PositionWhereUniqueInput, {nullable:false})
+    where!: PositionWhereUniqueInput;
 
-  @Field(() => PositionUpdateInput, { nullable: false })
-  update!: PositionUpdateInput;
+    @Field(() => PositionCreateInput, {nullable:false})
+    create!: PositionCreateInput;
+
+    @Field(() => PositionUpdateInput, {nullable:false})
+    update!: PositionUpdateInput;
 }

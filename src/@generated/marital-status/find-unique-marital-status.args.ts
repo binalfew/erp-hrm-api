@@ -4,6 +4,7 @@ import { MaritalStatusWhereUniqueInput } from './marital-status-where-unique.inp
 
 @ArgsType()
 export class FindUniqueMaritalStatusArgs {
-  @Field(() => MaritalStatusWhereUniqueInput, { nullable: false })
-  where!: MaritalStatusWhereUniqueInput;
+
+    @Field(() => MaritalStatusWhereUniqueInput, {nullable:false})
+    where!: MaritalStatusWhereUniqueInput;
 }

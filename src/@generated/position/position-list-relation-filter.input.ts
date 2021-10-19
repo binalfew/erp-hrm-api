@@ -4,12 +4,13 @@ import { PositionWhereInput } from './position-where.input';
 
 @InputType()
 export class PositionListRelationFilter {
-  @Field(() => PositionWhereInput, { nullable: true })
-  every?: PositionWhereInput;
 
-  @Field(() => PositionWhereInput, { nullable: true })
-  some?: PositionWhereInput;
+    @Field(() => PositionWhereInput, {nullable:true})
+    every?: PositionWhereInput;
 
-  @Field(() => PositionWhereInput, { nullable: true })
-  none?: PositionWhereInput;
+    @Field(() => PositionWhereInput, {nullable:true})
+    some?: PositionWhereInput;
+
+    @Field(() => PositionWhereInput, {nullable:true})
+    none?: PositionWhereInput;
 }

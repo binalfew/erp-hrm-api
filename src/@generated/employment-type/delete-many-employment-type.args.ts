@@ -4,6 +4,7 @@ import { EmploymentTypeWhereInput } from './employment-type-where.input';
 
 @ArgsType()
 export class DeleteManyEmploymentTypeArgs {
-  @Field(() => EmploymentTypeWhereInput, { nullable: true })
-  where?: EmploymentTypeWhereInput;
+
+    @Field(() => EmploymentTypeWhereInput, {nullable:true})
+    where?: EmploymentTypeWhereInput;
 }

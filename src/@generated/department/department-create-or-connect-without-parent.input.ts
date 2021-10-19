@@ -5,9 +5,10 @@ import { DepartmentCreateWithoutParentInput } from './department-create-without-
 
 @InputType()
 export class DepartmentCreateOrConnectWithoutParentInput {
-  @Field(() => DepartmentWhereUniqueInput, { nullable: false })
-  where!: DepartmentWhereUniqueInput;
 
-  @Field(() => DepartmentCreateWithoutParentInput, { nullable: false })
-  create!: DepartmentCreateWithoutParentInput;
+    @Field(() => DepartmentWhereUniqueInput, {nullable:false})
+    where!: DepartmentWhereUniqueInput;
+
+    @Field(() => DepartmentCreateWithoutParentInput, {nullable:false})
+    create!: DepartmentCreateWithoutParentInput;
 }

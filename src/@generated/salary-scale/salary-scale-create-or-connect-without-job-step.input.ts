@@ -5,9 +5,10 @@ import { SalaryScaleCreateWithoutJobStepInput } from './salary-scale-create-with
 
 @InputType()
 export class SalaryScaleCreateOrConnectWithoutJobStepInput {
-  @Field(() => SalaryScaleWhereUniqueInput, { nullable: false })
-  where!: SalaryScaleWhereUniqueInput;
 
-  @Field(() => SalaryScaleCreateWithoutJobStepInput, { nullable: false })
-  create!: SalaryScaleCreateWithoutJobStepInput;
+    @Field(() => SalaryScaleWhereUniqueInput, {nullable:false})
+    where!: SalaryScaleWhereUniqueInput;
+
+    @Field(() => SalaryScaleCreateWithoutJobStepInput, {nullable:false})
+    create!: SalaryScaleCreateWithoutJobStepInput;
 }

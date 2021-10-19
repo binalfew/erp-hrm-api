@@ -12,33 +12,34 @@ import { GenderMaxAggregateInput } from './gender-max-aggregate.input';
 
 @ArgsType()
 export class GenderAggregateArgs {
-  @Field(() => GenderWhereInput, { nullable: true })
-  where?: GenderWhereInput;
 
-  @Field(() => [GenderOrderByWithRelationInput], { nullable: true })
-  orderBy?: Array<GenderOrderByWithRelationInput>;
+    @Field(() => GenderWhereInput, {nullable:true})
+    where?: GenderWhereInput;
 
-  @Field(() => GenderWhereUniqueInput, { nullable: true })
-  cursor?: GenderWhereUniqueInput;
+    @Field(() => [GenderOrderByWithRelationInput], {nullable:true})
+    orderBy?: Array<GenderOrderByWithRelationInput>;
 
-  @Field(() => Int, { nullable: true })
-  take?: number;
+    @Field(() => GenderWhereUniqueInput, {nullable:true})
+    cursor?: GenderWhereUniqueInput;
 
-  @Field(() => Int, { nullable: true })
-  skip?: number;
+    @Field(() => Int, {nullable:true})
+    take?: number;
 
-  @Field(() => GenderCountAggregateInput, { nullable: true })
-  _count?: GenderCountAggregateInput;
+    @Field(() => Int, {nullable:true})
+    skip?: number;
 
-  @Field(() => GenderAvgAggregateInput, { nullable: true })
-  _avg?: GenderAvgAggregateInput;
+    @Field(() => GenderCountAggregateInput, {nullable:true})
+    _count?: GenderCountAggregateInput;
 
-  @Field(() => GenderSumAggregateInput, { nullable: true })
-  _sum?: GenderSumAggregateInput;
+    @Field(() => GenderAvgAggregateInput, {nullable:true})
+    _avg?: GenderAvgAggregateInput;
 
-  @Field(() => GenderMinAggregateInput, { nullable: true })
-  _min?: GenderMinAggregateInput;
+    @Field(() => GenderSumAggregateInput, {nullable:true})
+    _sum?: GenderSumAggregateInput;
 
-  @Field(() => GenderMaxAggregateInput, { nullable: true })
-  _max?: GenderMaxAggregateInput;
+    @Field(() => GenderMinAggregateInput, {nullable:true})
+    _min?: GenderMinAggregateInput;
+
+    @Field(() => GenderMaxAggregateInput, {nullable:true})
+    _max?: GenderMaxAggregateInput;
 }

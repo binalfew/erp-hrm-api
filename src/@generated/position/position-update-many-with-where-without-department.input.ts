@@ -5,9 +5,10 @@ import { PositionUpdateManyMutationInput } from './position-update-many-mutation
 
 @InputType()
 export class PositionUpdateManyWithWhereWithoutDepartmentInput {
-  @Field(() => PositionScalarWhereInput, { nullable: false })
-  where!: PositionScalarWhereInput;
 
-  @Field(() => PositionUpdateManyMutationInput, { nullable: false })
-  data!: PositionUpdateManyMutationInput;
+    @Field(() => PositionScalarWhereInput, {nullable:false})
+    where!: PositionScalarWhereInput;
+
+    @Field(() => PositionUpdateManyMutationInput, {nullable:false})
+    data!: PositionUpdateManyMutationInput;
 }

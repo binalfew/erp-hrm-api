@@ -6,12 +6,13 @@ import { EmploymentTypeUpdateInput } from './employment-type-update.input';
 
 @ArgsType()
 export class UpsertOneEmploymentTypeArgs {
-  @Field(() => EmploymentTypeWhereUniqueInput, { nullable: false })
-  where!: EmploymentTypeWhereUniqueInput;
 
-  @Field(() => EmploymentTypeCreateInput, { nullable: false })
-  create!: EmploymentTypeCreateInput;
+    @Field(() => EmploymentTypeWhereUniqueInput, {nullable:false})
+    where!: EmploymentTypeWhereUniqueInput;
 
-  @Field(() => EmploymentTypeUpdateInput, { nullable: false })
-  update!: EmploymentTypeUpdateInput;
+    @Field(() => EmploymentTypeCreateInput, {nullable:false})
+    create!: EmploymentTypeCreateInput;
+
+    @Field(() => EmploymentTypeUpdateInput, {nullable:false})
+    update!: EmploymentTypeUpdateInput;
 }

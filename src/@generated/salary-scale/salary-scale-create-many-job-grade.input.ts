@@ -5,21 +5,22 @@ import { Float } from '@nestjs/graphql';
 
 @InputType()
 export class SalaryScaleCreateManyJobGradeInput {
-  @Field(() => Int, { nullable: true })
-  id?: number;
 
-  @Field(() => Int, { nullable: true })
-  jobStepId?: number;
+    @Field(() => Int, {nullable:true})
+    id?: number;
 
-  @Field(() => Float, { nullable: true })
-  salary?: number;
+    @Field(() => Int, {nullable:true})
+    jobStepId?: number;
 
-  @Field(() => Boolean, { nullable: true })
-  deleted?: boolean;
+    @Field(() => Float, {nullable:true})
+    salary?: number;
 
-  @Field(() => Date, { nullable: true })
-  createdAt?: Date | string;
+    @Field(() => Boolean, {nullable:true})
+    deleted?: boolean;
 
-  @Field(() => Date, { nullable: true })
-  updatedAt?: Date | string;
+    @Field(() => Date, {nullable:true})
+    createdAt?: Date | string;
+
+    @Field(() => Date, {nullable:true})
+    updatedAt?: Date | string;
 }

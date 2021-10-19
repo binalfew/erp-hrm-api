@@ -5,9 +5,10 @@ import { DepartmentCreateWithoutPositionsInput } from './department-create-witho
 
 @InputType()
 export class DepartmentUpsertWithoutPositionsInput {
-  @Field(() => DepartmentUpdateWithoutPositionsInput, { nullable: false })
-  update!: DepartmentUpdateWithoutPositionsInput;
 
-  @Field(() => DepartmentCreateWithoutPositionsInput, { nullable: false })
-  create!: DepartmentCreateWithoutPositionsInput;
+    @Field(() => DepartmentUpdateWithoutPositionsInput, {nullable:false})
+    update!: DepartmentUpdateWithoutPositionsInput;
+
+    @Field(() => DepartmentCreateWithoutPositionsInput, {nullable:false})
+    create!: DepartmentCreateWithoutPositionsInput;
 }

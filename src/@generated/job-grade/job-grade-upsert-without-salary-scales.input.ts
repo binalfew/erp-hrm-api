@@ -5,9 +5,10 @@ import { JobGradeCreateWithoutSalaryScalesInput } from './job-grade-create-witho
 
 @InputType()
 export class JobGradeUpsertWithoutSalaryScalesInput {
-  @Field(() => JobGradeUpdateWithoutSalaryScalesInput, { nullable: false })
-  update!: JobGradeUpdateWithoutSalaryScalesInput;
 
-  @Field(() => JobGradeCreateWithoutSalaryScalesInput, { nullable: false })
-  create!: JobGradeCreateWithoutSalaryScalesInput;
+    @Field(() => JobGradeUpdateWithoutSalaryScalesInput, {nullable:false})
+    update!: JobGradeUpdateWithoutSalaryScalesInput;
+
+    @Field(() => JobGradeCreateWithoutSalaryScalesInput, {nullable:false})
+    create!: JobGradeCreateWithoutSalaryScalesInput;
 }

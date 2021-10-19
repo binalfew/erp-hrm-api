@@ -11,42 +11,43 @@ import { PositionClassListRelationFilter } from '../position-class/position-clas
 
 @InputType()
 export class SalaryScaleWhereInput {
-  @Field(() => [SalaryScaleWhereInput], { nullable: true })
-  AND?: Array<SalaryScaleWhereInput>;
 
-  @Field(() => [SalaryScaleWhereInput], { nullable: true })
-  OR?: Array<SalaryScaleWhereInput>;
+    @Field(() => [SalaryScaleWhereInput], {nullable:true})
+    AND?: Array<SalaryScaleWhereInput>;
 
-  @Field(() => [SalaryScaleWhereInput], { nullable: true })
-  NOT?: Array<SalaryScaleWhereInput>;
+    @Field(() => [SalaryScaleWhereInput], {nullable:true})
+    OR?: Array<SalaryScaleWhereInput>;
 
-  @Field(() => IntFilter, { nullable: true })
-  id?: IntFilter;
+    @Field(() => [SalaryScaleWhereInput], {nullable:true})
+    NOT?: Array<SalaryScaleWhereInput>;
 
-  @Field(() => JobGradeRelationFilter, { nullable: true })
-  jobGrade?: JobGradeRelationFilter;
+    @Field(() => IntFilter, {nullable:true})
+    id?: IntFilter;
 
-  @Field(() => IntNullableFilter, { nullable: true })
-  jobGradeId?: IntNullableFilter;
+    @Field(() => JobGradeRelationFilter, {nullable:true})
+    jobGrade?: JobGradeRelationFilter;
 
-  @Field(() => JobStepRelationFilter, { nullable: true })
-  jobStep?: JobStepRelationFilter;
+    @Field(() => IntNullableFilter, {nullable:true})
+    jobGradeId?: IntNullableFilter;
 
-  @Field(() => IntNullableFilter, { nullable: true })
-  jobStepId?: IntNullableFilter;
+    @Field(() => JobStepRelationFilter, {nullable:true})
+    jobStep?: JobStepRelationFilter;
 
-  @Field(() => FloatFilter, { nullable: true })
-  salary?: FloatFilter;
+    @Field(() => IntNullableFilter, {nullable:true})
+    jobStepId?: IntNullableFilter;
 
-  @Field(() => BoolFilter, { nullable: true })
-  deleted?: BoolFilter;
+    @Field(() => FloatFilter, {nullable:true})
+    salary?: FloatFilter;
 
-  @Field(() => DateTimeFilter, { nullable: true })
-  createdAt?: DateTimeFilter;
+    @Field(() => BoolFilter, {nullable:true})
+    deleted?: BoolFilter;
 
-  @Field(() => DateTimeFilter, { nullable: true })
-  updatedAt?: DateTimeFilter;
+    @Field(() => DateTimeFilter, {nullable:true})
+    createdAt?: DateTimeFilter;
 
-  @Field(() => PositionClassListRelationFilter, { nullable: true })
-  positionClasses?: PositionClassListRelationFilter;
+    @Field(() => DateTimeFilter, {nullable:true})
+    updatedAt?: DateTimeFilter;
+
+    @Field(() => PositionClassListRelationFilter, {nullable:true})
+    positionClasses?: PositionClassListRelationFilter;
 }

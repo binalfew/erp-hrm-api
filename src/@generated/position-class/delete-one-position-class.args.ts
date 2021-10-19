@@ -4,6 +4,7 @@ import { PositionClassWhereUniqueInput } from './position-class-where-unique.inp
 
 @ArgsType()
 export class DeleteOnePositionClassArgs {
-  @Field(() => PositionClassWhereUniqueInput, { nullable: false })
-  where!: PositionClassWhereUniqueInput;
+
+    @Field(() => PositionClassWhereUniqueInput, {nullable:false})
+    where!: PositionClassWhereUniqueInput;
 }

@@ -9,29 +9,28 @@ import { SalaryScaleUncheckedUpdateManyWithoutJobStepInput } from '../salary-sca
 
 @InputType()
 export class JobStepUncheckedUpdateInput {
-  @Field(() => IntFieldUpdateOperationsInput, { nullable: true })
-  id?: IntFieldUpdateOperationsInput;
 
-  @Field(() => StringFieldUpdateOperationsInput, { nullable: true })
-  name?: StringFieldUpdateOperationsInput;
+    @Field(() => IntFieldUpdateOperationsInput, {nullable:true})
+    id?: IntFieldUpdateOperationsInput;
 
-  @Field(() => StringFieldUpdateOperationsInput, { nullable: true })
-  code?: StringFieldUpdateOperationsInput;
+    @Field(() => StringFieldUpdateOperationsInput, {nullable:true})
+    name?: StringFieldUpdateOperationsInput;
 
-  @Field(() => GraphQLJSON, { nullable: true })
-  locales?: any;
+    @Field(() => StringFieldUpdateOperationsInput, {nullable:true})
+    code?: StringFieldUpdateOperationsInput;
 
-  @Field(() => BoolFieldUpdateOperationsInput, { nullable: true })
-  deleted?: BoolFieldUpdateOperationsInput;
+    @Field(() => GraphQLJSON, {nullable:true})
+    locales?: any;
 
-  @Field(() => DateTimeFieldUpdateOperationsInput, { nullable: true })
-  createdAt?: DateTimeFieldUpdateOperationsInput;
+    @Field(() => BoolFieldUpdateOperationsInput, {nullable:true})
+    deleted?: BoolFieldUpdateOperationsInput;
 
-  @Field(() => DateTimeFieldUpdateOperationsInput, { nullable: true })
-  updatedAt?: DateTimeFieldUpdateOperationsInput;
+    @Field(() => DateTimeFieldUpdateOperationsInput, {nullable:true})
+    createdAt?: DateTimeFieldUpdateOperationsInput;
 
-  @Field(() => SalaryScaleUncheckedUpdateManyWithoutJobStepInput, {
-    nullable: true,
-  })
-  salaryScales?: SalaryScaleUncheckedUpdateManyWithoutJobStepInput;
+    @Field(() => DateTimeFieldUpdateOperationsInput, {nullable:true})
+    updatedAt?: DateTimeFieldUpdateOperationsInput;
+
+    @Field(() => SalaryScaleUncheckedUpdateManyWithoutJobStepInput, {nullable:true})
+    salaryScales?: SalaryScaleUncheckedUpdateManyWithoutJobStepInput;
 }

@@ -4,9 +4,10 @@ import { EmploymentNatureCreateManyInput } from './employment-nature-create-many
 
 @ArgsType()
 export class CreateManyEmploymentNatureArgs {
-  @Field(() => [EmploymentNatureCreateManyInput], { nullable: false })
-  data!: Array<EmploymentNatureCreateManyInput>;
 
-  @Field(() => Boolean, { nullable: true })
-  skipDuplicates?: boolean;
+    @Field(() => [EmploymentNatureCreateManyInput], {nullable:false})
+    data!: Array<EmploymentNatureCreateManyInput>;
+
+    @Field(() => Boolean, {nullable:true})
+    skipDuplicates?: boolean;
 }

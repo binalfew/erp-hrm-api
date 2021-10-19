@@ -6,12 +6,13 @@ import { PositionClassUpdateInput } from './position-class-update.input';
 
 @ArgsType()
 export class UpsertOnePositionClassArgs {
-  @Field(() => PositionClassWhereUniqueInput, { nullable: false })
-  where!: PositionClassWhereUniqueInput;
 
-  @Field(() => PositionClassCreateInput, { nullable: false })
-  create!: PositionClassCreateInput;
+    @Field(() => PositionClassWhereUniqueInput, {nullable:false})
+    where!: PositionClassWhereUniqueInput;
 
-  @Field(() => PositionClassUpdateInput, { nullable: false })
-  update!: PositionClassUpdateInput;
+    @Field(() => PositionClassCreateInput, {nullable:false})
+    create!: PositionClassCreateInput;
+
+    @Field(() => PositionClassUpdateInput, {nullable:false})
+    update!: PositionClassUpdateInput;
 }

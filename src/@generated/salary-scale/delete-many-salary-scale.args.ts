@@ -4,6 +4,7 @@ import { SalaryScaleWhereInput } from './salary-scale-where.input';
 
 @ArgsType()
 export class DeleteManySalaryScaleArgs {
-  @Field(() => SalaryScaleWhereInput, { nullable: true })
-  where?: SalaryScaleWhereInput;
+
+    @Field(() => SalaryScaleWhereInput, {nullable:true})
+    where?: SalaryScaleWhereInput;
 }

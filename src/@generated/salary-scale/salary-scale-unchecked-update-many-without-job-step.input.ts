@@ -11,44 +11,37 @@ import { SalaryScaleScalarWhereInput } from './salary-scale-scalar-where.input';
 
 @InputType()
 export class SalaryScaleUncheckedUpdateManyWithoutJobStepInput {
-  @Field(() => [SalaryScaleCreateWithoutJobStepInput], { nullable: true })
-  create?: Array<SalaryScaleCreateWithoutJobStepInput>;
 
-  @Field(() => [SalaryScaleCreateOrConnectWithoutJobStepInput], {
-    nullable: true,
-  })
-  connectOrCreate?: Array<SalaryScaleCreateOrConnectWithoutJobStepInput>;
+    @Field(() => [SalaryScaleCreateWithoutJobStepInput], {nullable:true})
+    create?: Array<SalaryScaleCreateWithoutJobStepInput>;
 
-  @Field(() => [SalaryScaleUpsertWithWhereUniqueWithoutJobStepInput], {
-    nullable: true,
-  })
-  upsert?: Array<SalaryScaleUpsertWithWhereUniqueWithoutJobStepInput>;
+    @Field(() => [SalaryScaleCreateOrConnectWithoutJobStepInput], {nullable:true})
+    connectOrCreate?: Array<SalaryScaleCreateOrConnectWithoutJobStepInput>;
 
-  @Field(() => SalaryScaleCreateManyJobStepInputEnvelope, { nullable: true })
-  createMany?: SalaryScaleCreateManyJobStepInputEnvelope;
+    @Field(() => [SalaryScaleUpsertWithWhereUniqueWithoutJobStepInput], {nullable:true})
+    upsert?: Array<SalaryScaleUpsertWithWhereUniqueWithoutJobStepInput>;
 
-  @Field(() => [SalaryScaleWhereUniqueInput], { nullable: true })
-  connect?: Array<SalaryScaleWhereUniqueInput>;
+    @Field(() => SalaryScaleCreateManyJobStepInputEnvelope, {nullable:true})
+    createMany?: SalaryScaleCreateManyJobStepInputEnvelope;
 
-  @Field(() => [SalaryScaleWhereUniqueInput], { nullable: true })
-  set?: Array<SalaryScaleWhereUniqueInput>;
+    @Field(() => [SalaryScaleWhereUniqueInput], {nullable:true})
+    connect?: Array<SalaryScaleWhereUniqueInput>;
 
-  @Field(() => [SalaryScaleWhereUniqueInput], { nullable: true })
-  disconnect?: Array<SalaryScaleWhereUniqueInput>;
+    @Field(() => [SalaryScaleWhereUniqueInput], {nullable:true})
+    set?: Array<SalaryScaleWhereUniqueInput>;
 
-  @Field(() => [SalaryScaleWhereUniqueInput], { nullable: true })
-  delete?: Array<SalaryScaleWhereUniqueInput>;
+    @Field(() => [SalaryScaleWhereUniqueInput], {nullable:true})
+    disconnect?: Array<SalaryScaleWhereUniqueInput>;
 
-  @Field(() => [SalaryScaleUpdateWithWhereUniqueWithoutJobStepInput], {
-    nullable: true,
-  })
-  update?: Array<SalaryScaleUpdateWithWhereUniqueWithoutJobStepInput>;
+    @Field(() => [SalaryScaleWhereUniqueInput], {nullable:true})
+    delete?: Array<SalaryScaleWhereUniqueInput>;
 
-  @Field(() => [SalaryScaleUpdateManyWithWhereWithoutJobStepInput], {
-    nullable: true,
-  })
-  updateMany?: Array<SalaryScaleUpdateManyWithWhereWithoutJobStepInput>;
+    @Field(() => [SalaryScaleUpdateWithWhereUniqueWithoutJobStepInput], {nullable:true})
+    update?: Array<SalaryScaleUpdateWithWhereUniqueWithoutJobStepInput>;
 
-  @Field(() => [SalaryScaleScalarWhereInput], { nullable: true })
-  deleteMany?: Array<SalaryScaleScalarWhereInput>;
+    @Field(() => [SalaryScaleUpdateManyWithWhereWithoutJobStepInput], {nullable:true})
+    updateMany?: Array<SalaryScaleUpdateManyWithWhereWithoutJobStepInput>;
+
+    @Field(() => [SalaryScaleScalarWhereInput], {nullable:true})
+    deleteMany?: Array<SalaryScaleScalarWhereInput>;
 }

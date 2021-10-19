@@ -11,96 +11,97 @@ import { EmploymentNature } from '../employment-nature/employment-nature.model';
 
 @ObjectType()
 export class Employee {
-  @Field(() => ID, { nullable: false })
-  id!: number;
 
-  @Field(() => GraphQLJSON, { nullable: false })
-  firstName!: any;
+    @Field(() => ID, {nullable:false})
+    id!: number;
 
-  @Field(() => GraphQLJSON, { nullable: false })
-  lastName!: any;
+    @Field(() => GraphQLJSON, {nullable:false})
+    firstName!: any;
 
-  @Field(() => GraphQLJSON, { nullable: false })
-  grandfatherName!: any;
+    @Field(() => GraphQLJSON, {nullable:false})
+    lastName!: any;
 
-  @Field(() => GraphQLJSON, { nullable: true })
-  locales!: any | null;
+    @Field(() => GraphQLJSON, {nullable:false})
+    grandfatherName!: any;
 
-  @Field(() => Gender, { nullable: true })
-  gender?: Gender | null;
+    @Field(() => GraphQLJSON, {nullable:true})
+    locales!: any | null;
 
-  @Field(() => Int, { nullable: true })
-  genderId!: number | null;
+    @Field(() => Gender, {nullable:true})
+    gender?: Gender | null;
 
-  @Field(() => Nationality, { nullable: true })
-  nationality?: Nationality | null;
+    @Field(() => Int, {nullable:true})
+    genderId!: number | null;
 
-  @Field(() => Int, { nullable: true })
-  nationalityId!: number | null;
+    @Field(() => Nationality, {nullable:true})
+    nationality?: Nationality | null;
 
-  @Field(() => MaritalStatus, { nullable: true })
-  maritalStatus?: MaritalStatus | null;
+    @Field(() => Int, {nullable:true})
+    nationalityId!: number | null;
 
-  @Field(() => Int, { nullable: true })
-  maritalStatusId!: number | null;
+    @Field(() => MaritalStatus, {nullable:true})
+    maritalStatus?: MaritalStatus | null;
 
-  @Field(() => EmploymentType, { nullable: true })
-  employmentType?: EmploymentType | null;
+    @Field(() => Int, {nullable:true})
+    maritalStatusId!: number | null;
 
-  @Field(() => Int, { nullable: true })
-  employmentTypeId!: number | null;
+    @Field(() => EmploymentType, {nullable:true})
+    employmentType?: EmploymentType | null;
 
-  @Field(() => EmploymentNature, { nullable: true })
-  employmentNature?: EmploymentNature | null;
+    @Field(() => Int, {nullable:true})
+    employmentTypeId!: number | null;
 
-  @Field(() => Int, { nullable: true })
-  employmentNatureId!: number | null;
+    @Field(() => EmploymentNature, {nullable:true})
+    employmentNature?: EmploymentNature | null;
 
-  @Field(() => Date, { nullable: false })
-  dateOfBirth!: Date;
+    @Field(() => Int, {nullable:true})
+    employmentNatureId!: number | null;
 
-  @Field(() => String, { nullable: false })
-  placeOfBirth!: string;
+    @Field(() => Date, {nullable:false})
+    dateOfBirth!: Date;
 
-  @Field(() => String, { nullable: false })
-  countryOfBirth!: string;
+    @Field(() => String, {nullable:false})
+    placeOfBirth!: string;
 
-  @Field(() => String, { nullable: false })
-  idNumber!: string;
+    @Field(() => String, {nullable:false})
+    countryOfBirth!: string;
 
-  @Field(() => String, { nullable: false })
-  passportNumber!: string;
+    @Field(() => String, {nullable:false})
+    idNumber!: string;
 
-  @Field(() => String, { nullable: false })
-  email!: string;
+    @Field(() => String, {nullable:false})
+    passportNumber!: string;
 
-  @Field(() => String, { nullable: false })
-  Phone!: string;
+    @Field(() => String, {nullable:false})
+    email!: string;
 
-  @Field(() => String, { nullable: false })
-  emergencyContact!: string;
+    @Field(() => String, {nullable:false})
+    Phone!: string;
 
-  @Field(() => String, { nullable: false })
-  emergencyPhone!: string;
+    @Field(() => String, {nullable:false})
+    emergencyContact!: string;
 
-  @Field(() => Int, { nullable: false })
-  numberOfChildren!: number;
+    @Field(() => String, {nullable:false})
+    emergencyPhone!: string;
 
-  @Field(() => Date, { nullable: false })
-  employmentDate!: Date;
+    @Field(() => Int, {nullable:false})
+    numberOfChildren!: number;
 
-  @Field(() => Date, { nullable: false })
-  probationDate!: Date;
+    @Field(() => Date, {nullable:false})
+    employmentDate!: Date;
 
-  @Field(() => Date, { nullable: false })
-  retirementDate!: Date;
+    @Field(() => Date, {nullable:false})
+    probationDate!: Date;
 
-  @Field(() => Boolean, { nullable: false, defaultValue: false })
-  deleted!: boolean;
+    @Field(() => Date, {nullable:false})
+    retirementDate!: Date;
 
-  @Field(() => Date, { nullable: false })
-  createdAt!: Date;
+    @Field(() => Boolean, {nullable:false,defaultValue:false})
+    deleted!: boolean;
 
-  @Field(() => Date, { nullable: false })
-  updatedAt!: Date;
+    @Field(() => Date, {nullable:false})
+    createdAt!: Date;
+
+    @Field(() => Date, {nullable:false})
+    updatedAt!: Date;
 }

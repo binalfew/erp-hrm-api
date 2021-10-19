@@ -6,12 +6,13 @@ import { MaritalStatusUpdateInput } from './marital-status-update.input';
 
 @ArgsType()
 export class UpsertOneMaritalStatusArgs {
-  @Field(() => MaritalStatusWhereUniqueInput, { nullable: false })
-  where!: MaritalStatusWhereUniqueInput;
 
-  @Field(() => MaritalStatusCreateInput, { nullable: false })
-  create!: MaritalStatusCreateInput;
+    @Field(() => MaritalStatusWhereUniqueInput, {nullable:false})
+    where!: MaritalStatusWhereUniqueInput;
 
-  @Field(() => MaritalStatusUpdateInput, { nullable: false })
-  update!: MaritalStatusUpdateInput;
+    @Field(() => MaritalStatusCreateInput, {nullable:false})
+    create!: MaritalStatusCreateInput;
+
+    @Field(() => MaritalStatusUpdateInput, {nullable:false})
+    update!: MaritalStatusUpdateInput;
 }

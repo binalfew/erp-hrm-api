@@ -4,6 +4,7 @@ import { EmploymentNatureCreateInput } from './employment-nature-create.input';
 
 @ArgsType()
 export class CreateOneEmploymentNatureArgs {
-  @Field(() => EmploymentNatureCreateInput, { nullable: false })
-  data!: EmploymentNatureCreateInput;
+
+    @Field(() => EmploymentNatureCreateInput, {nullable:false})
+    data!: EmploymentNatureCreateInput;
 }

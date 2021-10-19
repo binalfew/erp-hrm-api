@@ -4,6 +4,7 @@ import { Int } from '@nestjs/graphql';
 
 @ObjectType()
 export class JobGradeCount {
-  @Field(() => Int, { nullable: false })
-  salaryScales!: number;
+
+    @Field(() => Int, {nullable:false})
+    salaryScales!: number;
 }

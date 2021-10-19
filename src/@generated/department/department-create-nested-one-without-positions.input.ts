@@ -6,14 +6,13 @@ import { DepartmentWhereUniqueInput } from './department-where-unique.input';
 
 @InputType()
 export class DepartmentCreateNestedOneWithoutPositionsInput {
-  @Field(() => DepartmentCreateWithoutPositionsInput, { nullable: true })
-  create?: DepartmentCreateWithoutPositionsInput;
 
-  @Field(() => DepartmentCreateOrConnectWithoutPositionsInput, {
-    nullable: true,
-  })
-  connectOrCreate?: DepartmentCreateOrConnectWithoutPositionsInput;
+    @Field(() => DepartmentCreateWithoutPositionsInput, {nullable:true})
+    create?: DepartmentCreateWithoutPositionsInput;
 
-  @Field(() => DepartmentWhereUniqueInput, { nullable: true })
-  connect?: DepartmentWhereUniqueInput;
+    @Field(() => DepartmentCreateOrConnectWithoutPositionsInput, {nullable:true})
+    connectOrCreate?: DepartmentCreateOrConnectWithoutPositionsInput;
+
+    @Field(() => DepartmentWhereUniqueInput, {nullable:true})
+    connect?: DepartmentWhereUniqueInput;
 }

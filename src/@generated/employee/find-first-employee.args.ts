@@ -8,21 +8,22 @@ import { EmployeeScalarFieldEnum } from './employee-scalar-field.enum';
 
 @ArgsType()
 export class FindFirstEmployeeArgs {
-  @Field(() => EmployeeWhereInput, { nullable: true })
-  where?: EmployeeWhereInput;
 
-  @Field(() => [EmployeeOrderByWithRelationInput], { nullable: true })
-  orderBy?: Array<EmployeeOrderByWithRelationInput>;
+    @Field(() => EmployeeWhereInput, {nullable:true})
+    where?: EmployeeWhereInput;
 
-  @Field(() => EmployeeWhereUniqueInput, { nullable: true })
-  cursor?: EmployeeWhereUniqueInput;
+    @Field(() => [EmployeeOrderByWithRelationInput], {nullable:true})
+    orderBy?: Array<EmployeeOrderByWithRelationInput>;
 
-  @Field(() => Int, { nullable: true })
-  take?: number;
+    @Field(() => EmployeeWhereUniqueInput, {nullable:true})
+    cursor?: EmployeeWhereUniqueInput;
 
-  @Field(() => Int, { nullable: true })
-  skip?: number;
+    @Field(() => Int, {nullable:true})
+    take?: number;
 
-  @Field(() => [EmployeeScalarFieldEnum], { nullable: true })
-  distinct?: Array<keyof typeof EmployeeScalarFieldEnum>;
+    @Field(() => Int, {nullable:true})
+    skip?: number;
+
+    @Field(() => [EmployeeScalarFieldEnum], {nullable:true})
+    distinct?: Array<keyof typeof EmployeeScalarFieldEnum>;
 }

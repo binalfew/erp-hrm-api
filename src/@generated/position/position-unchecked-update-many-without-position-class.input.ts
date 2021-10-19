@@ -11,44 +11,37 @@ import { PositionScalarWhereInput } from './position-scalar-where.input';
 
 @InputType()
 export class PositionUncheckedUpdateManyWithoutPositionClassInput {
-  @Field(() => [PositionCreateWithoutPositionClassInput], { nullable: true })
-  create?: Array<PositionCreateWithoutPositionClassInput>;
 
-  @Field(() => [PositionCreateOrConnectWithoutPositionClassInput], {
-    nullable: true,
-  })
-  connectOrCreate?: Array<PositionCreateOrConnectWithoutPositionClassInput>;
+    @Field(() => [PositionCreateWithoutPositionClassInput], {nullable:true})
+    create?: Array<PositionCreateWithoutPositionClassInput>;
 
-  @Field(() => [PositionUpsertWithWhereUniqueWithoutPositionClassInput], {
-    nullable: true,
-  })
-  upsert?: Array<PositionUpsertWithWhereUniqueWithoutPositionClassInput>;
+    @Field(() => [PositionCreateOrConnectWithoutPositionClassInput], {nullable:true})
+    connectOrCreate?: Array<PositionCreateOrConnectWithoutPositionClassInput>;
 
-  @Field(() => PositionCreateManyPositionClassInputEnvelope, { nullable: true })
-  createMany?: PositionCreateManyPositionClassInputEnvelope;
+    @Field(() => [PositionUpsertWithWhereUniqueWithoutPositionClassInput], {nullable:true})
+    upsert?: Array<PositionUpsertWithWhereUniqueWithoutPositionClassInput>;
 
-  @Field(() => [PositionWhereUniqueInput], { nullable: true })
-  connect?: Array<PositionWhereUniqueInput>;
+    @Field(() => PositionCreateManyPositionClassInputEnvelope, {nullable:true})
+    createMany?: PositionCreateManyPositionClassInputEnvelope;
 
-  @Field(() => [PositionWhereUniqueInput], { nullable: true })
-  set?: Array<PositionWhereUniqueInput>;
+    @Field(() => [PositionWhereUniqueInput], {nullable:true})
+    connect?: Array<PositionWhereUniqueInput>;
 
-  @Field(() => [PositionWhereUniqueInput], { nullable: true })
-  disconnect?: Array<PositionWhereUniqueInput>;
+    @Field(() => [PositionWhereUniqueInput], {nullable:true})
+    set?: Array<PositionWhereUniqueInput>;
 
-  @Field(() => [PositionWhereUniqueInput], { nullable: true })
-  delete?: Array<PositionWhereUniqueInput>;
+    @Field(() => [PositionWhereUniqueInput], {nullable:true})
+    disconnect?: Array<PositionWhereUniqueInput>;
 
-  @Field(() => [PositionUpdateWithWhereUniqueWithoutPositionClassInput], {
-    nullable: true,
-  })
-  update?: Array<PositionUpdateWithWhereUniqueWithoutPositionClassInput>;
+    @Field(() => [PositionWhereUniqueInput], {nullable:true})
+    delete?: Array<PositionWhereUniqueInput>;
 
-  @Field(() => [PositionUpdateManyWithWhereWithoutPositionClassInput], {
-    nullable: true,
-  })
-  updateMany?: Array<PositionUpdateManyWithWhereWithoutPositionClassInput>;
+    @Field(() => [PositionUpdateWithWhereUniqueWithoutPositionClassInput], {nullable:true})
+    update?: Array<PositionUpdateWithWhereUniqueWithoutPositionClassInput>;
 
-  @Field(() => [PositionScalarWhereInput], { nullable: true })
-  deleteMany?: Array<PositionScalarWhereInput>;
+    @Field(() => [PositionUpdateManyWithWhereWithoutPositionClassInput], {nullable:true})
+    updateMany?: Array<PositionUpdateManyWithWhereWithoutPositionClassInput>;
+
+    @Field(() => [PositionScalarWhereInput], {nullable:true})
+    deleteMany?: Array<PositionScalarWhereInput>;
 }

@@ -5,9 +5,10 @@ import { JobStepWhereUniqueInput } from './job-step-where-unique.input';
 
 @ArgsType()
 export class UpdateOneJobStepArgs {
-  @Field(() => JobStepUpdateInput, { nullable: false })
-  data!: JobStepUpdateInput;
 
-  @Field(() => JobStepWhereUniqueInput, { nullable: false })
-  where!: JobStepWhereUniqueInput;
+    @Field(() => JobStepUpdateInput, {nullable:false})
+    data!: JobStepUpdateInput;
+
+    @Field(() => JobStepWhereUniqueInput, {nullable:false})
+    where!: JobStepWhereUniqueInput;
 }

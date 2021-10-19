@@ -8,24 +8,25 @@ import { SalaryScaleUpdateManyWithoutJobGradeInput } from '../salary-scale/salar
 
 @InputType()
 export class JobGradeUpdateInput {
-  @Field(() => StringFieldUpdateOperationsInput, { nullable: true })
-  name?: StringFieldUpdateOperationsInput;
 
-  @Field(() => StringFieldUpdateOperationsInput, { nullable: true })
-  code?: StringFieldUpdateOperationsInput;
+    @Field(() => StringFieldUpdateOperationsInput, {nullable:true})
+    name?: StringFieldUpdateOperationsInput;
 
-  @Field(() => GraphQLJSON, { nullable: true })
-  locales?: any;
+    @Field(() => StringFieldUpdateOperationsInput, {nullable:true})
+    code?: StringFieldUpdateOperationsInput;
 
-  @Field(() => BoolFieldUpdateOperationsInput, { nullable: true })
-  deleted?: BoolFieldUpdateOperationsInput;
+    @Field(() => GraphQLJSON, {nullable:true})
+    locales?: any;
 
-  @Field(() => DateTimeFieldUpdateOperationsInput, { nullable: true })
-  createdAt?: DateTimeFieldUpdateOperationsInput;
+    @Field(() => BoolFieldUpdateOperationsInput, {nullable:true})
+    deleted?: BoolFieldUpdateOperationsInput;
 
-  @Field(() => DateTimeFieldUpdateOperationsInput, { nullable: true })
-  updatedAt?: DateTimeFieldUpdateOperationsInput;
+    @Field(() => DateTimeFieldUpdateOperationsInput, {nullable:true})
+    createdAt?: DateTimeFieldUpdateOperationsInput;
 
-  @Field(() => SalaryScaleUpdateManyWithoutJobGradeInput, { nullable: true })
-  salaryScales?: SalaryScaleUpdateManyWithoutJobGradeInput;
+    @Field(() => DateTimeFieldUpdateOperationsInput, {nullable:true})
+    updatedAt?: DateTimeFieldUpdateOperationsInput;
+
+    @Field(() => SalaryScaleUpdateManyWithoutJobGradeInput, {nullable:true})
+    salaryScales?: SalaryScaleUpdateManyWithoutJobGradeInput;
 }

@@ -5,9 +5,10 @@ import { DepartmentWhereUniqueInput } from './department-where-unique.input';
 
 @ArgsType()
 export class UpdateOneDepartmentArgs {
-  @Field(() => DepartmentUpdateInput, { nullable: false })
-  data!: DepartmentUpdateInput;
 
-  @Field(() => DepartmentWhereUniqueInput, { nullable: false })
-  where!: DepartmentWhereUniqueInput;
+    @Field(() => DepartmentUpdateInput, {nullable:false})
+    data!: DepartmentUpdateInput;
+
+    @Field(() => DepartmentWhereUniqueInput, {nullable:false})
+    where!: DepartmentWhereUniqueInput;
 }

@@ -5,9 +5,10 @@ import { EmployeeCreateWithoutMaritalStatusInput } from './employee-create-witho
 
 @InputType()
 export class EmployeeCreateOrConnectWithoutMaritalStatusInput {
-  @Field(() => EmployeeWhereUniqueInput, { nullable: false })
-  where!: EmployeeWhereUniqueInput;
 
-  @Field(() => EmployeeCreateWithoutMaritalStatusInput, { nullable: false })
-  create!: EmployeeCreateWithoutMaritalStatusInput;
+    @Field(() => EmployeeWhereUniqueInput, {nullable:false})
+    where!: EmployeeWhereUniqueInput;
+
+    @Field(() => EmployeeCreateWithoutMaritalStatusInput, {nullable:false})
+    create!: EmployeeCreateWithoutMaritalStatusInput;
 }

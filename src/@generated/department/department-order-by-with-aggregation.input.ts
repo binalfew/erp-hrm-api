@@ -9,39 +9,40 @@ import { DepartmentSumOrderByAggregateInput } from './department-sum-order-by-ag
 
 @InputType()
 export class DepartmentOrderByWithAggregationInput {
-  @Field(() => SortOrder, { nullable: true })
-  id?: keyof typeof SortOrder;
 
-  @Field(() => SortOrder, { nullable: true })
-  name?: keyof typeof SortOrder;
+    @Field(() => SortOrder, {nullable:true})
+    id?: keyof typeof SortOrder;
 
-  @Field(() => SortOrder, { nullable: true })
-  code?: keyof typeof SortOrder;
+    @Field(() => SortOrder, {nullable:true})
+    name?: keyof typeof SortOrder;
 
-  @Field(() => SortOrder, { nullable: true })
-  locales?: keyof typeof SortOrder;
+    @Field(() => SortOrder, {nullable:true})
+    code?: keyof typeof SortOrder;
 
-  @Field(() => SortOrder, { nullable: true })
-  parentId?: keyof typeof SortOrder;
+    @Field(() => SortOrder, {nullable:true})
+    locales?: keyof typeof SortOrder;
 
-  @Field(() => SortOrder, { nullable: true })
-  createdAt?: keyof typeof SortOrder;
+    @Field(() => SortOrder, {nullable:true})
+    parentId?: keyof typeof SortOrder;
 
-  @Field(() => SortOrder, { nullable: true })
-  updatedAt?: keyof typeof SortOrder;
+    @Field(() => SortOrder, {nullable:true})
+    createdAt?: keyof typeof SortOrder;
 
-  @Field(() => DepartmentCountOrderByAggregateInput, { nullable: true })
-  _count?: DepartmentCountOrderByAggregateInput;
+    @Field(() => SortOrder, {nullable:true})
+    updatedAt?: keyof typeof SortOrder;
 
-  @Field(() => DepartmentAvgOrderByAggregateInput, { nullable: true })
-  _avg?: DepartmentAvgOrderByAggregateInput;
+    @Field(() => DepartmentCountOrderByAggregateInput, {nullable:true})
+    _count?: DepartmentCountOrderByAggregateInput;
 
-  @Field(() => DepartmentMaxOrderByAggregateInput, { nullable: true })
-  _max?: DepartmentMaxOrderByAggregateInput;
+    @Field(() => DepartmentAvgOrderByAggregateInput, {nullable:true})
+    _avg?: DepartmentAvgOrderByAggregateInput;
 
-  @Field(() => DepartmentMinOrderByAggregateInput, { nullable: true })
-  _min?: DepartmentMinOrderByAggregateInput;
+    @Field(() => DepartmentMaxOrderByAggregateInput, {nullable:true})
+    _max?: DepartmentMaxOrderByAggregateInput;
 
-  @Field(() => DepartmentSumOrderByAggregateInput, { nullable: true })
-  _sum?: DepartmentSumOrderByAggregateInput;
+    @Field(() => DepartmentMinOrderByAggregateInput, {nullable:true})
+    _min?: DepartmentMinOrderByAggregateInput;
+
+    @Field(() => DepartmentSumOrderByAggregateInput, {nullable:true})
+    _sum?: DepartmentSumOrderByAggregateInput;
 }

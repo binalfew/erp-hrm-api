@@ -6,12 +6,13 @@ import { JobGradeUpdateInput } from './job-grade-update.input';
 
 @ArgsType()
 export class UpsertOneJobGradeArgs {
-  @Field(() => JobGradeWhereUniqueInput, { nullable: false })
-  where!: JobGradeWhereUniqueInput;
 
-  @Field(() => JobGradeCreateInput, { nullable: false })
-  create!: JobGradeCreateInput;
+    @Field(() => JobGradeWhereUniqueInput, {nullable:false})
+    where!: JobGradeWhereUniqueInput;
 
-  @Field(() => JobGradeUpdateInput, { nullable: false })
-  update!: JobGradeUpdateInput;
+    @Field(() => JobGradeCreateInput, {nullable:false})
+    create!: JobGradeCreateInput;
+
+    @Field(() => JobGradeUpdateInput, {nullable:false})
+    update!: JobGradeUpdateInput;
 }

@@ -6,12 +6,13 @@ import { PositionClassCreateWithoutSalaryScaleInput } from './position-class-cre
 
 @InputType()
 export class PositionClassUpsertWithWhereUniqueWithoutSalaryScaleInput {
-  @Field(() => PositionClassWhereUniqueInput, { nullable: false })
-  where!: PositionClassWhereUniqueInput;
 
-  @Field(() => PositionClassUpdateWithoutSalaryScaleInput, { nullable: false })
-  update!: PositionClassUpdateWithoutSalaryScaleInput;
+    @Field(() => PositionClassWhereUniqueInput, {nullable:false})
+    where!: PositionClassWhereUniqueInput;
 
-  @Field(() => PositionClassCreateWithoutSalaryScaleInput, { nullable: false })
-  create!: PositionClassCreateWithoutSalaryScaleInput;
+    @Field(() => PositionClassUpdateWithoutSalaryScaleInput, {nullable:false})
+    update!: PositionClassUpdateWithoutSalaryScaleInput;
+
+    @Field(() => PositionClassCreateWithoutSalaryScaleInput, {nullable:false})
+    create!: PositionClassCreateWithoutSalaryScaleInput;
 }

@@ -8,21 +8,22 @@ import { MaritalStatusScalarFieldEnum } from './marital-status-scalar-field.enum
 
 @ArgsType()
 export class FindFirstMaritalStatusArgs {
-  @Field(() => MaritalStatusWhereInput, { nullable: true })
-  where?: MaritalStatusWhereInput;
 
-  @Field(() => [MaritalStatusOrderByWithRelationInput], { nullable: true })
-  orderBy?: Array<MaritalStatusOrderByWithRelationInput>;
+    @Field(() => MaritalStatusWhereInput, {nullable:true})
+    where?: MaritalStatusWhereInput;
 
-  @Field(() => MaritalStatusWhereUniqueInput, { nullable: true })
-  cursor?: MaritalStatusWhereUniqueInput;
+    @Field(() => [MaritalStatusOrderByWithRelationInput], {nullable:true})
+    orderBy?: Array<MaritalStatusOrderByWithRelationInput>;
 
-  @Field(() => Int, { nullable: true })
-  take?: number;
+    @Field(() => MaritalStatusWhereUniqueInput, {nullable:true})
+    cursor?: MaritalStatusWhereUniqueInput;
 
-  @Field(() => Int, { nullable: true })
-  skip?: number;
+    @Field(() => Int, {nullable:true})
+    take?: number;
 
-  @Field(() => [MaritalStatusScalarFieldEnum], { nullable: true })
-  distinct?: Array<keyof typeof MaritalStatusScalarFieldEnum>;
+    @Field(() => Int, {nullable:true})
+    skip?: number;
+
+    @Field(() => [MaritalStatusScalarFieldEnum], {nullable:true})
+    distinct?: Array<keyof typeof MaritalStatusScalarFieldEnum>;
 }

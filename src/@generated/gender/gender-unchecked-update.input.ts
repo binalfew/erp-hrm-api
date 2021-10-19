@@ -10,34 +10,31 @@ import { EmployeeUncheckedUpdateManyWithoutGenderInput } from '../employee/emplo
 
 @InputType()
 export class GenderUncheckedUpdateInput {
-  @Field(() => IntFieldUpdateOperationsInput, { nullable: true })
-  id?: IntFieldUpdateOperationsInput;
 
-  @Field(() => StringFieldUpdateOperationsInput, { nullable: true })
-  name?: StringFieldUpdateOperationsInput;
+    @Field(() => IntFieldUpdateOperationsInput, {nullable:true})
+    id?: IntFieldUpdateOperationsInput;
 
-  @Field(() => StringFieldUpdateOperationsInput, { nullable: true })
-  code?: StringFieldUpdateOperationsInput;
+    @Field(() => StringFieldUpdateOperationsInput, {nullable:true})
+    name?: StringFieldUpdateOperationsInput;
 
-  @Field(() => GraphQLJSON, { nullable: true })
-  locales?: any;
+    @Field(() => StringFieldUpdateOperationsInput, {nullable:true})
+    code?: StringFieldUpdateOperationsInput;
 
-  @Field(() => BoolFieldUpdateOperationsInput, { nullable: true })
-  deleted?: BoolFieldUpdateOperationsInput;
+    @Field(() => GraphQLJSON, {nullable:true})
+    locales?: any;
 
-  @Field(() => DateTimeFieldUpdateOperationsInput, { nullable: true })
-  createdAt?: DateTimeFieldUpdateOperationsInput;
+    @Field(() => BoolFieldUpdateOperationsInput, {nullable:true})
+    deleted?: BoolFieldUpdateOperationsInput;
 
-  @Field(() => DateTimeFieldUpdateOperationsInput, { nullable: true })
-  updatedAt?: DateTimeFieldUpdateOperationsInput;
+    @Field(() => DateTimeFieldUpdateOperationsInput, {nullable:true})
+    createdAt?: DateTimeFieldUpdateOperationsInput;
 
-  @Field(() => PositionClassUncheckedUpdateManyWithoutGenderInput, {
-    nullable: true,
-  })
-  positionClasses?: PositionClassUncheckedUpdateManyWithoutGenderInput;
+    @Field(() => DateTimeFieldUpdateOperationsInput, {nullable:true})
+    updatedAt?: DateTimeFieldUpdateOperationsInput;
 
-  @Field(() => EmployeeUncheckedUpdateManyWithoutGenderInput, {
-    nullable: true,
-  })
-  employees?: EmployeeUncheckedUpdateManyWithoutGenderInput;
+    @Field(() => PositionClassUncheckedUpdateManyWithoutGenderInput, {nullable:true})
+    positionClasses?: PositionClassUncheckedUpdateManyWithoutGenderInput;
+
+    @Field(() => EmployeeUncheckedUpdateManyWithoutGenderInput, {nullable:true})
+    employees?: EmployeeUncheckedUpdateManyWithoutGenderInput;
 }

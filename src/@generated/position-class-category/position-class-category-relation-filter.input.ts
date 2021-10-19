@@ -4,9 +4,10 @@ import { PositionClassCategoryWhereInput } from './position-class-category-where
 
 @InputType()
 export class PositionClassCategoryRelationFilter {
-  @Field(() => PositionClassCategoryWhereInput, { nullable: true })
-  is?: PositionClassCategoryWhereInput;
 
-  @Field(() => PositionClassCategoryWhereInput, { nullable: true })
-  isNot?: PositionClassCategoryWhereInput;
+    @Field(() => PositionClassCategoryWhereInput, {nullable:true})
+    is?: PositionClassCategoryWhereInput;
+
+    @Field(() => PositionClassCategoryWhereInput, {nullable:true})
+    isNot?: PositionClassCategoryWhereInput;
 }

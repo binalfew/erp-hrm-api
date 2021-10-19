@@ -8,26 +8,25 @@ import { NationalityUpdateWithoutEmployeesInput } from './nationality-update-wit
 
 @InputType()
 export class NationalityUpdateOneWithoutEmployeesInput {
-  @Field(() => NationalityCreateWithoutEmployeesInput, { nullable: true })
-  create?: NationalityCreateWithoutEmployeesInput;
 
-  @Field(() => NationalityCreateOrConnectWithoutEmployeesInput, {
-    nullable: true,
-  })
-  connectOrCreate?: NationalityCreateOrConnectWithoutEmployeesInput;
+    @Field(() => NationalityCreateWithoutEmployeesInput, {nullable:true})
+    create?: NationalityCreateWithoutEmployeesInput;
 
-  @Field(() => NationalityUpsertWithoutEmployeesInput, { nullable: true })
-  upsert?: NationalityUpsertWithoutEmployeesInput;
+    @Field(() => NationalityCreateOrConnectWithoutEmployeesInput, {nullable:true})
+    connectOrCreate?: NationalityCreateOrConnectWithoutEmployeesInput;
 
-  @Field(() => NationalityWhereUniqueInput, { nullable: true })
-  connect?: NationalityWhereUniqueInput;
+    @Field(() => NationalityUpsertWithoutEmployeesInput, {nullable:true})
+    upsert?: NationalityUpsertWithoutEmployeesInput;
 
-  @Field(() => Boolean, { nullable: true })
-  disconnect?: boolean;
+    @Field(() => NationalityWhereUniqueInput, {nullable:true})
+    connect?: NationalityWhereUniqueInput;
 
-  @Field(() => Boolean, { nullable: true })
-  delete?: boolean;
+    @Field(() => Boolean, {nullable:true})
+    disconnect?: boolean;
 
-  @Field(() => NationalityUpdateWithoutEmployeesInput, { nullable: true })
-  update?: NationalityUpdateWithoutEmployeesInput;
+    @Field(() => Boolean, {nullable:true})
+    delete?: boolean;
+
+    @Field(() => NationalityUpdateWithoutEmployeesInput, {nullable:true})
+    update?: NationalityUpdateWithoutEmployeesInput;
 }

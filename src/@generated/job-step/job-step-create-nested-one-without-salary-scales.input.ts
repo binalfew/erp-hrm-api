@@ -6,14 +6,13 @@ import { JobStepWhereUniqueInput } from './job-step-where-unique.input';
 
 @InputType()
 export class JobStepCreateNestedOneWithoutSalaryScalesInput {
-  @Field(() => JobStepCreateWithoutSalaryScalesInput, { nullable: true })
-  create?: JobStepCreateWithoutSalaryScalesInput;
 
-  @Field(() => JobStepCreateOrConnectWithoutSalaryScalesInput, {
-    nullable: true,
-  })
-  connectOrCreate?: JobStepCreateOrConnectWithoutSalaryScalesInput;
+    @Field(() => JobStepCreateWithoutSalaryScalesInput, {nullable:true})
+    create?: JobStepCreateWithoutSalaryScalesInput;
 
-  @Field(() => JobStepWhereUniqueInput, { nullable: true })
-  connect?: JobStepWhereUniqueInput;
+    @Field(() => JobStepCreateOrConnectWithoutSalaryScalesInput, {nullable:true})
+    connectOrCreate?: JobStepCreateOrConnectWithoutSalaryScalesInput;
+
+    @Field(() => JobStepWhereUniqueInput, {nullable:true})
+    connect?: JobStepWhereUniqueInput;
 }

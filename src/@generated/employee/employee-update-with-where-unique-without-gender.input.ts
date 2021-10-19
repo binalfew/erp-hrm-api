@@ -5,9 +5,10 @@ import { EmployeeUpdateWithoutGenderInput } from './employee-update-without-gend
 
 @InputType()
 export class EmployeeUpdateWithWhereUniqueWithoutGenderInput {
-  @Field(() => EmployeeWhereUniqueInput, { nullable: false })
-  where!: EmployeeWhereUniqueInput;
 
-  @Field(() => EmployeeUpdateWithoutGenderInput, { nullable: false })
-  data!: EmployeeUpdateWithoutGenderInput;
+    @Field(() => EmployeeWhereUniqueInput, {nullable:false})
+    where!: EmployeeWhereUniqueInput;
+
+    @Field(() => EmployeeUpdateWithoutGenderInput, {nullable:false})
+    data!: EmployeeUpdateWithoutGenderInput;
 }

@@ -37,7 +37,9 @@ model Gender {
 
 model Nationality {
   id        Int        @id @default(autoincrement())
+  /// @Validator.IsNotEmpty()
   name      String     @unique @db.VarChar
+  /// @Validator.IsNotEmpty()
   code      String     @unique @db.VarChar
   locales   Json?
   deleted   Boolean    @default(false)
@@ -50,7 +52,9 @@ model Nationality {
 
 model MaritalStatus {
   id        Int        @id @default(autoincrement())
+  /// @Validator.IsNotEmpty()
   name      String     @unique @db.VarChar
+  /// @Validator.IsNotEmpty()
   code      String     @unique @db.VarChar
   locales   Json?
   deleted   Boolean    @default(false)
@@ -63,7 +67,9 @@ model MaritalStatus {
 
 model EmploymentType {
   id        Int        @id @default(autoincrement())
+  /// @Validator.IsNotEmpty()
   name      String     @unique @db.VarChar
+  /// @Validator.IsNotEmpty()
   code      String     @unique @db.VarChar
   locales   Json?
   deleted   Boolean    @default(false)
@@ -76,7 +82,9 @@ model EmploymentType {
 
 model EmploymentNature {
   id        Int        @id @default(autoincrement())
+  /// @Validator.IsNotEmpty()
   name      String     @unique @db.VarChar
+  /// @Validator.IsNotEmpty()
   code      String     @unique @db.VarChar
   locales   Json?
   deleted   Boolean    @default(false)
@@ -89,7 +97,9 @@ model EmploymentNature {
 
 model JobGrade {
   id           Int           @id @default(autoincrement())
+  /// @Validator.IsNotEmpty()
   name         String        @unique @db.VarChar
+  /// @Validator.IsNotEmpty()
   code         String        @unique @db.VarChar
   locales      Json?
   deleted      Boolean       @default(false)
@@ -102,7 +112,9 @@ model JobGrade {
 
 model JobStep {
   id           Int           @id @default(autoincrement())
+  /// @Validator.IsNotEmpty()
   name         String        @unique @db.VarChar
+  /// @Validator.IsNotEmpty()
   code         String        @unique @db.VarChar
   locales      Json?
   deleted      Boolean       @default(false)
@@ -115,7 +127,9 @@ model JobStep {
 
 model PositionClassType {
   id              Int             @id @default(autoincrement())
+  /// @Validator.IsNotEmpty()
   name            String          @unique @db.VarChar
+  /// @Validator.IsNotEmpty()
   code            String          @unique @db.VarChar
   locales         Json?
   deleted         Boolean         @default(false)
@@ -128,7 +142,9 @@ model PositionClassType {
 
 model PositionClassCategory {
   id              Int             @id @default(autoincrement())
+  /// @Validator.IsNotEmpty()
   name            String          @unique @db.VarChar
+  /// @Validator.IsNotEmpty()
   code            String          @unique @db.VarChar
   locales         Json?
   deleted         Boolean         @default(false)
@@ -156,8 +172,10 @@ model SalaryScale {
 
 model Department {
   id        Int          @id @default(autoincrement())
-  name      String
-  code      String
+  /// @Validator.IsNotEmpty()
+  name      String       @unique @db.VarChar
+  /// @Validator.IsNotEmpty()
+  code      String       @unique @db.VarChar
   locales   Json?
   parentId  Int?
   parent    Department?  @relation("ParentToChild", fields: [parentId], references: [id])
@@ -171,7 +189,9 @@ model Department {
 
 model PositionClass {
   id                      Int                    @id @default(autoincrement())
+  /// @Validator.IsNotEmpty()
   name                    String                 @unique @db.VarChar
+  /// @Validator.IsNotEmpty()
   code                    String                 @unique @db.VarChar
   locales                 Json?
   gender                  Gender?                @relation(fields: [genderId], references: [id])

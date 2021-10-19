@@ -4,6 +4,7 @@ import { PositionClassTypeWhereInput } from './position-class-type-where.input';
 
 @ArgsType()
 export class DeleteManyPositionClassTypeArgs {
-  @Field(() => PositionClassTypeWhereInput, { nullable: true })
-  where?: PositionClassTypeWhereInput;
+
+    @Field(() => PositionClassTypeWhereInput, {nullable:true})
+    where?: PositionClassTypeWhereInput;
 }

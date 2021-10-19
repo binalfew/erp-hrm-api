@@ -6,14 +6,13 @@ import { SalaryScaleWhereUniqueInput } from './salary-scale-where-unique.input';
 
 @InputType()
 export class SalaryScaleCreateNestedOneWithoutPositionClassesInput {
-  @Field(() => SalaryScaleCreateWithoutPositionClassesInput, { nullable: true })
-  create?: SalaryScaleCreateWithoutPositionClassesInput;
 
-  @Field(() => SalaryScaleCreateOrConnectWithoutPositionClassesInput, {
-    nullable: true,
-  })
-  connectOrCreate?: SalaryScaleCreateOrConnectWithoutPositionClassesInput;
+    @Field(() => SalaryScaleCreateWithoutPositionClassesInput, {nullable:true})
+    create?: SalaryScaleCreateWithoutPositionClassesInput;
 
-  @Field(() => SalaryScaleWhereUniqueInput, { nullable: true })
-  connect?: SalaryScaleWhereUniqueInput;
+    @Field(() => SalaryScaleCreateOrConnectWithoutPositionClassesInput, {nullable:true})
+    connectOrCreate?: SalaryScaleCreateOrConnectWithoutPositionClassesInput;
+
+    @Field(() => SalaryScaleWhereUniqueInput, {nullable:true})
+    connect?: SalaryScaleWhereUniqueInput;
 }

@@ -4,6 +4,7 @@ import { JobGradeCreateInput } from './job-grade-create.input';
 
 @ArgsType()
 export class CreateOneJobGradeArgs {
-  @Field(() => JobGradeCreateInput, { nullable: false })
-  data!: JobGradeCreateInput;
+
+    @Field(() => JobGradeCreateInput, {nullable:false})
+    data!: JobGradeCreateInput;
 }

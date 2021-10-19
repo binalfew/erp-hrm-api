@@ -4,6 +4,7 @@ import { GenderWhereUniqueInput } from './gender-where-unique.input';
 
 @ArgsType()
 export class FindUniqueGenderArgs {
-  @Field(() => GenderWhereUniqueInput, { nullable: false })
-  where!: GenderWhereUniqueInput;
+
+    @Field(() => GenderWhereUniqueInput, {nullable:false})
+    where!: GenderWhereUniqueInput;
 }

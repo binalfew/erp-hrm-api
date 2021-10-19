@@ -3,30 +3,31 @@ import { InputType } from '@nestjs/graphql';
 
 @InputType()
 export class PositionCountAggregateInput {
-  @Field(() => Boolean, { nullable: true })
-  id?: true;
 
-  @Field(() => Boolean, { nullable: true })
-  code?: true;
+    @Field(() => Boolean, {nullable:true})
+    id?: true;
 
-  @Field(() => Boolean, { nullable: true })
-  positionClassId?: true;
+    @Field(() => Boolean, {nullable:true})
+    code?: true;
 
-  @Field(() => Boolean, { nullable: true })
-  departmentId?: true;
+    @Field(() => Boolean, {nullable:true})
+    positionClassId?: true;
 
-  @Field(() => Boolean, { nullable: true })
-  vacant?: true;
+    @Field(() => Boolean, {nullable:true})
+    departmentId?: true;
 
-  @Field(() => Boolean, { nullable: true })
-  deleted?: true;
+    @Field(() => Boolean, {nullable:true})
+    vacant?: true;
 
-  @Field(() => Boolean, { nullable: true })
-  createdAt?: true;
+    @Field(() => Boolean, {nullable:true})
+    deleted?: true;
 
-  @Field(() => Boolean, { nullable: true })
-  updatedAt?: true;
+    @Field(() => Boolean, {nullable:true})
+    createdAt?: true;
 
-  @Field(() => Boolean, { nullable: true })
-  _all?: true;
+    @Field(() => Boolean, {nullable:true})
+    updatedAt?: true;
+
+    @Field(() => Boolean, {nullable:true})
+    _all?: true;
 }

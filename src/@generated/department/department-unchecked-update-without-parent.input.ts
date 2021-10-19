@@ -9,31 +9,28 @@ import { PositionUncheckedUpdateManyWithoutDepartmentInput } from '../position/p
 
 @InputType()
 export class DepartmentUncheckedUpdateWithoutParentInput {
-  @Field(() => IntFieldUpdateOperationsInput, { nullable: true })
-  id?: IntFieldUpdateOperationsInput;
 
-  @Field(() => StringFieldUpdateOperationsInput, { nullable: true })
-  name?: StringFieldUpdateOperationsInput;
+    @Field(() => IntFieldUpdateOperationsInput, {nullable:true})
+    id?: IntFieldUpdateOperationsInput;
 
-  @Field(() => StringFieldUpdateOperationsInput, { nullable: true })
-  code?: StringFieldUpdateOperationsInput;
+    @Field(() => StringFieldUpdateOperationsInput, {nullable:true})
+    name?: StringFieldUpdateOperationsInput;
 
-  @Field(() => GraphQLJSON, { nullable: true })
-  locales?: any;
+    @Field(() => StringFieldUpdateOperationsInput, {nullable:true})
+    code?: StringFieldUpdateOperationsInput;
 
-  @Field(() => DateTimeFieldUpdateOperationsInput, { nullable: true })
-  createdAt?: DateTimeFieldUpdateOperationsInput;
+    @Field(() => GraphQLJSON, {nullable:true})
+    locales?: any;
 
-  @Field(() => DateTimeFieldUpdateOperationsInput, { nullable: true })
-  updatedAt?: DateTimeFieldUpdateOperationsInput;
+    @Field(() => DateTimeFieldUpdateOperationsInput, {nullable:true})
+    createdAt?: DateTimeFieldUpdateOperationsInput;
 
-  @Field(() => DepartmentUncheckedUpdateManyWithoutParentInput, {
-    nullable: true,
-  })
-  children?: DepartmentUncheckedUpdateManyWithoutParentInput;
+    @Field(() => DateTimeFieldUpdateOperationsInput, {nullable:true})
+    updatedAt?: DateTimeFieldUpdateOperationsInput;
 
-  @Field(() => PositionUncheckedUpdateManyWithoutDepartmentInput, {
-    nullable: true,
-  })
-  positions?: PositionUncheckedUpdateManyWithoutDepartmentInput;
+    @Field(() => DepartmentUncheckedUpdateManyWithoutParentInput, {nullable:true})
+    children?: DepartmentUncheckedUpdateManyWithoutParentInput;
+
+    @Field(() => PositionUncheckedUpdateManyWithoutDepartmentInput, {nullable:true})
+    positions?: PositionUncheckedUpdateManyWithoutDepartmentInput;
 }

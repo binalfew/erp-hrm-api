@@ -5,9 +5,10 @@ import { EmploymentNatureCreateWithoutEmployeesInput } from './employment-nature
 
 @InputType()
 export class EmploymentNatureUpsertWithoutEmployeesInput {
-  @Field(() => EmploymentNatureUpdateWithoutEmployeesInput, { nullable: false })
-  update!: EmploymentNatureUpdateWithoutEmployeesInput;
 
-  @Field(() => EmploymentNatureCreateWithoutEmployeesInput, { nullable: false })
-  create!: EmploymentNatureCreateWithoutEmployeesInput;
+    @Field(() => EmploymentNatureUpdateWithoutEmployeesInput, {nullable:false})
+    update!: EmploymentNatureUpdateWithoutEmployeesInput;
+
+    @Field(() => EmploymentNatureCreateWithoutEmployeesInput, {nullable:false})
+    create!: EmploymentNatureCreateWithoutEmployeesInput;
 }

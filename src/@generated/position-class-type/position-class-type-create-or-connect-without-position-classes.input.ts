@@ -5,11 +5,10 @@ import { PositionClassTypeCreateWithoutPositionClassesInput } from './position-c
 
 @InputType()
 export class PositionClassTypeCreateOrConnectWithoutPositionClassesInput {
-  @Field(() => PositionClassTypeWhereUniqueInput, { nullable: false })
-  where!: PositionClassTypeWhereUniqueInput;
 
-  @Field(() => PositionClassTypeCreateWithoutPositionClassesInput, {
-    nullable: false,
-  })
-  create!: PositionClassTypeCreateWithoutPositionClassesInput;
+    @Field(() => PositionClassTypeWhereUniqueInput, {nullable:false})
+    where!: PositionClassTypeWhereUniqueInput;
+
+    @Field(() => PositionClassTypeCreateWithoutPositionClassesInput, {nullable:false})
+    create!: PositionClassTypeCreateWithoutPositionClassesInput;
 }

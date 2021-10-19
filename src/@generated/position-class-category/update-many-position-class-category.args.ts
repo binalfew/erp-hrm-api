@@ -5,11 +5,10 @@ import { PositionClassCategoryWhereInput } from './position-class-category-where
 
 @ArgsType()
 export class UpdateManyPositionClassCategoryArgs {
-  @Field(() => PositionClassCategoryUpdateManyMutationInput, {
-    nullable: false,
-  })
-  data!: PositionClassCategoryUpdateManyMutationInput;
 
-  @Field(() => PositionClassCategoryWhereInput, { nullable: true })
-  where?: PositionClassCategoryWhereInput;
+    @Field(() => PositionClassCategoryUpdateManyMutationInput, {nullable:false})
+    data!: PositionClassCategoryUpdateManyMutationInput;
+
+    @Field(() => PositionClassCategoryWhereInput, {nullable:true})
+    where?: PositionClassCategoryWhereInput;
 }

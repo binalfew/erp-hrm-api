@@ -4,9 +4,10 @@ import { NationalityCreateManyInput } from './nationality-create-many.input';
 
 @ArgsType()
 export class CreateManyNationalityArgs {
-  @Field(() => [NationalityCreateManyInput], { nullable: false })
-  data!: Array<NationalityCreateManyInput>;
 
-  @Field(() => Boolean, { nullable: true })
-  skipDuplicates?: boolean;
+    @Field(() => [NationalityCreateManyInput], {nullable:false})
+    data!: Array<NationalityCreateManyInput>;
+
+    @Field(() => Boolean, {nullable:true})
+    skipDuplicates?: boolean;
 }

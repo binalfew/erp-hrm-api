@@ -8,24 +8,25 @@ import { GenderUpdateWithoutEmployeesInput } from './gender-update-without-emplo
 
 @InputType()
 export class GenderUpdateOneWithoutEmployeesInput {
-  @Field(() => GenderCreateWithoutEmployeesInput, { nullable: true })
-  create?: GenderCreateWithoutEmployeesInput;
 
-  @Field(() => GenderCreateOrConnectWithoutEmployeesInput, { nullable: true })
-  connectOrCreate?: GenderCreateOrConnectWithoutEmployeesInput;
+    @Field(() => GenderCreateWithoutEmployeesInput, {nullable:true})
+    create?: GenderCreateWithoutEmployeesInput;
 
-  @Field(() => GenderUpsertWithoutEmployeesInput, { nullable: true })
-  upsert?: GenderUpsertWithoutEmployeesInput;
+    @Field(() => GenderCreateOrConnectWithoutEmployeesInput, {nullable:true})
+    connectOrCreate?: GenderCreateOrConnectWithoutEmployeesInput;
 
-  @Field(() => GenderWhereUniqueInput, { nullable: true })
-  connect?: GenderWhereUniqueInput;
+    @Field(() => GenderUpsertWithoutEmployeesInput, {nullable:true})
+    upsert?: GenderUpsertWithoutEmployeesInput;
 
-  @Field(() => Boolean, { nullable: true })
-  disconnect?: boolean;
+    @Field(() => GenderWhereUniqueInput, {nullable:true})
+    connect?: GenderWhereUniqueInput;
 
-  @Field(() => Boolean, { nullable: true })
-  delete?: boolean;
+    @Field(() => Boolean, {nullable:true})
+    disconnect?: boolean;
 
-  @Field(() => GenderUpdateWithoutEmployeesInput, { nullable: true })
-  update?: GenderUpdateWithoutEmployeesInput;
+    @Field(() => Boolean, {nullable:true})
+    delete?: boolean;
+
+    @Field(() => GenderUpdateWithoutEmployeesInput, {nullable:true})
+    update?: GenderUpdateWithoutEmployeesInput;
 }

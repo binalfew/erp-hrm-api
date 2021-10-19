@@ -8,18 +8,19 @@ import { GenderMaxAggregate } from './gender-max-aggregate.output';
 
 @ObjectType()
 export class AggregateGender {
-  @Field(() => GenderCountAggregate, { nullable: true })
-  _count?: GenderCountAggregate;
 
-  @Field(() => GenderAvgAggregate, { nullable: true })
-  _avg?: GenderAvgAggregate;
+    @Field(() => GenderCountAggregate, {nullable:true})
+    _count?: GenderCountAggregate;
 
-  @Field(() => GenderSumAggregate, { nullable: true })
-  _sum?: GenderSumAggregate;
+    @Field(() => GenderAvgAggregate, {nullable:true})
+    _avg?: GenderAvgAggregate;
 
-  @Field(() => GenderMinAggregate, { nullable: true })
-  _min?: GenderMinAggregate;
+    @Field(() => GenderSumAggregate, {nullable:true})
+    _sum?: GenderSumAggregate;
 
-  @Field(() => GenderMaxAggregate, { nullable: true })
-  _max?: GenderMaxAggregate;
+    @Field(() => GenderMinAggregate, {nullable:true})
+    _min?: GenderMinAggregate;
+
+    @Field(() => GenderMaxAggregate, {nullable:true})
+    _max?: GenderMaxAggregate;
 }

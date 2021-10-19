@@ -5,9 +5,10 @@ import { SalaryScaleUpdateWithoutJobGradeInput } from './salary-scale-update-wit
 
 @InputType()
 export class SalaryScaleUpdateWithWhereUniqueWithoutJobGradeInput {
-  @Field(() => SalaryScaleWhereUniqueInput, { nullable: false })
-  where!: SalaryScaleWhereUniqueInput;
 
-  @Field(() => SalaryScaleUpdateWithoutJobGradeInput, { nullable: false })
-  data!: SalaryScaleUpdateWithoutJobGradeInput;
+    @Field(() => SalaryScaleWhereUniqueInput, {nullable:false})
+    where!: SalaryScaleWhereUniqueInput;
+
+    @Field(() => SalaryScaleUpdateWithoutJobGradeInput, {nullable:false})
+    data!: SalaryScaleUpdateWithoutJobGradeInput;
 }

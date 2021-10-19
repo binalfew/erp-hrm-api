@@ -4,9 +4,10 @@ import { DepartmentCreateManyParentInput } from './department-create-many-parent
 
 @InputType()
 export class DepartmentCreateManyParentInputEnvelope {
-  @Field(() => [DepartmentCreateManyParentInput], { nullable: false })
-  data!: Array<DepartmentCreateManyParentInput>;
 
-  @Field(() => Boolean, { nullable: true })
-  skipDuplicates?: boolean;
+    @Field(() => [DepartmentCreateManyParentInput], {nullable:false})
+    data!: Array<DepartmentCreateManyParentInput>;
+
+    @Field(() => Boolean, {nullable:true})
+    skipDuplicates?: boolean;
 }

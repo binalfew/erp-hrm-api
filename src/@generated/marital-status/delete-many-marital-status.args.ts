@@ -4,6 +4,7 @@ import { MaritalStatusWhereInput } from './marital-status-where.input';
 
 @ArgsType()
 export class DeleteManyMaritalStatusArgs {
-  @Field(() => MaritalStatusWhereInput, { nullable: true })
-  where?: MaritalStatusWhereInput;
+
+    @Field(() => MaritalStatusWhereInput, {nullable:true})
+    where?: MaritalStatusWhereInput;
 }

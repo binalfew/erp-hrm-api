@@ -10,90 +10,91 @@ import { BoolWithAggregatesFilter } from '../prisma/bool-with-aggregates-filter.
 
 @InputType()
 export class EmployeeScalarWhereWithAggregatesInput {
-  @Field(() => [EmployeeScalarWhereWithAggregatesInput], { nullable: true })
-  AND?: Array<EmployeeScalarWhereWithAggregatesInput>;
 
-  @Field(() => [EmployeeScalarWhereWithAggregatesInput], { nullable: true })
-  OR?: Array<EmployeeScalarWhereWithAggregatesInput>;
+    @Field(() => [EmployeeScalarWhereWithAggregatesInput], {nullable:true})
+    AND?: Array<EmployeeScalarWhereWithAggregatesInput>;
 
-  @Field(() => [EmployeeScalarWhereWithAggregatesInput], { nullable: true })
-  NOT?: Array<EmployeeScalarWhereWithAggregatesInput>;
+    @Field(() => [EmployeeScalarWhereWithAggregatesInput], {nullable:true})
+    OR?: Array<EmployeeScalarWhereWithAggregatesInput>;
 
-  @Field(() => IntWithAggregatesFilter, { nullable: true })
-  id?: IntWithAggregatesFilter;
+    @Field(() => [EmployeeScalarWhereWithAggregatesInput], {nullable:true})
+    NOT?: Array<EmployeeScalarWhereWithAggregatesInput>;
 
-  @Field(() => JsonWithAggregatesFilter, { nullable: true })
-  firstName?: JsonWithAggregatesFilter;
+    @Field(() => IntWithAggregatesFilter, {nullable:true})
+    id?: IntWithAggregatesFilter;
 
-  @Field(() => JsonWithAggregatesFilter, { nullable: true })
-  lastName?: JsonWithAggregatesFilter;
+    @Field(() => JsonWithAggregatesFilter, {nullable:true})
+    firstName?: JsonWithAggregatesFilter;
 
-  @Field(() => JsonWithAggregatesFilter, { nullable: true })
-  grandfatherName?: JsonWithAggregatesFilter;
+    @Field(() => JsonWithAggregatesFilter, {nullable:true})
+    lastName?: JsonWithAggregatesFilter;
 
-  @Field(() => JsonNullableWithAggregatesFilter, { nullable: true })
-  locales?: JsonNullableWithAggregatesFilter;
+    @Field(() => JsonWithAggregatesFilter, {nullable:true})
+    grandfatherName?: JsonWithAggregatesFilter;
 
-  @Field(() => IntNullableWithAggregatesFilter, { nullable: true })
-  genderId?: IntNullableWithAggregatesFilter;
+    @Field(() => JsonNullableWithAggregatesFilter, {nullable:true})
+    locales?: JsonNullableWithAggregatesFilter;
 
-  @Field(() => IntNullableWithAggregatesFilter, { nullable: true })
-  nationalityId?: IntNullableWithAggregatesFilter;
+    @Field(() => IntNullableWithAggregatesFilter, {nullable:true})
+    genderId?: IntNullableWithAggregatesFilter;
 
-  @Field(() => IntNullableWithAggregatesFilter, { nullable: true })
-  maritalStatusId?: IntNullableWithAggregatesFilter;
+    @Field(() => IntNullableWithAggregatesFilter, {nullable:true})
+    nationalityId?: IntNullableWithAggregatesFilter;
 
-  @Field(() => IntNullableWithAggregatesFilter, { nullable: true })
-  employmentTypeId?: IntNullableWithAggregatesFilter;
+    @Field(() => IntNullableWithAggregatesFilter, {nullable:true})
+    maritalStatusId?: IntNullableWithAggregatesFilter;
 
-  @Field(() => IntNullableWithAggregatesFilter, { nullable: true })
-  employmentNatureId?: IntNullableWithAggregatesFilter;
+    @Field(() => IntNullableWithAggregatesFilter, {nullable:true})
+    employmentTypeId?: IntNullableWithAggregatesFilter;
 
-  @Field(() => DateTimeWithAggregatesFilter, { nullable: true })
-  dateOfBirth?: DateTimeWithAggregatesFilter;
+    @Field(() => IntNullableWithAggregatesFilter, {nullable:true})
+    employmentNatureId?: IntNullableWithAggregatesFilter;
 
-  @Field(() => StringWithAggregatesFilter, { nullable: true })
-  placeOfBirth?: StringWithAggregatesFilter;
+    @Field(() => DateTimeWithAggregatesFilter, {nullable:true})
+    dateOfBirth?: DateTimeWithAggregatesFilter;
 
-  @Field(() => StringWithAggregatesFilter, { nullable: true })
-  countryOfBirth?: StringWithAggregatesFilter;
+    @Field(() => StringWithAggregatesFilter, {nullable:true})
+    placeOfBirth?: StringWithAggregatesFilter;
 
-  @Field(() => StringWithAggregatesFilter, { nullable: true })
-  idNumber?: StringWithAggregatesFilter;
+    @Field(() => StringWithAggregatesFilter, {nullable:true})
+    countryOfBirth?: StringWithAggregatesFilter;
 
-  @Field(() => StringWithAggregatesFilter, { nullable: true })
-  passportNumber?: StringWithAggregatesFilter;
+    @Field(() => StringWithAggregatesFilter, {nullable:true})
+    idNumber?: StringWithAggregatesFilter;
 
-  @Field(() => StringWithAggregatesFilter, { nullable: true })
-  email?: StringWithAggregatesFilter;
+    @Field(() => StringWithAggregatesFilter, {nullable:true})
+    passportNumber?: StringWithAggregatesFilter;
 
-  @Field(() => StringWithAggregatesFilter, { nullable: true })
-  Phone?: StringWithAggregatesFilter;
+    @Field(() => StringWithAggregatesFilter, {nullable:true})
+    email?: StringWithAggregatesFilter;
 
-  @Field(() => StringWithAggregatesFilter, { nullable: true })
-  emergencyContact?: StringWithAggregatesFilter;
+    @Field(() => StringWithAggregatesFilter, {nullable:true})
+    Phone?: StringWithAggregatesFilter;
 
-  @Field(() => StringWithAggregatesFilter, { nullable: true })
-  emergencyPhone?: StringWithAggregatesFilter;
+    @Field(() => StringWithAggregatesFilter, {nullable:true})
+    emergencyContact?: StringWithAggregatesFilter;
 
-  @Field(() => IntWithAggregatesFilter, { nullable: true })
-  numberOfChildren?: IntWithAggregatesFilter;
+    @Field(() => StringWithAggregatesFilter, {nullable:true})
+    emergencyPhone?: StringWithAggregatesFilter;
 
-  @Field(() => DateTimeWithAggregatesFilter, { nullable: true })
-  employmentDate?: DateTimeWithAggregatesFilter;
+    @Field(() => IntWithAggregatesFilter, {nullable:true})
+    numberOfChildren?: IntWithAggregatesFilter;
 
-  @Field(() => DateTimeWithAggregatesFilter, { nullable: true })
-  probationDate?: DateTimeWithAggregatesFilter;
+    @Field(() => DateTimeWithAggregatesFilter, {nullable:true})
+    employmentDate?: DateTimeWithAggregatesFilter;
 
-  @Field(() => DateTimeWithAggregatesFilter, { nullable: true })
-  retirementDate?: DateTimeWithAggregatesFilter;
+    @Field(() => DateTimeWithAggregatesFilter, {nullable:true})
+    probationDate?: DateTimeWithAggregatesFilter;
 
-  @Field(() => BoolWithAggregatesFilter, { nullable: true })
-  deleted?: BoolWithAggregatesFilter;
+    @Field(() => DateTimeWithAggregatesFilter, {nullable:true})
+    retirementDate?: DateTimeWithAggregatesFilter;
 
-  @Field(() => DateTimeWithAggregatesFilter, { nullable: true })
-  createdAt?: DateTimeWithAggregatesFilter;
+    @Field(() => BoolWithAggregatesFilter, {nullable:true})
+    deleted?: BoolWithAggregatesFilter;
 
-  @Field(() => DateTimeWithAggregatesFilter, { nullable: true })
-  updatedAt?: DateTimeWithAggregatesFilter;
+    @Field(() => DateTimeWithAggregatesFilter, {nullable:true})
+    createdAt?: DateTimeWithAggregatesFilter;
+
+    @Field(() => DateTimeWithAggregatesFilter, {nullable:true})
+    updatedAt?: DateTimeWithAggregatesFilter;
 }

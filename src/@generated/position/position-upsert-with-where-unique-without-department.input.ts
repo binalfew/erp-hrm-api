@@ -6,12 +6,13 @@ import { PositionCreateWithoutDepartmentInput } from './position-create-without-
 
 @InputType()
 export class PositionUpsertWithWhereUniqueWithoutDepartmentInput {
-  @Field(() => PositionWhereUniqueInput, { nullable: false })
-  where!: PositionWhereUniqueInput;
 
-  @Field(() => PositionUpdateWithoutDepartmentInput, { nullable: false })
-  update!: PositionUpdateWithoutDepartmentInput;
+    @Field(() => PositionWhereUniqueInput, {nullable:false})
+    where!: PositionWhereUniqueInput;
 
-  @Field(() => PositionCreateWithoutDepartmentInput, { nullable: false })
-  create!: PositionCreateWithoutDepartmentInput;
+    @Field(() => PositionUpdateWithoutDepartmentInput, {nullable:false})
+    update!: PositionUpdateWithoutDepartmentInput;
+
+    @Field(() => PositionCreateWithoutDepartmentInput, {nullable:false})
+    create!: PositionCreateWithoutDepartmentInput;
 }

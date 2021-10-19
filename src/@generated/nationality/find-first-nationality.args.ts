@@ -8,21 +8,22 @@ import { NationalityScalarFieldEnum } from './nationality-scalar-field.enum';
 
 @ArgsType()
 export class FindFirstNationalityArgs {
-  @Field(() => NationalityWhereInput, { nullable: true })
-  where?: NationalityWhereInput;
 
-  @Field(() => [NationalityOrderByWithRelationInput], { nullable: true })
-  orderBy?: Array<NationalityOrderByWithRelationInput>;
+    @Field(() => NationalityWhereInput, {nullable:true})
+    where?: NationalityWhereInput;
 
-  @Field(() => NationalityWhereUniqueInput, { nullable: true })
-  cursor?: NationalityWhereUniqueInput;
+    @Field(() => [NationalityOrderByWithRelationInput], {nullable:true})
+    orderBy?: Array<NationalityOrderByWithRelationInput>;
 
-  @Field(() => Int, { nullable: true })
-  take?: number;
+    @Field(() => NationalityWhereUniqueInput, {nullable:true})
+    cursor?: NationalityWhereUniqueInput;
 
-  @Field(() => Int, { nullable: true })
-  skip?: number;
+    @Field(() => Int, {nullable:true})
+    take?: number;
 
-  @Field(() => [NationalityScalarFieldEnum], { nullable: true })
-  distinct?: Array<keyof typeof NationalityScalarFieldEnum>;
+    @Field(() => Int, {nullable:true})
+    skip?: number;
+
+    @Field(() => [NationalityScalarFieldEnum], {nullable:true})
+    distinct?: Array<keyof typeof NationalityScalarFieldEnum>;
 }

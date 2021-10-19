@@ -4,6 +4,7 @@ import { EmploymentTypeWhereUniqueInput } from './employment-type-where-unique.i
 
 @ArgsType()
 export class FindUniqueEmploymentTypeArgs {
-  @Field(() => EmploymentTypeWhereUniqueInput, { nullable: false })
-  where!: EmploymentTypeWhereUniqueInput;
+
+    @Field(() => EmploymentTypeWhereUniqueInput, {nullable:false})
+    where!: EmploymentTypeWhereUniqueInput;
 }

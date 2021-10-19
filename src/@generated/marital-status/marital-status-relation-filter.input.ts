@@ -4,9 +4,10 @@ import { MaritalStatusWhereInput } from './marital-status-where.input';
 
 @InputType()
 export class MaritalStatusRelationFilter {
-  @Field(() => MaritalStatusWhereInput, { nullable: true })
-  is?: MaritalStatusWhereInput;
 
-  @Field(() => MaritalStatusWhereInput, { nullable: true })
-  isNot?: MaritalStatusWhereInput;
+    @Field(() => MaritalStatusWhereInput, {nullable:true})
+    is?: MaritalStatusWhereInput;
+
+    @Field(() => MaritalStatusWhereInput, {nullable:true})
+    isNot?: MaritalStatusWhereInput;
 }

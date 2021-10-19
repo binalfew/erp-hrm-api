@@ -5,9 +5,10 @@ import { JobGradeWhereInput } from './job-grade-where.input';
 
 @ArgsType()
 export class UpdateManyJobGradeArgs {
-  @Field(() => JobGradeUpdateManyMutationInput, { nullable: false })
-  data!: JobGradeUpdateManyMutationInput;
 
-  @Field(() => JobGradeWhereInput, { nullable: true })
-  where?: JobGradeWhereInput;
+    @Field(() => JobGradeUpdateManyMutationInput, {nullable:false})
+    data!: JobGradeUpdateManyMutationInput;
+
+    @Field(() => JobGradeWhereInput, {nullable:true})
+    where?: JobGradeWhereInput;
 }

@@ -5,9 +5,10 @@ import { GenderCreateWithoutPositionClassesInput } from './gender-create-without
 
 @InputType()
 export class GenderUpsertWithoutPositionClassesInput {
-  @Field(() => GenderUpdateWithoutPositionClassesInput, { nullable: false })
-  update!: GenderUpdateWithoutPositionClassesInput;
 
-  @Field(() => GenderCreateWithoutPositionClassesInput, { nullable: false })
-  create!: GenderCreateWithoutPositionClassesInput;
+    @Field(() => GenderUpdateWithoutPositionClassesInput, {nullable:false})
+    update!: GenderUpdateWithoutPositionClassesInput;
+
+    @Field(() => GenderCreateWithoutPositionClassesInput, {nullable:false})
+    create!: GenderCreateWithoutPositionClassesInput;
 }

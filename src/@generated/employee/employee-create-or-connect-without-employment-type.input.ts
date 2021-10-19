@@ -5,9 +5,10 @@ import { EmployeeCreateWithoutEmploymentTypeInput } from './employee-create-with
 
 @InputType()
 export class EmployeeCreateOrConnectWithoutEmploymentTypeInput {
-  @Field(() => EmployeeWhereUniqueInput, { nullable: false })
-  where!: EmployeeWhereUniqueInput;
 
-  @Field(() => EmployeeCreateWithoutEmploymentTypeInput, { nullable: false })
-  create!: EmployeeCreateWithoutEmploymentTypeInput;
+    @Field(() => EmployeeWhereUniqueInput, {nullable:false})
+    where!: EmployeeWhereUniqueInput;
+
+    @Field(() => EmployeeCreateWithoutEmploymentTypeInput, {nullable:false})
+    create!: EmployeeCreateWithoutEmploymentTypeInput;
 }

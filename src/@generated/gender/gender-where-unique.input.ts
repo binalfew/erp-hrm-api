@@ -5,14 +5,15 @@ import * as Validator from 'class-validator';
 
 @InputType()
 export class GenderWhereUniqueInput {
-  @Field(() => Int, { nullable: true })
-  id?: number;
 
-  @Field(() => String, { nullable: true })
-  @Validator.IsNotEmpty()
-  name?: string;
+    @Field(() => Int, {nullable:true})
+    id?: number;
 
-  @Field(() => String, { nullable: true })
-  @Validator.IsNotEmpty()
-  code?: string;
+    @Field(() => String, {nullable:true})
+    @Validator.IsNotEmpty()
+    name?: string;
+
+    @Field(() => String, {nullable:true})
+    @Validator.IsNotEmpty()
+    code?: string;
 }

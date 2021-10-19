@@ -9,36 +9,37 @@ import { SalaryScaleListRelationFilter } from '../salary-scale/salary-scale-list
 
 @InputType()
 export class JobStepWhereInput {
-  @Field(() => [JobStepWhereInput], { nullable: true })
-  AND?: Array<JobStepWhereInput>;
 
-  @Field(() => [JobStepWhereInput], { nullable: true })
-  OR?: Array<JobStepWhereInput>;
+    @Field(() => [JobStepWhereInput], {nullable:true})
+    AND?: Array<JobStepWhereInput>;
 
-  @Field(() => [JobStepWhereInput], { nullable: true })
-  NOT?: Array<JobStepWhereInput>;
+    @Field(() => [JobStepWhereInput], {nullable:true})
+    OR?: Array<JobStepWhereInput>;
 
-  @Field(() => IntFilter, { nullable: true })
-  id?: IntFilter;
+    @Field(() => [JobStepWhereInput], {nullable:true})
+    NOT?: Array<JobStepWhereInput>;
 
-  @Field(() => StringFilter, { nullable: true })
-  name?: StringFilter;
+    @Field(() => IntFilter, {nullable:true})
+    id?: IntFilter;
 
-  @Field(() => StringFilter, { nullable: true })
-  code?: StringFilter;
+    @Field(() => StringFilter, {nullable:true})
+    name?: StringFilter;
 
-  @Field(() => JsonNullableFilter, { nullable: true })
-  locales?: JsonNullableFilter;
+    @Field(() => StringFilter, {nullable:true})
+    code?: StringFilter;
 
-  @Field(() => BoolFilter, { nullable: true })
-  deleted?: BoolFilter;
+    @Field(() => JsonNullableFilter, {nullable:true})
+    locales?: JsonNullableFilter;
 
-  @Field(() => DateTimeFilter, { nullable: true })
-  createdAt?: DateTimeFilter;
+    @Field(() => BoolFilter, {nullable:true})
+    deleted?: BoolFilter;
 
-  @Field(() => DateTimeFilter, { nullable: true })
-  updatedAt?: DateTimeFilter;
+    @Field(() => DateTimeFilter, {nullable:true})
+    createdAt?: DateTimeFilter;
 
-  @Field(() => SalaryScaleListRelationFilter, { nullable: true })
-  salaryScales?: SalaryScaleListRelationFilter;
+    @Field(() => DateTimeFilter, {nullable:true})
+    updatedAt?: DateTimeFilter;
+
+    @Field(() => SalaryScaleListRelationFilter, {nullable:true})
+    salaryScales?: SalaryScaleListRelationFilter;
 }

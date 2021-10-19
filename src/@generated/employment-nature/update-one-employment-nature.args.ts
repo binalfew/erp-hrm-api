@@ -5,9 +5,10 @@ import { EmploymentNatureWhereUniqueInput } from './employment-nature-where-uniq
 
 @ArgsType()
 export class UpdateOneEmploymentNatureArgs {
-  @Field(() => EmploymentNatureUpdateInput, { nullable: false })
-  data!: EmploymentNatureUpdateInput;
 
-  @Field(() => EmploymentNatureWhereUniqueInput, { nullable: false })
-  where!: EmploymentNatureWhereUniqueInput;
+    @Field(() => EmploymentNatureUpdateInput, {nullable:false})
+    data!: EmploymentNatureUpdateInput;
+
+    @Field(() => EmploymentNatureWhereUniqueInput, {nullable:false})
+    where!: EmploymentNatureWhereUniqueInput;
 }

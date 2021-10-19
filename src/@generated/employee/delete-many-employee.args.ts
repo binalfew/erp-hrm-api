@@ -4,6 +4,7 @@ import { EmployeeWhereInput } from './employee-where.input';
 
 @ArgsType()
 export class DeleteManyEmployeeArgs {
-  @Field(() => EmployeeWhereInput, { nullable: true })
-  where?: EmployeeWhereInput;
+
+    @Field(() => EmployeeWhereInput, {nullable:true})
+    where?: EmployeeWhereInput;
 }

@@ -10,39 +10,40 @@ import { EmploymentTypeMaxAggregate } from './employment-type-max-aggregate.outp
 
 @ObjectType()
 export class EmploymentTypeGroupBy {
-  @Field(() => Int, { nullable: false })
-  id!: number;
 
-  @Field(() => String, { nullable: false })
-  name!: string;
+    @Field(() => Int, {nullable:false})
+    id!: number;
 
-  @Field(() => String, { nullable: false })
-  code!: string;
+    @Field(() => String, {nullable:false})
+    name!: string;
 
-  @Field(() => GraphQLJSON, { nullable: true })
-  locales?: any;
+    @Field(() => String, {nullable:false})
+    code!: string;
 
-  @Field(() => Boolean, { nullable: false })
-  deleted!: boolean;
+    @Field(() => GraphQLJSON, {nullable:true})
+    locales?: any;
 
-  @Field(() => Date, { nullable: false })
-  createdAt!: Date | string;
+    @Field(() => Boolean, {nullable:false})
+    deleted!: boolean;
 
-  @Field(() => Date, { nullable: false })
-  updatedAt!: Date | string;
+    @Field(() => Date, {nullable:false})
+    createdAt!: Date | string;
 
-  @Field(() => EmploymentTypeCountAggregate, { nullable: true })
-  _count?: EmploymentTypeCountAggregate;
+    @Field(() => Date, {nullable:false})
+    updatedAt!: Date | string;
 
-  @Field(() => EmploymentTypeAvgAggregate, { nullable: true })
-  _avg?: EmploymentTypeAvgAggregate;
+    @Field(() => EmploymentTypeCountAggregate, {nullable:true})
+    _count?: EmploymentTypeCountAggregate;
 
-  @Field(() => EmploymentTypeSumAggregate, { nullable: true })
-  _sum?: EmploymentTypeSumAggregate;
+    @Field(() => EmploymentTypeAvgAggregate, {nullable:true})
+    _avg?: EmploymentTypeAvgAggregate;
 
-  @Field(() => EmploymentTypeMinAggregate, { nullable: true })
-  _min?: EmploymentTypeMinAggregate;
+    @Field(() => EmploymentTypeSumAggregate, {nullable:true})
+    _sum?: EmploymentTypeSumAggregate;
 
-  @Field(() => EmploymentTypeMaxAggregate, { nullable: true })
-  _max?: EmploymentTypeMaxAggregate;
+    @Field(() => EmploymentTypeMinAggregate, {nullable:true})
+    _min?: EmploymentTypeMinAggregate;
+
+    @Field(() => EmploymentTypeMaxAggregate, {nullable:true})
+    _max?: EmploymentTypeMaxAggregate;
 }

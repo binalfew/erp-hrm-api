@@ -8,32 +8,25 @@ import { PositionClassTypeUpdateWithoutPositionClassesInput } from './position-c
 
 @InputType()
 export class PositionClassTypeUpdateOneWithoutPositionClassesInput {
-  @Field(() => PositionClassTypeCreateWithoutPositionClassesInput, {
-    nullable: true,
-  })
-  create?: PositionClassTypeCreateWithoutPositionClassesInput;
 
-  @Field(() => PositionClassTypeCreateOrConnectWithoutPositionClassesInput, {
-    nullable: true,
-  })
-  connectOrCreate?: PositionClassTypeCreateOrConnectWithoutPositionClassesInput;
+    @Field(() => PositionClassTypeCreateWithoutPositionClassesInput, {nullable:true})
+    create?: PositionClassTypeCreateWithoutPositionClassesInput;
 
-  @Field(() => PositionClassTypeUpsertWithoutPositionClassesInput, {
-    nullable: true,
-  })
-  upsert?: PositionClassTypeUpsertWithoutPositionClassesInput;
+    @Field(() => PositionClassTypeCreateOrConnectWithoutPositionClassesInput, {nullable:true})
+    connectOrCreate?: PositionClassTypeCreateOrConnectWithoutPositionClassesInput;
 
-  @Field(() => PositionClassTypeWhereUniqueInput, { nullable: true })
-  connect?: PositionClassTypeWhereUniqueInput;
+    @Field(() => PositionClassTypeUpsertWithoutPositionClassesInput, {nullable:true})
+    upsert?: PositionClassTypeUpsertWithoutPositionClassesInput;
 
-  @Field(() => Boolean, { nullable: true })
-  disconnect?: boolean;
+    @Field(() => PositionClassTypeWhereUniqueInput, {nullable:true})
+    connect?: PositionClassTypeWhereUniqueInput;
 
-  @Field(() => Boolean, { nullable: true })
-  delete?: boolean;
+    @Field(() => Boolean, {nullable:true})
+    disconnect?: boolean;
 
-  @Field(() => PositionClassTypeUpdateWithoutPositionClassesInput, {
-    nullable: true,
-  })
-  update?: PositionClassTypeUpdateWithoutPositionClassesInput;
+    @Field(() => Boolean, {nullable:true})
+    delete?: boolean;
+
+    @Field(() => PositionClassTypeUpdateWithoutPositionClassesInput, {nullable:true})
+    update?: PositionClassTypeUpdateWithoutPositionClassesInput;
 }

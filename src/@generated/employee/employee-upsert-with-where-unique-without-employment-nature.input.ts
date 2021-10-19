@@ -6,12 +6,13 @@ import { EmployeeCreateWithoutEmploymentNatureInput } from './employee-create-wi
 
 @InputType()
 export class EmployeeUpsertWithWhereUniqueWithoutEmploymentNatureInput {
-  @Field(() => EmployeeWhereUniqueInput, { nullable: false })
-  where!: EmployeeWhereUniqueInput;
 
-  @Field(() => EmployeeUpdateWithoutEmploymentNatureInput, { nullable: false })
-  update!: EmployeeUpdateWithoutEmploymentNatureInput;
+    @Field(() => EmployeeWhereUniqueInput, {nullable:false})
+    where!: EmployeeWhereUniqueInput;
 
-  @Field(() => EmployeeCreateWithoutEmploymentNatureInput, { nullable: false })
-  create!: EmployeeCreateWithoutEmploymentNatureInput;
+    @Field(() => EmployeeUpdateWithoutEmploymentNatureInput, {nullable:false})
+    update!: EmployeeUpdateWithoutEmploymentNatureInput;
+
+    @Field(() => EmployeeCreateWithoutEmploymentNatureInput, {nullable:false})
+    create!: EmployeeCreateWithoutEmploymentNatureInput;
 }

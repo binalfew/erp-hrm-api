@@ -9,42 +9,43 @@ import { PositionMaxAggregate } from './position-max-aggregate.output';
 
 @ObjectType()
 export class PositionGroupBy {
-  @Field(() => Int, { nullable: false })
-  id!: number;
 
-  @Field(() => String, { nullable: false })
-  code!: string;
+    @Field(() => Int, {nullable:false})
+    id!: number;
 
-  @Field(() => Int, { nullable: true })
-  positionClassId?: number;
+    @Field(() => String, {nullable:false})
+    code!: string;
 
-  @Field(() => Int, { nullable: true })
-  departmentId?: number;
+    @Field(() => Int, {nullable:true})
+    positionClassId?: number;
 
-  @Field(() => Boolean, { nullable: false })
-  vacant!: boolean;
+    @Field(() => Int, {nullable:true})
+    departmentId?: number;
 
-  @Field(() => Boolean, { nullable: false })
-  deleted!: boolean;
+    @Field(() => Boolean, {nullable:false})
+    vacant!: boolean;
 
-  @Field(() => Date, { nullable: false })
-  createdAt!: Date | string;
+    @Field(() => Boolean, {nullable:false})
+    deleted!: boolean;
 
-  @Field(() => Date, { nullable: false })
-  updatedAt!: Date | string;
+    @Field(() => Date, {nullable:false})
+    createdAt!: Date | string;
 
-  @Field(() => PositionCountAggregate, { nullable: true })
-  _count?: PositionCountAggregate;
+    @Field(() => Date, {nullable:false})
+    updatedAt!: Date | string;
 
-  @Field(() => PositionAvgAggregate, { nullable: true })
-  _avg?: PositionAvgAggregate;
+    @Field(() => PositionCountAggregate, {nullable:true})
+    _count?: PositionCountAggregate;
 
-  @Field(() => PositionSumAggregate, { nullable: true })
-  _sum?: PositionSumAggregate;
+    @Field(() => PositionAvgAggregate, {nullable:true})
+    _avg?: PositionAvgAggregate;
 
-  @Field(() => PositionMinAggregate, { nullable: true })
-  _min?: PositionMinAggregate;
+    @Field(() => PositionSumAggregate, {nullable:true})
+    _sum?: PositionSumAggregate;
 
-  @Field(() => PositionMaxAggregate, { nullable: true })
-  _max?: PositionMaxAggregate;
+    @Field(() => PositionMinAggregate, {nullable:true})
+    _min?: PositionMinAggregate;
+
+    @Field(() => PositionMaxAggregate, {nullable:true})
+    _max?: PositionMaxAggregate;
 }

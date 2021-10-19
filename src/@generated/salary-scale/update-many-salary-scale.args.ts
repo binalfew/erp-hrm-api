@@ -5,9 +5,10 @@ import { SalaryScaleWhereInput } from './salary-scale-where.input';
 
 @ArgsType()
 export class UpdateManySalaryScaleArgs {
-  @Field(() => SalaryScaleUpdateManyMutationInput, { nullable: false })
-  data!: SalaryScaleUpdateManyMutationInput;
 
-  @Field(() => SalaryScaleWhereInput, { nullable: true })
-  where?: SalaryScaleWhereInput;
+    @Field(() => SalaryScaleUpdateManyMutationInput, {nullable:false})
+    data!: SalaryScaleUpdateManyMutationInput;
+
+    @Field(() => SalaryScaleWhereInput, {nullable:true})
+    where?: SalaryScaleWhereInput;
 }

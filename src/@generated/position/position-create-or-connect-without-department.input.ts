@@ -5,9 +5,10 @@ import { PositionCreateWithoutDepartmentInput } from './position-create-without-
 
 @InputType()
 export class PositionCreateOrConnectWithoutDepartmentInput {
-  @Field(() => PositionWhereUniqueInput, { nullable: false })
-  where!: PositionWhereUniqueInput;
 
-  @Field(() => PositionCreateWithoutDepartmentInput, { nullable: false })
-  create!: PositionCreateWithoutDepartmentInput;
+    @Field(() => PositionWhereUniqueInput, {nullable:false})
+    where!: PositionWhereUniqueInput;
+
+    @Field(() => PositionCreateWithoutDepartmentInput, {nullable:false})
+    create!: PositionCreateWithoutDepartmentInput;
 }

@@ -5,9 +5,10 @@ import { EmploymentNatureCreateWithoutEmployeesInput } from './employment-nature
 
 @InputType()
 export class EmploymentNatureCreateOrConnectWithoutEmployeesInput {
-  @Field(() => EmploymentNatureWhereUniqueInput, { nullable: false })
-  where!: EmploymentNatureWhereUniqueInput;
 
-  @Field(() => EmploymentNatureCreateWithoutEmployeesInput, { nullable: false })
-  create!: EmploymentNatureCreateWithoutEmployeesInput;
+    @Field(() => EmploymentNatureWhereUniqueInput, {nullable:false})
+    where!: EmploymentNatureWhereUniqueInput;
+
+    @Field(() => EmploymentNatureCreateWithoutEmployeesInput, {nullable:false})
+    create!: EmploymentNatureCreateWithoutEmployeesInput;
 }

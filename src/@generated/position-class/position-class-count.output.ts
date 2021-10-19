@@ -4,6 +4,7 @@ import { Int } from '@nestjs/graphql';
 
 @ObjectType()
 export class PositionClassCount {
-  @Field(() => Int, { nullable: false })
-  positions!: number;
+
+    @Field(() => Int, {nullable:false})
+    positions!: number;
 }

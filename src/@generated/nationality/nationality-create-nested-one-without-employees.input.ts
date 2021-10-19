@@ -6,14 +6,13 @@ import { NationalityWhereUniqueInput } from './nationality-where-unique.input';
 
 @InputType()
 export class NationalityCreateNestedOneWithoutEmployeesInput {
-  @Field(() => NationalityCreateWithoutEmployeesInput, { nullable: true })
-  create?: NationalityCreateWithoutEmployeesInput;
 
-  @Field(() => NationalityCreateOrConnectWithoutEmployeesInput, {
-    nullable: true,
-  })
-  connectOrCreate?: NationalityCreateOrConnectWithoutEmployeesInput;
+    @Field(() => NationalityCreateWithoutEmployeesInput, {nullable:true})
+    create?: NationalityCreateWithoutEmployeesInput;
 
-  @Field(() => NationalityWhereUniqueInput, { nullable: true })
-  connect?: NationalityWhereUniqueInput;
+    @Field(() => NationalityCreateOrConnectWithoutEmployeesInput, {nullable:true})
+    connectOrCreate?: NationalityCreateOrConnectWithoutEmployeesInput;
+
+    @Field(() => NationalityWhereUniqueInput, {nullable:true})
+    connect?: NationalityWhereUniqueInput;
 }

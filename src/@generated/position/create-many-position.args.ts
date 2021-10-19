@@ -4,9 +4,10 @@ import { PositionCreateManyInput } from './position-create-many.input';
 
 @ArgsType()
 export class CreateManyPositionArgs {
-  @Field(() => [PositionCreateManyInput], { nullable: false })
-  data!: Array<PositionCreateManyInput>;
 
-  @Field(() => Boolean, { nullable: true })
-  skipDuplicates?: boolean;
+    @Field(() => [PositionCreateManyInput], {nullable:false})
+    data!: Array<PositionCreateManyInput>;
+
+    @Field(() => Boolean, {nullable:true})
+    skipDuplicates?: boolean;
 }

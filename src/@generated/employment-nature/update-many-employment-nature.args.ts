@@ -5,9 +5,10 @@ import { EmploymentNatureWhereInput } from './employment-nature-where.input';
 
 @ArgsType()
 export class UpdateManyEmploymentNatureArgs {
-  @Field(() => EmploymentNatureUpdateManyMutationInput, { nullable: false })
-  data!: EmploymentNatureUpdateManyMutationInput;
 
-  @Field(() => EmploymentNatureWhereInput, { nullable: true })
-  where?: EmploymentNatureWhereInput;
+    @Field(() => EmploymentNatureUpdateManyMutationInput, {nullable:false})
+    data!: EmploymentNatureUpdateManyMutationInput;
+
+    @Field(() => EmploymentNatureWhereInput, {nullable:true})
+    where?: EmploymentNatureWhereInput;
 }

@@ -9,39 +9,40 @@ import { EmploymentTypeSumOrderByAggregateInput } from './employment-type-sum-or
 
 @InputType()
 export class EmploymentTypeOrderByWithAggregationInput {
-  @Field(() => SortOrder, { nullable: true })
-  id?: keyof typeof SortOrder;
 
-  @Field(() => SortOrder, { nullable: true })
-  name?: keyof typeof SortOrder;
+    @Field(() => SortOrder, {nullable:true})
+    id?: keyof typeof SortOrder;
 
-  @Field(() => SortOrder, { nullable: true })
-  code?: keyof typeof SortOrder;
+    @Field(() => SortOrder, {nullable:true})
+    name?: keyof typeof SortOrder;
 
-  @Field(() => SortOrder, { nullable: true })
-  locales?: keyof typeof SortOrder;
+    @Field(() => SortOrder, {nullable:true})
+    code?: keyof typeof SortOrder;
 
-  @Field(() => SortOrder, { nullable: true })
-  deleted?: keyof typeof SortOrder;
+    @Field(() => SortOrder, {nullable:true})
+    locales?: keyof typeof SortOrder;
 
-  @Field(() => SortOrder, { nullable: true })
-  createdAt?: keyof typeof SortOrder;
+    @Field(() => SortOrder, {nullable:true})
+    deleted?: keyof typeof SortOrder;
 
-  @Field(() => SortOrder, { nullable: true })
-  updatedAt?: keyof typeof SortOrder;
+    @Field(() => SortOrder, {nullable:true})
+    createdAt?: keyof typeof SortOrder;
 
-  @Field(() => EmploymentTypeCountOrderByAggregateInput, { nullable: true })
-  _count?: EmploymentTypeCountOrderByAggregateInput;
+    @Field(() => SortOrder, {nullable:true})
+    updatedAt?: keyof typeof SortOrder;
 
-  @Field(() => EmploymentTypeAvgOrderByAggregateInput, { nullable: true })
-  _avg?: EmploymentTypeAvgOrderByAggregateInput;
+    @Field(() => EmploymentTypeCountOrderByAggregateInput, {nullable:true})
+    _count?: EmploymentTypeCountOrderByAggregateInput;
 
-  @Field(() => EmploymentTypeMaxOrderByAggregateInput, { nullable: true })
-  _max?: EmploymentTypeMaxOrderByAggregateInput;
+    @Field(() => EmploymentTypeAvgOrderByAggregateInput, {nullable:true})
+    _avg?: EmploymentTypeAvgOrderByAggregateInput;
 
-  @Field(() => EmploymentTypeMinOrderByAggregateInput, { nullable: true })
-  _min?: EmploymentTypeMinOrderByAggregateInput;
+    @Field(() => EmploymentTypeMaxOrderByAggregateInput, {nullable:true})
+    _max?: EmploymentTypeMaxOrderByAggregateInput;
 
-  @Field(() => EmploymentTypeSumOrderByAggregateInput, { nullable: true })
-  _sum?: EmploymentTypeSumOrderByAggregateInput;
+    @Field(() => EmploymentTypeMinOrderByAggregateInput, {nullable:true})
+    _min?: EmploymentTypeMinOrderByAggregateInput;
+
+    @Field(() => EmploymentTypeSumOrderByAggregateInput, {nullable:true})
+    _sum?: EmploymentTypeSumOrderByAggregateInput;
 }

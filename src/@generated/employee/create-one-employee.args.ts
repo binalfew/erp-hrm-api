@@ -4,6 +4,7 @@ import { EmployeeCreateInput } from './employee-create.input';
 
 @ArgsType()
 export class CreateOneEmployeeArgs {
-  @Field(() => EmployeeCreateInput, { nullable: false })
-  data!: EmployeeCreateInput;
+
+    @Field(() => EmployeeCreateInput, {nullable:false})
+    data!: EmployeeCreateInput;
 }

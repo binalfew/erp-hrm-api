@@ -5,9 +5,10 @@ import { EmployeeUpdateManyMutationInput } from './employee-update-many-mutation
 
 @InputType()
 export class EmployeeUpdateManyWithWhereWithoutMaritalStatusInput {
-  @Field(() => EmployeeScalarWhereInput, { nullable: false })
-  where!: EmployeeScalarWhereInput;
 
-  @Field(() => EmployeeUpdateManyMutationInput, { nullable: false })
-  data!: EmployeeUpdateManyMutationInput;
+    @Field(() => EmployeeScalarWhereInput, {nullable:false})
+    where!: EmployeeScalarWhereInput;
+
+    @Field(() => EmployeeUpdateManyMutationInput, {nullable:false})
+    data!: EmployeeUpdateManyMutationInput;
 }

@@ -9,39 +9,40 @@ import { NationalitySumOrderByAggregateInput } from './nationality-sum-order-by-
 
 @InputType()
 export class NationalityOrderByWithAggregationInput {
-  @Field(() => SortOrder, { nullable: true })
-  id?: keyof typeof SortOrder;
 
-  @Field(() => SortOrder, { nullable: true })
-  name?: keyof typeof SortOrder;
+    @Field(() => SortOrder, {nullable:true})
+    id?: keyof typeof SortOrder;
 
-  @Field(() => SortOrder, { nullable: true })
-  code?: keyof typeof SortOrder;
+    @Field(() => SortOrder, {nullable:true})
+    name?: keyof typeof SortOrder;
 
-  @Field(() => SortOrder, { nullable: true })
-  locales?: keyof typeof SortOrder;
+    @Field(() => SortOrder, {nullable:true})
+    code?: keyof typeof SortOrder;
 
-  @Field(() => SortOrder, { nullable: true })
-  deleted?: keyof typeof SortOrder;
+    @Field(() => SortOrder, {nullable:true})
+    locales?: keyof typeof SortOrder;
 
-  @Field(() => SortOrder, { nullable: true })
-  createdAt?: keyof typeof SortOrder;
+    @Field(() => SortOrder, {nullable:true})
+    deleted?: keyof typeof SortOrder;
 
-  @Field(() => SortOrder, { nullable: true })
-  updatedAt?: keyof typeof SortOrder;
+    @Field(() => SortOrder, {nullable:true})
+    createdAt?: keyof typeof SortOrder;
 
-  @Field(() => NationalityCountOrderByAggregateInput, { nullable: true })
-  _count?: NationalityCountOrderByAggregateInput;
+    @Field(() => SortOrder, {nullable:true})
+    updatedAt?: keyof typeof SortOrder;
 
-  @Field(() => NationalityAvgOrderByAggregateInput, { nullable: true })
-  _avg?: NationalityAvgOrderByAggregateInput;
+    @Field(() => NationalityCountOrderByAggregateInput, {nullable:true})
+    _count?: NationalityCountOrderByAggregateInput;
 
-  @Field(() => NationalityMaxOrderByAggregateInput, { nullable: true })
-  _max?: NationalityMaxOrderByAggregateInput;
+    @Field(() => NationalityAvgOrderByAggregateInput, {nullable:true})
+    _avg?: NationalityAvgOrderByAggregateInput;
 
-  @Field(() => NationalityMinOrderByAggregateInput, { nullable: true })
-  _min?: NationalityMinOrderByAggregateInput;
+    @Field(() => NationalityMaxOrderByAggregateInput, {nullable:true})
+    _max?: NationalityMaxOrderByAggregateInput;
 
-  @Field(() => NationalitySumOrderByAggregateInput, { nullable: true })
-  _sum?: NationalitySumOrderByAggregateInput;
+    @Field(() => NationalityMinOrderByAggregateInput, {nullable:true})
+    _min?: NationalityMinOrderByAggregateInput;
+
+    @Field(() => NationalitySumOrderByAggregateInput, {nullable:true})
+    _sum?: NationalitySumOrderByAggregateInput;
 }

@@ -10,36 +10,37 @@ import { SalaryScaleCount } from './salary-scale-count.output';
 
 @ObjectType()
 export class SalaryScale {
-  @Field(() => ID, { nullable: false })
-  id!: number;
 
-  @Field(() => JobGrade, { nullable: true })
-  jobGrade?: JobGrade | null;
+    @Field(() => ID, {nullable:false})
+    id!: number;
 
-  @Field(() => Int, { nullable: true })
-  jobGradeId!: number | null;
+    @Field(() => JobGrade, {nullable:true})
+    jobGrade?: JobGrade | null;
 
-  @Field(() => JobStep, { nullable: true })
-  jobStep?: JobStep | null;
+    @Field(() => Int, {nullable:true})
+    jobGradeId!: number | null;
 
-  @Field(() => Int, { nullable: true })
-  jobStepId!: number | null;
+    @Field(() => JobStep, {nullable:true})
+    jobStep?: JobStep | null;
 
-  @Field(() => Float, { nullable: false, defaultValue: 0 })
-  salary!: number;
+    @Field(() => Int, {nullable:true})
+    jobStepId!: number | null;
 
-  @Field(() => Boolean, { nullable: false, defaultValue: false })
-  deleted!: boolean;
+    @Field(() => Float, {nullable:false,defaultValue:0})
+    salary!: number;
 
-  @Field(() => Date, { nullable: false })
-  createdAt!: Date;
+    @Field(() => Boolean, {nullable:false,defaultValue:false})
+    deleted!: boolean;
 
-  @Field(() => Date, { nullable: false })
-  updatedAt!: Date;
+    @Field(() => Date, {nullable:false})
+    createdAt!: Date;
 
-  @Field(() => [PositionClass], { nullable: true })
-  positionClasses?: Array<PositionClass>;
+    @Field(() => Date, {nullable:false})
+    updatedAt!: Date;
 
-  @Field(() => SalaryScaleCount, { nullable: true })
-  _count?: SalaryScaleCount | null;
+    @Field(() => [PositionClass], {nullable:true})
+    positionClasses?: Array<PositionClass>;
+
+    @Field(() => SalaryScaleCount, {nullable:true})
+    _count?: SalaryScaleCount | null;
 }

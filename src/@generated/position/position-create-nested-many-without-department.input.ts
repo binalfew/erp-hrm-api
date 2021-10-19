@@ -7,17 +7,16 @@ import { PositionWhereUniqueInput } from './position-where-unique.input';
 
 @InputType()
 export class PositionCreateNestedManyWithoutDepartmentInput {
-  @Field(() => [PositionCreateWithoutDepartmentInput], { nullable: true })
-  create?: Array<PositionCreateWithoutDepartmentInput>;
 
-  @Field(() => [PositionCreateOrConnectWithoutDepartmentInput], {
-    nullable: true,
-  })
-  connectOrCreate?: Array<PositionCreateOrConnectWithoutDepartmentInput>;
+    @Field(() => [PositionCreateWithoutDepartmentInput], {nullable:true})
+    create?: Array<PositionCreateWithoutDepartmentInput>;
 
-  @Field(() => PositionCreateManyDepartmentInputEnvelope, { nullable: true })
-  createMany?: PositionCreateManyDepartmentInputEnvelope;
+    @Field(() => [PositionCreateOrConnectWithoutDepartmentInput], {nullable:true})
+    connectOrCreate?: Array<PositionCreateOrConnectWithoutDepartmentInput>;
 
-  @Field(() => [PositionWhereUniqueInput], { nullable: true })
-  connect?: Array<PositionWhereUniqueInput>;
+    @Field(() => PositionCreateManyDepartmentInputEnvelope, {nullable:true})
+    createMany?: PositionCreateManyDepartmentInputEnvelope;
+
+    @Field(() => [PositionWhereUniqueInput], {nullable:true})
+    connect?: Array<PositionWhereUniqueInput>;
 }

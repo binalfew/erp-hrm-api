@@ -4,6 +4,7 @@ import { PositionClassCategoryCreateInput } from './position-class-category-crea
 
 @ArgsType()
 export class CreateOnePositionClassCategoryArgs {
-  @Field(() => PositionClassCategoryCreateInput, { nullable: false })
-  data!: PositionClassCategoryCreateInput;
+
+    @Field(() => PositionClassCategoryCreateInput, {nullable:false})
+    data!: PositionClassCategoryCreateInput;
 }

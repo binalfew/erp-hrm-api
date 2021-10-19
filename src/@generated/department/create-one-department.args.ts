@@ -4,6 +4,7 @@ import { DepartmentCreateInput } from './department-create.input';
 
 @ArgsType()
 export class CreateOneDepartmentArgs {
-  @Field(() => DepartmentCreateInput, { nullable: false })
-  data!: DepartmentCreateInput;
+
+    @Field(() => DepartmentCreateInput, {nullable:false})
+    data!: DepartmentCreateInput;
 }

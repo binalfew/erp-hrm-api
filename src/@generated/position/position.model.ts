@@ -7,33 +7,34 @@ import { Department } from '../department/department.model';
 
 @ObjectType()
 export class Position {
-  @Field(() => ID, { nullable: false })
-  id!: number;
 
-  @Field(() => String, { nullable: false })
-  code!: string;
+    @Field(() => ID, {nullable:false})
+    id!: number;
 
-  @Field(() => PositionClass, { nullable: true })
-  positionClass?: PositionClass | null;
+    @Field(() => String, {nullable:false})
+    code!: string;
 
-  @Field(() => Int, { nullable: true })
-  positionClassId!: number | null;
+    @Field(() => PositionClass, {nullable:true})
+    positionClass?: PositionClass | null;
 
-  @Field(() => Department, { nullable: true })
-  department?: Department | null;
+    @Field(() => Int, {nullable:true})
+    positionClassId!: number | null;
 
-  @Field(() => Int, { nullable: true })
-  departmentId!: number | null;
+    @Field(() => Department, {nullable:true})
+    department?: Department | null;
 
-  @Field(() => Boolean, { nullable: false, defaultValue: false })
-  vacant!: boolean;
+    @Field(() => Int, {nullable:true})
+    departmentId!: number | null;
 
-  @Field(() => Boolean, { nullable: false, defaultValue: false })
-  deleted!: boolean;
+    @Field(() => Boolean, {nullable:false,defaultValue:false})
+    vacant!: boolean;
 
-  @Field(() => Date, { nullable: false })
-  createdAt!: Date;
+    @Field(() => Boolean, {nullable:false,defaultValue:false})
+    deleted!: boolean;
 
-  @Field(() => Date, { nullable: false })
-  updatedAt!: Date;
+    @Field(() => Date, {nullable:false})
+    createdAt!: Date;
+
+    @Field(() => Date, {nullable:false})
+    updatedAt!: Date;
 }

@@ -5,9 +5,10 @@ import { PositionClassWhereUniqueInput } from './position-class-where-unique.inp
 
 @ArgsType()
 export class UpdateOnePositionClassArgs {
-  @Field(() => PositionClassUpdateInput, { nullable: false })
-  data!: PositionClassUpdateInput;
 
-  @Field(() => PositionClassWhereUniqueInput, { nullable: false })
-  where!: PositionClassWhereUniqueInput;
+    @Field(() => PositionClassUpdateInput, {nullable:false})
+    data!: PositionClassUpdateInput;
+
+    @Field(() => PositionClassWhereUniqueInput, {nullable:false})
+    where!: PositionClassWhereUniqueInput;
 }

@@ -5,9 +5,10 @@ import { EmployeeCreateWithoutNationalityInput } from './employee-create-without
 
 @InputType()
 export class EmployeeCreateOrConnectWithoutNationalityInput {
-  @Field(() => EmployeeWhereUniqueInput, { nullable: false })
-  where!: EmployeeWhereUniqueInput;
 
-  @Field(() => EmployeeCreateWithoutNationalityInput, { nullable: false })
-  create!: EmployeeCreateWithoutNationalityInput;
+    @Field(() => EmployeeWhereUniqueInput, {nullable:false})
+    where!: EmployeeWhereUniqueInput;
+
+    @Field(() => EmployeeCreateWithoutNationalityInput, {nullable:false})
+    create!: EmployeeCreateWithoutNationalityInput;
 }

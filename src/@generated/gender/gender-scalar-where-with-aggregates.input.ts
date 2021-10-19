@@ -8,33 +8,34 @@ import { DateTimeWithAggregatesFilter } from '../prisma/date-time-with-aggregate
 
 @InputType()
 export class GenderScalarWhereWithAggregatesInput {
-  @Field(() => [GenderScalarWhereWithAggregatesInput], { nullable: true })
-  AND?: Array<GenderScalarWhereWithAggregatesInput>;
 
-  @Field(() => [GenderScalarWhereWithAggregatesInput], { nullable: true })
-  OR?: Array<GenderScalarWhereWithAggregatesInput>;
+    @Field(() => [GenderScalarWhereWithAggregatesInput], {nullable:true})
+    AND?: Array<GenderScalarWhereWithAggregatesInput>;
 
-  @Field(() => [GenderScalarWhereWithAggregatesInput], { nullable: true })
-  NOT?: Array<GenderScalarWhereWithAggregatesInput>;
+    @Field(() => [GenderScalarWhereWithAggregatesInput], {nullable:true})
+    OR?: Array<GenderScalarWhereWithAggregatesInput>;
 
-  @Field(() => IntWithAggregatesFilter, { nullable: true })
-  id?: IntWithAggregatesFilter;
+    @Field(() => [GenderScalarWhereWithAggregatesInput], {nullable:true})
+    NOT?: Array<GenderScalarWhereWithAggregatesInput>;
 
-  @Field(() => StringWithAggregatesFilter, { nullable: true })
-  name?: StringWithAggregatesFilter;
+    @Field(() => IntWithAggregatesFilter, {nullable:true})
+    id?: IntWithAggregatesFilter;
 
-  @Field(() => StringWithAggregatesFilter, { nullable: true })
-  code?: StringWithAggregatesFilter;
+    @Field(() => StringWithAggregatesFilter, {nullable:true})
+    name?: StringWithAggregatesFilter;
 
-  @Field(() => JsonNullableWithAggregatesFilter, { nullable: true })
-  locales?: JsonNullableWithAggregatesFilter;
+    @Field(() => StringWithAggregatesFilter, {nullable:true})
+    code?: StringWithAggregatesFilter;
 
-  @Field(() => BoolWithAggregatesFilter, { nullable: true })
-  deleted?: BoolWithAggregatesFilter;
+    @Field(() => JsonNullableWithAggregatesFilter, {nullable:true})
+    locales?: JsonNullableWithAggregatesFilter;
 
-  @Field(() => DateTimeWithAggregatesFilter, { nullable: true })
-  createdAt?: DateTimeWithAggregatesFilter;
+    @Field(() => BoolWithAggregatesFilter, {nullable:true})
+    deleted?: BoolWithAggregatesFilter;
 
-  @Field(() => DateTimeWithAggregatesFilter, { nullable: true })
-  updatedAt?: DateTimeWithAggregatesFilter;
+    @Field(() => DateTimeWithAggregatesFilter, {nullable:true})
+    createdAt?: DateTimeWithAggregatesFilter;
+
+    @Field(() => DateTimeWithAggregatesFilter, {nullable:true})
+    updatedAt?: DateTimeWithAggregatesFilter;
 }

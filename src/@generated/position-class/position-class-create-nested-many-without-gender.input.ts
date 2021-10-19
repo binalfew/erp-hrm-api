@@ -7,17 +7,16 @@ import { PositionClassWhereUniqueInput } from './position-class-where-unique.inp
 
 @InputType()
 export class PositionClassCreateNestedManyWithoutGenderInput {
-  @Field(() => [PositionClassCreateWithoutGenderInput], { nullable: true })
-  create?: Array<PositionClassCreateWithoutGenderInput>;
 
-  @Field(() => [PositionClassCreateOrConnectWithoutGenderInput], {
-    nullable: true,
-  })
-  connectOrCreate?: Array<PositionClassCreateOrConnectWithoutGenderInput>;
+    @Field(() => [PositionClassCreateWithoutGenderInput], {nullable:true})
+    create?: Array<PositionClassCreateWithoutGenderInput>;
 
-  @Field(() => PositionClassCreateManyGenderInputEnvelope, { nullable: true })
-  createMany?: PositionClassCreateManyGenderInputEnvelope;
+    @Field(() => [PositionClassCreateOrConnectWithoutGenderInput], {nullable:true})
+    connectOrCreate?: Array<PositionClassCreateOrConnectWithoutGenderInput>;
 
-  @Field(() => [PositionClassWhereUniqueInput], { nullable: true })
-  connect?: Array<PositionClassWhereUniqueInput>;
+    @Field(() => PositionClassCreateManyGenderInputEnvelope, {nullable:true})
+    createMany?: PositionClassCreateManyGenderInputEnvelope;
+
+    @Field(() => [PositionClassWhereUniqueInput], {nullable:true})
+    connect?: Array<PositionClassWhereUniqueInput>;
 }

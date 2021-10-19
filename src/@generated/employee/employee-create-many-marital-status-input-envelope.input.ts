@@ -4,9 +4,10 @@ import { EmployeeCreateManyMaritalStatusInput } from './employee-create-many-mar
 
 @InputType()
 export class EmployeeCreateManyMaritalStatusInputEnvelope {
-  @Field(() => [EmployeeCreateManyMaritalStatusInput], { nullable: false })
-  data!: Array<EmployeeCreateManyMaritalStatusInput>;
 
-  @Field(() => Boolean, { nullable: true })
-  skipDuplicates?: boolean;
+    @Field(() => [EmployeeCreateManyMaritalStatusInput], {nullable:false})
+    data!: Array<EmployeeCreateManyMaritalStatusInput>;
+
+    @Field(() => Boolean, {nullable:true})
+    skipDuplicates?: boolean;
 }

@@ -13,40 +13,37 @@ import { EmploymentNatureMaxAggregateInput } from './employment-nature-max-aggre
 
 @ArgsType()
 export class EmploymentNatureGroupByArgs {
-  @Field(() => EmploymentNatureWhereInput, { nullable: true })
-  where?: EmploymentNatureWhereInput;
 
-  @Field(() => [EmploymentNatureOrderByWithAggregationInput], {
-    nullable: true,
-  })
-  orderBy?: Array<EmploymentNatureOrderByWithAggregationInput>;
+    @Field(() => EmploymentNatureWhereInput, {nullable:true})
+    where?: EmploymentNatureWhereInput;
 
-  @Field(() => [EmploymentNatureScalarFieldEnum], { nullable: false })
-  by!: Array<keyof typeof EmploymentNatureScalarFieldEnum>;
+    @Field(() => [EmploymentNatureOrderByWithAggregationInput], {nullable:true})
+    orderBy?: Array<EmploymentNatureOrderByWithAggregationInput>;
 
-  @Field(() => EmploymentNatureScalarWhereWithAggregatesInput, {
-    nullable: true,
-  })
-  having?: EmploymentNatureScalarWhereWithAggregatesInput;
+    @Field(() => [EmploymentNatureScalarFieldEnum], {nullable:false})
+    by!: Array<keyof typeof EmploymentNatureScalarFieldEnum>;
 
-  @Field(() => Int, { nullable: true })
-  take?: number;
+    @Field(() => EmploymentNatureScalarWhereWithAggregatesInput, {nullable:true})
+    having?: EmploymentNatureScalarWhereWithAggregatesInput;
 
-  @Field(() => Int, { nullable: true })
-  skip?: number;
+    @Field(() => Int, {nullable:true})
+    take?: number;
 
-  @Field(() => EmploymentNatureCountAggregateInput, { nullable: true })
-  _count?: EmploymentNatureCountAggregateInput;
+    @Field(() => Int, {nullable:true})
+    skip?: number;
 
-  @Field(() => EmploymentNatureAvgAggregateInput, { nullable: true })
-  _avg?: EmploymentNatureAvgAggregateInput;
+    @Field(() => EmploymentNatureCountAggregateInput, {nullable:true})
+    _count?: EmploymentNatureCountAggregateInput;
 
-  @Field(() => EmploymentNatureSumAggregateInput, { nullable: true })
-  _sum?: EmploymentNatureSumAggregateInput;
+    @Field(() => EmploymentNatureAvgAggregateInput, {nullable:true})
+    _avg?: EmploymentNatureAvgAggregateInput;
 
-  @Field(() => EmploymentNatureMinAggregateInput, { nullable: true })
-  _min?: EmploymentNatureMinAggregateInput;
+    @Field(() => EmploymentNatureSumAggregateInput, {nullable:true})
+    _sum?: EmploymentNatureSumAggregateInput;
 
-  @Field(() => EmploymentNatureMaxAggregateInput, { nullable: true })
-  _max?: EmploymentNatureMaxAggregateInput;
+    @Field(() => EmploymentNatureMinAggregateInput, {nullable:true})
+    _min?: EmploymentNatureMinAggregateInput;
+
+    @Field(() => EmploymentNatureMaxAggregateInput, {nullable:true})
+    _max?: EmploymentNatureMaxAggregateInput;
 }

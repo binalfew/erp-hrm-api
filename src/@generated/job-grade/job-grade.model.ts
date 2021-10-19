@@ -7,30 +7,31 @@ import { JobGradeCount } from './job-grade-count.output';
 
 @ObjectType()
 export class JobGrade {
-  @Field(() => ID, { nullable: false })
-  id!: number;
 
-  @Field(() => String, { nullable: false })
-  name!: string;
+    @Field(() => ID, {nullable:false})
+    id!: number;
 
-  @Field(() => String, { nullable: false })
-  code!: string;
+    @Field(() => String, {nullable:false})
+    name!: string;
 
-  @Field(() => GraphQLJSON, { nullable: true })
-  locales!: any | null;
+    @Field(() => String, {nullable:false})
+    code!: string;
 
-  @Field(() => Boolean, { nullable: false, defaultValue: false })
-  deleted!: boolean;
+    @Field(() => GraphQLJSON, {nullable:true})
+    locales!: any | null;
 
-  @Field(() => Date, { nullable: false })
-  createdAt!: Date;
+    @Field(() => Boolean, {nullable:false,defaultValue:false})
+    deleted!: boolean;
 
-  @Field(() => Date, { nullable: false })
-  updatedAt!: Date;
+    @Field(() => Date, {nullable:false})
+    createdAt!: Date;
 
-  @Field(() => [SalaryScale], { nullable: true })
-  salaryScales?: Array<SalaryScale>;
+    @Field(() => Date, {nullable:false})
+    updatedAt!: Date;
 
-  @Field(() => JobGradeCount, { nullable: true })
-  _count?: JobGradeCount | null;
+    @Field(() => [SalaryScale], {nullable:true})
+    salaryScales?: Array<SalaryScale>;
+
+    @Field(() => JobGradeCount, {nullable:true})
+    _count?: JobGradeCount | null;
 }

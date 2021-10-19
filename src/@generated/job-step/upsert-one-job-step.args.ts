@@ -6,12 +6,13 @@ import { JobStepUpdateInput } from './job-step-update.input';
 
 @ArgsType()
 export class UpsertOneJobStepArgs {
-  @Field(() => JobStepWhereUniqueInput, { nullable: false })
-  where!: JobStepWhereUniqueInput;
 
-  @Field(() => JobStepCreateInput, { nullable: false })
-  create!: JobStepCreateInput;
+    @Field(() => JobStepWhereUniqueInput, {nullable:false})
+    where!: JobStepWhereUniqueInput;
 
-  @Field(() => JobStepUpdateInput, { nullable: false })
-  update!: JobStepUpdateInput;
+    @Field(() => JobStepCreateInput, {nullable:false})
+    create!: JobStepCreateInput;
+
+    @Field(() => JobStepUpdateInput, {nullable:false})
+    update!: JobStepUpdateInput;
 }

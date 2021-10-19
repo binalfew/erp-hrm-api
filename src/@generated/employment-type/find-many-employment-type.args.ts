@@ -8,21 +8,22 @@ import { EmploymentTypeScalarFieldEnum } from './employment-type-scalar-field.en
 
 @ArgsType()
 export class FindManyEmploymentTypeArgs {
-  @Field(() => EmploymentTypeWhereInput, { nullable: true })
-  where?: EmploymentTypeWhereInput;
 
-  @Field(() => [EmploymentTypeOrderByWithRelationInput], { nullable: true })
-  orderBy?: Array<EmploymentTypeOrderByWithRelationInput>;
+    @Field(() => EmploymentTypeWhereInput, {nullable:true})
+    where?: EmploymentTypeWhereInput;
 
-  @Field(() => EmploymentTypeWhereUniqueInput, { nullable: true })
-  cursor?: EmploymentTypeWhereUniqueInput;
+    @Field(() => [EmploymentTypeOrderByWithRelationInput], {nullable:true})
+    orderBy?: Array<EmploymentTypeOrderByWithRelationInput>;
 
-  @Field(() => Int, { nullable: true })
-  take?: number;
+    @Field(() => EmploymentTypeWhereUniqueInput, {nullable:true})
+    cursor?: EmploymentTypeWhereUniqueInput;
 
-  @Field(() => Int, { nullable: true })
-  skip?: number;
+    @Field(() => Int, {nullable:true})
+    take?: number;
 
-  @Field(() => [EmploymentTypeScalarFieldEnum], { nullable: true })
-  distinct?: Array<keyof typeof EmploymentTypeScalarFieldEnum>;
+    @Field(() => Int, {nullable:true})
+    skip?: number;
+
+    @Field(() => [EmploymentTypeScalarFieldEnum], {nullable:true})
+    distinct?: Array<keyof typeof EmploymentTypeScalarFieldEnum>;
 }

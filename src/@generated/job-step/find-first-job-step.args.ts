@@ -8,21 +8,22 @@ import { JobStepScalarFieldEnum } from './job-step-scalar-field.enum';
 
 @ArgsType()
 export class FindFirstJobStepArgs {
-  @Field(() => JobStepWhereInput, { nullable: true })
-  where?: JobStepWhereInput;
 
-  @Field(() => [JobStepOrderByWithRelationInput], { nullable: true })
-  orderBy?: Array<JobStepOrderByWithRelationInput>;
+    @Field(() => JobStepWhereInput, {nullable:true})
+    where?: JobStepWhereInput;
 
-  @Field(() => JobStepWhereUniqueInput, { nullable: true })
-  cursor?: JobStepWhereUniqueInput;
+    @Field(() => [JobStepOrderByWithRelationInput], {nullable:true})
+    orderBy?: Array<JobStepOrderByWithRelationInput>;
 
-  @Field(() => Int, { nullable: true })
-  take?: number;
+    @Field(() => JobStepWhereUniqueInput, {nullable:true})
+    cursor?: JobStepWhereUniqueInput;
 
-  @Field(() => Int, { nullable: true })
-  skip?: number;
+    @Field(() => Int, {nullable:true})
+    take?: number;
 
-  @Field(() => [JobStepScalarFieldEnum], { nullable: true })
-  distinct?: Array<keyof typeof JobStepScalarFieldEnum>;
+    @Field(() => Int, {nullable:true})
+    skip?: number;
+
+    @Field(() => [JobStepScalarFieldEnum], {nullable:true})
+    distinct?: Array<keyof typeof JobStepScalarFieldEnum>;
 }

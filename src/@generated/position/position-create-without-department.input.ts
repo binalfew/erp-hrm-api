@@ -4,23 +4,22 @@ import { PositionClassCreateNestedOneWithoutPositionsInput } from '../position-c
 
 @InputType()
 export class PositionCreateWithoutDepartmentInput {
-  @Field(() => String, { nullable: false })
-  code!: string;
 
-  @Field(() => Boolean, { nullable: true })
-  vacant?: boolean;
+    @Field(() => String, {nullable:false})
+    code!: string;
 
-  @Field(() => Boolean, { nullable: true })
-  deleted?: boolean;
+    @Field(() => Boolean, {nullable:true})
+    vacant?: boolean;
 
-  @Field(() => Date, { nullable: true })
-  createdAt?: Date | string;
+    @Field(() => Boolean, {nullable:true})
+    deleted?: boolean;
 
-  @Field(() => Date, { nullable: true })
-  updatedAt?: Date | string;
+    @Field(() => Date, {nullable:true})
+    createdAt?: Date | string;
 
-  @Field(() => PositionClassCreateNestedOneWithoutPositionsInput, {
-    nullable: true,
-  })
-  positionClass?: PositionClassCreateNestedOneWithoutPositionsInput;
+    @Field(() => Date, {nullable:true})
+    updatedAt?: Date | string;
+
+    @Field(() => PositionClassCreateNestedOneWithoutPositionsInput, {nullable:true})
+    positionClass?: PositionClassCreateNestedOneWithoutPositionsInput;
 }

@@ -10,39 +10,40 @@ import { GenderMaxAggregate } from './gender-max-aggregate.output';
 
 @ObjectType()
 export class GenderGroupBy {
-  @Field(() => Int, { nullable: false })
-  id!: number;
 
-  @Field(() => String, { nullable: false })
-  name!: string;
+    @Field(() => Int, {nullable:false})
+    id!: number;
 
-  @Field(() => String, { nullable: false })
-  code!: string;
+    @Field(() => String, {nullable:false})
+    name!: string;
 
-  @Field(() => GraphQLJSON, { nullable: true })
-  locales?: any;
+    @Field(() => String, {nullable:false})
+    code!: string;
 
-  @Field(() => Boolean, { nullable: false })
-  deleted!: boolean;
+    @Field(() => GraphQLJSON, {nullable:true})
+    locales?: any;
 
-  @Field(() => Date, { nullable: false })
-  createdAt!: Date | string;
+    @Field(() => Boolean, {nullable:false})
+    deleted!: boolean;
 
-  @Field(() => Date, { nullable: false })
-  updatedAt!: Date | string;
+    @Field(() => Date, {nullable:false})
+    createdAt!: Date | string;
 
-  @Field(() => GenderCountAggregate, { nullable: true })
-  _count?: GenderCountAggregate;
+    @Field(() => Date, {nullable:false})
+    updatedAt!: Date | string;
 
-  @Field(() => GenderAvgAggregate, { nullable: true })
-  _avg?: GenderAvgAggregate;
+    @Field(() => GenderCountAggregate, {nullable:true})
+    _count?: GenderCountAggregate;
 
-  @Field(() => GenderSumAggregate, { nullable: true })
-  _sum?: GenderSumAggregate;
+    @Field(() => GenderAvgAggregate, {nullable:true})
+    _avg?: GenderAvgAggregate;
 
-  @Field(() => GenderMinAggregate, { nullable: true })
-  _min?: GenderMinAggregate;
+    @Field(() => GenderSumAggregate, {nullable:true})
+    _sum?: GenderSumAggregate;
 
-  @Field(() => GenderMaxAggregate, { nullable: true })
-  _max?: GenderMaxAggregate;
+    @Field(() => GenderMinAggregate, {nullable:true})
+    _min?: GenderMinAggregate;
+
+    @Field(() => GenderMaxAggregate, {nullable:true})
+    _max?: GenderMaxAggregate;
 }

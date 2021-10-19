@@ -5,9 +5,10 @@ import { NationalityWhereInput } from './nationality-where.input';
 
 @ArgsType()
 export class UpdateManyNationalityArgs {
-  @Field(() => NationalityUpdateManyMutationInput, { nullable: false })
-  data!: NationalityUpdateManyMutationInput;
 
-  @Field(() => NationalityWhereInput, { nullable: true })
-  where?: NationalityWhereInput;
+    @Field(() => NationalityUpdateManyMutationInput, {nullable:false})
+    data!: NationalityUpdateManyMutationInput;
+
+    @Field(() => NationalityWhereInput, {nullable:true})
+    where?: NationalityWhereInput;
 }

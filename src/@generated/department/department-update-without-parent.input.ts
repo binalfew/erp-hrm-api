@@ -8,24 +8,25 @@ import { PositionUpdateManyWithoutDepartmentInput } from '../position/position-u
 
 @InputType()
 export class DepartmentUpdateWithoutParentInput {
-  @Field(() => StringFieldUpdateOperationsInput, { nullable: true })
-  name?: StringFieldUpdateOperationsInput;
 
-  @Field(() => StringFieldUpdateOperationsInput, { nullable: true })
-  code?: StringFieldUpdateOperationsInput;
+    @Field(() => StringFieldUpdateOperationsInput, {nullable:true})
+    name?: StringFieldUpdateOperationsInput;
 
-  @Field(() => GraphQLJSON, { nullable: true })
-  locales?: any;
+    @Field(() => StringFieldUpdateOperationsInput, {nullable:true})
+    code?: StringFieldUpdateOperationsInput;
 
-  @Field(() => DateTimeFieldUpdateOperationsInput, { nullable: true })
-  createdAt?: DateTimeFieldUpdateOperationsInput;
+    @Field(() => GraphQLJSON, {nullable:true})
+    locales?: any;
 
-  @Field(() => DateTimeFieldUpdateOperationsInput, { nullable: true })
-  updatedAt?: DateTimeFieldUpdateOperationsInput;
+    @Field(() => DateTimeFieldUpdateOperationsInput, {nullable:true})
+    createdAt?: DateTimeFieldUpdateOperationsInput;
 
-  @Field(() => DepartmentUpdateManyWithoutParentInput, { nullable: true })
-  children?: DepartmentUpdateManyWithoutParentInput;
+    @Field(() => DateTimeFieldUpdateOperationsInput, {nullable:true})
+    updatedAt?: DateTimeFieldUpdateOperationsInput;
 
-  @Field(() => PositionUpdateManyWithoutDepartmentInput, { nullable: true })
-  positions?: PositionUpdateManyWithoutDepartmentInput;
+    @Field(() => DepartmentUpdateManyWithoutParentInput, {nullable:true})
+    children?: DepartmentUpdateManyWithoutParentInput;
+
+    @Field(() => PositionUpdateManyWithoutDepartmentInput, {nullable:true})
+    positions?: PositionUpdateManyWithoutDepartmentInput;
 }

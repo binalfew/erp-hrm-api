@@ -6,17 +6,13 @@ import { PositionClassCategoryWhereUniqueInput } from './position-class-category
 
 @InputType()
 export class PositionClassCategoryCreateNestedOneWithoutPositionClassesInput {
-  @Field(() => PositionClassCategoryCreateWithoutPositionClassesInput, {
-    nullable: true,
-  })
-  create?: PositionClassCategoryCreateWithoutPositionClassesInput;
 
-  @Field(
-    () => PositionClassCategoryCreateOrConnectWithoutPositionClassesInput,
-    { nullable: true },
-  )
-  connectOrCreate?: PositionClassCategoryCreateOrConnectWithoutPositionClassesInput;
+    @Field(() => PositionClassCategoryCreateWithoutPositionClassesInput, {nullable:true})
+    create?: PositionClassCategoryCreateWithoutPositionClassesInput;
 
-  @Field(() => PositionClassCategoryWhereUniqueInput, { nullable: true })
-  connect?: PositionClassCategoryWhereUniqueInput;
+    @Field(() => PositionClassCategoryCreateOrConnectWithoutPositionClassesInput, {nullable:true})
+    connectOrCreate?: PositionClassCategoryCreateOrConnectWithoutPositionClassesInput;
+
+    @Field(() => PositionClassCategoryWhereUniqueInput, {nullable:true})
+    connect?: PositionClassCategoryWhereUniqueInput;
 }

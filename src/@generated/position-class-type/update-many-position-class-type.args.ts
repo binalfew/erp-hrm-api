@@ -5,9 +5,10 @@ import { PositionClassTypeWhereInput } from './position-class-type-where.input';
 
 @ArgsType()
 export class UpdateManyPositionClassTypeArgs {
-  @Field(() => PositionClassTypeUpdateManyMutationInput, { nullable: false })
-  data!: PositionClassTypeUpdateManyMutationInput;
 
-  @Field(() => PositionClassTypeWhereInput, { nullable: true })
-  where?: PositionClassTypeWhereInput;
+    @Field(() => PositionClassTypeUpdateManyMutationInput, {nullable:false})
+    data!: PositionClassTypeUpdateManyMutationInput;
+
+    @Field(() => PositionClassTypeWhereInput, {nullable:true})
+    where?: PositionClassTypeWhereInput;
 }

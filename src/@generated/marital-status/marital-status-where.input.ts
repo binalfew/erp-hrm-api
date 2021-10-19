@@ -9,36 +9,37 @@ import { EmployeeListRelationFilter } from '../employee/employee-list-relation-f
 
 @InputType()
 export class MaritalStatusWhereInput {
-  @Field(() => [MaritalStatusWhereInput], { nullable: true })
-  AND?: Array<MaritalStatusWhereInput>;
 
-  @Field(() => [MaritalStatusWhereInput], { nullable: true })
-  OR?: Array<MaritalStatusWhereInput>;
+    @Field(() => [MaritalStatusWhereInput], {nullable:true})
+    AND?: Array<MaritalStatusWhereInput>;
 
-  @Field(() => [MaritalStatusWhereInput], { nullable: true })
-  NOT?: Array<MaritalStatusWhereInput>;
+    @Field(() => [MaritalStatusWhereInput], {nullable:true})
+    OR?: Array<MaritalStatusWhereInput>;
 
-  @Field(() => IntFilter, { nullable: true })
-  id?: IntFilter;
+    @Field(() => [MaritalStatusWhereInput], {nullable:true})
+    NOT?: Array<MaritalStatusWhereInput>;
 
-  @Field(() => StringFilter, { nullable: true })
-  name?: StringFilter;
+    @Field(() => IntFilter, {nullable:true})
+    id?: IntFilter;
 
-  @Field(() => StringFilter, { nullable: true })
-  code?: StringFilter;
+    @Field(() => StringFilter, {nullable:true})
+    name?: StringFilter;
 
-  @Field(() => JsonNullableFilter, { nullable: true })
-  locales?: JsonNullableFilter;
+    @Field(() => StringFilter, {nullable:true})
+    code?: StringFilter;
 
-  @Field(() => BoolFilter, { nullable: true })
-  deleted?: BoolFilter;
+    @Field(() => JsonNullableFilter, {nullable:true})
+    locales?: JsonNullableFilter;
 
-  @Field(() => DateTimeFilter, { nullable: true })
-  createdAt?: DateTimeFilter;
+    @Field(() => BoolFilter, {nullable:true})
+    deleted?: BoolFilter;
 
-  @Field(() => DateTimeFilter, { nullable: true })
-  updatedAt?: DateTimeFilter;
+    @Field(() => DateTimeFilter, {nullable:true})
+    createdAt?: DateTimeFilter;
 
-  @Field(() => EmployeeListRelationFilter, { nullable: true })
-  employees?: EmployeeListRelationFilter;
+    @Field(() => DateTimeFilter, {nullable:true})
+    updatedAt?: DateTimeFilter;
+
+    @Field(() => EmployeeListRelationFilter, {nullable:true})
+    employees?: EmployeeListRelationFilter;
 }

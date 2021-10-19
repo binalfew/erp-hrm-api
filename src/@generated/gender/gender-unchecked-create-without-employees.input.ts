@@ -7,31 +7,30 @@ import { PositionClassUncheckedCreateNestedManyWithoutGenderInput } from '../pos
 
 @InputType()
 export class GenderUncheckedCreateWithoutEmployeesInput {
-  @Field(() => Int, { nullable: true })
-  id?: number;
 
-  @Field(() => String, { nullable: false })
-  @Validator.IsNotEmpty()
-  name!: string;
+    @Field(() => Int, {nullable:true})
+    id?: number;
 
-  @Field(() => String, { nullable: false })
-  @Validator.IsNotEmpty()
-  code!: string;
+    @Field(() => String, {nullable:false})
+    @Validator.IsNotEmpty()
+    name!: string;
 
-  @Field(() => GraphQLJSON, { nullable: true })
-  locales?: any;
+    @Field(() => String, {nullable:false})
+    @Validator.IsNotEmpty()
+    code!: string;
 
-  @Field(() => Boolean, { nullable: true })
-  deleted?: boolean;
+    @Field(() => GraphQLJSON, {nullable:true})
+    locales?: any;
 
-  @Field(() => Date, { nullable: true })
-  createdAt?: Date | string;
+    @Field(() => Boolean, {nullable:true})
+    deleted?: boolean;
 
-  @Field(() => Date, { nullable: true })
-  updatedAt?: Date | string;
+    @Field(() => Date, {nullable:true})
+    createdAt?: Date | string;
 
-  @Field(() => PositionClassUncheckedCreateNestedManyWithoutGenderInput, {
-    nullable: true,
-  })
-  positionClasses?: PositionClassUncheckedCreateNestedManyWithoutGenderInput;
+    @Field(() => Date, {nullable:true})
+    updatedAt?: Date | string;
+
+    @Field(() => PositionClassUncheckedCreateNestedManyWithoutGenderInput, {nullable:true})
+    positionClasses?: PositionClassUncheckedCreateNestedManyWithoutGenderInput;
 }

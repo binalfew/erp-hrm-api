@@ -13,36 +13,37 @@ import { GenderMaxAggregateInput } from './gender-max-aggregate.input';
 
 @ArgsType()
 export class GenderGroupByArgs {
-  @Field(() => GenderWhereInput, { nullable: true })
-  where?: GenderWhereInput;
 
-  @Field(() => [GenderOrderByWithAggregationInput], { nullable: true })
-  orderBy?: Array<GenderOrderByWithAggregationInput>;
+    @Field(() => GenderWhereInput, {nullable:true})
+    where?: GenderWhereInput;
 
-  @Field(() => [GenderScalarFieldEnum], { nullable: false })
-  by!: Array<keyof typeof GenderScalarFieldEnum>;
+    @Field(() => [GenderOrderByWithAggregationInput], {nullable:true})
+    orderBy?: Array<GenderOrderByWithAggregationInput>;
 
-  @Field(() => GenderScalarWhereWithAggregatesInput, { nullable: true })
-  having?: GenderScalarWhereWithAggregatesInput;
+    @Field(() => [GenderScalarFieldEnum], {nullable:false})
+    by!: Array<keyof typeof GenderScalarFieldEnum>;
 
-  @Field(() => Int, { nullable: true })
-  take?: number;
+    @Field(() => GenderScalarWhereWithAggregatesInput, {nullable:true})
+    having?: GenderScalarWhereWithAggregatesInput;
 
-  @Field(() => Int, { nullable: true })
-  skip?: number;
+    @Field(() => Int, {nullable:true})
+    take?: number;
 
-  @Field(() => GenderCountAggregateInput, { nullable: true })
-  _count?: GenderCountAggregateInput;
+    @Field(() => Int, {nullable:true})
+    skip?: number;
 
-  @Field(() => GenderAvgAggregateInput, { nullable: true })
-  _avg?: GenderAvgAggregateInput;
+    @Field(() => GenderCountAggregateInput, {nullable:true})
+    _count?: GenderCountAggregateInput;
 
-  @Field(() => GenderSumAggregateInput, { nullable: true })
-  _sum?: GenderSumAggregateInput;
+    @Field(() => GenderAvgAggregateInput, {nullable:true})
+    _avg?: GenderAvgAggregateInput;
 
-  @Field(() => GenderMinAggregateInput, { nullable: true })
-  _min?: GenderMinAggregateInput;
+    @Field(() => GenderSumAggregateInput, {nullable:true})
+    _sum?: GenderSumAggregateInput;
 
-  @Field(() => GenderMaxAggregateInput, { nullable: true })
-  _max?: GenderMaxAggregateInput;
+    @Field(() => GenderMinAggregateInput, {nullable:true})
+    _min?: GenderMinAggregateInput;
+
+    @Field(() => GenderMaxAggregateInput, {nullable:true})
+    _max?: GenderMaxAggregateInput;
 }

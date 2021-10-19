@@ -5,9 +5,10 @@ import { PositionClassUpdateWithoutGenderInput } from './position-class-update-w
 
 @InputType()
 export class PositionClassUpdateWithWhereUniqueWithoutGenderInput {
-  @Field(() => PositionClassWhereUniqueInput, { nullable: false })
-  where!: PositionClassWhereUniqueInput;
 
-  @Field(() => PositionClassUpdateWithoutGenderInput, { nullable: false })
-  data!: PositionClassUpdateWithoutGenderInput;
+    @Field(() => PositionClassWhereUniqueInput, {nullable:false})
+    where!: PositionClassWhereUniqueInput;
+
+    @Field(() => PositionClassUpdateWithoutGenderInput, {nullable:false})
+    data!: PositionClassUpdateWithoutGenderInput;
 }

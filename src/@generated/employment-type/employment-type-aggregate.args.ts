@@ -12,33 +12,34 @@ import { EmploymentTypeMaxAggregateInput } from './employment-type-max-aggregate
 
 @ArgsType()
 export class EmploymentTypeAggregateArgs {
-  @Field(() => EmploymentTypeWhereInput, { nullable: true })
-  where?: EmploymentTypeWhereInput;
 
-  @Field(() => [EmploymentTypeOrderByWithRelationInput], { nullable: true })
-  orderBy?: Array<EmploymentTypeOrderByWithRelationInput>;
+    @Field(() => EmploymentTypeWhereInput, {nullable:true})
+    where?: EmploymentTypeWhereInput;
 
-  @Field(() => EmploymentTypeWhereUniqueInput, { nullable: true })
-  cursor?: EmploymentTypeWhereUniqueInput;
+    @Field(() => [EmploymentTypeOrderByWithRelationInput], {nullable:true})
+    orderBy?: Array<EmploymentTypeOrderByWithRelationInput>;
 
-  @Field(() => Int, { nullable: true })
-  take?: number;
+    @Field(() => EmploymentTypeWhereUniqueInput, {nullable:true})
+    cursor?: EmploymentTypeWhereUniqueInput;
 
-  @Field(() => Int, { nullable: true })
-  skip?: number;
+    @Field(() => Int, {nullable:true})
+    take?: number;
 
-  @Field(() => EmploymentTypeCountAggregateInput, { nullable: true })
-  _count?: EmploymentTypeCountAggregateInput;
+    @Field(() => Int, {nullable:true})
+    skip?: number;
 
-  @Field(() => EmploymentTypeAvgAggregateInput, { nullable: true })
-  _avg?: EmploymentTypeAvgAggregateInput;
+    @Field(() => EmploymentTypeCountAggregateInput, {nullable:true})
+    _count?: EmploymentTypeCountAggregateInput;
 
-  @Field(() => EmploymentTypeSumAggregateInput, { nullable: true })
-  _sum?: EmploymentTypeSumAggregateInput;
+    @Field(() => EmploymentTypeAvgAggregateInput, {nullable:true})
+    _avg?: EmploymentTypeAvgAggregateInput;
 
-  @Field(() => EmploymentTypeMinAggregateInput, { nullable: true })
-  _min?: EmploymentTypeMinAggregateInput;
+    @Field(() => EmploymentTypeSumAggregateInput, {nullable:true})
+    _sum?: EmploymentTypeSumAggregateInput;
 
-  @Field(() => EmploymentTypeMaxAggregateInput, { nullable: true })
-  _max?: EmploymentTypeMaxAggregateInput;
+    @Field(() => EmploymentTypeMinAggregateInput, {nullable:true})
+    _min?: EmploymentTypeMinAggregateInput;
+
+    @Field(() => EmploymentTypeMaxAggregateInput, {nullable:true})
+    _max?: EmploymentTypeMaxAggregateInput;
 }

@@ -7,31 +7,30 @@ import { EmployeeCreateNestedManyWithoutGenderInput } from '../employee/employee
 
 @InputType()
 export class GenderCreateInput {
-  @Field(() => String, { nullable: false })
-  @Validator.IsNotEmpty()
-  name!: string;
 
-  @Field(() => String, { nullable: false })
-  @Validator.IsNotEmpty()
-  code!: string;
+    @Field(() => String, {nullable:false})
+    @Validator.IsNotEmpty()
+    name!: string;
 
-  @Field(() => GraphQLJSON, { nullable: true })
-  locales?: any;
+    @Field(() => String, {nullable:false})
+    @Validator.IsNotEmpty()
+    code!: string;
 
-  @Field(() => Boolean, { nullable: true })
-  deleted?: boolean;
+    @Field(() => GraphQLJSON, {nullable:true})
+    locales?: any;
 
-  @Field(() => Date, { nullable: true })
-  createdAt?: Date | string;
+    @Field(() => Boolean, {nullable:true})
+    deleted?: boolean;
 
-  @Field(() => Date, { nullable: true })
-  updatedAt?: Date | string;
+    @Field(() => Date, {nullable:true})
+    createdAt?: Date | string;
 
-  @Field(() => PositionClassCreateNestedManyWithoutGenderInput, {
-    nullable: true,
-  })
-  positionClasses?: PositionClassCreateNestedManyWithoutGenderInput;
+    @Field(() => Date, {nullable:true})
+    updatedAt?: Date | string;
 
-  @Field(() => EmployeeCreateNestedManyWithoutGenderInput, { nullable: true })
-  employees?: EmployeeCreateNestedManyWithoutGenderInput;
+    @Field(() => PositionClassCreateNestedManyWithoutGenderInput, {nullable:true})
+    positionClasses?: PositionClassCreateNestedManyWithoutGenderInput;
+
+    @Field(() => EmployeeCreateNestedManyWithoutGenderInput, {nullable:true})
+    employees?: EmployeeCreateNestedManyWithoutGenderInput;
 }

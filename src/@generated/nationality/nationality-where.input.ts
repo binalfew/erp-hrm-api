@@ -9,36 +9,37 @@ import { EmployeeListRelationFilter } from '../employee/employee-list-relation-f
 
 @InputType()
 export class NationalityWhereInput {
-  @Field(() => [NationalityWhereInput], { nullable: true })
-  AND?: Array<NationalityWhereInput>;
 
-  @Field(() => [NationalityWhereInput], { nullable: true })
-  OR?: Array<NationalityWhereInput>;
+    @Field(() => [NationalityWhereInput], {nullable:true})
+    AND?: Array<NationalityWhereInput>;
 
-  @Field(() => [NationalityWhereInput], { nullable: true })
-  NOT?: Array<NationalityWhereInput>;
+    @Field(() => [NationalityWhereInput], {nullable:true})
+    OR?: Array<NationalityWhereInput>;
 
-  @Field(() => IntFilter, { nullable: true })
-  id?: IntFilter;
+    @Field(() => [NationalityWhereInput], {nullable:true})
+    NOT?: Array<NationalityWhereInput>;
 
-  @Field(() => StringFilter, { nullable: true })
-  name?: StringFilter;
+    @Field(() => IntFilter, {nullable:true})
+    id?: IntFilter;
 
-  @Field(() => StringFilter, { nullable: true })
-  code?: StringFilter;
+    @Field(() => StringFilter, {nullable:true})
+    name?: StringFilter;
 
-  @Field(() => JsonNullableFilter, { nullable: true })
-  locales?: JsonNullableFilter;
+    @Field(() => StringFilter, {nullable:true})
+    code?: StringFilter;
 
-  @Field(() => BoolFilter, { nullable: true })
-  deleted?: BoolFilter;
+    @Field(() => JsonNullableFilter, {nullable:true})
+    locales?: JsonNullableFilter;
 
-  @Field(() => DateTimeFilter, { nullable: true })
-  createdAt?: DateTimeFilter;
+    @Field(() => BoolFilter, {nullable:true})
+    deleted?: BoolFilter;
 
-  @Field(() => DateTimeFilter, { nullable: true })
-  updatedAt?: DateTimeFilter;
+    @Field(() => DateTimeFilter, {nullable:true})
+    createdAt?: DateTimeFilter;
 
-  @Field(() => EmployeeListRelationFilter, { nullable: true })
-  employees?: EmployeeListRelationFilter;
+    @Field(() => DateTimeFilter, {nullable:true})
+    updatedAt?: DateTimeFilter;
+
+    @Field(() => EmployeeListRelationFilter, {nullable:true})
+    employees?: EmployeeListRelationFilter;
 }

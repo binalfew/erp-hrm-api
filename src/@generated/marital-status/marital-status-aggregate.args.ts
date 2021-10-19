@@ -12,33 +12,34 @@ import { MaritalStatusMaxAggregateInput } from './marital-status-max-aggregate.i
 
 @ArgsType()
 export class MaritalStatusAggregateArgs {
-  @Field(() => MaritalStatusWhereInput, { nullable: true })
-  where?: MaritalStatusWhereInput;
 
-  @Field(() => [MaritalStatusOrderByWithRelationInput], { nullable: true })
-  orderBy?: Array<MaritalStatusOrderByWithRelationInput>;
+    @Field(() => MaritalStatusWhereInput, {nullable:true})
+    where?: MaritalStatusWhereInput;
 
-  @Field(() => MaritalStatusWhereUniqueInput, { nullable: true })
-  cursor?: MaritalStatusWhereUniqueInput;
+    @Field(() => [MaritalStatusOrderByWithRelationInput], {nullable:true})
+    orderBy?: Array<MaritalStatusOrderByWithRelationInput>;
 
-  @Field(() => Int, { nullable: true })
-  take?: number;
+    @Field(() => MaritalStatusWhereUniqueInput, {nullable:true})
+    cursor?: MaritalStatusWhereUniqueInput;
 
-  @Field(() => Int, { nullable: true })
-  skip?: number;
+    @Field(() => Int, {nullable:true})
+    take?: number;
 
-  @Field(() => MaritalStatusCountAggregateInput, { nullable: true })
-  _count?: MaritalStatusCountAggregateInput;
+    @Field(() => Int, {nullable:true})
+    skip?: number;
 
-  @Field(() => MaritalStatusAvgAggregateInput, { nullable: true })
-  _avg?: MaritalStatusAvgAggregateInput;
+    @Field(() => MaritalStatusCountAggregateInput, {nullable:true})
+    _count?: MaritalStatusCountAggregateInput;
 
-  @Field(() => MaritalStatusSumAggregateInput, { nullable: true })
-  _sum?: MaritalStatusSumAggregateInput;
+    @Field(() => MaritalStatusAvgAggregateInput, {nullable:true})
+    _avg?: MaritalStatusAvgAggregateInput;
 
-  @Field(() => MaritalStatusMinAggregateInput, { nullable: true })
-  _min?: MaritalStatusMinAggregateInput;
+    @Field(() => MaritalStatusSumAggregateInput, {nullable:true})
+    _sum?: MaritalStatusSumAggregateInput;
 
-  @Field(() => MaritalStatusMaxAggregateInput, { nullable: true })
-  _max?: MaritalStatusMaxAggregateInput;
+    @Field(() => MaritalStatusMinAggregateInput, {nullable:true})
+    _min?: MaritalStatusMinAggregateInput;
+
+    @Field(() => MaritalStatusMaxAggregateInput, {nullable:true})
+    _max?: MaritalStatusMaxAggregateInput;
 }

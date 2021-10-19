@@ -9,39 +9,40 @@ import { MaritalStatusSumOrderByAggregateInput } from './marital-status-sum-orde
 
 @InputType()
 export class MaritalStatusOrderByWithAggregationInput {
-  @Field(() => SortOrder, { nullable: true })
-  id?: keyof typeof SortOrder;
 
-  @Field(() => SortOrder, { nullable: true })
-  name?: keyof typeof SortOrder;
+    @Field(() => SortOrder, {nullable:true})
+    id?: keyof typeof SortOrder;
 
-  @Field(() => SortOrder, { nullable: true })
-  code?: keyof typeof SortOrder;
+    @Field(() => SortOrder, {nullable:true})
+    name?: keyof typeof SortOrder;
 
-  @Field(() => SortOrder, { nullable: true })
-  locales?: keyof typeof SortOrder;
+    @Field(() => SortOrder, {nullable:true})
+    code?: keyof typeof SortOrder;
 
-  @Field(() => SortOrder, { nullable: true })
-  deleted?: keyof typeof SortOrder;
+    @Field(() => SortOrder, {nullable:true})
+    locales?: keyof typeof SortOrder;
 
-  @Field(() => SortOrder, { nullable: true })
-  createdAt?: keyof typeof SortOrder;
+    @Field(() => SortOrder, {nullable:true})
+    deleted?: keyof typeof SortOrder;
 
-  @Field(() => SortOrder, { nullable: true })
-  updatedAt?: keyof typeof SortOrder;
+    @Field(() => SortOrder, {nullable:true})
+    createdAt?: keyof typeof SortOrder;
 
-  @Field(() => MaritalStatusCountOrderByAggregateInput, { nullable: true })
-  _count?: MaritalStatusCountOrderByAggregateInput;
+    @Field(() => SortOrder, {nullable:true})
+    updatedAt?: keyof typeof SortOrder;
 
-  @Field(() => MaritalStatusAvgOrderByAggregateInput, { nullable: true })
-  _avg?: MaritalStatusAvgOrderByAggregateInput;
+    @Field(() => MaritalStatusCountOrderByAggregateInput, {nullable:true})
+    _count?: MaritalStatusCountOrderByAggregateInput;
 
-  @Field(() => MaritalStatusMaxOrderByAggregateInput, { nullable: true })
-  _max?: MaritalStatusMaxOrderByAggregateInput;
+    @Field(() => MaritalStatusAvgOrderByAggregateInput, {nullable:true})
+    _avg?: MaritalStatusAvgOrderByAggregateInput;
 
-  @Field(() => MaritalStatusMinOrderByAggregateInput, { nullable: true })
-  _min?: MaritalStatusMinOrderByAggregateInput;
+    @Field(() => MaritalStatusMaxOrderByAggregateInput, {nullable:true})
+    _max?: MaritalStatusMaxOrderByAggregateInput;
 
-  @Field(() => MaritalStatusSumOrderByAggregateInput, { nullable: true })
-  _sum?: MaritalStatusSumOrderByAggregateInput;
+    @Field(() => MaritalStatusMinOrderByAggregateInput, {nullable:true})
+    _min?: MaritalStatusMinOrderByAggregateInput;
+
+    @Field(() => MaritalStatusSumOrderByAggregateInput, {nullable:true})
+    _sum?: MaritalStatusSumOrderByAggregateInput;
 }

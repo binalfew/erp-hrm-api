@@ -6,25 +6,22 @@ import { JobStepCreateNestedOneWithoutSalaryScalesInput } from '../job-step/job-
 
 @InputType()
 export class SalaryScaleCreateWithoutPositionClassesInput {
-  @Field(() => Float, { nullable: true })
-  salary?: number;
 
-  @Field(() => Boolean, { nullable: true })
-  deleted?: boolean;
+    @Field(() => Float, {nullable:true})
+    salary?: number;
 
-  @Field(() => Date, { nullable: true })
-  createdAt?: Date | string;
+    @Field(() => Boolean, {nullable:true})
+    deleted?: boolean;
 
-  @Field(() => Date, { nullable: true })
-  updatedAt?: Date | string;
+    @Field(() => Date, {nullable:true})
+    createdAt?: Date | string;
 
-  @Field(() => JobGradeCreateNestedOneWithoutSalaryScalesInput, {
-    nullable: true,
-  })
-  jobGrade?: JobGradeCreateNestedOneWithoutSalaryScalesInput;
+    @Field(() => Date, {nullable:true})
+    updatedAt?: Date | string;
 
-  @Field(() => JobStepCreateNestedOneWithoutSalaryScalesInput, {
-    nullable: true,
-  })
-  jobStep?: JobStepCreateNestedOneWithoutSalaryScalesInput;
+    @Field(() => JobGradeCreateNestedOneWithoutSalaryScalesInput, {nullable:true})
+    jobGrade?: JobGradeCreateNestedOneWithoutSalaryScalesInput;
+
+    @Field(() => JobStepCreateNestedOneWithoutSalaryScalesInput, {nullable:true})
+    jobStep?: JobStepCreateNestedOneWithoutSalaryScalesInput;
 }

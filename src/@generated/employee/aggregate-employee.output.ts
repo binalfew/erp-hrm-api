@@ -8,18 +8,19 @@ import { EmployeeMaxAggregate } from './employee-max-aggregate.output';
 
 @ObjectType()
 export class AggregateEmployee {
-  @Field(() => EmployeeCountAggregate, { nullable: true })
-  _count?: EmployeeCountAggregate;
 
-  @Field(() => EmployeeAvgAggregate, { nullable: true })
-  _avg?: EmployeeAvgAggregate;
+    @Field(() => EmployeeCountAggregate, {nullable:true})
+    _count?: EmployeeCountAggregate;
 
-  @Field(() => EmployeeSumAggregate, { nullable: true })
-  _sum?: EmployeeSumAggregate;
+    @Field(() => EmployeeAvgAggregate, {nullable:true})
+    _avg?: EmployeeAvgAggregate;
 
-  @Field(() => EmployeeMinAggregate, { nullable: true })
-  _min?: EmployeeMinAggregate;
+    @Field(() => EmployeeSumAggregate, {nullable:true})
+    _sum?: EmployeeSumAggregate;
 
-  @Field(() => EmployeeMaxAggregate, { nullable: true })
-  _max?: EmployeeMaxAggregate;
+    @Field(() => EmployeeMinAggregate, {nullable:true})
+    _min?: EmployeeMinAggregate;
+
+    @Field(() => EmployeeMaxAggregate, {nullable:true})
+    _max?: EmployeeMaxAggregate;
 }

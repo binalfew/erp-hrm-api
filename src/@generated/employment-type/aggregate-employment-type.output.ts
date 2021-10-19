@@ -8,18 +8,19 @@ import { EmploymentTypeMaxAggregate } from './employment-type-max-aggregate.outp
 
 @ObjectType()
 export class AggregateEmploymentType {
-  @Field(() => EmploymentTypeCountAggregate, { nullable: true })
-  _count?: EmploymentTypeCountAggregate;
 
-  @Field(() => EmploymentTypeAvgAggregate, { nullable: true })
-  _avg?: EmploymentTypeAvgAggregate;
+    @Field(() => EmploymentTypeCountAggregate, {nullable:true})
+    _count?: EmploymentTypeCountAggregate;
 
-  @Field(() => EmploymentTypeSumAggregate, { nullable: true })
-  _sum?: EmploymentTypeSumAggregate;
+    @Field(() => EmploymentTypeAvgAggregate, {nullable:true})
+    _avg?: EmploymentTypeAvgAggregate;
 
-  @Field(() => EmploymentTypeMinAggregate, { nullable: true })
-  _min?: EmploymentTypeMinAggregate;
+    @Field(() => EmploymentTypeSumAggregate, {nullable:true})
+    _sum?: EmploymentTypeSumAggregate;
 
-  @Field(() => EmploymentTypeMaxAggregate, { nullable: true })
-  _max?: EmploymentTypeMaxAggregate;
+    @Field(() => EmploymentTypeMinAggregate, {nullable:true})
+    _min?: EmploymentTypeMinAggregate;
+
+    @Field(() => EmploymentTypeMaxAggregate, {nullable:true})
+    _max?: EmploymentTypeMaxAggregate;
 }

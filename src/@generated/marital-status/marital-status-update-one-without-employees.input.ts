@@ -8,26 +8,25 @@ import { MaritalStatusUpdateWithoutEmployeesInput } from './marital-status-updat
 
 @InputType()
 export class MaritalStatusUpdateOneWithoutEmployeesInput {
-  @Field(() => MaritalStatusCreateWithoutEmployeesInput, { nullable: true })
-  create?: MaritalStatusCreateWithoutEmployeesInput;
 
-  @Field(() => MaritalStatusCreateOrConnectWithoutEmployeesInput, {
-    nullable: true,
-  })
-  connectOrCreate?: MaritalStatusCreateOrConnectWithoutEmployeesInput;
+    @Field(() => MaritalStatusCreateWithoutEmployeesInput, {nullable:true})
+    create?: MaritalStatusCreateWithoutEmployeesInput;
 
-  @Field(() => MaritalStatusUpsertWithoutEmployeesInput, { nullable: true })
-  upsert?: MaritalStatusUpsertWithoutEmployeesInput;
+    @Field(() => MaritalStatusCreateOrConnectWithoutEmployeesInput, {nullable:true})
+    connectOrCreate?: MaritalStatusCreateOrConnectWithoutEmployeesInput;
 
-  @Field(() => MaritalStatusWhereUniqueInput, { nullable: true })
-  connect?: MaritalStatusWhereUniqueInput;
+    @Field(() => MaritalStatusUpsertWithoutEmployeesInput, {nullable:true})
+    upsert?: MaritalStatusUpsertWithoutEmployeesInput;
 
-  @Field(() => Boolean, { nullable: true })
-  disconnect?: boolean;
+    @Field(() => MaritalStatusWhereUniqueInput, {nullable:true})
+    connect?: MaritalStatusWhereUniqueInput;
 
-  @Field(() => Boolean, { nullable: true })
-  delete?: boolean;
+    @Field(() => Boolean, {nullable:true})
+    disconnect?: boolean;
 
-  @Field(() => MaritalStatusUpdateWithoutEmployeesInput, { nullable: true })
-  update?: MaritalStatusUpdateWithoutEmployeesInput;
+    @Field(() => Boolean, {nullable:true})
+    delete?: boolean;
+
+    @Field(() => MaritalStatusUpdateWithoutEmployeesInput, {nullable:true})
+    update?: MaritalStatusUpdateWithoutEmployeesInput;
 }

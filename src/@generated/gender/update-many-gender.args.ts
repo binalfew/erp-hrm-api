@@ -5,9 +5,10 @@ import { GenderWhereInput } from './gender-where.input';
 
 @ArgsType()
 export class UpdateManyGenderArgs {
-  @Field(() => GenderUpdateManyMutationInput, { nullable: false })
-  data!: GenderUpdateManyMutationInput;
 
-  @Field(() => GenderWhereInput, { nullable: true })
-  where?: GenderWhereInput;
+    @Field(() => GenderUpdateManyMutationInput, {nullable:false})
+    data!: GenderUpdateManyMutationInput;
+
+    @Field(() => GenderWhereInput, {nullable:true})
+    where?: GenderWhereInput;
 }

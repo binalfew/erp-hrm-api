@@ -5,9 +5,10 @@ import { DepartmentWhereInput } from './department-where.input';
 
 @ArgsType()
 export class UpdateManyDepartmentArgs {
-  @Field(() => DepartmentUpdateManyMutationInput, { nullable: false })
-  data!: DepartmentUpdateManyMutationInput;
 
-  @Field(() => DepartmentWhereInput, { nullable: true })
-  where?: DepartmentWhereInput;
+    @Field(() => DepartmentUpdateManyMutationInput, {nullable:false})
+    data!: DepartmentUpdateManyMutationInput;
+
+    @Field(() => DepartmentWhereInput, {nullable:true})
+    where?: DepartmentWhereInput;
 }

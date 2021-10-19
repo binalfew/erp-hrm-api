@@ -9,36 +9,37 @@ import { PositionClassListRelationFilter } from '../position-class/position-clas
 
 @InputType()
 export class PositionClassTypeWhereInput {
-  @Field(() => [PositionClassTypeWhereInput], { nullable: true })
-  AND?: Array<PositionClassTypeWhereInput>;
 
-  @Field(() => [PositionClassTypeWhereInput], { nullable: true })
-  OR?: Array<PositionClassTypeWhereInput>;
+    @Field(() => [PositionClassTypeWhereInput], {nullable:true})
+    AND?: Array<PositionClassTypeWhereInput>;
 
-  @Field(() => [PositionClassTypeWhereInput], { nullable: true })
-  NOT?: Array<PositionClassTypeWhereInput>;
+    @Field(() => [PositionClassTypeWhereInput], {nullable:true})
+    OR?: Array<PositionClassTypeWhereInput>;
 
-  @Field(() => IntFilter, { nullable: true })
-  id?: IntFilter;
+    @Field(() => [PositionClassTypeWhereInput], {nullable:true})
+    NOT?: Array<PositionClassTypeWhereInput>;
 
-  @Field(() => StringFilter, { nullable: true })
-  name?: StringFilter;
+    @Field(() => IntFilter, {nullable:true})
+    id?: IntFilter;
 
-  @Field(() => StringFilter, { nullable: true })
-  code?: StringFilter;
+    @Field(() => StringFilter, {nullable:true})
+    name?: StringFilter;
 
-  @Field(() => JsonNullableFilter, { nullable: true })
-  locales?: JsonNullableFilter;
+    @Field(() => StringFilter, {nullable:true})
+    code?: StringFilter;
 
-  @Field(() => BoolFilter, { nullable: true })
-  deleted?: BoolFilter;
+    @Field(() => JsonNullableFilter, {nullable:true})
+    locales?: JsonNullableFilter;
 
-  @Field(() => DateTimeFilter, { nullable: true })
-  createdAt?: DateTimeFilter;
+    @Field(() => BoolFilter, {nullable:true})
+    deleted?: BoolFilter;
 
-  @Field(() => DateTimeFilter, { nullable: true })
-  updatedAt?: DateTimeFilter;
+    @Field(() => DateTimeFilter, {nullable:true})
+    createdAt?: DateTimeFilter;
 
-  @Field(() => PositionClassListRelationFilter, { nullable: true })
-  positionClasses?: PositionClassListRelationFilter;
+    @Field(() => DateTimeFilter, {nullable:true})
+    updatedAt?: DateTimeFilter;
+
+    @Field(() => PositionClassListRelationFilter, {nullable:true})
+    positionClasses?: PositionClassListRelationFilter;
 }

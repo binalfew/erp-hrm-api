@@ -4,12 +4,13 @@ import { SortOrder } from '../prisma/sort-order.enum';
 
 @InputType()
 export class PositionAvgOrderByAggregateInput {
-  @Field(() => SortOrder, { nullable: true })
-  id?: keyof typeof SortOrder;
 
-  @Field(() => SortOrder, { nullable: true })
-  positionClassId?: keyof typeof SortOrder;
+    @Field(() => SortOrder, {nullable:true})
+    id?: keyof typeof SortOrder;
 
-  @Field(() => SortOrder, { nullable: true })
-  departmentId?: keyof typeof SortOrder;
+    @Field(() => SortOrder, {nullable:true})
+    positionClassId?: keyof typeof SortOrder;
+
+    @Field(() => SortOrder, {nullable:true})
+    departmentId?: keyof typeof SortOrder;
 }

@@ -5,9 +5,10 @@ import { PositionClassUpdateWithoutSalaryScaleInput } from './position-class-upd
 
 @InputType()
 export class PositionClassUpdateWithWhereUniqueWithoutSalaryScaleInput {
-  @Field(() => PositionClassWhereUniqueInput, { nullable: false })
-  where!: PositionClassWhereUniqueInput;
 
-  @Field(() => PositionClassUpdateWithoutSalaryScaleInput, { nullable: false })
-  data!: PositionClassUpdateWithoutSalaryScaleInput;
+    @Field(() => PositionClassWhereUniqueInput, {nullable:false})
+    where!: PositionClassWhereUniqueInput;
+
+    @Field(() => PositionClassUpdateWithoutSalaryScaleInput, {nullable:false})
+    data!: PositionClassUpdateWithoutSalaryScaleInput;
 }

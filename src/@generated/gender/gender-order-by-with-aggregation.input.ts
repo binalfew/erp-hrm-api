@@ -9,39 +9,40 @@ import { GenderSumOrderByAggregateInput } from './gender-sum-order-by-aggregate.
 
 @InputType()
 export class GenderOrderByWithAggregationInput {
-  @Field(() => SortOrder, { nullable: true })
-  id?: keyof typeof SortOrder;
 
-  @Field(() => SortOrder, { nullable: true })
-  name?: keyof typeof SortOrder;
+    @Field(() => SortOrder, {nullable:true})
+    id?: keyof typeof SortOrder;
 
-  @Field(() => SortOrder, { nullable: true })
-  code?: keyof typeof SortOrder;
+    @Field(() => SortOrder, {nullable:true})
+    name?: keyof typeof SortOrder;
 
-  @Field(() => SortOrder, { nullable: true })
-  locales?: keyof typeof SortOrder;
+    @Field(() => SortOrder, {nullable:true})
+    code?: keyof typeof SortOrder;
 
-  @Field(() => SortOrder, { nullable: true })
-  deleted?: keyof typeof SortOrder;
+    @Field(() => SortOrder, {nullable:true})
+    locales?: keyof typeof SortOrder;
 
-  @Field(() => SortOrder, { nullable: true })
-  createdAt?: keyof typeof SortOrder;
+    @Field(() => SortOrder, {nullable:true})
+    deleted?: keyof typeof SortOrder;
 
-  @Field(() => SortOrder, { nullable: true })
-  updatedAt?: keyof typeof SortOrder;
+    @Field(() => SortOrder, {nullable:true})
+    createdAt?: keyof typeof SortOrder;
 
-  @Field(() => GenderCountOrderByAggregateInput, { nullable: true })
-  _count?: GenderCountOrderByAggregateInput;
+    @Field(() => SortOrder, {nullable:true})
+    updatedAt?: keyof typeof SortOrder;
 
-  @Field(() => GenderAvgOrderByAggregateInput, { nullable: true })
-  _avg?: GenderAvgOrderByAggregateInput;
+    @Field(() => GenderCountOrderByAggregateInput, {nullable:true})
+    _count?: GenderCountOrderByAggregateInput;
 
-  @Field(() => GenderMaxOrderByAggregateInput, { nullable: true })
-  _max?: GenderMaxOrderByAggregateInput;
+    @Field(() => GenderAvgOrderByAggregateInput, {nullable:true})
+    _avg?: GenderAvgOrderByAggregateInput;
 
-  @Field(() => GenderMinOrderByAggregateInput, { nullable: true })
-  _min?: GenderMinOrderByAggregateInput;
+    @Field(() => GenderMaxOrderByAggregateInput, {nullable:true})
+    _max?: GenderMaxOrderByAggregateInput;
 
-  @Field(() => GenderSumOrderByAggregateInput, { nullable: true })
-  _sum?: GenderSumOrderByAggregateInput;
+    @Field(() => GenderMinOrderByAggregateInput, {nullable:true})
+    _min?: GenderMinOrderByAggregateInput;
+
+    @Field(() => GenderSumOrderByAggregateInput, {nullable:true})
+    _sum?: GenderSumOrderByAggregateInput;
 }

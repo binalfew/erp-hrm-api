@@ -7,30 +7,31 @@ import { PositionClassTypeCount } from '../position/position-class-type-count.ou
 
 @ObjectType()
 export class PositionClassType {
-  @Field(() => ID, { nullable: false })
-  id!: number;
 
-  @Field(() => String, { nullable: false })
-  name!: string;
+    @Field(() => ID, {nullable:false})
+    id!: number;
 
-  @Field(() => String, { nullable: false })
-  code!: string;
+    @Field(() => String, {nullable:false})
+    name!: string;
 
-  @Field(() => GraphQLJSON, { nullable: true })
-  locales!: any | null;
+    @Field(() => String, {nullable:false})
+    code!: string;
 
-  @Field(() => Boolean, { nullable: false, defaultValue: false })
-  deleted!: boolean;
+    @Field(() => GraphQLJSON, {nullable:true})
+    locales!: any | null;
 
-  @Field(() => Date, { nullable: false })
-  createdAt!: Date;
+    @Field(() => Boolean, {nullable:false,defaultValue:false})
+    deleted!: boolean;
 
-  @Field(() => Date, { nullable: false })
-  updatedAt!: Date;
+    @Field(() => Date, {nullable:false})
+    createdAt!: Date;
 
-  @Field(() => [PositionClass], { nullable: true })
-  positionClasses?: Array<PositionClass>;
+    @Field(() => Date, {nullable:false})
+    updatedAt!: Date;
 
-  @Field(() => PositionClassTypeCount, { nullable: true })
-  _count?: PositionClassTypeCount | null;
+    @Field(() => [PositionClass], {nullable:true})
+    positionClasses?: Array<PositionClass>;
+
+    @Field(() => PositionClassTypeCount, {nullable:true})
+    _count?: PositionClassTypeCount | null;
 }

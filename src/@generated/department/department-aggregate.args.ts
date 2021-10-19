@@ -12,33 +12,34 @@ import { DepartmentMaxAggregateInput } from './department-max-aggregate.input';
 
 @ArgsType()
 export class DepartmentAggregateArgs {
-  @Field(() => DepartmentWhereInput, { nullable: true })
-  where?: DepartmentWhereInput;
 
-  @Field(() => [DepartmentOrderByWithRelationInput], { nullable: true })
-  orderBy?: Array<DepartmentOrderByWithRelationInput>;
+    @Field(() => DepartmentWhereInput, {nullable:true})
+    where?: DepartmentWhereInput;
 
-  @Field(() => DepartmentWhereUniqueInput, { nullable: true })
-  cursor?: DepartmentWhereUniqueInput;
+    @Field(() => [DepartmentOrderByWithRelationInput], {nullable:true})
+    orderBy?: Array<DepartmentOrderByWithRelationInput>;
 
-  @Field(() => Int, { nullable: true })
-  take?: number;
+    @Field(() => DepartmentWhereUniqueInput, {nullable:true})
+    cursor?: DepartmentWhereUniqueInput;
 
-  @Field(() => Int, { nullable: true })
-  skip?: number;
+    @Field(() => Int, {nullable:true})
+    take?: number;
 
-  @Field(() => DepartmentCountAggregateInput, { nullable: true })
-  _count?: DepartmentCountAggregateInput;
+    @Field(() => Int, {nullable:true})
+    skip?: number;
 
-  @Field(() => DepartmentAvgAggregateInput, { nullable: true })
-  _avg?: DepartmentAvgAggregateInput;
+    @Field(() => DepartmentCountAggregateInput, {nullable:true})
+    _count?: DepartmentCountAggregateInput;
 
-  @Field(() => DepartmentSumAggregateInput, { nullable: true })
-  _sum?: DepartmentSumAggregateInput;
+    @Field(() => DepartmentAvgAggregateInput, {nullable:true})
+    _avg?: DepartmentAvgAggregateInput;
 
-  @Field(() => DepartmentMinAggregateInput, { nullable: true })
-  _min?: DepartmentMinAggregateInput;
+    @Field(() => DepartmentSumAggregateInput, {nullable:true})
+    _sum?: DepartmentSumAggregateInput;
 
-  @Field(() => DepartmentMaxAggregateInput, { nullable: true })
-  _max?: DepartmentMaxAggregateInput;
+    @Field(() => DepartmentMinAggregateInput, {nullable:true})
+    _min?: DepartmentMinAggregateInput;
+
+    @Field(() => DepartmentMaxAggregateInput, {nullable:true})
+    _max?: DepartmentMaxAggregateInput;
 }

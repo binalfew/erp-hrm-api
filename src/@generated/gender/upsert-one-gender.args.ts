@@ -6,12 +6,13 @@ import { GenderUpdateInput } from './gender-update.input';
 
 @ArgsType()
 export class UpsertOneGenderArgs {
-  @Field(() => GenderWhereUniqueInput, { nullable: false })
-  where!: GenderWhereUniqueInput;
 
-  @Field(() => GenderCreateInput, { nullable: false })
-  create!: GenderCreateInput;
+    @Field(() => GenderWhereUniqueInput, {nullable:false})
+    where!: GenderWhereUniqueInput;
 
-  @Field(() => GenderUpdateInput, { nullable: false })
-  update!: GenderUpdateInput;
+    @Field(() => GenderCreateInput, {nullable:false})
+    create!: GenderCreateInput;
+
+    @Field(() => GenderUpdateInput, {nullable:false})
+    update!: GenderUpdateInput;
 }

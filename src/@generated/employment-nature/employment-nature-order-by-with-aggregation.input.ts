@@ -9,39 +9,40 @@ import { EmploymentNatureSumOrderByAggregateInput } from './employment-nature-su
 
 @InputType()
 export class EmploymentNatureOrderByWithAggregationInput {
-  @Field(() => SortOrder, { nullable: true })
-  id?: keyof typeof SortOrder;
 
-  @Field(() => SortOrder, { nullable: true })
-  name?: keyof typeof SortOrder;
+    @Field(() => SortOrder, {nullable:true})
+    id?: keyof typeof SortOrder;
 
-  @Field(() => SortOrder, { nullable: true })
-  code?: keyof typeof SortOrder;
+    @Field(() => SortOrder, {nullable:true})
+    name?: keyof typeof SortOrder;
 
-  @Field(() => SortOrder, { nullable: true })
-  locales?: keyof typeof SortOrder;
+    @Field(() => SortOrder, {nullable:true})
+    code?: keyof typeof SortOrder;
 
-  @Field(() => SortOrder, { nullable: true })
-  deleted?: keyof typeof SortOrder;
+    @Field(() => SortOrder, {nullable:true})
+    locales?: keyof typeof SortOrder;
 
-  @Field(() => SortOrder, { nullable: true })
-  createdAt?: keyof typeof SortOrder;
+    @Field(() => SortOrder, {nullable:true})
+    deleted?: keyof typeof SortOrder;
 
-  @Field(() => SortOrder, { nullable: true })
-  updatedAt?: keyof typeof SortOrder;
+    @Field(() => SortOrder, {nullable:true})
+    createdAt?: keyof typeof SortOrder;
 
-  @Field(() => EmploymentNatureCountOrderByAggregateInput, { nullable: true })
-  _count?: EmploymentNatureCountOrderByAggregateInput;
+    @Field(() => SortOrder, {nullable:true})
+    updatedAt?: keyof typeof SortOrder;
 
-  @Field(() => EmploymentNatureAvgOrderByAggregateInput, { nullable: true })
-  _avg?: EmploymentNatureAvgOrderByAggregateInput;
+    @Field(() => EmploymentNatureCountOrderByAggregateInput, {nullable:true})
+    _count?: EmploymentNatureCountOrderByAggregateInput;
 
-  @Field(() => EmploymentNatureMaxOrderByAggregateInput, { nullable: true })
-  _max?: EmploymentNatureMaxOrderByAggregateInput;
+    @Field(() => EmploymentNatureAvgOrderByAggregateInput, {nullable:true})
+    _avg?: EmploymentNatureAvgOrderByAggregateInput;
 
-  @Field(() => EmploymentNatureMinOrderByAggregateInput, { nullable: true })
-  _min?: EmploymentNatureMinOrderByAggregateInput;
+    @Field(() => EmploymentNatureMaxOrderByAggregateInput, {nullable:true})
+    _max?: EmploymentNatureMaxOrderByAggregateInput;
 
-  @Field(() => EmploymentNatureSumOrderByAggregateInput, { nullable: true })
-  _sum?: EmploymentNatureSumOrderByAggregateInput;
+    @Field(() => EmploymentNatureMinOrderByAggregateInput, {nullable:true})
+    _min?: EmploymentNatureMinOrderByAggregateInput;
+
+    @Field(() => EmploymentNatureSumOrderByAggregateInput, {nullable:true})
+    _sum?: EmploymentNatureSumOrderByAggregateInput;
 }

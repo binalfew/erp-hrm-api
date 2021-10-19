@@ -8,21 +8,22 @@ import { GenderScalarFieldEnum } from './gender-scalar-field.enum';
 
 @ArgsType()
 export class FindFirstGenderArgs {
-  @Field(() => GenderWhereInput, { nullable: true })
-  where?: GenderWhereInput;
 
-  @Field(() => [GenderOrderByWithRelationInput], { nullable: true })
-  orderBy?: Array<GenderOrderByWithRelationInput>;
+    @Field(() => GenderWhereInput, {nullable:true})
+    where?: GenderWhereInput;
 
-  @Field(() => GenderWhereUniqueInput, { nullable: true })
-  cursor?: GenderWhereUniqueInput;
+    @Field(() => [GenderOrderByWithRelationInput], {nullable:true})
+    orderBy?: Array<GenderOrderByWithRelationInput>;
 
-  @Field(() => Int, { nullable: true })
-  take?: number;
+    @Field(() => GenderWhereUniqueInput, {nullable:true})
+    cursor?: GenderWhereUniqueInput;
 
-  @Field(() => Int, { nullable: true })
-  skip?: number;
+    @Field(() => Int, {nullable:true})
+    take?: number;
 
-  @Field(() => [GenderScalarFieldEnum], { nullable: true })
-  distinct?: Array<keyof typeof GenderScalarFieldEnum>;
+    @Field(() => Int, {nullable:true})
+    skip?: number;
+
+    @Field(() => [GenderScalarFieldEnum], {nullable:true})
+    distinct?: Array<keyof typeof GenderScalarFieldEnum>;
 }

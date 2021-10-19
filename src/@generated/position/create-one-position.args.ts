@@ -4,6 +4,7 @@ import { PositionCreateInput } from './position-create.input';
 
 @ArgsType()
 export class CreateOnePositionArgs {
-  @Field(() => PositionCreateInput, { nullable: false })
-  data!: PositionCreateInput;
+
+    @Field(() => PositionCreateInput, {nullable:false})
+    data!: PositionCreateInput;
 }

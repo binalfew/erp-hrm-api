@@ -6,14 +6,13 @@ import { MaritalStatusWhereUniqueInput } from './marital-status-where-unique.inp
 
 @InputType()
 export class MaritalStatusCreateNestedOneWithoutEmployeesInput {
-  @Field(() => MaritalStatusCreateWithoutEmployeesInput, { nullable: true })
-  create?: MaritalStatusCreateWithoutEmployeesInput;
 
-  @Field(() => MaritalStatusCreateOrConnectWithoutEmployeesInput, {
-    nullable: true,
-  })
-  connectOrCreate?: MaritalStatusCreateOrConnectWithoutEmployeesInput;
+    @Field(() => MaritalStatusCreateWithoutEmployeesInput, {nullable:true})
+    create?: MaritalStatusCreateWithoutEmployeesInput;
 
-  @Field(() => MaritalStatusWhereUniqueInput, { nullable: true })
-  connect?: MaritalStatusWhereUniqueInput;
+    @Field(() => MaritalStatusCreateOrConnectWithoutEmployeesInput, {nullable:true})
+    connectOrCreate?: MaritalStatusCreateOrConnectWithoutEmployeesInput;
+
+    @Field(() => MaritalStatusWhereUniqueInput, {nullable:true})
+    connect?: MaritalStatusWhereUniqueInput;
 }

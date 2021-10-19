@@ -11,44 +11,37 @@ import { EmployeeScalarWhereInput } from './employee-scalar-where.input';
 
 @InputType()
 export class EmployeeUncheckedUpdateManyWithoutNationalityInput {
-  @Field(() => [EmployeeCreateWithoutNationalityInput], { nullable: true })
-  create?: Array<EmployeeCreateWithoutNationalityInput>;
 
-  @Field(() => [EmployeeCreateOrConnectWithoutNationalityInput], {
-    nullable: true,
-  })
-  connectOrCreate?: Array<EmployeeCreateOrConnectWithoutNationalityInput>;
+    @Field(() => [EmployeeCreateWithoutNationalityInput], {nullable:true})
+    create?: Array<EmployeeCreateWithoutNationalityInput>;
 
-  @Field(() => [EmployeeUpsertWithWhereUniqueWithoutNationalityInput], {
-    nullable: true,
-  })
-  upsert?: Array<EmployeeUpsertWithWhereUniqueWithoutNationalityInput>;
+    @Field(() => [EmployeeCreateOrConnectWithoutNationalityInput], {nullable:true})
+    connectOrCreate?: Array<EmployeeCreateOrConnectWithoutNationalityInput>;
 
-  @Field(() => EmployeeCreateManyNationalityInputEnvelope, { nullable: true })
-  createMany?: EmployeeCreateManyNationalityInputEnvelope;
+    @Field(() => [EmployeeUpsertWithWhereUniqueWithoutNationalityInput], {nullable:true})
+    upsert?: Array<EmployeeUpsertWithWhereUniqueWithoutNationalityInput>;
 
-  @Field(() => [EmployeeWhereUniqueInput], { nullable: true })
-  connect?: Array<EmployeeWhereUniqueInput>;
+    @Field(() => EmployeeCreateManyNationalityInputEnvelope, {nullable:true})
+    createMany?: EmployeeCreateManyNationalityInputEnvelope;
 
-  @Field(() => [EmployeeWhereUniqueInput], { nullable: true })
-  set?: Array<EmployeeWhereUniqueInput>;
+    @Field(() => [EmployeeWhereUniqueInput], {nullable:true})
+    connect?: Array<EmployeeWhereUniqueInput>;
 
-  @Field(() => [EmployeeWhereUniqueInput], { nullable: true })
-  disconnect?: Array<EmployeeWhereUniqueInput>;
+    @Field(() => [EmployeeWhereUniqueInput], {nullable:true})
+    set?: Array<EmployeeWhereUniqueInput>;
 
-  @Field(() => [EmployeeWhereUniqueInput], { nullable: true })
-  delete?: Array<EmployeeWhereUniqueInput>;
+    @Field(() => [EmployeeWhereUniqueInput], {nullable:true})
+    disconnect?: Array<EmployeeWhereUniqueInput>;
 
-  @Field(() => [EmployeeUpdateWithWhereUniqueWithoutNationalityInput], {
-    nullable: true,
-  })
-  update?: Array<EmployeeUpdateWithWhereUniqueWithoutNationalityInput>;
+    @Field(() => [EmployeeWhereUniqueInput], {nullable:true})
+    delete?: Array<EmployeeWhereUniqueInput>;
 
-  @Field(() => [EmployeeUpdateManyWithWhereWithoutNationalityInput], {
-    nullable: true,
-  })
-  updateMany?: Array<EmployeeUpdateManyWithWhereWithoutNationalityInput>;
+    @Field(() => [EmployeeUpdateWithWhereUniqueWithoutNationalityInput], {nullable:true})
+    update?: Array<EmployeeUpdateWithWhereUniqueWithoutNationalityInput>;
 
-  @Field(() => [EmployeeScalarWhereInput], { nullable: true })
-  deleteMany?: Array<EmployeeScalarWhereInput>;
+    @Field(() => [EmployeeUpdateManyWithWhereWithoutNationalityInput], {nullable:true})
+    updateMany?: Array<EmployeeUpdateManyWithWhereWithoutNationalityInput>;
+
+    @Field(() => [EmployeeScalarWhereInput], {nullable:true})
+    deleteMany?: Array<EmployeeScalarWhereInput>;
 }

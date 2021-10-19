@@ -7,19 +7,16 @@ import { EmployeeWhereUniqueInput } from './employee-where-unique.input';
 
 @InputType()
 export class EmployeeUncheckedCreateNestedManyWithoutEmploymentTypeInput {
-  @Field(() => [EmployeeCreateWithoutEmploymentTypeInput], { nullable: true })
-  create?: Array<EmployeeCreateWithoutEmploymentTypeInput>;
 
-  @Field(() => [EmployeeCreateOrConnectWithoutEmploymentTypeInput], {
-    nullable: true,
-  })
-  connectOrCreate?: Array<EmployeeCreateOrConnectWithoutEmploymentTypeInput>;
+    @Field(() => [EmployeeCreateWithoutEmploymentTypeInput], {nullable:true})
+    create?: Array<EmployeeCreateWithoutEmploymentTypeInput>;
 
-  @Field(() => EmployeeCreateManyEmploymentTypeInputEnvelope, {
-    nullable: true,
-  })
-  createMany?: EmployeeCreateManyEmploymentTypeInputEnvelope;
+    @Field(() => [EmployeeCreateOrConnectWithoutEmploymentTypeInput], {nullable:true})
+    connectOrCreate?: Array<EmployeeCreateOrConnectWithoutEmploymentTypeInput>;
 
-  @Field(() => [EmployeeWhereUniqueInput], { nullable: true })
-  connect?: Array<EmployeeWhereUniqueInput>;
+    @Field(() => EmployeeCreateManyEmploymentTypeInputEnvelope, {nullable:true})
+    createMany?: EmployeeCreateManyEmploymentTypeInputEnvelope;
+
+    @Field(() => [EmployeeWhereUniqueInput], {nullable:true})
+    connect?: Array<EmployeeWhereUniqueInput>;
 }

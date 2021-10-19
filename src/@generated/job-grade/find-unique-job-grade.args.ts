@@ -4,6 +4,7 @@ import { JobGradeWhereUniqueInput } from './job-grade-where-unique.input';
 
 @ArgsType()
 export class FindUniqueJobGradeArgs {
-  @Field(() => JobGradeWhereUniqueInput, { nullable: false })
-  where!: JobGradeWhereUniqueInput;
+
+    @Field(() => JobGradeWhereUniqueInput, {nullable:false})
+    where!: JobGradeWhereUniqueInput;
 }

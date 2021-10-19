@@ -6,16 +6,13 @@ import { PositionClassTypeWhereUniqueInput } from './position-class-type-where-u
 
 @InputType()
 export class PositionClassTypeCreateNestedOneWithoutPositionClassesInput {
-  @Field(() => PositionClassTypeCreateWithoutPositionClassesInput, {
-    nullable: true,
-  })
-  create?: PositionClassTypeCreateWithoutPositionClassesInput;
 
-  @Field(() => PositionClassTypeCreateOrConnectWithoutPositionClassesInput, {
-    nullable: true,
-  })
-  connectOrCreate?: PositionClassTypeCreateOrConnectWithoutPositionClassesInput;
+    @Field(() => PositionClassTypeCreateWithoutPositionClassesInput, {nullable:true})
+    create?: PositionClassTypeCreateWithoutPositionClassesInput;
 
-  @Field(() => PositionClassTypeWhereUniqueInput, { nullable: true })
-  connect?: PositionClassTypeWhereUniqueInput;
+    @Field(() => PositionClassTypeCreateOrConnectWithoutPositionClassesInput, {nullable:true})
+    connectOrCreate?: PositionClassTypeCreateOrConnectWithoutPositionClassesInput;
+
+    @Field(() => PositionClassTypeWhereUniqueInput, {nullable:true})
+    connect?: PositionClassTypeWhereUniqueInput;
 }

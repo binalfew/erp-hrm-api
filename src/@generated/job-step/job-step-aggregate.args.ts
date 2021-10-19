@@ -12,33 +12,34 @@ import { JobStepMaxAggregateInput } from './job-step-max-aggregate.input';
 
 @ArgsType()
 export class JobStepAggregateArgs {
-  @Field(() => JobStepWhereInput, { nullable: true })
-  where?: JobStepWhereInput;
 
-  @Field(() => [JobStepOrderByWithRelationInput], { nullable: true })
-  orderBy?: Array<JobStepOrderByWithRelationInput>;
+    @Field(() => JobStepWhereInput, {nullable:true})
+    where?: JobStepWhereInput;
 
-  @Field(() => JobStepWhereUniqueInput, { nullable: true })
-  cursor?: JobStepWhereUniqueInput;
+    @Field(() => [JobStepOrderByWithRelationInput], {nullable:true})
+    orderBy?: Array<JobStepOrderByWithRelationInput>;
 
-  @Field(() => Int, { nullable: true })
-  take?: number;
+    @Field(() => JobStepWhereUniqueInput, {nullable:true})
+    cursor?: JobStepWhereUniqueInput;
 
-  @Field(() => Int, { nullable: true })
-  skip?: number;
+    @Field(() => Int, {nullable:true})
+    take?: number;
 
-  @Field(() => JobStepCountAggregateInput, { nullable: true })
-  _count?: JobStepCountAggregateInput;
+    @Field(() => Int, {nullable:true})
+    skip?: number;
 
-  @Field(() => JobStepAvgAggregateInput, { nullable: true })
-  _avg?: JobStepAvgAggregateInput;
+    @Field(() => JobStepCountAggregateInput, {nullable:true})
+    _count?: JobStepCountAggregateInput;
 
-  @Field(() => JobStepSumAggregateInput, { nullable: true })
-  _sum?: JobStepSumAggregateInput;
+    @Field(() => JobStepAvgAggregateInput, {nullable:true})
+    _avg?: JobStepAvgAggregateInput;
 
-  @Field(() => JobStepMinAggregateInput, { nullable: true })
-  _min?: JobStepMinAggregateInput;
+    @Field(() => JobStepSumAggregateInput, {nullable:true})
+    _sum?: JobStepSumAggregateInput;
 
-  @Field(() => JobStepMaxAggregateInput, { nullable: true })
-  _max?: JobStepMaxAggregateInput;
+    @Field(() => JobStepMinAggregateInput, {nullable:true})
+    _min?: JobStepMinAggregateInput;
+
+    @Field(() => JobStepMaxAggregateInput, {nullable:true})
+    _max?: JobStepMaxAggregateInput;
 }

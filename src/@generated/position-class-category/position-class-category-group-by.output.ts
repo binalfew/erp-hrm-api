@@ -10,39 +10,40 @@ import { PositionClassCategoryMaxAggregate } from './position-class-category-max
 
 @ObjectType()
 export class PositionClassCategoryGroupBy {
-  @Field(() => Int, { nullable: false })
-  id!: number;
 
-  @Field(() => String, { nullable: false })
-  name!: string;
+    @Field(() => Int, {nullable:false})
+    id!: number;
 
-  @Field(() => String, { nullable: false })
-  code!: string;
+    @Field(() => String, {nullable:false})
+    name!: string;
 
-  @Field(() => GraphQLJSON, { nullable: true })
-  locales?: any;
+    @Field(() => String, {nullable:false})
+    code!: string;
 
-  @Field(() => Boolean, { nullable: false })
-  deleted!: boolean;
+    @Field(() => GraphQLJSON, {nullable:true})
+    locales?: any;
 
-  @Field(() => Date, { nullable: false })
-  createdAt!: Date | string;
+    @Field(() => Boolean, {nullable:false})
+    deleted!: boolean;
 
-  @Field(() => Date, { nullable: false })
-  updatedAt!: Date | string;
+    @Field(() => Date, {nullable:false})
+    createdAt!: Date | string;
 
-  @Field(() => PositionClassCategoryCountAggregate, { nullable: true })
-  _count?: PositionClassCategoryCountAggregate;
+    @Field(() => Date, {nullable:false})
+    updatedAt!: Date | string;
 
-  @Field(() => PositionClassCategoryAvgAggregate, { nullable: true })
-  _avg?: PositionClassCategoryAvgAggregate;
+    @Field(() => PositionClassCategoryCountAggregate, {nullable:true})
+    _count?: PositionClassCategoryCountAggregate;
 
-  @Field(() => PositionClassCategorySumAggregate, { nullable: true })
-  _sum?: PositionClassCategorySumAggregate;
+    @Field(() => PositionClassCategoryAvgAggregate, {nullable:true})
+    _avg?: PositionClassCategoryAvgAggregate;
 
-  @Field(() => PositionClassCategoryMinAggregate, { nullable: true })
-  _min?: PositionClassCategoryMinAggregate;
+    @Field(() => PositionClassCategorySumAggregate, {nullable:true})
+    _sum?: PositionClassCategorySumAggregate;
 
-  @Field(() => PositionClassCategoryMaxAggregate, { nullable: true })
-  _max?: PositionClassCategoryMaxAggregate;
+    @Field(() => PositionClassCategoryMinAggregate, {nullable:true})
+    _min?: PositionClassCategoryMinAggregate;
+
+    @Field(() => PositionClassCategoryMaxAggregate, {nullable:true})
+    _max?: PositionClassCategoryMaxAggregate;
 }

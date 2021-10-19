@@ -4,9 +4,10 @@ import { EmployeeCreateManyInput } from './employee-create-many.input';
 
 @ArgsType()
 export class CreateManyEmployeeArgs {
-  @Field(() => [EmployeeCreateManyInput], { nullable: false })
-  data!: Array<EmployeeCreateManyInput>;
 
-  @Field(() => Boolean, { nullable: true })
-  skipDuplicates?: boolean;
+    @Field(() => [EmployeeCreateManyInput], {nullable:false})
+    data!: Array<EmployeeCreateManyInput>;
+
+    @Field(() => Boolean, {nullable:true})
+    skipDuplicates?: boolean;
 }

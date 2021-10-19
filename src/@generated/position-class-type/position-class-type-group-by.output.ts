@@ -10,39 +10,40 @@ import { PositionClassTypeMaxAggregate } from './position-class-type-max-aggrega
 
 @ObjectType()
 export class PositionClassTypeGroupBy {
-  @Field(() => Int, { nullable: false })
-  id!: number;
 
-  @Field(() => String, { nullable: false })
-  name!: string;
+    @Field(() => Int, {nullable:false})
+    id!: number;
 
-  @Field(() => String, { nullable: false })
-  code!: string;
+    @Field(() => String, {nullable:false})
+    name!: string;
 
-  @Field(() => GraphQLJSON, { nullable: true })
-  locales?: any;
+    @Field(() => String, {nullable:false})
+    code!: string;
 
-  @Field(() => Boolean, { nullable: false })
-  deleted!: boolean;
+    @Field(() => GraphQLJSON, {nullable:true})
+    locales?: any;
 
-  @Field(() => Date, { nullable: false })
-  createdAt!: Date | string;
+    @Field(() => Boolean, {nullable:false})
+    deleted!: boolean;
 
-  @Field(() => Date, { nullable: false })
-  updatedAt!: Date | string;
+    @Field(() => Date, {nullable:false})
+    createdAt!: Date | string;
 
-  @Field(() => PositionClassTypeCountAggregate, { nullable: true })
-  _count?: PositionClassTypeCountAggregate;
+    @Field(() => Date, {nullable:false})
+    updatedAt!: Date | string;
 
-  @Field(() => PositionClassTypeAvgAggregate, { nullable: true })
-  _avg?: PositionClassTypeAvgAggregate;
+    @Field(() => PositionClassTypeCountAggregate, {nullable:true})
+    _count?: PositionClassTypeCountAggregate;
 
-  @Field(() => PositionClassTypeSumAggregate, { nullable: true })
-  _sum?: PositionClassTypeSumAggregate;
+    @Field(() => PositionClassTypeAvgAggregate, {nullable:true})
+    _avg?: PositionClassTypeAvgAggregate;
 
-  @Field(() => PositionClassTypeMinAggregate, { nullable: true })
-  _min?: PositionClassTypeMinAggregate;
+    @Field(() => PositionClassTypeSumAggregate, {nullable:true})
+    _sum?: PositionClassTypeSumAggregate;
 
-  @Field(() => PositionClassTypeMaxAggregate, { nullable: true })
-  _max?: PositionClassTypeMaxAggregate;
+    @Field(() => PositionClassTypeMinAggregate, {nullable:true})
+    _min?: PositionClassTypeMinAggregate;
+
+    @Field(() => PositionClassTypeMaxAggregate, {nullable:true})
+    _max?: PositionClassTypeMaxAggregate;
 }

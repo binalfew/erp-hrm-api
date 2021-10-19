@@ -8,26 +8,25 @@ import { JobStepUpdateWithoutSalaryScalesInput } from './job-step-update-without
 
 @InputType()
 export class JobStepUpdateOneWithoutSalaryScalesInput {
-  @Field(() => JobStepCreateWithoutSalaryScalesInput, { nullable: true })
-  create?: JobStepCreateWithoutSalaryScalesInput;
 
-  @Field(() => JobStepCreateOrConnectWithoutSalaryScalesInput, {
-    nullable: true,
-  })
-  connectOrCreate?: JobStepCreateOrConnectWithoutSalaryScalesInput;
+    @Field(() => JobStepCreateWithoutSalaryScalesInput, {nullable:true})
+    create?: JobStepCreateWithoutSalaryScalesInput;
 
-  @Field(() => JobStepUpsertWithoutSalaryScalesInput, { nullable: true })
-  upsert?: JobStepUpsertWithoutSalaryScalesInput;
+    @Field(() => JobStepCreateOrConnectWithoutSalaryScalesInput, {nullable:true})
+    connectOrCreate?: JobStepCreateOrConnectWithoutSalaryScalesInput;
 
-  @Field(() => JobStepWhereUniqueInput, { nullable: true })
-  connect?: JobStepWhereUniqueInput;
+    @Field(() => JobStepUpsertWithoutSalaryScalesInput, {nullable:true})
+    upsert?: JobStepUpsertWithoutSalaryScalesInput;
 
-  @Field(() => Boolean, { nullable: true })
-  disconnect?: boolean;
+    @Field(() => JobStepWhereUniqueInput, {nullable:true})
+    connect?: JobStepWhereUniqueInput;
 
-  @Field(() => Boolean, { nullable: true })
-  delete?: boolean;
+    @Field(() => Boolean, {nullable:true})
+    disconnect?: boolean;
 
-  @Field(() => JobStepUpdateWithoutSalaryScalesInput, { nullable: true })
-  update?: JobStepUpdateWithoutSalaryScalesInput;
+    @Field(() => Boolean, {nullable:true})
+    delete?: boolean;
+
+    @Field(() => JobStepUpdateWithoutSalaryScalesInput, {nullable:true})
+    update?: JobStepUpdateWithoutSalaryScalesInput;
 }

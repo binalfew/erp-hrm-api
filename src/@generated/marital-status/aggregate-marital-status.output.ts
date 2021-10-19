@@ -8,18 +8,19 @@ import { MaritalStatusMaxAggregate } from './marital-status-max-aggregate.output
 
 @ObjectType()
 export class AggregateMaritalStatus {
-  @Field(() => MaritalStatusCountAggregate, { nullable: true })
-  _count?: MaritalStatusCountAggregate;
 
-  @Field(() => MaritalStatusAvgAggregate, { nullable: true })
-  _avg?: MaritalStatusAvgAggregate;
+    @Field(() => MaritalStatusCountAggregate, {nullable:true})
+    _count?: MaritalStatusCountAggregate;
 
-  @Field(() => MaritalStatusSumAggregate, { nullable: true })
-  _sum?: MaritalStatusSumAggregate;
+    @Field(() => MaritalStatusAvgAggregate, {nullable:true})
+    _avg?: MaritalStatusAvgAggregate;
 
-  @Field(() => MaritalStatusMinAggregate, { nullable: true })
-  _min?: MaritalStatusMinAggregate;
+    @Field(() => MaritalStatusSumAggregate, {nullable:true})
+    _sum?: MaritalStatusSumAggregate;
 
-  @Field(() => MaritalStatusMaxAggregate, { nullable: true })
-  _max?: MaritalStatusMaxAggregate;
+    @Field(() => MaritalStatusMinAggregate, {nullable:true})
+    _min?: MaritalStatusMinAggregate;
+
+    @Field(() => MaritalStatusMaxAggregate, {nullable:true})
+    _max?: MaritalStatusMaxAggregate;
 }
