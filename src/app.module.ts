@@ -24,6 +24,8 @@ import { NationalitiesResolver } from './resolvers/nationalities.resolver';
 import { PositionClassCategoriesResolver } from './resolvers/position-class-categories.resolver';
 import { PositionClassTypesResolver } from './resolvers/position-class-types.resolver';
 import { PositionClassesResolver } from './resolvers/position-classes.resolver';
+import { PositionsResolver } from './resolvers/positions.resolver';
+import { SalaryScalesResolver } from './resolvers/salary-scales.resolver';
 
 @Module({
   imports: [
@@ -49,6 +51,8 @@ import { PositionClassesResolver } from './resolvers/position-classes.resolver';
     PositionClassTypesResolver,
     PositionClassCategoriesResolver,
     PositionClassesResolver,
+    PositionsResolver,
+    SalaryScalesResolver,
     AppConfigService,
     GqlConfigService,
     RedisConfigService,
