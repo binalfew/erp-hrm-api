@@ -15,6 +15,7 @@ import {
 } from './config/configuration';
 import { DataModule } from './data/data.module';
 import { GendersResolver } from './resolvers/genders.resolver';
+import { NationalitiesResolver } from './resolvers/nationalities.resolver';
 
 @Module({
   imports: [
@@ -31,6 +32,7 @@ import { GendersResolver } from './resolvers/genders.resolver';
   controllers: [],
   providers: [
     GendersResolver,
+    NationalitiesResolver,
     AppConfigService,
     GqlConfigService,
     RedisConfigService,

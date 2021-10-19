@@ -354,6 +354,39 @@ input EmployeeCreateManyGenderInputEnvelope {
   skipDuplicates: Boolean
 }
 
+input EmployeeCreateManyNationalityInput {
+  Phone: String!
+  countryOfBirth: String!
+  createdAt: Timestamp
+  dateOfBirth: Timestamp
+  deleted: Boolean
+  email: String!
+  emergencyContact: String!
+  emergencyPhone: String!
+  employmentDate: Timestamp
+  employmentNatureId: Int
+  employmentTypeId: Int
+  firstName: JSON!
+  genderId: Int
+  grandfatherName: JSON!
+  id: Int
+  idNumber: String!
+  lastName: JSON!
+  locales: JSON
+  maritalStatusId: Int
+  numberOfChildren: Int!
+  passportNumber: String!
+  placeOfBirth: String!
+  probationDate: Timestamp
+  retirementDate: Timestamp
+  updatedAt: Timestamp
+}
+
+input EmployeeCreateManyNationalityInputEnvelope {
+  data: [EmployeeCreateManyNationalityInput!]!
+  skipDuplicates: Boolean
+}
+
 input EmployeeCreateNestedManyWithoutGenderInput {
   connect: [EmployeeWhereUniqueInput!]
   connectOrCreate: [EmployeeCreateOrConnectWithoutGenderInput!]
@@ -361,8 +394,20 @@ input EmployeeCreateNestedManyWithoutGenderInput {
   createMany: EmployeeCreateManyGenderInputEnvelope
 }
 
+input EmployeeCreateNestedManyWithoutNationalityInput {
+  connect: [EmployeeWhereUniqueInput!]
+  connectOrCreate: [EmployeeCreateOrConnectWithoutNationalityInput!]
+  create: [EmployeeCreateWithoutNationalityInput!]
+  createMany: EmployeeCreateManyNationalityInputEnvelope
+}
+
 input EmployeeCreateOrConnectWithoutGenderInput {
   create: EmployeeCreateWithoutGenderInput!
+  where: EmployeeWhereUniqueInput!
+}
+
+input EmployeeCreateOrConnectWithoutNationalityInput {
+  create: EmployeeCreateWithoutNationalityInput!
   where: EmployeeWhereUniqueInput!
 }
 
@@ -385,6 +430,33 @@ input EmployeeCreateWithoutGenderInput {
   locales: JSON
   maritalStatus: MaritalStatusCreateNestedOneWithoutEmployeesInput
   nationality: NationalityCreateNestedOneWithoutEmployeesInput
+  numberOfChildren: Int!
+  passportNumber: String!
+  placeOfBirth: String!
+  probationDate: Timestamp
+  retirementDate: Timestamp
+  updatedAt: Timestamp
+}
+
+input EmployeeCreateWithoutNationalityInput {
+  Phone: String!
+  countryOfBirth: String!
+  createdAt: Timestamp
+  dateOfBirth: Timestamp
+  deleted: Boolean
+  email: String!
+  emergencyContact: String!
+  emergencyPhone: String!
+  employmentDate: Timestamp
+  employmentNature: EmploymentNatureCreateNestedOneWithoutEmployeesInput
+  employmentType: EmploymentTypeCreateNestedOneWithoutEmployeesInput
+  firstName: JSON!
+  gender: GenderCreateNestedOneWithoutEmployeesInput
+  grandfatherName: JSON!
+  idNumber: String!
+  lastName: JSON!
+  locales: JSON
+  maritalStatus: MaritalStatusCreateNestedOneWithoutEmployeesInput
   numberOfChildren: Int!
   passportNumber: String!
   placeOfBirth: String!
@@ -463,6 +535,11 @@ input EmployeeUpdateManyWithWhereWithoutGenderInput {
   where: EmployeeScalarWhereInput!
 }
 
+input EmployeeUpdateManyWithWhereWithoutNationalityInput {
+  data: EmployeeUpdateManyMutationInput!
+  where: EmployeeScalarWhereInput!
+}
+
 input EmployeeUpdateManyWithoutGenderInput {
   connect: [EmployeeWhereUniqueInput!]
   connectOrCreate: [EmployeeCreateOrConnectWithoutGenderInput!]
@@ -477,8 +554,27 @@ input EmployeeUpdateManyWithoutGenderInput {
   upsert: [EmployeeUpsertWithWhereUniqueWithoutGenderInput!]
 }
 
+input EmployeeUpdateManyWithoutNationalityInput {
+  connect: [EmployeeWhereUniqueInput!]
+  connectOrCreate: [EmployeeCreateOrConnectWithoutNationalityInput!]
+  create: [EmployeeCreateWithoutNationalityInput!]
+  createMany: EmployeeCreateManyNationalityInputEnvelope
+  delete: [EmployeeWhereUniqueInput!]
+  deleteMany: [EmployeeScalarWhereInput!]
+  disconnect: [EmployeeWhereUniqueInput!]
+  set: [EmployeeWhereUniqueInput!]
+  update: [EmployeeUpdateWithWhereUniqueWithoutNationalityInput!]
+  updateMany: [EmployeeUpdateManyWithWhereWithoutNationalityInput!]
+  upsert: [EmployeeUpsertWithWhereUniqueWithoutNationalityInput!]
+}
+
 input EmployeeUpdateWithWhereUniqueWithoutGenderInput {
   data: EmployeeUpdateWithoutGenderInput!
+  where: EmployeeWhereUniqueInput!
+}
+
+input EmployeeUpdateWithWhereUniqueWithoutNationalityInput {
+  data: EmployeeUpdateWithoutNationalityInput!
   where: EmployeeWhereUniqueInput!
 }
 
@@ -509,9 +605,42 @@ input EmployeeUpdateWithoutGenderInput {
   updatedAt: DateTimeFieldUpdateOperationsInput
 }
 
+input EmployeeUpdateWithoutNationalityInput {
+  Phone: StringFieldUpdateOperationsInput
+  countryOfBirth: StringFieldUpdateOperationsInput
+  createdAt: DateTimeFieldUpdateOperationsInput
+  dateOfBirth: DateTimeFieldUpdateOperationsInput
+  deleted: BoolFieldUpdateOperationsInput
+  email: StringFieldUpdateOperationsInput
+  emergencyContact: StringFieldUpdateOperationsInput
+  emergencyPhone: StringFieldUpdateOperationsInput
+  employmentDate: DateTimeFieldUpdateOperationsInput
+  employmentNature: EmploymentNatureUpdateOneWithoutEmployeesInput
+  employmentType: EmploymentTypeUpdateOneWithoutEmployeesInput
+  firstName: JSON
+  gender: GenderUpdateOneWithoutEmployeesInput
+  grandfatherName: JSON
+  idNumber: StringFieldUpdateOperationsInput
+  lastName: JSON
+  locales: JSON
+  maritalStatus: MaritalStatusUpdateOneWithoutEmployeesInput
+  numberOfChildren: IntFieldUpdateOperationsInput
+  passportNumber: StringFieldUpdateOperationsInput
+  placeOfBirth: StringFieldUpdateOperationsInput
+  probationDate: DateTimeFieldUpdateOperationsInput
+  retirementDate: DateTimeFieldUpdateOperationsInput
+  updatedAt: DateTimeFieldUpdateOperationsInput
+}
+
 input EmployeeUpsertWithWhereUniqueWithoutGenderInput {
   create: EmployeeCreateWithoutGenderInput!
   update: EmployeeUpdateWithoutGenderInput!
+  where: EmployeeWhereUniqueInput!
+}
+
+input EmployeeUpsertWithWhereUniqueWithoutNationalityInput {
+  create: EmployeeCreateWithoutNationalityInput!
+  update: EmployeeUpdateWithoutNationalityInput!
   where: EmployeeWhereUniqueInput!
 }
 
@@ -789,15 +918,36 @@ input GenderCreateInput {
   updatedAt: Timestamp
 }
 
+input GenderCreateNestedOneWithoutEmployeesInput {
+  connect: GenderWhereUniqueInput
+  connectOrCreate: GenderCreateOrConnectWithoutEmployeesInput
+  create: GenderCreateWithoutEmployeesInput
+}
+
 input GenderCreateNestedOneWithoutPositionClassesInput {
   connect: GenderWhereUniqueInput
   connectOrCreate: GenderCreateOrConnectWithoutPositionClassesInput
   create: GenderCreateWithoutPositionClassesInput
 }
 
+input GenderCreateOrConnectWithoutEmployeesInput {
+  create: GenderCreateWithoutEmployeesInput!
+  where: GenderWhereUniqueInput!
+}
+
 input GenderCreateOrConnectWithoutPositionClassesInput {
   create: GenderCreateWithoutPositionClassesInput!
   where: GenderWhereUniqueInput!
+}
+
+input GenderCreateWithoutEmployeesInput {
+  code: String!
+  createdAt: Timestamp
+  deleted: Boolean
+  locales: JSON
+  name: String!
+  positionClasses: PositionClassCreateNestedManyWithoutGenderInput
+  updatedAt: Timestamp
 }
 
 input GenderCreateWithoutPositionClassesInput {
@@ -875,6 +1025,16 @@ input GenderUpdateInput {
   updatedAt: DateTimeFieldUpdateOperationsInput
 }
 
+input GenderUpdateOneWithoutEmployeesInput {
+  connect: GenderWhereUniqueInput
+  connectOrCreate: GenderCreateOrConnectWithoutEmployeesInput
+  create: GenderCreateWithoutEmployeesInput
+  delete: Boolean
+  disconnect: Boolean
+  update: GenderUpdateWithoutEmployeesInput
+  upsert: GenderUpsertWithoutEmployeesInput
+}
+
 input GenderUpdateOneWithoutPositionClassesInput {
   connect: GenderWhereUniqueInput
   connectOrCreate: GenderCreateOrConnectWithoutPositionClassesInput
@@ -885,6 +1045,16 @@ input GenderUpdateOneWithoutPositionClassesInput {
   upsert: GenderUpsertWithoutPositionClassesInput
 }
 
+input GenderUpdateWithoutEmployeesInput {
+  code: StringFieldUpdateOperationsInput
+  createdAt: DateTimeFieldUpdateOperationsInput
+  deleted: BoolFieldUpdateOperationsInput
+  locales: JSON
+  name: StringFieldUpdateOperationsInput
+  positionClasses: PositionClassUpdateManyWithoutGenderInput
+  updatedAt: DateTimeFieldUpdateOperationsInput
+}
+
 input GenderUpdateWithoutPositionClassesInput {
   code: StringFieldUpdateOperationsInput
   createdAt: DateTimeFieldUpdateOperationsInput
@@ -893,6 +1063,11 @@ input GenderUpdateWithoutPositionClassesInput {
   locales: JSON
   name: StringFieldUpdateOperationsInput
   updatedAt: DateTimeFieldUpdateOperationsInput
+}
+
+input GenderUpsertWithoutEmployeesInput {
+  create: GenderCreateWithoutEmployeesInput!
+  update: GenderUpdateWithoutEmployeesInput!
 }
 
 input GenderUpsertWithoutPositionClassesInput {
@@ -1223,8 +1398,11 @@ input MaritalStatusWhereUniqueInput {
 
 type Mutation {
   createGender(data: GenderCreateInput!): Gender!
+  createNationality(data: NationalityCreateInput!): Nationality!
   deleteGender(where: GenderWhereUniqueInput!): Gender!
+  deleteNationality(where: NationalityWhereUniqueInput!): Nationality!
   updateGender(data: GenderUpdateInput!, where: GenderWhereUniqueInput!): Gender!
+  updateNationality(data: NationalityUpdateInput!, where: NationalityWhereUniqueInput!): Nationality!
 }
 
 type Nationality {
@@ -1239,8 +1417,33 @@ type Nationality {
   updatedAt: Timestamp!
 }
 
+type NationalityAvgAggregate {
+  id: Float
+}
+
 type NationalityCount {
   employees: Int!
+}
+
+type NationalityCountAggregate {
+  _all: Int!
+  code: Int!
+  createdAt: Int!
+  deleted: Int!
+  id: Int!
+  locales: Int!
+  name: Int!
+  updatedAt: Int!
+}
+
+input NationalityCreateInput {
+  code: String!
+  createdAt: Timestamp
+  deleted: Boolean
+  employees: EmployeeCreateNestedManyWithoutNationalityInput
+  locales: JSON
+  name: String!
+  updatedAt: Timestamp
 }
 
 input NationalityCreateNestedOneWithoutEmployeesInput {
@@ -1263,9 +1466,67 @@ input NationalityCreateWithoutEmployeesInput {
   updatedAt: Timestamp
 }
 
+type NationalityEdge {
+  cursor: String!
+  node: Nationality!
+}
+
+type NationalityMaxAggregate {
+  code: String
+  createdAt: Timestamp
+  deleted: Boolean
+  id: Int
+  name: String
+  updatedAt: Timestamp
+}
+
+type NationalityMinAggregate {
+  code: String
+  createdAt: Timestamp
+  deleted: Boolean
+  id: Int
+  name: String
+  updatedAt: Timestamp
+}
+
+input NationalityOrderByWithRelationInput {
+  code: SortOrder
+  createdAt: SortOrder
+  deleted: SortOrder
+  employees: EmployeeOrderByRelationAggregateInput
+  id: SortOrder
+  locales: SortOrder
+  name: SortOrder
+  updatedAt: SortOrder
+}
+
 input NationalityRelationFilter {
   is: NationalityWhereInput
   isNot: NationalityWhereInput
+}
+
+enum NationalityScalarFieldEnum {
+  code
+  createdAt
+  deleted
+  id
+  locales
+  name
+  updatedAt
+}
+
+type NationalitySumAggregate {
+  id: Int
+}
+
+input NationalityUpdateInput {
+  code: StringFieldUpdateOperationsInput
+  createdAt: DateTimeFieldUpdateOperationsInput
+  deleted: BoolFieldUpdateOperationsInput
+  employees: EmployeeUpdateManyWithoutNationalityInput
+  locales: JSON
+  name: StringFieldUpdateOperationsInput
+  updatedAt: DateTimeFieldUpdateOperationsInput
 }
 
 input NationalityUpdateOneWithoutEmployeesInput {
@@ -1409,6 +1670,15 @@ type PaginatedGender {
   endCursor: Int!
   hasNextPage: Boolean!
   nodes: [Gender!]!
+  startCursor: Int!
+  totalCount: Int!
+}
+
+type PaginatedNationality {
+  edges: [NationalityEdge!]!
+  endCursor: Int!
+  hasNextPage: Boolean!
+  nodes: [Nationality!]!
   startCursor: Int!
   totalCount: Int!
 }
@@ -2074,6 +2344,8 @@ input PositionWhereUniqueInput {
 type Query {
   gender(where: GenderWhereUniqueInput!): Gender
   genders(cursor: GenderWhereUniqueInput, distinct: [GenderScalarFieldEnum!], orderBy: [GenderOrderByWithRelationInput!], skip: Int, take: Int, where: GenderWhereInput): PaginatedGender!
+  nationalities(cursor: NationalityWhereUniqueInput, distinct: [NationalityScalarFieldEnum!], orderBy: [NationalityOrderByWithRelationInput!], skip: Int, take: Int, where: NationalityWhereInput): PaginatedNationality!
+  nationality(where: NationalityWhereUniqueInput!): Nationality
 }
 
 enum QueryMode {
