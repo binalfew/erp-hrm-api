@@ -23,6 +23,7 @@ import { MaritalStatusesResolver } from './resolvers/marital-statuses.resolver';
 import { NationalitiesResolver } from './resolvers/nationalities.resolver';
 import { PositionClassCategoriesResolver } from './resolvers/position-class-categories.resolver';
 import { PositionClassTypesResolver } from './resolvers/position-class-types.resolver';
+import { PositionClassesResolver } from './resolvers/position-classes.resolver';
 
 @Module({
   imports: [
@@ -47,6 +48,7 @@ import { PositionClassTypesResolver } from './resolvers/position-class-types.res
     JobStepsResolver,
     PositionClassTypesResolver,
     PositionClassCategoriesResolver,
+    PositionClassesResolver,
     AppConfigService,
     GqlConfigService,
     RedisConfigService,

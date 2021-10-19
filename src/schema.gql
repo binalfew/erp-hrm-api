@@ -2208,6 +2208,7 @@ type Mutation {
   createJobStep(data: JobStepCreateInput!): JobStep!
   createMaritalStatus(data: MaritalStatusCreateInput!): MaritalStatus!
   createNationality(data: NationalityCreateInput!): Nationality!
+  createPositionClass(data: PositionClassCreateInput!): PositionClass!
   createPositionClassCategory(data: PositionClassCategoryCreateInput!): PositionClassCategory!
   createPositionClassType(data: PositionClassTypeCreateInput!): PositionClassType!
   deleteEmploymentNature(where: EmploymentNatureWhereUniqueInput!): EmploymentNature!
@@ -2217,6 +2218,7 @@ type Mutation {
   deleteJobStep(where: JobStepWhereUniqueInput!): JobStep!
   deleteMaritalStatus(where: MaritalStatusWhereUniqueInput!): MaritalStatus!
   deleteNationality(where: NationalityWhereUniqueInput!): Nationality!
+  deletePositionClass(where: PositionClassWhereUniqueInput!): PositionClass!
   deletePositionClassCategory(where: PositionClassCategoryWhereUniqueInput!): PositionClassCategory!
   deletePositionClassType(where: PositionClassTypeWhereUniqueInput!): PositionClassType!
   updateEmploymentNature(data: EmploymentNatureUpdateInput!, where: EmploymentNatureWhereUniqueInput!): EmploymentNature!
@@ -2226,6 +2228,7 @@ type Mutation {
   updateJobStep(data: JobStepUpdateInput!, where: JobStepWhereUniqueInput!): JobStep!
   updateMaritalStatus(data: MaritalStatusUpdateInput!, where: MaritalStatusWhereUniqueInput!): MaritalStatus!
   updateNationality(data: NationalityUpdateInput!, where: NationalityWhereUniqueInput!): Nationality!
+  updatePositionClass(data: PositionClassUpdateInput!, where: PositionClassWhereUniqueInput!): PositionClass!
   updatePositionClassCategory(data: PositionClassCategoryUpdateInput!, where: PositionClassCategoryWhereUniqueInput!): PositionClassCategory!
   updatePositionClassType(data: PositionClassTypeUpdateInput!, where: PositionClassTypeWhereUniqueInput!): PositionClassType!
 }
@@ -2553,6 +2556,15 @@ type PaginatedNationality {
   totalCount: Int!
 }
 
+type PaginatedPositionClass {
+  edges: [PositionClassEdge!]!
+  endCursor: Int!
+  hasNextPage: Boolean!
+  nodes: [PositionClass!]!
+  startCursor: Int!
+  totalCount: Int!
+}
+
 type PaginatedPositionClassCategory {
   edges: [PositionClassCategoryEdge!]!
   endCursor: Int!
@@ -2607,6 +2619,18 @@ type PositionClass {
   salaryScaleId: Int
   specification: String
   updatedAt: Timestamp!
+}
+
+type PositionClassAvgAggregate {
+  genderId: Float
+  id: Float
+  maximumAge: Float
+  minimumAge: Float
+  monthlyWorkingHours: Decimal
+  positionClassCategoryId: Float
+  positionClassTypeId: Float
+  salary: Decimal
+  salaryScaleId: Float
 }
 
 type PositionClassCategory {
@@ -2779,6 +2803,45 @@ input PositionClassCategoryWhereUniqueInput {
 
 type PositionClassCount {
   positions: Int!
+}
+
+type PositionClassCountAggregate {
+  _all: Int!
+  code: Int!
+  createdAt: Int!
+  deleted: Int!
+  genderId: Int!
+  id: Int!
+  locales: Int!
+  maximumAge: Int!
+  minimumAge: Int!
+  monthlyWorkingHours: Int!
+  name: Int!
+  positionClassCategoryId: Int!
+  positionClassTypeId: Int!
+  salary: Int!
+  salaryScaleId: Int!
+  specification: Int!
+  updatedAt: Int!
+}
+
+input PositionClassCreateInput {
+  code: String!
+  createdAt: Timestamp
+  deleted: Boolean
+  gender: GenderCreateNestedOneWithoutPositionClassesInput
+  locales: JSON
+  maximumAge: Int
+  minimumAge: Int
+  monthlyWorkingHours: Decimal
+  name: String!
+  positionClassCategory: PositionClassCategoryCreateNestedOneWithoutPositionClassesInput
+  positionClassType: PositionClassTypeCreateNestedOneWithoutPositionClassesInput
+  positions: PositionCreateNestedManyWithoutPositionClassInput
+  salary: Decimal
+  salaryScale: SalaryScaleCreateNestedOneWithoutPositionClassesInput
+  specification: String
+  updatedAt: Timestamp
 }
 
 input PositionClassCreateManyGenderInput {
@@ -3022,19 +3085,103 @@ input PositionClassCreateWithoutSalaryScaleInput {
   updatedAt: Timestamp
 }
 
+type PositionClassEdge {
+  cursor: String!
+  node: PositionClass!
+}
+
 input PositionClassListRelationFilter {
   every: PositionClassWhereInput
   none: PositionClassWhereInput
   some: PositionClassWhereInput
 }
 
+type PositionClassMaxAggregate {
+  code: String
+  createdAt: Timestamp
+  deleted: Boolean
+  genderId: Int
+  id: Int
+  maximumAge: Int
+  minimumAge: Int
+  monthlyWorkingHours: Decimal
+  name: String
+  positionClassCategoryId: Int
+  positionClassTypeId: Int
+  salary: Decimal
+  salaryScaleId: Int
+  specification: String
+  updatedAt: Timestamp
+}
+
+type PositionClassMinAggregate {
+  code: String
+  createdAt: Timestamp
+  deleted: Boolean
+  genderId: Int
+  id: Int
+  maximumAge: Int
+  minimumAge: Int
+  monthlyWorkingHours: Decimal
+  name: String
+  positionClassCategoryId: Int
+  positionClassTypeId: Int
+  salary: Decimal
+  salaryScaleId: Int
+  specification: String
+  updatedAt: Timestamp
+}
+
 input PositionClassOrderByRelationAggregateInput {
   _count: SortOrder
+}
+
+input PositionClassOrderByWithRelationInput {
+  code: SortOrder
+  createdAt: SortOrder
+  deleted: SortOrder
+  gender: GenderOrderByWithRelationInput
+  genderId: SortOrder
+  id: SortOrder
+  locales: SortOrder
+  maximumAge: SortOrder
+  minimumAge: SortOrder
+  monthlyWorkingHours: SortOrder
+  name: SortOrder
+  positionClassCategory: PositionClassCategoryOrderByWithRelationInput
+  positionClassCategoryId: SortOrder
+  positionClassType: PositionClassTypeOrderByWithRelationInput
+  positionClassTypeId: SortOrder
+  positions: PositionOrderByRelationAggregateInput
+  salary: SortOrder
+  salaryScale: SalaryScaleOrderByWithRelationInput
+  salaryScaleId: SortOrder
+  specification: SortOrder
+  updatedAt: SortOrder
 }
 
 input PositionClassRelationFilter {
   is: PositionClassWhereInput
   isNot: PositionClassWhereInput
+}
+
+enum PositionClassScalarFieldEnum {
+  code
+  createdAt
+  deleted
+  genderId
+  id
+  locales
+  maximumAge
+  minimumAge
+  monthlyWorkingHours
+  name
+  positionClassCategoryId
+  positionClassTypeId
+  salary
+  salaryScaleId
+  specification
+  updatedAt
 }
 
 input PositionClassScalarWhereInput {
@@ -3057,6 +3204,18 @@ input PositionClassScalarWhereInput {
   salaryScaleId: IntNullableFilter
   specification: StringNullableFilter
   updatedAt: DateTimeFilter
+}
+
+type PositionClassSumAggregate {
+  genderId: Int
+  id: Int
+  maximumAge: Int
+  minimumAge: Int
+  monthlyWorkingHours: Decimal
+  positionClassCategoryId: Int
+  positionClassTypeId: Int
+  salary: Decimal
+  salaryScaleId: Int
 }
 
 type PositionClassType {
@@ -3225,6 +3384,25 @@ input PositionClassTypeWhereUniqueInput {
   code: String
   id: Int
   name: String
+}
+
+input PositionClassUpdateInput {
+  code: StringFieldUpdateOperationsInput
+  createdAt: DateTimeFieldUpdateOperationsInput
+  deleted: BoolFieldUpdateOperationsInput
+  gender: GenderUpdateOneWithoutPositionClassesInput
+  locales: JSON
+  maximumAge: IntFieldUpdateOperationsInput
+  minimumAge: IntFieldUpdateOperationsInput
+  monthlyWorkingHours: DecimalFieldUpdateOperationsInput
+  name: StringFieldUpdateOperationsInput
+  positionClassCategory: PositionClassCategoryUpdateOneWithoutPositionClassesInput
+  positionClassType: PositionClassTypeUpdateOneWithoutPositionClassesInput
+  positions: PositionUpdateManyWithoutPositionClassInput
+  salary: DecimalFieldUpdateOperationsInput
+  salaryScale: SalaryScaleUpdateOneWithoutPositionClassesInput
+  specification: NullableStringFieldUpdateOperationsInput
+  updatedAt: DateTimeFieldUpdateOperationsInput
 }
 
 input PositionClassUpdateManyMutationInput {
@@ -3577,6 +3755,10 @@ input PositionListRelationFilter {
   some: PositionWhereInput
 }
 
+input PositionOrderByRelationAggregateInput {
+  _count: SortOrder
+}
+
 input PositionScalarWhereInput {
   AND: [PositionScalarWhereInput!]
   NOT: [PositionScalarWhereInput!]
@@ -3713,10 +3895,12 @@ type Query {
   maritalStatuses(cursor: MaritalStatusWhereUniqueInput, distinct: [MaritalStatusScalarFieldEnum!], orderBy: [MaritalStatusOrderByWithRelationInput!], skip: Int, take: Int, where: MaritalStatusWhereInput): PaginatedMaritalStatus!
   nationalities(cursor: NationalityWhereUniqueInput, distinct: [NationalityScalarFieldEnum!], orderBy: [NationalityOrderByWithRelationInput!], skip: Int, take: Int, where: NationalityWhereInput): PaginatedNationality!
   nationality(where: NationalityWhereUniqueInput!): Nationality
+  positionClass(where: PositionClassWhereUniqueInput!): PositionClass
   positionClassCategories(cursor: PositionClassCategoryWhereUniqueInput, distinct: [PositionClassCategoryScalarFieldEnum!], orderBy: [PositionClassCategoryOrderByWithRelationInput!], skip: Int, take: Int, where: PositionClassCategoryWhereInput): PaginatedPositionClassCategory!
   positionClassCategory(where: PositionClassCategoryWhereUniqueInput!): PositionClassCategory
   positionClassType(where: PositionClassTypeWhereUniqueInput!): PositionClassType
   positionClassTypes(cursor: PositionClassTypeWhereUniqueInput, distinct: [PositionClassTypeScalarFieldEnum!], orderBy: [PositionClassTypeOrderByWithRelationInput!], skip: Int, take: Int, where: PositionClassTypeWhereInput): PaginatedPositionClassType!
+  positionClasses(cursor: PositionClassWhereUniqueInput, distinct: [PositionClassScalarFieldEnum!], orderBy: [PositionClassOrderByWithRelationInput!], skip: Int, take: Int, where: PositionClassWhereInput): PaginatedPositionClass!
 }
 
 enum QueryMode {
@@ -3840,6 +4024,19 @@ input SalaryScaleListRelationFilter {
 
 input SalaryScaleOrderByRelationAggregateInput {
   _count: SortOrder
+}
+
+input SalaryScaleOrderByWithRelationInput {
+  createdAt: SortOrder
+  deleted: SortOrder
+  id: SortOrder
+  jobGrade: JobGradeOrderByWithRelationInput
+  jobGradeId: SortOrder
+  jobStep: JobStepOrderByWithRelationInput
+  jobStepId: SortOrder
+  positionClasses: PositionClassOrderByRelationAggregateInput
+  salary: SortOrder
+  updatedAt: SortOrder
 }
 
 input SalaryScaleRelationFilter {
