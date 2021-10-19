@@ -1698,8 +1698,33 @@ type JobGrade {
   updatedAt: Timestamp!
 }
 
+type JobGradeAvgAggregate {
+  id: Float
+}
+
 type JobGradeCount {
   salaryScales: Int!
+}
+
+type JobGradeCountAggregate {
+  _all: Int!
+  code: Int!
+  createdAt: Int!
+  deleted: Int!
+  id: Int!
+  locales: Int!
+  name: Int!
+  updatedAt: Int!
+}
+
+input JobGradeCreateInput {
+  code: String!
+  createdAt: Timestamp
+  deleted: Boolean
+  locales: JSON
+  name: String!
+  salaryScales: SalaryScaleCreateNestedManyWithoutJobGradeInput
+  updatedAt: Timestamp
 }
 
 input JobGradeCreateNestedOneWithoutSalaryScalesInput {
@@ -1722,9 +1747,67 @@ input JobGradeCreateWithoutSalaryScalesInput {
   updatedAt: Timestamp
 }
 
+type JobGradeEdge {
+  cursor: String!
+  node: JobGrade!
+}
+
+type JobGradeMaxAggregate {
+  code: String
+  createdAt: Timestamp
+  deleted: Boolean
+  id: Int
+  name: String
+  updatedAt: Timestamp
+}
+
+type JobGradeMinAggregate {
+  code: String
+  createdAt: Timestamp
+  deleted: Boolean
+  id: Int
+  name: String
+  updatedAt: Timestamp
+}
+
+input JobGradeOrderByWithRelationInput {
+  code: SortOrder
+  createdAt: SortOrder
+  deleted: SortOrder
+  id: SortOrder
+  locales: SortOrder
+  name: SortOrder
+  salaryScales: SalaryScaleOrderByRelationAggregateInput
+  updatedAt: SortOrder
+}
+
 input JobGradeRelationFilter {
   is: JobGradeWhereInput
   isNot: JobGradeWhereInput
+}
+
+enum JobGradeScalarFieldEnum {
+  code
+  createdAt
+  deleted
+  id
+  locales
+  name
+  updatedAt
+}
+
+type JobGradeSumAggregate {
+  id: Int
+}
+
+input JobGradeUpdateInput {
+  code: StringFieldUpdateOperationsInput
+  createdAt: DateTimeFieldUpdateOperationsInput
+  deleted: BoolFieldUpdateOperationsInput
+  locales: JSON
+  name: StringFieldUpdateOperationsInput
+  salaryScales: SalaryScaleUpdateManyWithoutJobGradeInput
+  updatedAt: DateTimeFieldUpdateOperationsInput
 }
 
 input JobGradeUpdateOneWithoutSalaryScalesInput {
@@ -2038,16 +2121,19 @@ type Mutation {
   createEmploymentNature(data: EmploymentNatureCreateInput!): EmploymentNature!
   createEmploymentType(data: EmploymentTypeCreateInput!): EmploymentType!
   createGender(data: GenderCreateInput!): Gender!
+  createJobGrade(data: JobGradeCreateInput!): JobGrade!
   createMaritalStatus(data: MaritalStatusCreateInput!): MaritalStatus!
   createNationality(data: NationalityCreateInput!): Nationality!
   deleteEmploymentNature(where: EmploymentNatureWhereUniqueInput!): EmploymentNature!
   deleteEmploymentType(where: EmploymentTypeWhereUniqueInput!): EmploymentType!
   deleteGender(where: GenderWhereUniqueInput!): Gender!
+  deleteJobGrade(where: JobGradeWhereUniqueInput!): JobGrade!
   deleteMaritalStatus(where: MaritalStatusWhereUniqueInput!): MaritalStatus!
   deleteNationality(where: NationalityWhereUniqueInput!): Nationality!
   updateEmploymentNature(data: EmploymentNatureUpdateInput!, where: EmploymentNatureWhereUniqueInput!): EmploymentNature!
   updateEmploymentType(data: EmploymentTypeUpdateInput!, where: EmploymentTypeWhereUniqueInput!): EmploymentType!
   updateGender(data: GenderUpdateInput!, where: GenderWhereUniqueInput!): Gender!
+  updateJobGrade(data: JobGradeUpdateInput!, where: JobGradeWhereUniqueInput!): JobGrade!
   updateMaritalStatus(data: MaritalStatusUpdateInput!, where: MaritalStatusWhereUniqueInput!): MaritalStatus!
   updateNationality(data: NationalityUpdateInput!, where: NationalityWhereUniqueInput!): Nationality!
 }
@@ -2339,6 +2425,15 @@ type PaginatedGender {
   totalCount: Int!
 }
 
+type PaginatedJobGrade {
+  edges: [JobGradeEdge!]!
+  endCursor: Int!
+  hasNextPage: Boolean!
+  nodes: [JobGrade!]!
+  startCursor: Int!
+  totalCount: Int!
+}
+
 type PaginatedMaritalStatus {
   edges: [MaritalStatusEdge!]!
   endCursor: Int!
@@ -2507,11 +2602,41 @@ input PositionClassCreateManyGenderInputEnvelope {
   skipDuplicates: Boolean
 }
 
+input PositionClassCreateManySalaryScaleInput {
+  code: String!
+  createdAt: Timestamp
+  deleted: Boolean
+  genderId: Int
+  id: Int
+  locales: JSON
+  maximumAge: Int
+  minimumAge: Int
+  monthlyWorkingHours: Decimal
+  name: String!
+  positionClassCategoryId: Int
+  positionClassTypeId: Int
+  salary: Decimal
+  specification: String
+  updatedAt: Timestamp
+}
+
+input PositionClassCreateManySalaryScaleInputEnvelope {
+  data: [PositionClassCreateManySalaryScaleInput!]!
+  skipDuplicates: Boolean
+}
+
 input PositionClassCreateNestedManyWithoutGenderInput {
   connect: [PositionClassWhereUniqueInput!]
   connectOrCreate: [PositionClassCreateOrConnectWithoutGenderInput!]
   create: [PositionClassCreateWithoutGenderInput!]
   createMany: PositionClassCreateManyGenderInputEnvelope
+}
+
+input PositionClassCreateNestedManyWithoutSalaryScaleInput {
+  connect: [PositionClassWhereUniqueInput!]
+  connectOrCreate: [PositionClassCreateOrConnectWithoutSalaryScaleInput!]
+  create: [PositionClassCreateWithoutSalaryScaleInput!]
+  createMany: PositionClassCreateManySalaryScaleInputEnvelope
 }
 
 input PositionClassCreateNestedOneWithoutPositionsInput {
@@ -2527,6 +2652,11 @@ input PositionClassCreateOrConnectWithoutGenderInput {
 
 input PositionClassCreateOrConnectWithoutPositionsInput {
   create: PositionClassCreateWithoutPositionsInput!
+  where: PositionClassWhereUniqueInput!
+}
+
+input PositionClassCreateOrConnectWithoutSalaryScaleInput {
+  create: PositionClassCreateWithoutSalaryScaleInput!
   where: PositionClassWhereUniqueInput!
 }
 
@@ -2562,6 +2692,24 @@ input PositionClassCreateWithoutPositionsInput {
   positionClassType: PositionClassTypeCreateNestedOneWithoutPositionClassesInput
   salary: Decimal
   salaryScale: SalaryScaleCreateNestedOneWithoutPositionClassesInput
+  specification: String
+  updatedAt: Timestamp
+}
+
+input PositionClassCreateWithoutSalaryScaleInput {
+  code: String!
+  createdAt: Timestamp
+  deleted: Boolean
+  gender: GenderCreateNestedOneWithoutPositionClassesInput
+  locales: JSON
+  maximumAge: Int
+  minimumAge: Int
+  monthlyWorkingHours: Decimal
+  name: String!
+  positionClassCategory: PositionClassCategoryCreateNestedOneWithoutPositionClassesInput
+  positionClassType: PositionClassTypeCreateNestedOneWithoutPositionClassesInput
+  positions: PositionCreateNestedManyWithoutPositionClassInput
+  salary: Decimal
   specification: String
   updatedAt: Timestamp
 }
@@ -2707,6 +2855,11 @@ input PositionClassUpdateManyWithWhereWithoutGenderInput {
   where: PositionClassScalarWhereInput!
 }
 
+input PositionClassUpdateManyWithWhereWithoutSalaryScaleInput {
+  data: PositionClassUpdateManyMutationInput!
+  where: PositionClassScalarWhereInput!
+}
+
 input PositionClassUpdateManyWithoutGenderInput {
   connect: [PositionClassWhereUniqueInput!]
   connectOrCreate: [PositionClassCreateOrConnectWithoutGenderInput!]
@@ -2721,6 +2874,20 @@ input PositionClassUpdateManyWithoutGenderInput {
   upsert: [PositionClassUpsertWithWhereUniqueWithoutGenderInput!]
 }
 
+input PositionClassUpdateManyWithoutSalaryScaleInput {
+  connect: [PositionClassWhereUniqueInput!]
+  connectOrCreate: [PositionClassCreateOrConnectWithoutSalaryScaleInput!]
+  create: [PositionClassCreateWithoutSalaryScaleInput!]
+  createMany: PositionClassCreateManySalaryScaleInputEnvelope
+  delete: [PositionClassWhereUniqueInput!]
+  deleteMany: [PositionClassScalarWhereInput!]
+  disconnect: [PositionClassWhereUniqueInput!]
+  set: [PositionClassWhereUniqueInput!]
+  update: [PositionClassUpdateWithWhereUniqueWithoutSalaryScaleInput!]
+  updateMany: [PositionClassUpdateManyWithWhereWithoutSalaryScaleInput!]
+  upsert: [PositionClassUpsertWithWhereUniqueWithoutSalaryScaleInput!]
+}
+
 input PositionClassUpdateOneWithoutPositionsInput {
   connect: PositionClassWhereUniqueInput
   connectOrCreate: PositionClassCreateOrConnectWithoutPositionsInput
@@ -2733,6 +2900,11 @@ input PositionClassUpdateOneWithoutPositionsInput {
 
 input PositionClassUpdateWithWhereUniqueWithoutGenderInput {
   data: PositionClassUpdateWithoutGenderInput!
+  where: PositionClassWhereUniqueInput!
+}
+
+input PositionClassUpdateWithWhereUniqueWithoutSalaryScaleInput {
+  data: PositionClassUpdateWithoutSalaryScaleInput!
   where: PositionClassWhereUniqueInput!
 }
 
@@ -2772,9 +2944,33 @@ input PositionClassUpdateWithoutPositionsInput {
   updatedAt: DateTimeFieldUpdateOperationsInput
 }
 
+input PositionClassUpdateWithoutSalaryScaleInput {
+  code: StringFieldUpdateOperationsInput
+  createdAt: DateTimeFieldUpdateOperationsInput
+  deleted: BoolFieldUpdateOperationsInput
+  gender: GenderUpdateOneWithoutPositionClassesInput
+  locales: JSON
+  maximumAge: IntFieldUpdateOperationsInput
+  minimumAge: IntFieldUpdateOperationsInput
+  monthlyWorkingHours: DecimalFieldUpdateOperationsInput
+  name: StringFieldUpdateOperationsInput
+  positionClassCategory: PositionClassCategoryUpdateOneWithoutPositionClassesInput
+  positionClassType: PositionClassTypeUpdateOneWithoutPositionClassesInput
+  positions: PositionUpdateManyWithoutPositionClassInput
+  salary: DecimalFieldUpdateOperationsInput
+  specification: NullableStringFieldUpdateOperationsInput
+  updatedAt: DateTimeFieldUpdateOperationsInput
+}
+
 input PositionClassUpsertWithWhereUniqueWithoutGenderInput {
   create: PositionClassCreateWithoutGenderInput!
   update: PositionClassUpdateWithoutGenderInput!
+  where: PositionClassWhereUniqueInput!
+}
+
+input PositionClassUpsertWithWhereUniqueWithoutSalaryScaleInput {
+  create: PositionClassCreateWithoutSalaryScaleInput!
+  update: PositionClassUpdateWithoutSalaryScaleInput!
   where: PositionClassWhereUniqueInput!
 }
 
@@ -3022,6 +3218,8 @@ type Query {
   employmentTypes(cursor: EmploymentTypeWhereUniqueInput, distinct: [EmploymentTypeScalarFieldEnum!], orderBy: [EmploymentTypeOrderByWithRelationInput!], skip: Int, take: Int, where: EmploymentTypeWhereInput): PaginatedEmploymentType!
   gender(where: GenderWhereUniqueInput!): Gender
   genders(cursor: GenderWhereUniqueInput, distinct: [GenderScalarFieldEnum!], orderBy: [GenderOrderByWithRelationInput!], skip: Int, take: Int, where: GenderWhereInput): PaginatedGender!
+  jobGrade(where: JobGradeWhereUniqueInput!): JobGrade
+  jobGrades(cursor: JobGradeWhereUniqueInput, distinct: [JobGradeScalarFieldEnum!], orderBy: [JobGradeOrderByWithRelationInput!], skip: Int, take: Int, where: JobGradeWhereInput): PaginatedJobGrade!
   maritalStatus(where: MaritalStatusWhereUniqueInput!): MaritalStatus
   maritalStatuses(cursor: MaritalStatusWhereUniqueInput, distinct: [MaritalStatusScalarFieldEnum!], orderBy: [MaritalStatusOrderByWithRelationInput!], skip: Int, take: Int, where: MaritalStatusWhereInput): PaginatedMaritalStatus!
   nationalities(cursor: NationalityWhereUniqueInput, distinct: [NationalityScalarFieldEnum!], orderBy: [NationalityOrderByWithRelationInput!], skip: Int, take: Int, where: NationalityWhereInput): PaginatedNationality!
@@ -3051,15 +3249,50 @@ type SalaryScaleCount {
   positionClasses: Int!
 }
 
+input SalaryScaleCreateManyJobGradeInput {
+  createdAt: Timestamp
+  deleted: Boolean
+  id: Int
+  jobStepId: Int
+  salary: Float
+  updatedAt: Timestamp
+}
+
+input SalaryScaleCreateManyJobGradeInputEnvelope {
+  data: [SalaryScaleCreateManyJobGradeInput!]!
+  skipDuplicates: Boolean
+}
+
+input SalaryScaleCreateNestedManyWithoutJobGradeInput {
+  connect: [SalaryScaleWhereUniqueInput!]
+  connectOrCreate: [SalaryScaleCreateOrConnectWithoutJobGradeInput!]
+  create: [SalaryScaleCreateWithoutJobGradeInput!]
+  createMany: SalaryScaleCreateManyJobGradeInputEnvelope
+}
+
 input SalaryScaleCreateNestedOneWithoutPositionClassesInput {
   connect: SalaryScaleWhereUniqueInput
   connectOrCreate: SalaryScaleCreateOrConnectWithoutPositionClassesInput
   create: SalaryScaleCreateWithoutPositionClassesInput
 }
 
+input SalaryScaleCreateOrConnectWithoutJobGradeInput {
+  create: SalaryScaleCreateWithoutJobGradeInput!
+  where: SalaryScaleWhereUniqueInput!
+}
+
 input SalaryScaleCreateOrConnectWithoutPositionClassesInput {
   create: SalaryScaleCreateWithoutPositionClassesInput!
   where: SalaryScaleWhereUniqueInput!
+}
+
+input SalaryScaleCreateWithoutJobGradeInput {
+  createdAt: Timestamp
+  deleted: Boolean
+  jobStep: JobStepCreateNestedOneWithoutSalaryScalesInput
+  positionClasses: PositionClassCreateNestedManyWithoutSalaryScaleInput
+  salary: Float
+  updatedAt: Timestamp
 }
 
 input SalaryScaleCreateWithoutPositionClassesInput {
@@ -3077,9 +3310,52 @@ input SalaryScaleListRelationFilter {
   some: SalaryScaleWhereInput
 }
 
+input SalaryScaleOrderByRelationAggregateInput {
+  _count: SortOrder
+}
+
 input SalaryScaleRelationFilter {
   is: SalaryScaleWhereInput
   isNot: SalaryScaleWhereInput
+}
+
+input SalaryScaleScalarWhereInput {
+  AND: [SalaryScaleScalarWhereInput!]
+  NOT: [SalaryScaleScalarWhereInput!]
+  OR: [SalaryScaleScalarWhereInput!]
+  createdAt: DateTimeFilter
+  deleted: BoolFilter
+  id: IntFilter
+  jobGradeId: IntNullableFilter
+  jobStepId: IntNullableFilter
+  salary: FloatFilter
+  updatedAt: DateTimeFilter
+}
+
+input SalaryScaleUpdateManyMutationInput {
+  createdAt: DateTimeFieldUpdateOperationsInput
+  deleted: BoolFieldUpdateOperationsInput
+  salary: FloatFieldUpdateOperationsInput
+  updatedAt: DateTimeFieldUpdateOperationsInput
+}
+
+input SalaryScaleUpdateManyWithWhereWithoutJobGradeInput {
+  data: SalaryScaleUpdateManyMutationInput!
+  where: SalaryScaleScalarWhereInput!
+}
+
+input SalaryScaleUpdateManyWithoutJobGradeInput {
+  connect: [SalaryScaleWhereUniqueInput!]
+  connectOrCreate: [SalaryScaleCreateOrConnectWithoutJobGradeInput!]
+  create: [SalaryScaleCreateWithoutJobGradeInput!]
+  createMany: SalaryScaleCreateManyJobGradeInputEnvelope
+  delete: [SalaryScaleWhereUniqueInput!]
+  deleteMany: [SalaryScaleScalarWhereInput!]
+  disconnect: [SalaryScaleWhereUniqueInput!]
+  set: [SalaryScaleWhereUniqueInput!]
+  update: [SalaryScaleUpdateWithWhereUniqueWithoutJobGradeInput!]
+  updateMany: [SalaryScaleUpdateManyWithWhereWithoutJobGradeInput!]
+  upsert: [SalaryScaleUpsertWithWhereUniqueWithoutJobGradeInput!]
 }
 
 input SalaryScaleUpdateOneWithoutPositionClassesInput {
@@ -3092,6 +3368,20 @@ input SalaryScaleUpdateOneWithoutPositionClassesInput {
   upsert: SalaryScaleUpsertWithoutPositionClassesInput
 }
 
+input SalaryScaleUpdateWithWhereUniqueWithoutJobGradeInput {
+  data: SalaryScaleUpdateWithoutJobGradeInput!
+  where: SalaryScaleWhereUniqueInput!
+}
+
+input SalaryScaleUpdateWithoutJobGradeInput {
+  createdAt: DateTimeFieldUpdateOperationsInput
+  deleted: BoolFieldUpdateOperationsInput
+  jobStep: JobStepUpdateOneWithoutSalaryScalesInput
+  positionClasses: PositionClassUpdateManyWithoutSalaryScaleInput
+  salary: FloatFieldUpdateOperationsInput
+  updatedAt: DateTimeFieldUpdateOperationsInput
+}
+
 input SalaryScaleUpdateWithoutPositionClassesInput {
   createdAt: DateTimeFieldUpdateOperationsInput
   deleted: BoolFieldUpdateOperationsInput
@@ -3099,6 +3389,12 @@ input SalaryScaleUpdateWithoutPositionClassesInput {
   jobStep: JobStepUpdateOneWithoutSalaryScalesInput
   salary: FloatFieldUpdateOperationsInput
   updatedAt: DateTimeFieldUpdateOperationsInput
+}
+
+input SalaryScaleUpsertWithWhereUniqueWithoutJobGradeInput {
+  create: SalaryScaleCreateWithoutJobGradeInput!
+  update: SalaryScaleUpdateWithoutJobGradeInput!
+  where: SalaryScaleWhereUniqueInput!
 }
 
 input SalaryScaleUpsertWithoutPositionClassesInput {
