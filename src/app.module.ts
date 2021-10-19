@@ -21,6 +21,8 @@ import { JobGradesResolver } from './resolvers/job-grades.resolver';
 import { JobStepsResolver } from './resolvers/job-steps.resolver';
 import { MaritalStatusesResolver } from './resolvers/marital-statuses.resolver';
 import { NationalitiesResolver } from './resolvers/nationalities.resolver';
+import { PositionClassCategoriesResolver } from './resolvers/position-class-categories.resolver';
+import { PositionClassTypesResolver } from './resolvers/position-class-types.resolver';
 
 @Module({
   imports: [
@@ -43,6 +45,8 @@ import { NationalitiesResolver } from './resolvers/nationalities.resolver';
     EmploymentNaturesResolver,
     JobGradesResolver,
     JobStepsResolver,
+    PositionClassTypesResolver,
+    PositionClassCategoriesResolver,
     AppConfigService,
     GqlConfigService,
     RedisConfigService,
