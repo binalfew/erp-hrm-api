@@ -18,6 +18,7 @@ import { EmploymentNaturesResolver } from './resolvers/employment-natures.resolv
 import { EmploymentTypesResolver } from './resolvers/employment-types.resolver';
 import { GendersResolver } from './resolvers/genders.resolver';
 import { JobGradesResolver } from './resolvers/job-grades.resolver';
+import { JobStepsResolver } from './resolvers/job-steps.resolver';
 import { MaritalStatusesResolver } from './resolvers/marital-statuses.resolver';
 import { NationalitiesResolver } from './resolvers/nationalities.resolver';
 
@@ -41,6 +42,7 @@ import { NationalitiesResolver } from './resolvers/nationalities.resolver';
     EmploymentTypesResolver,
     EmploymentNaturesResolver,
     JobGradesResolver,
+    JobStepsResolver,
     AppConfigService,
     GqlConfigService,
     RedisConfigService,
