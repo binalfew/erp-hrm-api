@@ -14,6 +14,8 @@ import {
   sessionConfig,
 } from './config/configuration';
 import { DataModule } from './data/data.module';
+import { EmploymentNaturesResolver } from './resolvers/employment-natures.resolver';
+import { EmploymentTypesResolver } from './resolvers/employment-types.resolver';
 import { GendersResolver } from './resolvers/genders.resolver';
 import { MaritalStatusesResolver } from './resolvers/marital-statuses.resolver';
 import { NationalitiesResolver } from './resolvers/nationalities.resolver';
@@ -35,6 +37,8 @@ import { NationalitiesResolver } from './resolvers/nationalities.resolver';
     GendersResolver,
     NationalitiesResolver,
     MaritalStatusesResolver,
+    EmploymentTypesResolver,
+    EmploymentNaturesResolver,
     AppConfigService,
     GqlConfigService,
     RedisConfigService,
